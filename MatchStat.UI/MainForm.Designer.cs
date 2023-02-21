@@ -117,6 +117,7 @@
             this.MatchButton.TabIndex = 6;
             this.MatchButton.Text = "Matches";
             this.MatchButton.UseVisualStyleBackColor = true;
+            this.MatchButton.Click += new System.EventHandler(this.MatchButton_Click);
             // 
             // MainForm
             // 

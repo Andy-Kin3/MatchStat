@@ -21,6 +21,11 @@ namespace MatchStat.UI
         private void Match_Load(object sender, EventArgs e)
         {
             LoadMatch();
+            team1Cbo.Items.Add("Pineaple");
+            team1Cbo.Items.Add("Pear");
+            team1Cbo.Items.Add("Orange");
+            team1Cbo.Items.Add("Apple");
+
         }
         private void LoadMatch()
         {
@@ -30,10 +35,26 @@ namespace MatchStat.UI
 
         private object GetMatches()
         {
-            using(var context = new FootballInfoContext())
+            using (var context = new FootballInfoContext())
             {
                 var matches = context.Matches.ToList();
                 return matches;
+            }
+        }
+        private object GetTeams()
+        {
+            using(var context = new FootballInfoContext())
+            {
+                var teams = context.Teams.ToList();
+                return teams;
+            }
+        }
+        private object GetTournament()
+        {
+            using(var context = new FootballInfoContext())
+            {
+                var tournament = context.Tournaments.ToList();
+                return tournament;
             }
         }
 
@@ -43,6 +64,11 @@ namespace MatchStat.UI
             {
                 Date = DateTime.Parse(matchDateTimePicker.Text),
             };
+        }
+
+        private void team1Cbo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

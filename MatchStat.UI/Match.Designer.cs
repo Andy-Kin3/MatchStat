@@ -102,13 +102,8 @@
             this.tourCbo.Size = new System.Drawing.Size(315, 27);
             this.tourCbo.TabIndex = 5;
             // 
-            // matchBindingSource
-            // 
-            this.matchBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Match);
-            // 
             // team1Cbo
             // 
-            this.team1Cbo.DataSource = this.matchBindingSource;
             this.team1Cbo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.team1Cbo.FormattingEnabled = true;
             this.team1Cbo.Location = new System.Drawing.Point(450, 8);

@@ -39,5 +39,11 @@ namespace MatchStat.UI
             var fields = new Field();
             fields.Show();
         }
+
+        private void MatchButton_Click(object sender, EventArgs e)
+        {
+            var matches = new Match();
+            matches.Show();
+        }
     }
 }
