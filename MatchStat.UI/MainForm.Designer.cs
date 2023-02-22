@@ -44,7 +44,7 @@
             this.tournamentbutton.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.tournamentbutton.Location = new System.Drawing.Point(398, 83);
             this.tournamentbutton.Name = "tournamentbutton";
-            this.tournamentbutton.Size = new System.Drawing.Size(270, 55);
+            this.tournamentbutton.Size = new System.Drawing.Size(261, 55);
             this.tournamentbutton.TabIndex = 0;
             this.tournamentbutton.Text = "Set Tournaments";
             this.tournamentbutton.UseVisualStyleBackColor = true;
@@ -54,12 +54,13 @@
             // 
             this.tournamentTeamsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tournamentTeamsButton.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tournamentTeamsButton.Location = new System.Drawing.Point(732, 224);
+            this.tournamentTeamsButton.Location = new System.Drawing.Point(723, 224);
             this.tournamentTeamsButton.Name = "tournamentTeamsButton";
             this.tournamentTeamsButton.Size = new System.Drawing.Size(270, 55);
             this.tournamentTeamsButton.TabIndex = 1;
             this.tournamentTeamsButton.Text = "Registered Teams(Tournaments)";
             this.tournamentTeamsButton.UseVisualStyleBackColor = true;
+            this.tournamentTeamsButton.Click += new System.EventHandler(this.tournamentTeamsButton_Click);
             // 
             // teamButton
             // 
@@ -71,12 +72,13 @@
             this.teamButton.TabIndex = 2;
             this.teamButton.Text = "Competing Teams";
             this.teamButton.UseVisualStyleBackColor = true;
+            this.teamButton.Click += new System.EventHandler(this.teamButton_Click);
             // 
             // fieldButton
             // 
             this.fieldButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.fieldButton.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.fieldButton.Location = new System.Drawing.Point(732, 83);
+            this.fieldButton.Location = new System.Drawing.Point(723, 83);
             this.fieldButton.Name = "fieldButton";
             this.fieldButton.Size = new System.Drawing.Size(270, 55);
             this.fieldButton.TabIndex = 3;
@@ -111,7 +113,7 @@
             // 
             this.MatchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.MatchButton.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.MatchButton.Location = new System.Drawing.Point(730, 369);
+            this.MatchButton.Location = new System.Drawing.Point(721, 369);
             this.MatchButton.Name = "MatchButton";
             this.MatchButton.Size = new System.Drawing.Size(270, 55);
             this.MatchButton.TabIndex = 6;
@@ -126,7 +128,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1062, 505);
+            this.ClientSize = new System.Drawing.Size(1053, 505);
             this.Controls.Add(this.MatchButton);
             this.Controls.Add(this.playerButton);
             this.Controls.Add(this.goalsButton);
@@ -135,8 +137,7 @@
             this.Controls.Add(this.tournamentTeamsButton);
             this.Controls.Add(this.tournamentbutton);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MaximumSize = new System.Drawing.Size(1078, 544);
-            this.MinimumSize = new System.Drawing.Size(1078, 544);
+            this.MinimumSize = new System.Drawing.Size(1069, 544);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.ResumeLayout(false);

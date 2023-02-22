@@ -28,11 +28,6 @@ namespace MatchStat.UI
             var players = new Players();
             players.Show();
         }
-        private void teamButton_Click(Object sender, EventArgs e)
-        {
-            var team = new Teams();
-            team.Show();
-        }
 
         private void fieldButton_Click(object sender, EventArgs e)
         {
@@ -44,6 +39,19 @@ namespace MatchStat.UI
         {
             var matches = new Match();
             matches.Show();
+        }
+
+        private void teamButton_Click(object sender, EventArgs e)
+        {
+            var team = new Teams();
+            team.Show();
+
+        }
+
+        private void tournamentTeamsButton_Click(object sender, EventArgs e)
+        {
+            var teamTournament = new TeamTournaments();
+            teamTournament.Show();
         }
     }
 }

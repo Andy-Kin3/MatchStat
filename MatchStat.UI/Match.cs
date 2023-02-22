@@ -21,11 +21,18 @@ namespace MatchStat.UI
         private void Match_Load(object sender, EventArgs e)
         {
             LoadMatch();
-            team1Cbo.Items.Add("Pineaple");
-            team1Cbo.Items.Add("Pear");
-            team1Cbo.Items.Add("Orange");
-            team1Cbo.Items.Add("Apple");
+            apply_cboValues();
+            var myTournament = this.GetTournament();
+            tournamentBindingSource.DataSource = myTournament;
+        }
 
+        
+        private void apply_cboValues()
+        {
+            var myTeam = this.GetTeams();
+            teamBindingSource.DataSource = myTeam;
+            var Dteam = this.GetTeams();
+            teamBindingSource1.DataSource = Dteam;
         }
         private void LoadMatch()
         {
@@ -41,7 +48,7 @@ namespace MatchStat.UI
                 return matches;
             }
         }
-        private object GetTeams()
+        private List<Team> GetTeams()
         {
             using(var context = new FootballInfoContext())
             {
@@ -49,7 +56,7 @@ namespace MatchStat.UI
                 return teams;
             }
         }
-        private object GetTournament()
+        private List<Tournament> GetTournament()
         {
             using(var context = new FootballInfoContext())
             {
@@ -63,12 +70,16 @@ namespace MatchStat.UI
             var matches = new Matches
             {
                 Date = DateTime.Parse(matchDateTimePicker.Text),
+                Team1Id = (int)team1Cbo.SelectedItem,
+                Team2Id = (int)team2Cbo.SelectedItem,
+                TournamentId = tourCbo.TabIndex
             };
-        }
-
-        private void team1Cbo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
+            using(var context =  new FootballInfoContext())
+            {
+                context.Matches.Add(matches);
+                context.SaveChanges();
+                LoadMatch();
+            }
         }
     }
 }

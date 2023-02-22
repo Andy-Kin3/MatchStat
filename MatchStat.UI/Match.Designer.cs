@@ -35,13 +35,23 @@
             this.team2Id = new System.Windows.Forms.Label();
             this.tournamentId = new System.Windows.Forms.Label();
             this.tourCbo = new System.Windows.Forms.ComboBox();
+            this.tournamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.matchBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.team1Cbo = new System.Windows.Forms.ComboBox();
+            this.teamBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.team2Cbo = new System.Windows.Forms.ComboBox();
+            this.teamBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.createMatchButton = new System.Windows.Forms.Button();
             this.deleteMatchButton = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.matchD = new System.Windows.Forms.ColumnHeader();
+            this.firstTeam = new System.Windows.Forms.ColumnHeader();
+            this.secondTeam = new System.Windows.Forms.ColumnHeader();
+            this.tour = new System.Windows.Forms.ColumnHeader();
+            ((System.ComponentModel.ISupportInitialize)(this.tournamentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matchBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // matchDate
@@ -68,9 +78,9 @@
             this.team1ID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.team1ID.Location = new System.Drawing.Point(365, 11);
             this.team1ID.Name = "team1ID";
-            this.team1ID.Size = new System.Drawing.Size(81, 19);
+            this.team1ID.Size = new System.Drawing.Size(65, 19);
             this.team1ID.TabIndex = 2;
-            this.team1ID.Text = "Team1 ID :";
+            this.team1ID.Text = "Team 1 :";
             // 
             // team2Id
             // 
@@ -78,9 +88,9 @@
             this.team2Id.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.team2Id.Location = new System.Drawing.Point(577, 11);
             this.team2Id.Name = "team2Id";
-            this.team2Id.Size = new System.Drawing.Size(81, 19);
+            this.team2Id.Size = new System.Drawing.Size(65, 19);
             this.team2Id.TabIndex = 3;
-            this.team2Id.Text = "Team2 ID :";
+            this.team2Id.Text = "Team 2 :";
             // 
             // tournamentId
             // 
@@ -88,13 +98,14 @@
             this.tournamentId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.tournamentId.Location = new System.Drawing.Point(12, 43);
             this.tournamentId.Name = "tournamentId";
-            this.tournamentId.Size = new System.Drawing.Size(116, 19);
+            this.tournamentId.Size = new System.Drawing.Size(96, 19);
             this.tournamentId.TabIndex = 4;
-            this.tournamentId.Text = "Tournament ID :";
+            this.tournamentId.Text = "Tournament :";
             // 
             // tourCbo
             // 
-            this.tourCbo.DataSource = this.matchBindingSource;
+            this.tourCbo.DataSource = this.tournamentBindingSource;
+            this.tourCbo.DisplayMember = "Name";
             this.tourCbo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.tourCbo.FormattingEnabled = true;
             this.tourCbo.Location = new System.Drawing.Point(131, 40);
@@ -102,24 +113,39 @@
             this.tourCbo.Size = new System.Drawing.Size(315, 27);
             this.tourCbo.TabIndex = 5;
             // 
+            // tournamentBindingSource
+            // 
+            this.tournamentBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Tournament);
+            // 
             // team1Cbo
             // 
+            this.team1Cbo.DataSource = this.teamBindingSource;
+            this.team1Cbo.DisplayMember = "Name";
             this.team1Cbo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.team1Cbo.FormattingEnabled = true;
-            this.team1Cbo.Location = new System.Drawing.Point(450, 8);
+            this.team1Cbo.Location = new System.Drawing.Point(436, 5);
             this.team1Cbo.Name = "team1Cbo";
             this.team1Cbo.Size = new System.Drawing.Size(121, 27);
             this.team1Cbo.TabIndex = 6;
             // 
+            // teamBindingSource
+            // 
+            this.teamBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Team);
+            // 
             // team2Cbo
             // 
-            this.team2Cbo.DataSource = this.matchBindingSource;
+            this.team2Cbo.DataSource = this.teamBindingSource1;
+            this.team2Cbo.DisplayMember = "Name";
             this.team2Cbo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.team2Cbo.FormattingEnabled = true;
-            this.team2Cbo.Location = new System.Drawing.Point(667, 8);
+            this.team2Cbo.Location = new System.Drawing.Point(648, 5);
             this.team2Cbo.Name = "team2Cbo";
             this.team2Cbo.Size = new System.Drawing.Size(121, 27);
             this.team2Cbo.TabIndex = 7;
+            // 
+            // teamBindingSource1
+            // 
+            this.teamBindingSource1.DataSource = typeof(MatchStat.DataModel.DataModels.Team);
             // 
             // createMatchButton
             // 
@@ -145,12 +171,38 @@
             // listView1
             // 
             this.listView1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.listView1.Location = new System.Drawing.Point(12, 73);
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.matchD,
+            this.firstTeam,
+            this.secondTeam,
+            this.tour});
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listView1.Location = new System.Drawing.Point(0, 85);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(776, 365);
+            this.listView1.Size = new System.Drawing.Size(800, 365);
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.List;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // matchD
+            // 
+            this.matchD.Text = "Match Date";
+            this.matchD.Width = 160;
+            // 
+            // firstTeam
+            // 
+            this.firstTeam.Text = "Team 1";
+            this.firstTeam.Width = 160;
+            // 
+            // secondTeam
+            // 
+            this.secondTeam.Text = "Team 2";
+            this.secondTeam.Width = 160;
+            // 
+            // tour
+            // 
+            this.tour.Text = "Tournament";
+            this.tour.Width = 160;
             // 
             // Match
             // 
@@ -172,7 +224,10 @@
             this.Name = "Match";
             this.Text = "Match";
             this.Load += new System.EventHandler(this.Match_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tournamentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.matchBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +247,12 @@
         private Button deleteMatchButton;
         private ListView listView1;
         private BindingSource matchBindingSource;
+        private ColumnHeader matchD;
+        private ColumnHeader firstTeam;
+        private ColumnHeader secondTeam;
+        private ColumnHeader tour;
+        private BindingSource tournamentBindingSource;
+        private BindingSource teamBindingSource;
+        private BindingSource teamBindingSource1;
     }
 }

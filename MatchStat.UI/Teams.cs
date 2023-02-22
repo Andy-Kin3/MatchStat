@@ -44,7 +44,6 @@ namespace MatchStat.UI
             };
             using(var context = new FootballInfoContext())
             {
-                var team = context.Teams.ToList();
                 context.Teams.Add(teams);
                 context.SaveChanges();
             }
@@ -54,7 +53,7 @@ namespace MatchStat.UI
         {
             var allTeams = teamBindingSource.DataSource as List<Team>;
             var maximumId = allTeams != null && allTeams.Any() ? allTeams.Max(x => x.Id) : 0;
-            return maximumId+1;
+            return maximumId + 1;
 
         }
 
