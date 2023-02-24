@@ -67,25 +67,24 @@
             // 
             // stadiumTextBox
             // 
-            this.stadiumTextBox.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.stadiumTextBox.Location = new System.Drawing.Point(142, 3);
-            this.stadiumTextBox.Multiline = true;
+            this.stadiumTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.stadiumTextBox.Location = new System.Drawing.Point(142, 8);
             this.stadiumTextBox.Name = "stadiumTextBox";
-            this.stadiumTextBox.Size = new System.Drawing.Size(219, 33);
+            this.stadiumTextBox.Size = new System.Drawing.Size(219, 26);
             this.stadiumTextBox.TabIndex = 2;
             // 
             // countryTextBox
             // 
-            this.countryTextBox.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.countryTextBox.Location = new System.Drawing.Point(450, 4);
-            this.countryTextBox.Multiline = true;
+            this.countryTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.countryTextBox.Location = new System.Drawing.Point(450, 9);
             this.countryTextBox.Name = "countryTextBox";
-            this.countryTextBox.Size = new System.Drawing.Size(181, 33);
+            this.countryTextBox.Size = new System.Drawing.Size(181, 26);
             this.countryTextBox.TabIndex = 3;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -93,10 +92,11 @@
             this.countryDataGridViewTextBoxColumn,
             this.matchesDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.fieldBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 79);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 80);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(620, 343);
+            this.dataGridView1.Size = new System.Drawing.Size(645, 354);
             this.dataGridView1.TabIndex = 4;
             // 
             // idDataGridViewTextBoxColumn

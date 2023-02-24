@@ -31,12 +31,13 @@ namespace MatchStat.UI
                 Name = tournamentName.Text.ToString(),
                 Id = GetNextId()
             };
-
+            
             using (var context = new FootballInfoContext())
             {
                 context.Tournaments.Add(tournament);
                 context.SaveChanges();
-                LoadTournaments(); 
+                LoadTournaments();
+                tournamentName.Clear();
             }
         }
 

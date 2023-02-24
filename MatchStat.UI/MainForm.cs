@@ -17,7 +17,7 @@ namespace MatchStat.UI
             InitializeComponent();
         }
 
-        private void tournamentbutton_Click(object sender, EventArgs e)
+        private void tournamentbutton_Cilick(object sender, EventArgs e)
         {
            var tournamentStatistics = new TournamentStatistics();
             tournamentStatistics.Show();
@@ -52,6 +52,12 @@ namespace MatchStat.UI
         {
             var teamTournament = new TeamTournaments();
             teamTournament.Show();
+        }
+
+        private void goalsButton_Click(object sender, EventArgs e)
+        {
+            var goals = new Goals();
+            goals.Show();
         }
     }
 }

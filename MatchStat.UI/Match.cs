@@ -21,23 +21,19 @@ namespace MatchStat.UI
         private void Match_Load(object sender, EventArgs e)
         {
             LoadMatch();
-            apply_cboValues();
-            var myTournament = this.GetTournament();
-            tournamentBindingSource.DataSource = myTournament;
         }
-
-        
-        private void apply_cboValues()
+        private void LoadMatch()
         {
+            var matches = this.GetMatches();
+            matchBindingSource.DataSource = matches;
             var myTeam = this.GetTeams();
             teamBindingSource.DataSource = myTeam;
             var Dteam = this.GetTeams();
             teamBindingSource1.DataSource = Dteam;
-        }
-        private void LoadMatch()
-        {
-            var matches = GetMatches();
-            matchBindingSource.DataSource = matches;
+            var field = this.GetFields();
+            fieldsBindingSource.DataSource = field;
+            var myTournament = this.GetTournament();
+            tournamentBindingSource.DataSource = myTournament;
         }
 
         private object GetMatches()
@@ -56,6 +52,14 @@ namespace MatchStat.UI
                 return teams;
             }
         }
+        private List<Fields> GetFields()
+        {
+            using(var context = new FootballInfoContext())
+            {
+                var fields = context.Fields.ToList();
+                return fields;
+            }
+        }
         private List<Tournament> GetTournament()
         {
             using(var context = new FootballInfoContext())
@@ -67,18 +71,43 @@ namespace MatchStat.UI
 
         private void createMatchButton_Click(object sender, EventArgs e)
         {
+
             var matches = new Matches
             {
                 Date = DateTime.Parse(matchDateTimePicker.Text),
-                Team1Id = (int)team1Cbo.SelectedItem,
-                Team2Id = (int)team2Cbo.SelectedItem,
-                TournamentId = tourCbo.TabIndex
+                Team1Id = Convert.ToInt32(team1Cbo.SelectedValue),
+                Team2Id = Convert.ToInt32(team2Cbo.SelectedValue),
+                TournamentId = Convert.ToInt32(tourCbo.SelectedValue),
+                FieldId = Convert.ToInt32(fieldcbo.SelectedValue),
+                Id = GetNextID()
             };
-            using(var context =  new FootballInfoContext())
+            //listView1.Items.AddRange(matches);
+            using (var context =  new FootballInfoContext())
             {
                 context.Matches.Add(matches);
                 context.SaveChanges();
                 LoadMatch();
+            }
+        }
+
+        private int GetNextID()
+        {
+            var allMatches = matchBindingSource.DataSource as List<Matches>;
+            var maximumId = allMatches != null && allMatches.Any() ? allMatches.Max(e => e.Id) : 0;
+            return maximumId + 1;
+        }
+
+        private void deleteMatchButton_Click(object sender, EventArgs e)
+        {
+            var mySelected = matchBindingSource.Current as Matches;
+            if( mySelected != null)
+            {
+                using(var context = new FootballInfoContext())
+                {
+                    context.Matches.Remove(mySelected);
+                    context.SaveChanges();
+                    LoadMatch();
+                }
             }
         }
     }

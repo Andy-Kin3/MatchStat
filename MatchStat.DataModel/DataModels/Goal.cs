@@ -11,5 +11,7 @@ public partial class Goal
 
     public int MatchId { get; set; }
 
+    public int NumberOfGoal { get; set; }
+
     public virtual Player Player { get; set; } = null!;
 }

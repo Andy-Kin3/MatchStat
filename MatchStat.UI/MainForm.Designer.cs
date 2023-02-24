@@ -96,6 +96,7 @@
             this.goalsButton.TabIndex = 4;
             this.goalsButton.Text = "Goals";
             this.goalsButton.UseVisualStyleBackColor = true;
+            this.goalsButton.Click += new System.EventHandler(this.goalsButton_Click);
             // 
             // playerButton
             // 
@@ -140,6 +141,7 @@
             this.MinimumSize = new System.Drawing.Size(1069, 544);
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }

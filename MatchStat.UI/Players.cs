@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.VisualBasic;
 
 namespace MatchStat.UI
 {
@@ -28,18 +29,29 @@ namespace MatchStat.UI
                 return player; 
             }
         }
+        private List<Team> GetTeams()
+        {
+            using(var context = new FootballInfoContext())
+            {
+                var teams = context.Teams.ToList();
+                return teams;
+            }
+        }
 
         private void LoadPlayers()
         {
             var players = this.GetPlayer();
             playerBindingSource.DataSource = players;
+            var myTeams = this.GetTeams();
+            teamBindingSource.DataSource = myTeams;
         }
 
         private int GetNextId()
         {
-            var allPlayers = playerBindingSource.DataSource as List<Tournament>;
+            var allPlayers = playerBindingSource.DataSource as List<Player>;
             var maximumId = allPlayers != null && allPlayers.Any() ? allPlayers.Max(x => x.Id) : 0;
-            return maximumId + 1;
+            var returnValue = maximumId + 1;
+            return returnValue;
         }
 
         private void createPlayerButton_Click(object sender, EventArgs e)
@@ -50,6 +62,7 @@ namespace MatchStat.UI
                 LastName = playerLastName.Text.ToString(),
                 Dob = DateTime.Parse(dateOfBirth.Text),
                 Id= GetNextId(),
+                TeamId = Convert.ToInt32(teamCbo.SelectedValue)
             };
             using (var context = new FootballInfoContext())
             {
