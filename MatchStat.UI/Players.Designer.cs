@@ -47,8 +47,8 @@
             this.goalsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teamCbo = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.teamBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).BeginInit();
@@ -210,6 +210,10 @@
             this.teamCbo.TabIndex = 10;
             this.teamCbo.ValueMember = "Id";
             // 
+            // teamBindingSource
+            // 
+            this.teamBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Team);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -219,10 +223,6 @@
             this.label1.Size = new System.Drawing.Size(41, 17);
             this.label1.TabIndex = 11;
             this.label1.Text = "Team";
-            // 
-            // teamBindingSource
-            // 
-            this.teamBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Team);
             // 
             // Players
             // 
@@ -241,9 +241,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.playerFirstName);
             this.Controls.Add(this.playerFName);
+            this.Location = new System.Drawing.Point(592, 400);
             this.MaximumSize = new System.Drawing.Size(769, 462);
             this.MinimumSize = new System.Drawing.Size(769, 462);
             this.Name = "Players";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "PlayerInfo";
             this.Load += new System.EventHandler(this.Players_Load);
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).EndInit();

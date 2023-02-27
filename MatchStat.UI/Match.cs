@@ -1,8 +1,10 @@
 ﻿using MatchStat.DataModel.DataModels;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -81,12 +83,30 @@ namespace MatchStat.UI
                 FieldId = Convert.ToInt32(fieldcbo.SelectedValue),
                 Id = GetNextID()
             };
-            //listView1.Items.AddRange(matches);
             using (var context =  new FootballInfoContext())
             {
+                add(Convert.ToDateTime(matchDateTimePicker.Text), team1Cbo.Text, team2Cbo.Text, tourCbo.Text, fieldcbo.Text);
+                //listView1.Items.Add(Convert.ToString(matches));
                 context.Matches.Add(matches);
                 context.SaveChanges();
-                LoadMatch();
+            }
+        }
+        private void add(DateTime matchDate, string team1, string team2, string tournament, string field)
+        {
+            
+            string[] row = {Convert.ToString(matchDate), team1, team2, tournament, field };
+            ListViewItem item = new ListViewItem(row);
+            listView1.Items.Add(item);
+        }
+        private void FillList(List<Matches> myMatch)
+        {
+            listView1.Items.Clear();
+            listView1.View = View.Details;
+            
+            foreach(var match in myMatch)
+            {
+                string[] row = { Convert.ToString(match.Date), Convert.ToString(match.Team1Id), Convert.ToString(match.Team2Id), Convert.ToString(match.TournamentId), Convert.ToString(match.FieldId) };
+                listView1.Items.Add(new ListViewItem(row));
             }
         }
 
@@ -94,7 +114,9 @@ namespace MatchStat.UI
         {
             var allMatches = matchBindingSource.DataSource as List<Matches>;
             var maximumId = allMatches != null && allMatches.Any() ? allMatches.Max(e => e.Id) : 0;
-            return maximumId + 1;
+            var myId = maximumId + 1;
+            return myId;
+            
         }
 
         private void deleteMatchButton_Click(object sender, EventArgs e)
@@ -108,6 +130,14 @@ namespace MatchStat.UI
                     context.SaveChanges();
                     LoadMatch();
                 }
+            }
+        }
+
+        private void previewButton_Click(object sender, EventArgs e)
+        {
+            using(var context = new FootballInfoContext())
+            {
+                FillList(context.Matches.ToList());
             }
         }
     }

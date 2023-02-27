@@ -163,7 +163,9 @@
             this.Controls.Add(this.stadiumTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Location = new System.Drawing.Point(592, 400);
             this.Name = "Field";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Field";
             this.Load += new System.EventHandler(this.Field_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

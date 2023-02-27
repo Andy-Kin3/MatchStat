@@ -30,27 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.goalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.playerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.matchIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numberOfGoalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.playerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.createButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.playerCbox = new System.Windows.Forms.ComboBox();
-            this.matchCbox = new System.Windows.Forms.ComboBox();
-            this.numberOfGoals = new System.Windows.Forms.NumericUpDown();
-            this.matchesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.playerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.matchCbox = new System.Windows.Forms.ComboBox();
+            this.matchesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.numberOfGoals = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goalBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numberOfGoals)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matchesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matchesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numberOfGoals)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -71,10 +71,6 @@
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(800, 362);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // goalBindingSource
-            // 
-            this.goalBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Goal);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -105,6 +101,10 @@
             this.playerDataGridViewTextBoxColumn.DataPropertyName = "Player";
             this.playerDataGridViewTextBoxColumn.HeaderText = "Player";
             this.playerDataGridViewTextBoxColumn.Name = "playerDataGridViewTextBoxColumn";
+            // 
+            // goalBindingSource
+            // 
+            this.goalBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Goal);
             // 
             // createButton
             // 
@@ -170,6 +170,10 @@
             this.playerCbox.TabIndex = 6;
             this.playerCbox.ValueMember = "Id";
             // 
+            // playerBindingSource
+            // 
+            this.playerBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Player);
+            // 
             // matchCbox
             // 
             this.matchCbox.DataSource = this.matchesBindingSource;
@@ -182,6 +186,10 @@
             this.matchCbox.TabIndex = 7;
             this.matchCbox.ValueMember = "Id";
             // 
+            // matchesBindingSource
+            // 
+            this.matchesBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Matches);
+            // 
             // numberOfGoals
             // 
             this.numberOfGoals.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
@@ -189,14 +197,6 @@
             this.numberOfGoals.Name = "numberOfGoals";
             this.numberOfGoals.Size = new System.Drawing.Size(279, 27);
             this.numberOfGoals.TabIndex = 8;
-            // 
-            // matchesBindingSource
-            // 
-            this.matchesBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Matches);
-            // 
-            // playerBindingSource
-            // 
-            this.playerBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Player);
             // 
             // Goals
             // 
@@ -213,13 +213,15 @@
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.createButton);
             this.Controls.Add(this.dataGridView1);
+            this.Location = new System.Drawing.Point(592, 400);
             this.Name = "Goals";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Goal";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goalBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numberOfGoals)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matchesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matchesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numberOfGoals)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -40,9 +40,9 @@
             // 
             // tournamentbutton
             // 
-            this.tournamentbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tournamentbutton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tournamentbutton.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tournamentbutton.Location = new System.Drawing.Point(398, 83);
+            this.tournamentbutton.Location = new System.Drawing.Point(426, 33);
             this.tournamentbutton.Name = "tournamentbutton";
             this.tournamentbutton.Size = new System.Drawing.Size(261, 55);
             this.tournamentbutton.TabIndex = 0;
@@ -52,9 +52,9 @@
             // 
             // tournamentTeamsButton
             // 
-            this.tournamentTeamsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tournamentTeamsButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tournamentTeamsButton.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tournamentTeamsButton.Location = new System.Drawing.Point(723, 224);
+            this.tournamentTeamsButton.Location = new System.Drawing.Point(771, 133);
             this.tournamentTeamsButton.Name = "tournamentTeamsButton";
             this.tournamentTeamsButton.Size = new System.Drawing.Size(270, 55);
             this.tournamentTeamsButton.TabIndex = 1;
@@ -64,9 +64,9 @@
             // 
             // teamButton
             // 
-            this.teamButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.teamButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.teamButton.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.teamButton.Location = new System.Drawing.Point(73, 224);
+            this.teamButton.Location = new System.Drawing.Point(12, 133);
             this.teamButton.Name = "teamButton";
             this.teamButton.Size = new System.Drawing.Size(270, 55);
             this.teamButton.TabIndex = 2;
@@ -76,9 +76,9 @@
             // 
             // fieldButton
             // 
-            this.fieldButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.fieldButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.fieldButton.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.fieldButton.Location = new System.Drawing.Point(723, 83);
+            this.fieldButton.Location = new System.Drawing.Point(771, 33);
             this.fieldButton.Name = "fieldButton";
             this.fieldButton.Size = new System.Drawing.Size(270, 55);
             this.fieldButton.TabIndex = 3;
@@ -88,9 +88,9 @@
             // 
             // goalsButton
             // 
-            this.goalsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.goalsButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.goalsButton.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.goalsButton.Location = new System.Drawing.Point(73, 83);
+            this.goalsButton.Location = new System.Drawing.Point(12, 33);
             this.goalsButton.Name = "goalsButton";
             this.goalsButton.Size = new System.Drawing.Size(270, 55);
             this.goalsButton.TabIndex = 4;
@@ -100,9 +100,9 @@
             // 
             // playerButton
             // 
-            this.playerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.playerButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.playerButton.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.playerButton.Location = new System.Drawing.Point(74, 369);
+            this.playerButton.Location = new System.Drawing.Point(12, 231);
             this.playerButton.Name = "playerButton";
             this.playerButton.Size = new System.Drawing.Size(270, 55);
             this.playerButton.TabIndex = 5;
@@ -112,9 +112,9 @@
             // 
             // MatchButton
             // 
-            this.MatchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.MatchButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.MatchButton.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.MatchButton.Location = new System.Drawing.Point(721, 369);
+            this.MatchButton.Location = new System.Drawing.Point(771, 231);
             this.MatchButton.Name = "MatchButton";
             this.MatchButton.Size = new System.Drawing.Size(270, 55);
             this.MatchButton.TabIndex = 6;
@@ -128,7 +128,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1053, 505);
             this.Controls.Add(this.MatchButton);
             this.Controls.Add(this.playerButton);
@@ -138,8 +138,10 @@
             this.Controls.Add(this.tournamentTeamsButton);
             this.Controls.Add(this.tournamentbutton);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IsMdiContainer = true;
             this.MinimumSize = new System.Drawing.Size(1069, 544);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);

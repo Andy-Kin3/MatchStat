@@ -154,7 +154,9 @@
             this.Controls.Add(this.createbutton);
             this.Controls.Add(this.teamName);
             this.Controls.Add(this.label1);
+            this.Location = new System.Drawing.Point(592, 400);
             this.Name = "Teams";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Teams";
             this.Load += new System.EventHandler(this.Teams_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
