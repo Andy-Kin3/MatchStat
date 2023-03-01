@@ -8,6 +8,7 @@ using System.Data;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,9 +24,9 @@ namespace MatchStat.UI
 
         private void Match_Load(object sender, EventArgs e)
         {
-            LoadMatch();
+            LoadMatches();
         }
-        private void LoadMatch()
+        private void LoadMatches()
         {
             var matches = this.GetMatches();
             matchBindingSource.DataSource = matches;
@@ -90,6 +91,7 @@ namespace MatchStat.UI
                 //listView1.Items.Add(Convert.ToString(matches));
                 context.Matches.Add(matches);
                 context.SaveChanges();
+                LoadMatches();
             }
         }
         private void add(DateTime matchDate, string team1, string team2, string tournament, string field)
@@ -116,11 +118,11 @@ namespace MatchStat.UI
             var maximumId = allMatches != null && allMatches.Any() ? allMatches.Max(e => e.Id) : 0;
             var nextId = maximumId + 1;
             return nextId;
-            //var maximumIdQuery = new FormattableString("SELECT MAX(Id) FROM Match");
-            //using(var context = new FootballInfoContext())
+            //var maximumIdQuery = $"SELECT MAX(Id) FROM Match";
+            //using (var context = new FootballInfoContext())
             //{
-            //    var maximumId = context.Database.SqlQuery<int?>(maximumIdQuery).FirstOrDefault();
-            //    var nextId = maximumId.HasValue ? maximumId.Value + 1 : 1;
+            //    var maximumId = context.Database.SqlQuery<int?>(FormattableStringFactory.Create(maximumIdQuery)).FirstOrDefault();
+            //    var nextId = maximumId.HasValue ? maximumId.GetValueOrDefault() + 1 : 1;
             //    return nextId;
             //}
         }
@@ -134,7 +136,7 @@ namespace MatchStat.UI
                 {
                     context.Matches.Remove(mySelected);
                     context.SaveChanges();
-                    LoadMatch();
+                    LoadMatches();
 
 
                     foreach (ListViewItem selectedItem in listView1.SelectedItems)
