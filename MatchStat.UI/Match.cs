@@ -1,5 +1,6 @@
 ﻿using MatchStat.DataModel.DataModels;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -94,18 +95,17 @@ namespace MatchStat.UI
         private void add(DateTime matchDate, string team1, string team2, string tournament, string field)
         {
             
-            string[] row = {Convert.ToString(matchDate), team1, team2, tournament, field };
+            string[] row = {Convert.ToString(matchDate.TimeOfDay), team1, team2, tournament, field };
             ListViewItem item = new ListViewItem(row);
             listView1.Items.Add(item);
         }
         private void FillList(List<Matches> myMatch)
         {
             listView1.Items.Clear();
-            listView1.View = View.Details;
             
             foreach(var match in myMatch)
             {
-                string[] row = { Convert.ToString(match.Date), Convert.ToString(match.Team1Id), Convert.ToString(match.Team2Id), Convert.ToString(match.TournamentId), Convert.ToString(match.FieldId) };
+                string[] row = { Convert.ToString(match.Date.TimeOfDay), Convert.ToString(match.Team1Id), Convert.ToString(match.Team2Id), Convert.ToString(match.TournamentId), Convert.ToString(match.FieldId) };
                 listView1.Items.Add(new ListViewItem(row));
             }
         }
@@ -114,9 +114,15 @@ namespace MatchStat.UI
         {
             var allMatches = matchBindingSource.DataSource as List<Matches>;
             var maximumId = allMatches != null && allMatches.Any() ? allMatches.Max(e => e.Id) : 0;
-            var myId = maximumId + 1;
-            return myId;
-            
+            var nextId = maximumId + 1;
+            return nextId;
+            //var maximumIdQuery = new FormattableString("SELECT MAX(Id) FROM Match");
+            //using(var context = new FootballInfoContext())
+            //{
+            //    var maximumId = context.Database.SqlQuery<int?>(maximumIdQuery).FirstOrDefault();
+            //    var nextId = maximumId.HasValue ? maximumId.Value + 1 : 1;
+            //    return nextId;
+            //}
         }
 
         private void deleteMatchButton_Click(object sender, EventArgs e)
@@ -129,6 +135,15 @@ namespace MatchStat.UI
                     context.Matches.Remove(mySelected);
                     context.SaveChanges();
                     LoadMatch();
+
+
+                    foreach (ListViewItem selectedItem in listView1.SelectedItems)
+                    {
+                        if(listView1.SelectedItems.Count > 0)
+                        {
+                            listView1.Items.Remove(selectedItem);
+                        }
+                    }
                 }
             }
         }
