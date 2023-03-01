@@ -86,10 +86,11 @@ namespace MatchStat.UI
             using (var context =  new FootballInfoContext())
             {
                 add(Convert.ToDateTime(matchDateTimePicker.Text), team1Cbo.Text, team2Cbo.Text, tourCbo.Text, fieldcbo.Text);
-                //listView1.Items.Add(Convert.ToString(matches));
                 context.Matches.Add(matches);
                 context.SaveChanges();
             }
+
+            LoadMatch();
         }
         private void add(DateTime matchDate, string team1, string team2, string tournament, string field)
         {

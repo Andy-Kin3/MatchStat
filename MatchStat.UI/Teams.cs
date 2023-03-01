@@ -25,14 +25,14 @@ namespace MatchStat.UI
                 return team;
             }
         }
-        private void LoadTeam()
+        private void LoadTeams()
         {
             var teams = GetTeams();
             teamBindingSource.DataSource = teams;
         }
         private void Teams_Load(object sender, EventArgs e)
         {
-            LoadTeam();
+            LoadTeams();
         }
 
         private void createbutton_Click(object sender, EventArgs e)
@@ -47,6 +47,7 @@ namespace MatchStat.UI
                 context.Teams.Add(teams);
                 context.SaveChanges();
             }
+            LoadTeams();
         }
 
         private int GetNextID()
@@ -54,7 +55,6 @@ namespace MatchStat.UI
             var allTeams = teamBindingSource.DataSource as List<Team>;
             var maximumId = allTeams != null && allTeams.Any() ? allTeams.Max(x => x.Id) : 0;
             return maximumId + 1;
-
         }
 
         private void deleteTeamButton_Click(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace MatchStat.UI
                 {
                     context.Teams.Remove(currentlySelected);
                     context.SaveChanges();
-                    LoadTeam();
+                    LoadTeams();
                 }
             }
         }
