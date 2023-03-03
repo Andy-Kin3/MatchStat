@@ -59,6 +59,7 @@ namespace MatchStat.UI
         private void TeamTournaments_Load(object sender, EventArgs e)
         {
             LoadTeamTournments();
+            listView1.BackColor = Color.Turquoise;
         }
 
         private void assignButton_Click(object sender, EventArgs e)

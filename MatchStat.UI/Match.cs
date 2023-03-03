@@ -12,6 +12,7 @@ namespace MatchStat.UI
         private void Match_Load(object sender, EventArgs e)
         {
             LoadMatches();
+            listView1.BackColor= Color.Turquoise;
         }
         private void LoadMatches()
         {
