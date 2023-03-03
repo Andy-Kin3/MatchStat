@@ -93,7 +93,7 @@ namespace MatchStat.UI
                 LoadMatches();
             }
 
-            LoadMatch();
+            LoadMatches();
         }
         private void add(DateTime matchDate, string team1, string team2, string tournament, string field)
         {
