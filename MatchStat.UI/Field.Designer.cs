@@ -37,7 +37,6 @@
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matchesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fieldBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.createButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
@@ -59,7 +58,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(367, 10);
+            this.label2.Location = new System.Drawing.Point(275, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 21);
             this.label2.TabIndex = 1;
@@ -67,32 +66,37 @@
             // 
             // stadiumTextBox
             // 
+            this.stadiumTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.stadiumTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.stadiumTextBox.Location = new System.Drawing.Point(142, 8);
             this.stadiumTextBox.Name = "stadiumTextBox";
-            this.stadiumTextBox.Size = new System.Drawing.Size(219, 26);
+            this.stadiumTextBox.Size = new System.Drawing.Size(491, 26);
             this.stadiumTextBox.TabIndex = 2;
             // 
             // countryTextBox
             // 
+            this.countryTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.countryTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.countryTextBox.Location = new System.Drawing.Point(450, 9);
+            this.countryTextBox.Location = new System.Drawing.Point(364, 44);
             this.countryTextBox.Name = "countryTextBox";
-            this.countryTextBox.Size = new System.Drawing.Size(181, 26);
+            this.countryTextBox.Size = new System.Drawing.Size(269, 26);
             this.countryTextBox.TabIndex = 3;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
-            this.countryDataGridViewTextBoxColumn,
-            this.matchesDataGridViewTextBoxColumn});
+            this.countryDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.fieldBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 80);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
@@ -101,9 +105,12 @@
             // 
             // idDataGridViewTextBoxColumn
             // 
+            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.Frozen = true;
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 55;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -116,13 +123,6 @@
             this.countryDataGridViewTextBoxColumn.DataPropertyName = "Country";
             this.countryDataGridViewTextBoxColumn.HeaderText = "Country";
             this.countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
-            // 
-            // matchesDataGridViewTextBoxColumn
-            // 
-            this.matchesDataGridViewTextBoxColumn.DataPropertyName = "Matches";
-            this.matchesDataGridViewTextBoxColumn.HeaderText = "Matches";
-            this.matchesDataGridViewTextBoxColumn.Name = "matchesDataGridViewTextBoxColumn";
-            this.matchesDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fieldBindingSource
             // 
@@ -164,8 +164,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Location = new System.Drawing.Point(592, 400);
+            this.MinimumSize = new System.Drawing.Size(661, 473);
             this.Name = "Field";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Field";
             this.Load += new System.EventHandler(this.Field_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -182,12 +183,11 @@
         private TextBox stadiumTextBox;
         private TextBox countryTextBox;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn matchesDataGridViewTextBoxColumn;
         private BindingSource fieldBindingSource;
         private Button createButton;
         private Button deleteButton;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn;
     }
 }

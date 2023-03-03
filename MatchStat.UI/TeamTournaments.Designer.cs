@@ -48,10 +48,12 @@
             // 
             // listView1
             // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.team,
             this.tournament});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listView1.Font = new System.Drawing.Font("Times New Roman", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(0, 81);
@@ -83,9 +85,12 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(340, 9);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 21);
             this.label2.TabIndex = 3;
@@ -117,10 +122,11 @@
             // 
             this.comboTeam.DataSource = this.teamBindingSource;
             this.comboTeam.DisplayMember = "Name";
+            this.comboTeam.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.comboTeam.FormattingEnabled = true;
-            this.comboTeam.Location = new System.Drawing.Point(82, 7);
+            this.comboTeam.Location = new System.Drawing.Point(82, 4);
             this.comboTeam.Name = "comboTeam";
-            this.comboTeam.Size = new System.Drawing.Size(252, 23);
+            this.comboTeam.Size = new System.Drawing.Size(252, 30);
             this.comboTeam.TabIndex = 6;
             this.comboTeam.ValueMember = "Id";
             // 
@@ -134,12 +140,16 @@
             // 
             // comboTournament
             // 
+            this.comboTournament.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.comboTournament.DataSource = this.tournamentBindingSource;
             this.comboTournament.DisplayMember = "Name";
+            this.comboTournament.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.comboTournament.FormattingEnabled = true;
-            this.comboTournament.Location = new System.Drawing.Point(459, 7);
+            this.comboTournament.Location = new System.Drawing.Point(459, 5);
+            this.comboTournament.MinimumSize = new System.Drawing.Size(255, 0);
             this.comboTournament.Name = "comboTournament";
-            this.comboTournament.Size = new System.Drawing.Size(255, 23);
+            this.comboTournament.Size = new System.Drawing.Size(255, 30);
             this.comboTournament.TabIndex = 7;
             this.comboTournament.ValueMember = "Id";
             // 
@@ -161,8 +171,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
             this.Location = new System.Drawing.Point(592, 400);
+            this.MinimumSize = new System.Drawing.Size(754, 498);
             this.Name = "TeamTournaments";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TeamTournaments";
             this.Load += new System.EventHandler(this.TeamTournaments_Load);
             ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).EndInit();

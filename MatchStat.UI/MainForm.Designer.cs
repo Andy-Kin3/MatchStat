@@ -29,98 +29,99 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.tournamentbutton = new System.Windows.Forms.Button();
-            this.tournamentTeamsButton = new System.Windows.Forms.Button();
-            this.teamButton = new System.Windows.Forms.Button();
-            this.fieldButton = new System.Windows.Forms.Button();
-            this.goalsButton = new System.Windows.Forms.Button();
-            this.playerButton = new System.Windows.Forms.Button();
-            this.MatchButton = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.goalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.competingTeamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setTournamentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setTournamentsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectedFieldsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.participatingPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.matchesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tournamentbutton
+            // menuStrip1
             // 
-            this.tournamentbutton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tournamentbutton.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tournamentbutton.Location = new System.Drawing.Point(426, 33);
-            this.tournamentbutton.Name = "tournamentbutton";
-            this.tournamentbutton.Size = new System.Drawing.Size(261, 55);
-            this.tournamentbutton.TabIndex = 0;
-            this.tournamentbutton.Text = "Set Tournaments";
-            this.tournamentbutton.UseVisualStyleBackColor = true;
-            this.tournamentbutton.Click += new System.EventHandler(this.tournamentbutton_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1053, 24);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // tournamentTeamsButton
+            // menuToolStripMenuItem
             // 
-            this.tournamentTeamsButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tournamentTeamsButton.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tournamentTeamsButton.Location = new System.Drawing.Point(771, 133);
-            this.tournamentTeamsButton.Name = "tournamentTeamsButton";
-            this.tournamentTeamsButton.Size = new System.Drawing.Size(270, 55);
-            this.tournamentTeamsButton.TabIndex = 1;
-            this.tournamentTeamsButton.Text = "Registered Teams(Tournaments)";
-            this.tournamentTeamsButton.UseVisualStyleBackColor = true;
-            this.tournamentTeamsButton.Click += new System.EventHandler(this.tournamentTeamsButton_Click);
+            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.goalsToolStripMenuItem,
+            this.competingTeamsToolStripMenuItem,
+            this.setTournamentsToolStripMenuItem,
+            this.setTournamentsToolStripMenuItem1,
+            this.selectedFieldsToolStripMenuItem,
+            this.participatingPlayerToolStripMenuItem,
+            this.matchesToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.menuToolStripMenuItem.Text = "Menu";
             // 
-            // teamButton
+            // goalsToolStripMenuItem
             // 
-            this.teamButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.teamButton.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.teamButton.Location = new System.Drawing.Point(12, 133);
-            this.teamButton.Name = "teamButton";
-            this.teamButton.Size = new System.Drawing.Size(270, 55);
-            this.teamButton.TabIndex = 2;
-            this.teamButton.Text = "Competing Teams";
-            this.teamButton.UseVisualStyleBackColor = true;
-            this.teamButton.Click += new System.EventHandler(this.teamButton_Click);
+            this.goalsToolStripMenuItem.Name = "goalsToolStripMenuItem";
+            this.goalsToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.goalsToolStripMenuItem.Text = "Goals";
+            this.goalsToolStripMenuItem.Click += new System.EventHandler(this.goalsToolStripMenuItem_Click);
             // 
-            // fieldButton
+            // competingTeamsToolStripMenuItem
             // 
-            this.fieldButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.fieldButton.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.fieldButton.Location = new System.Drawing.Point(771, 33);
-            this.fieldButton.Name = "fieldButton";
-            this.fieldButton.Size = new System.Drawing.Size(270, 55);
-            this.fieldButton.TabIndex = 3;
-            this.fieldButton.Text = "Selected Fields";
-            this.fieldButton.UseVisualStyleBackColor = true;
-            this.fieldButton.Click += new System.EventHandler(this.fieldButton_Click);
+            this.competingTeamsToolStripMenuItem.Name = "competingTeamsToolStripMenuItem";
+            this.competingTeamsToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.competingTeamsToolStripMenuItem.Text = "Competing Teams";
+            this.competingTeamsToolStripMenuItem.Click += new System.EventHandler(this.competingTeamsToolStripMenuItem_Click);
             // 
-            // goalsButton
+            // setTournamentsToolStripMenuItem
             // 
-            this.goalsButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.goalsButton.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.goalsButton.Location = new System.Drawing.Point(12, 33);
-            this.goalsButton.Name = "goalsButton";
-            this.goalsButton.Size = new System.Drawing.Size(270, 55);
-            this.goalsButton.TabIndex = 4;
-            this.goalsButton.Text = "Goals";
-            this.goalsButton.UseVisualStyleBackColor = true;
-            this.goalsButton.Click += new System.EventHandler(this.goalsButton_Click);
+            this.setTournamentsToolStripMenuItem.Name = "setTournamentsToolStripMenuItem";
+            this.setTournamentsToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.setTournamentsToolStripMenuItem.Text = "Set Tournaments";
+            this.setTournamentsToolStripMenuItem.Click += new System.EventHandler(this.setTournamentsToolStripMenuItem_Click);
             // 
-            // playerButton
+            // setTournamentsToolStripMenuItem1
             // 
-            this.playerButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.playerButton.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.playerButton.Location = new System.Drawing.Point(12, 231);
-            this.playerButton.Name = "playerButton";
-            this.playerButton.Size = new System.Drawing.Size(270, 55);
-            this.playerButton.TabIndex = 5;
-            this.playerButton.Text = "Participating Player";
-            this.playerButton.UseVisualStyleBackColor = true;
-            this.playerButton.Click += new System.EventHandler(this.playerButton_Click);
+            this.setTournamentsToolStripMenuItem1.Name = "setTournamentsToolStripMenuItem1";
+            this.setTournamentsToolStripMenuItem1.Size = new System.Drawing.Size(229, 22);
+            this.setTournamentsToolStripMenuItem1.Text = "Register Teams(Tournaments)";
+            this.setTournamentsToolStripMenuItem1.Click += new System.EventHandler(this.setTournamentsToolStripMenuItem1_Click);
             // 
-            // MatchButton
+            // selectedFieldsToolStripMenuItem
             // 
-            this.MatchButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.MatchButton.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.MatchButton.Location = new System.Drawing.Point(771, 231);
-            this.MatchButton.Name = "MatchButton";
-            this.MatchButton.Size = new System.Drawing.Size(270, 55);
-            this.MatchButton.TabIndex = 6;
-            this.MatchButton.Text = "Matches";
-            this.MatchButton.UseVisualStyleBackColor = true;
-            this.MatchButton.Click += new System.EventHandler(this.MatchButton_Click);
+            this.selectedFieldsToolStripMenuItem.Name = "selectedFieldsToolStripMenuItem";
+            this.selectedFieldsToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.selectedFieldsToolStripMenuItem.Text = "Selected Fields";
+            this.selectedFieldsToolStripMenuItem.Click += new System.EventHandler(this.selectedFieldsToolStripMenuItem_Click);
+            // 
+            // participatingPlayerToolStripMenuItem
+            // 
+            this.participatingPlayerToolStripMenuItem.Name = "participatingPlayerToolStripMenuItem";
+            this.participatingPlayerToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.participatingPlayerToolStripMenuItem.Text = "Participating Player";
+            this.participatingPlayerToolStripMenuItem.Click += new System.EventHandler(this.participatingPlayerToolStripMenuItem_Click);
+            // 
+            // matchesToolStripMenuItem
+            // 
+            this.matchesToolStripMenuItem.Name = "matchesToolStripMenuItem";
+            this.matchesToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.matchesToolStripMenuItem.Text = "Matches";
+            this.matchesToolStripMenuItem.Click += new System.EventHandler(this.matchesToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -130,32 +131,32 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1053, 505);
-            this.Controls.Add(this.MatchButton);
-            this.Controls.Add(this.playerButton);
-            this.Controls.Add(this.goalsButton);
-            this.Controls.Add(this.fieldButton);
-            this.Controls.Add(this.teamButton);
-            this.Controls.Add(this.tournamentTeamsButton);
-            this.Controls.Add(this.tournamentbutton);
+            this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(1069, 544);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private Button tournamentbutton;
-        private Button tournamentTeamsButton;
-        private Button teamButton;
-        private Button fieldButton;
-        private Button goalsButton;
-        private Button playerButton;
-        private Button MatchButton;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem menuToolStripMenuItem;
+        private ToolStripMenuItem goalsToolStripMenuItem;
+        private ToolStripMenuItem competingTeamsToolStripMenuItem;
+        private ToolStripMenuItem setTournamentsToolStripMenuItem;
+        private ToolStripMenuItem setTournamentsToolStripMenuItem1;
+        private ToolStripMenuItem selectedFieldsToolStripMenuItem;
+        private ToolStripMenuItem participatingPlayerToolStripMenuItem;
+        private ToolStripMenuItem matchesToolStripMenuItem;
+        private ToolStripMenuItem exitToolStripMenuItem;
     }
 }

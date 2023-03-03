@@ -61,9 +61,11 @@
             // 
             // matchDate
             // 
+            this.matchDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.matchDate.AutoSize = true;
             this.matchDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.matchDate.Location = new System.Drawing.Point(14, 9);
+            this.matchDate.Location = new System.Drawing.Point(0, 9);
             this.matchDate.Name = "matchDate";
             this.matchDate.Size = new System.Drawing.Size(102, 19);
             this.matchDate.TabIndex = 0;
@@ -71,14 +73,17 @@
             // 
             // matchDateTimePicker
             // 
+            this.matchDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.matchDateTimePicker.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.matchDateTimePicker.Location = new System.Drawing.Point(119, 3);
+            this.matchDateTimePicker.Location = new System.Drawing.Point(108, 3);
             this.matchDateTimePicker.Name = "matchDateTimePicker";
-            this.matchDateTimePicker.Size = new System.Drawing.Size(242, 26);
+            this.matchDateTimePicker.Size = new System.Drawing.Size(253, 26);
             this.matchDateTimePicker.TabIndex = 1;
             // 
             // team1ID
             // 
+            this.team1ID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.team1ID.AutoSize = true;
             this.team1ID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.team1ID.Location = new System.Drawing.Point(367, 9);
@@ -89,6 +94,7 @@
             // 
             // team2Id
             // 
+            this.team2Id.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.team2Id.AutoSize = true;
             this.team2Id.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.team2Id.Location = new System.Drawing.Point(579, 9);
@@ -99,9 +105,11 @@
             // 
             // tournamentId
             // 
+            this.tournamentId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tournamentId.AutoSize = true;
             this.tournamentId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.tournamentId.Location = new System.Drawing.Point(14, 41);
+            this.tournamentId.Location = new System.Drawing.Point(6, 41);
             this.tournamentId.Name = "tournamentId";
             this.tournamentId.Size = new System.Drawing.Size(96, 19);
             this.tournamentId.TabIndex = 4;
@@ -109,13 +117,15 @@
             // 
             // tourCbo
             // 
+            this.tourCbo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tourCbo.DataSource = this.tournamentBindingSource;
             this.tourCbo.DisplayMember = "Name";
             this.tourCbo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.tourCbo.FormattingEnabled = true;
-            this.tourCbo.Location = new System.Drawing.Point(116, 37);
+            this.tourCbo.Location = new System.Drawing.Point(108, 38);
             this.tourCbo.Name = "tourCbo";
-            this.tourCbo.Size = new System.Drawing.Size(177, 27);
+            this.tourCbo.Size = new System.Drawing.Size(185, 27);
             this.tourCbo.TabIndex = 5;
             this.tourCbo.ValueMember = "Id";
             // 
@@ -125,6 +135,7 @@
             // 
             // team1Cbo
             // 
+            this.team1Cbo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.team1Cbo.DataSource = this.teamBindingSource;
             this.team1Cbo.DisplayMember = "Name";
             this.team1Cbo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
@@ -141,6 +152,7 @@
             // 
             // team2Cbo
             // 
+            this.team2Cbo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.team2Cbo.DataSource = this.teamBindingSource1;
             this.team2Cbo.DisplayMember = "Name";
             this.team2Cbo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
@@ -157,6 +169,7 @@
             // 
             // createMatchButton
             // 
+            this.createMatchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.createMatchButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.createMatchButton.Location = new System.Drawing.Point(547, 37);
             this.createMatchButton.Name = "createMatchButton";
@@ -168,6 +181,7 @@
             // 
             // deleteMatchButton
             // 
+            this.deleteMatchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.deleteMatchButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.deleteMatchButton.Location = new System.Drawing.Point(668, 38);
             this.deleteMatchButton.Name = "deleteMatchButton";
@@ -179,6 +193,9 @@
             // 
             // listView1
             // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listView1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.matchD,
@@ -186,7 +203,6 @@
             this.secondTeam,
             this.tour,
             this.myfield});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listView1.Font = new System.Drawing.Font("Times New Roman", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(0, 71);
@@ -224,11 +240,12 @@
             // 
             // fieldcbo
             // 
+            this.fieldcbo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fieldcbo.DataSource = this.fieldsBindingSource;
             this.fieldcbo.DisplayMember = "Name";
             this.fieldcbo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.fieldcbo.FormattingEnabled = true;
-            this.fieldcbo.Location = new System.Drawing.Point(356, 38);
+            this.fieldcbo.Location = new System.Drawing.Point(356, 37);
             this.fieldcbo.Name = "fieldcbo";
             this.fieldcbo.Size = new System.Drawing.Size(177, 27);
             this.fieldcbo.TabIndex = 12;
@@ -240,6 +257,7 @@
             // 
             // field
             // 
+            this.field.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.field.AutoSize = true;
             this.field.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.field.Location = new System.Drawing.Point(299, 41);
@@ -268,8 +286,9 @@
             this.Controls.Add(this.matchDateTimePicker);
             this.Controls.Add(this.matchDate);
             this.Location = new System.Drawing.Point(592, 400);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "Match";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Match";
             this.Load += new System.EventHandler(this.Match_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tournamentBindingSource)).EndInit();
