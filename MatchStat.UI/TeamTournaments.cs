@@ -25,6 +25,7 @@ namespace MatchStat.UI
             teamBindingSource.DataSource = teams;
             var tournament = this.GetTournament();
             tournamentBindingSource.DataSource = tournament;
+            fillList(teamsTournament);
         }
 
         private List<TeamTournament> GetTeamTournaments()
@@ -102,6 +103,28 @@ namespace MatchStat.UI
                 string[] row = { Convert.ToString(myTeam.TeamId), Convert.ToString(myTeam.TournamentId) };
                 listView1.Items.Add(new ListViewItem(row));
             }
+        }
+
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            var focussedItemIndex = listView1.FocusedItem?.Index;
+            if(focussedItemIndex.HasValue == false )
+            {
+                return;
+            }
+            var allTeamTournaments = teamTournamentBindingSource.DataSource as List<TeamTournament>;
+            if(allTeamTournaments == null || allTeamTournaments.Any() == false) { return; }
+            var teamTournamentToDelete = allTeamTournaments[focussedItemIndex.Value];
+            if(teamTournamentToDelete != null )
+            {
+                using(var context = new FootballInfoContext())
+                {
+                    context.TeamTournaments.Remove(teamTournamentToDelete);
+                    context.SaveChanges();
+                    LoadTeamTournments();
+                }
+            }
+
         }
     }
 }
