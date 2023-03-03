@@ -45,7 +45,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(2, 14);
+            this.label1.Location = new System.Drawing.Point(2, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 23);
             this.label1.TabIndex = 0;
@@ -55,7 +55,7 @@
             // 
             this.teamName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.teamName.Location = new System.Drawing.Point(75, 12);
+            this.teamName.Location = new System.Drawing.Point(75, 7);
             this.teamName.Multiline = true;
             this.teamName.Name = "teamName";
             this.teamName.Size = new System.Drawing.Size(377, 29);
@@ -65,7 +65,7 @@
             // 
             this.createbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.createbutton.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.createbutton.Location = new System.Drawing.Point(467, 14);
+            this.createbutton.Location = new System.Drawing.Point(467, 9);
             this.createbutton.Name = "createbutton";
             this.createbutton.Size = new System.Drawing.Size(104, 27);
             this.createbutton.TabIndex = 2;
@@ -77,7 +77,7 @@
             // 
             this.deleteTeamButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.deleteTeamButton.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.deleteTeamButton.Location = new System.Drawing.Point(582, 13);
+            this.deleteTeamButton.Location = new System.Drawing.Point(582, 8);
             this.deleteTeamButton.Name = "deleteTeamButton";
             this.deleteTeamButton.Size = new System.Drawing.Size(138, 27);
             this.deleteTeamButton.TabIndex = 3;
@@ -92,15 +92,16 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.teamBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 58);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 42);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(731, 352);
+            this.dataGridView1.Size = new System.Drawing.Size(731, 368);
             this.dataGridView1.TabIndex = 4;
             // 
             // idDataGridViewTextBoxColumn
@@ -136,6 +137,7 @@
             this.Controls.Add(this.teamName);
             this.Controls.Add(this.label1);
             this.Location = new System.Drawing.Point(592, 400);
+            this.MinimumSize = new System.Drawing.Size(747, 449);
             this.Name = "Teams";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Teams";

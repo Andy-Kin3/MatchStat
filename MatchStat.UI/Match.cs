@@ -98,8 +98,47 @@ namespace MatchStat.UI
             
             foreach(var match in myMatch)
             {
-                string[] row = { Convert.ToString(match.Date.TimeOfDay), Convert.ToString(match.Team1Id), Convert.ToString(match.Team2Id), Convert.ToString(match.TournamentId), Convert.ToString(match.FieldId) };
+                string[] row = { Convert.ToString(match.Date),GetTeamName(match.Team1Id), GetTeamName(match.Team2Id), GetTournamentName(match.TournamentId), GetFieldName(match.FieldId) };
                 listView1.Items.Add(new ListViewItem(row));
+            }
+        }
+
+        private string GetFieldName(int fieldId)
+        {
+            using (var context = new FootballInfoContext())
+            {
+                var field = context.Fields.FirstOrDefault(t => t.Id == fieldId);
+                if (field != null)
+                {
+                    return field.Name;
+                }
+                return null;
+            }
+        }
+
+        private string GetTournamentName(int? tournamentId)
+        {
+            using (var context = new FootballInfoContext())
+            {
+                var tournament = context.Tournaments.FirstOrDefault(t => t.Id == tournamentId);
+                if (tournament != null)
+                {
+                    return tournament.Name;
+                }
+                return null;
+            }
+        }
+
+        private string GetTeamName(int teamId)
+        {
+            using(var context = new FootballInfoContext())
+            {
+                var team = context.Teams.FirstOrDefault(t => t.Id== teamId);
+                if(team != null)
+                {
+                    return team.Name;
+                }
+                return null;
             }
         }
 

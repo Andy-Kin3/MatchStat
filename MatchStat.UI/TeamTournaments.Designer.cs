@@ -51,6 +51,7 @@
             this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView1.BackColor = System.Drawing.Color.Turquoise;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.team,
             this.tournament});
@@ -140,6 +141,7 @@
             // 
             // comboTournament
             // 
+            this.comboTournament.AllowDrop = true;
             this.comboTournament.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboTournament.DataSource = this.tournamentBindingSource;
@@ -147,6 +149,7 @@
             this.comboTournament.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.comboTournament.FormattingEnabled = true;
             this.comboTournament.Location = new System.Drawing.Point(459, 5);
+            this.comboTournament.MaxDropDownItems = 30;
             this.comboTournament.MinimumSize = new System.Drawing.Size(255, 0);
             this.comboTournament.Name = "comboTournament";
             this.comboTournament.Size = new System.Drawing.Size(255, 30);

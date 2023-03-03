@@ -25,7 +25,7 @@ namespace MatchStat.UI
             teamBindingSource.DataSource = teams;
             var tournament = this.GetTournament();
             tournamentBindingSource.DataSource = tournament;
-            fillList(teamsTournament);
+            FillList(teamsTournament);
         }
 
         private List<TeamTournament> GetTeamTournaments()
@@ -78,6 +78,31 @@ namespace MatchStat.UI
                 LoadTeamTournments();
             }
         }
+        private string GetTeamName(int id)
+        {
+            using (var context = new FootballInfoContext())
+            {
+                var team = context.Teams.FirstOrDefault(t => t.Id == id);
+                if(team != null)
+                {
+                    return team.Name;
+                }
+                return null;
+            }
+        }
+        private string GetTournamentName(int id)
+        {
+            using (var context = new FootballInfoContext())
+            {
+                var tournament = context.Tournaments.FirstOrDefault(t => t.Id == id);
+                if(tournament != null)
+                {
+                    return tournament?.Name;
+                }
+                return null;
+
+            }
+        }
 
         private int GetNextID()
         {
@@ -94,14 +119,13 @@ namespace MatchStat.UI
             ListViewItem items = new ListViewItem(row);
             listView1.Items.Add(items);
         }
-        private void fillList(List<TeamTournament> teamTournaments)
+        private void FillList(List<TeamTournament> teamTournaments)
         {
             listView1.Items.Clear();
-            listView1.View = View.Details;
 
             foreach (var myTeam in teamTournaments)
             {
-                string[] row = { Convert.ToString(myTeam.TeamId), Convert.ToString(myTeam.TournamentId) };
+                string[] row = { GetTeamName(myTeam.TeamId),GetTournamentName(myTeam.TournamentId) };
                 listView1.Items.Add(new ListViewItem(row));
             }
         }
