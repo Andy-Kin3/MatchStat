@@ -42,7 +42,6 @@
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matchesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tournamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tournamentBindingSource)).BeginInit();
@@ -81,8 +80,7 @@
             // 
             // startDate
             // 
-            this.startDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.startDate.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.startDate.Location = new System.Drawing.Point(134, 48);
             this.startDate.Name = "startDate";
             this.startDate.Size = new System.Drawing.Size(200, 23);
@@ -90,7 +88,9 @@
             // 
             // endDate
             // 
-            this.endDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.endDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.endDate.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.endDate.Location = new System.Drawing.Point(482, 49);
             this.endDate.Name = "endDate";
             this.endDate.Size = new System.Drawing.Size(191, 23);
@@ -98,7 +98,8 @@
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Pristina", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(357, 41);
@@ -134,6 +135,9 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -141,8 +145,7 @@
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.startDateDataGridViewTextBoxColumn,
-            this.endDateDataGridViewTextBoxColumn,
-            this.matchesDataGridViewTextBoxColumn});
+            this.endDateDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.tournamentBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(-1, 86);
             this.dataGridView1.Name = "dataGridView1";
@@ -152,9 +155,12 @@
             // 
             // idDataGridViewTextBoxColumn
             // 
+            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.Frozen = true;
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 55;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -173,13 +179,6 @@
             this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
             this.endDateDataGridViewTextBoxColumn.HeaderText = "EndDate";
             this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
-            // 
-            // matchesDataGridViewTextBoxColumn
-            // 
-            this.matchesDataGridViewTextBoxColumn.DataPropertyName = "Matches";
-            this.matchesDataGridViewTextBoxColumn.HeaderText = "Matches";
-            this.matchesDataGridViewTextBoxColumn.Name = "matchesDataGridViewTextBoxColumn";
-            this.matchesDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tournamentBindingSource
             // 
@@ -202,8 +201,9 @@
             this.Controls.Add(this.tournamentName);
             this.Location = new System.Drawing.Point(592, 400);
             this.MdiChildrenMinimizedAnchorBottom = false;
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "TournamentStatistics";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tournament Statistics";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -223,11 +223,10 @@
         private Button createButton;
         private Button deleteButton;
         private DataGridView dataGridView1;
+        private BindingSource tournamentBindingSource;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn matchesDataGridViewTextBoxColumn;
-        private BindingSource tournamentBindingSource;
     }
 }

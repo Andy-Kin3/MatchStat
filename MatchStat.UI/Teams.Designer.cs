@@ -36,9 +36,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matchTeam1sDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matchTeam2sDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teamBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).BeginInit();
@@ -56,6 +53,8 @@
             // 
             // teamName
             // 
+            this.teamName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.teamName.Location = new System.Drawing.Point(75, 12);
             this.teamName.Multiline = true;
             this.teamName.Name = "teamName";
@@ -64,8 +63,7 @@
             // 
             // createbutton
             // 
-            this.createbutton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.createbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.createbutton.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.createbutton.Location = new System.Drawing.Point(467, 14);
             this.createbutton.Name = "createbutton";
@@ -89,17 +87,16 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.matchTeam1sDataGridViewTextBoxColumn,
-            this.matchTeam2sDataGridViewTextBoxColumn,
-            this.playersDataGridViewTextBoxColumn});
+            this.nameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.teamBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 58);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
@@ -108,36 +105,20 @@
             // 
             // idDataGridViewTextBoxColumn
             // 
+            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.FillWeight = 45.68528F;
+            this.idDataGridViewTextBoxColumn.Frozen = true;
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 55;
             // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.FillWeight = 127.1574F;
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // matchTeam1sDataGridViewTextBoxColumn
-            // 
-            this.matchTeam1sDataGridViewTextBoxColumn.DataPropertyName = "MatchTeam1s";
-            this.matchTeam1sDataGridViewTextBoxColumn.HeaderText = "MatchTeam1s";
-            this.matchTeam1sDataGridViewTextBoxColumn.Name = "matchTeam1sDataGridViewTextBoxColumn";
-            this.matchTeam1sDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // matchTeam2sDataGridViewTextBoxColumn
-            // 
-            this.matchTeam2sDataGridViewTextBoxColumn.DataPropertyName = "MatchTeam2s";
-            this.matchTeam2sDataGridViewTextBoxColumn.HeaderText = "MatchTeam2s";
-            this.matchTeam2sDataGridViewTextBoxColumn.Name = "matchTeam2sDataGridViewTextBoxColumn";
-            this.matchTeam2sDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // playersDataGridViewTextBoxColumn
-            // 
-            this.playersDataGridViewTextBoxColumn.DataPropertyName = "Players";
-            this.playersDataGridViewTextBoxColumn.HeaderText = "Players";
-            this.playersDataGridViewTextBoxColumn.Name = "playersDataGridViewTextBoxColumn";
-            this.playersDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // teamBindingSource
             // 
@@ -156,7 +137,7 @@
             this.Controls.Add(this.label1);
             this.Location = new System.Drawing.Point(592, 400);
             this.Name = "Teams";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Teams";
             this.Load += new System.EventHandler(this.Teams_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -173,11 +154,8 @@
         private Button createbutton;
         private Button deleteTeamButton;
         private DataGridView dataGridView1;
+        private BindingSource teamBindingSource;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn matchTeam1sDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn matchTeam2sDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn playersDataGridViewTextBoxColumn;
-        private BindingSource teamBindingSource;
     }
 }

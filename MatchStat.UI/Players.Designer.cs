@@ -44,8 +44,6 @@
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dobDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teamIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goalsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teamCbo = new System.Windows.Forms.ComboBox();
             this.teamBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -56,9 +54,11 @@
             // 
             // playerFName
             // 
+            this.playerFName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.playerFName.AutoSize = true;
             this.playerFName.Font = new System.Drawing.Font("Times New Roman", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.playerFName.Location = new System.Drawing.Point(12, 16);
+            this.playerFName.Location = new System.Drawing.Point(12, 10);
             this.playerFName.Name = "playerFName";
             this.playerFName.Size = new System.Drawing.Size(83, 17);
             this.playerFName.TabIndex = 0;
@@ -70,17 +70,20 @@
             // 
             // playerFirstName
             // 
+            this.playerFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.playerFirstName.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.playerFirstName.Location = new System.Drawing.Point(101, 16);
+            this.playerFirstName.Location = new System.Drawing.Point(101, 10);
             this.playerFirstName.Name = "playerFirstName";
             this.playerFirstName.Size = new System.Drawing.Size(253, 23);
             this.playerFirstName.TabIndex = 2;
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(384, 18);
+            this.label2.Location = new System.Drawing.Point(384, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 17);
             this.label2.TabIndex = 3;
@@ -88,17 +91,20 @@
             // 
             // dateOfBirth
             // 
+            this.dateOfBirth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateOfBirth.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.dateOfBirth.Location = new System.Drawing.Point(485, 16);
+            this.dateOfBirth.Location = new System.Drawing.Point(485, 10);
             this.dateOfBirth.Name = "dateOfBirth";
-            this.dateOfBirth.Size = new System.Drawing.Size(211, 23);
+            this.dateOfBirth.Size = new System.Drawing.Size(256, 23);
             this.dateOfBirth.TabIndex = 4;
             // 
             // playerLName
             // 
+            this.playerLName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.playerLName.AutoSize = true;
             this.playerLName.Font = new System.Drawing.Font("Times New Roman", 10.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.playerLName.Location = new System.Drawing.Point(12, 52);
+            this.playerLName.Location = new System.Drawing.Point(12, 42);
             this.playerLName.Name = "playerLName";
             this.playerLName.Size = new System.Drawing.Size(81, 17);
             this.playerLName.TabIndex = 5;
@@ -106,16 +112,19 @@
             // 
             // playerLastName
             // 
+            this.playerLastName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.playerLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.playerLastName.Location = new System.Drawing.Point(99, 50);
+            this.playerLastName.Location = new System.Drawing.Point(99, 40);
             this.playerLastName.Name = "playerLastName";
             this.playerLastName.Size = new System.Drawing.Size(148, 23);
             this.playerLastName.TabIndex = 6;
             // 
             // createPlayerButton
             // 
+            this.createPlayerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.createPlayerButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.createPlayerButton.Location = new System.Drawing.Point(485, 47);
+            this.createPlayerButton.Location = new System.Drawing.Point(485, 37);
             this.createPlayerButton.Name = "createPlayerButton";
             this.createPlayerButton.Size = new System.Drawing.Size(108, 28);
             this.createPlayerButton.TabIndex = 7;
@@ -125,8 +134,9 @@
             // 
             // deletePlayerButton
             // 
+            this.deletePlayerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.deletePlayerButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.deletePlayerButton.Location = new System.Drawing.Point(599, 49);
+            this.deletePlayerButton.Location = new System.Drawing.Point(599, 39);
             this.deletePlayerButton.Name = "deletePlayerButton";
             this.deletePlayerButton.Size = new System.Drawing.Size(143, 28);
             this.deletePlayerButton.TabIndex = 8;
@@ -136,6 +146,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -144,22 +157,22 @@
             this.firstNameDataGridViewTextBoxColumn,
             this.lastNameDataGridViewTextBoxColumn,
             this.dobDataGridViewTextBoxColumn,
-            this.teamIdDataGridViewTextBoxColumn,
-            this.goalsDataGridViewTextBoxColumn,
-            this.teamDataGridViewTextBoxColumn});
+            this.teamIdDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.playerBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 92);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 73);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(753, 331);
+            this.dataGridView1.Size = new System.Drawing.Size(753, 350);
             this.dataGridView1.TabIndex = 9;
             // 
             // idDataGridViewTextBoxColumn
             // 
+            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.Frozen = true;
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 55;
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
@@ -185,26 +198,14 @@
             this.teamIdDataGridViewTextBoxColumn.HeaderText = "TeamId";
             this.teamIdDataGridViewTextBoxColumn.Name = "teamIdDataGridViewTextBoxColumn";
             // 
-            // goalsDataGridViewTextBoxColumn
-            // 
-            this.goalsDataGridViewTextBoxColumn.DataPropertyName = "Goals";
-            this.goalsDataGridViewTextBoxColumn.HeaderText = "Goals";
-            this.goalsDataGridViewTextBoxColumn.Name = "goalsDataGridViewTextBoxColumn";
-            this.goalsDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // teamDataGridViewTextBoxColumn
-            // 
-            this.teamDataGridViewTextBoxColumn.DataPropertyName = "Team";
-            this.teamDataGridViewTextBoxColumn.HeaderText = "Team";
-            this.teamDataGridViewTextBoxColumn.Name = "teamDataGridViewTextBoxColumn";
-            // 
             // teamCbo
             // 
+            this.teamCbo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.teamCbo.DataSource = this.teamBindingSource;
             this.teamCbo.DisplayMember = "Name";
             this.teamCbo.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.teamCbo.FormattingEnabled = true;
-            this.teamCbo.Location = new System.Drawing.Point(310, 51);
+            this.teamCbo.Location = new System.Drawing.Point(310, 41);
             this.teamCbo.Name = "teamCbo";
             this.teamCbo.Size = new System.Drawing.Size(151, 23);
             this.teamCbo.TabIndex = 10;
@@ -216,13 +217,14 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(263, 53);
+            this.label1.Location = new System.Drawing.Point(263, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 17);
+            this.label1.Size = new System.Drawing.Size(50, 17);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Team";
+            this.label1.Text = "Team :";
             // 
             // Players
             // 
@@ -242,10 +244,9 @@
             this.Controls.Add(this.playerFirstName);
             this.Controls.Add(this.playerFName);
             this.Location = new System.Drawing.Point(592, 400);
-            this.MaximumSize = new System.Drawing.Size(769, 462);
             this.MinimumSize = new System.Drawing.Size(769, 462);
             this.Name = "Players";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PlayerInfo";
             this.Load += new System.EventHandler(this.Players_Load);
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).EndInit();
@@ -269,15 +270,13 @@
         private Button createPlayerButton;
         private Button deletePlayerButton;
         private DataGridView dataGridView1;
+        private ComboBox teamCbo;
+        private Label label1;
+        private BindingSource teamBindingSource;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn dobDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn teamIdDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn goalsDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn teamDataGridViewTextBoxColumn;
-        private ComboBox teamCbo;
-        private Label label1;
-        private BindingSource teamBindingSource;
     }
 }
