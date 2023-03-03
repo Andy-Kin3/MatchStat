@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Match));
             this.matchDate = new System.Windows.Forms.Label();
             this.matchDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.team1ID = new System.Windows.Forms.Label();
@@ -53,7 +52,6 @@
             this.fieldcbo = new System.Windows.Forms.ComboBox();
             this.fieldsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.field = new System.Windows.Forms.Label();
-            this.previewButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tournamentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matchBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).BeginInit();
@@ -149,7 +147,7 @@
             this.team2Cbo.FormattingEnabled = true;
             this.team2Cbo.Location = new System.Drawing.Point(650, 3);
             this.team2Cbo.Name = "team2Cbo";
-            this.team2Cbo.Size = new System.Drawing.Size(121, 27);
+            this.team2Cbo.Size = new System.Drawing.Size(150, 27);
             this.team2Cbo.TabIndex = 7;
             this.team2Cbo.ValueMember = "Id";
             // 
@@ -160,24 +158,24 @@
             // createMatchButton
             // 
             this.createMatchButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.createMatchButton.Location = new System.Drawing.Point(547, 39);
+            this.createMatchButton.Location = new System.Drawing.Point(547, 37);
             this.createMatchButton.Name = "createMatchButton";
-            this.createMatchButton.Size = new System.Drawing.Size(115, 32);
+            this.createMatchButton.Size = new System.Drawing.Size(115, 28);
             this.createMatchButton.TabIndex = 8;
             this.createMatchButton.Text = "Create";
             this.createMatchButton.UseVisualStyleBackColor = true;
-            this.createMatchButton.Click += new System.EventHandler(this.createMatchButton_Click);
+            this.createMatchButton.Click += new System.EventHandler(this.CreateMatchButton_Click);
             // 
             // deleteMatchButton
             // 
             this.deleteMatchButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.deleteMatchButton.Location = new System.Drawing.Point(668, 39);
+            this.deleteMatchButton.Location = new System.Drawing.Point(668, 38);
             this.deleteMatchButton.Name = "deleteMatchButton";
-            this.deleteMatchButton.Size = new System.Drawing.Size(122, 30);
+            this.deleteMatchButton.Size = new System.Drawing.Size(132, 27);
             this.deleteMatchButton.TabIndex = 9;
             this.deleteMatchButton.Text = "Delete Selected";
             this.deleteMatchButton.UseVisualStyleBackColor = true;
-            this.deleteMatchButton.Click += new System.EventHandler(this.deleteMatchButton_Click);
+            this.deleteMatchButton.Click += new System.EventHandler(this.DeleteMatchButton_Click);
             // 
             // listView1
             // 
@@ -191,9 +189,10 @@
             this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listView1.Font = new System.Drawing.Font("Times New Roman", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(0, 104);
+            this.listView1.Location = new System.Drawing.Point(0, 71);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(800, 346);
+            this.listView1.Size = new System.Drawing.Size(800, 379);
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -249,28 +248,12 @@
             this.field.TabIndex = 11;
             this.field.Text = "Field :";
             // 
-            // previewButton
-            // 
-            this.previewButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("previewButton.BackgroundImage")));
-            this.previewButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.previewButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.previewButton.Image = ((System.Drawing.Image)(resources.GetObject("previewButton.Image")));
-            this.previewButton.Location = new System.Drawing.Point(14, 72);
-            this.previewButton.Name = "previewButton";
-            this.previewButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.previewButton.Size = new System.Drawing.Size(96, 31);
-            this.previewButton.TabIndex = 13;
-            this.previewButton.Text = "Preview";
-            this.previewButton.UseVisualStyleBackColor = true;
-            this.previewButton.Click += new System.EventHandler(this.previewButton_Click);
-            // 
             // Match
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.previewButton);
             this.Controls.Add(this.fieldcbo);
             this.Controls.Add(this.field);
             this.Controls.Add(this.listView1);
@@ -324,6 +307,5 @@
         private Label field;
         private BindingSource fieldsBindingSource;
         private ColumnHeader myfield;
-        private Button previewButton;
     }
 }

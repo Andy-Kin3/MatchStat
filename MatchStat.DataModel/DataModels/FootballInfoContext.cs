@@ -131,10 +131,10 @@ public partial class FootballInfoContext : DbContext
 
         modelBuilder.Entity<TeamTournament>(entity =>
         {
-            entity
-                .HasKey(e => e.Id);
+            entity.HasKey(e => e.Id);
 
-            entity.Property(e => e.Id);
+            entity.Property(e => e.Id).ValueGeneratedNever();
+
             entity.Property(e => e.TeamId).HasColumnName("TeamID");
             entity.Property(e => e.TournamentId).HasColumnName("TournamentID");
 
