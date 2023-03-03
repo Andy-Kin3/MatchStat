@@ -1,16 +1,4 @@
 ﻿using MatchStat.DataModel.DataModels;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics.CodeAnalysis;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace MatchStat.UI
 {
@@ -23,9 +11,9 @@ namespace MatchStat.UI
 
         private void Match_Load(object sender, EventArgs e)
         {
-            LoadMatch();
+            LoadMatches();
         }
-        private void LoadMatch()
+        private void LoadMatches()
         {
             var matches = this.GetMatches();
             matchBindingSource.DataSource = matches;
@@ -37,9 +25,11 @@ namespace MatchStat.UI
             fieldsBindingSource.DataSource = field;
             var myTournament = this.GetTournament();
             tournamentBindingSource.DataSource = myTournament;
+
+            FillList(matches);
         }
 
-        private object GetMatches()
+        private List<Matches> GetMatches()
         {
             using (var context = new FootballInfoContext())
             {
@@ -72,7 +62,7 @@ namespace MatchStat.UI
             }
         }
 
-        private void createMatchButton_Click(object sender, EventArgs e)
+        private void CreateMatchButton_Click(object sender, EventArgs e)
         {
 
             var matches = new Matches
@@ -86,13 +76,15 @@ namespace MatchStat.UI
             };
             using (var context =  new FootballInfoContext())
             {
-                add(Convert.ToDateTime(matchDateTimePicker.Text), team1Cbo.Text, team2Cbo.Text, tourCbo.Text, fieldcbo.Text);
-                //listView1.Items.Add(Convert.ToString(matches));
+                Add(Convert.ToDateTime(matchDateTimePicker.Text), team1Cbo.Text, team2Cbo.Text, tourCbo.Text, fieldcbo.Text);
                 context.Matches.Add(matches);
                 context.SaveChanges();
+                LoadMatches();
             }
+
+            LoadMatches();
         }
-        private void add(DateTime matchDate, string team1, string team2, string tournament, string field)
+        private void Add(DateTime matchDate, string team1, string team2, string tournament, string field)
         {
             
             string[] row = {Convert.ToString(matchDate.TimeOfDay), team1, team2, tournament, field };
@@ -116,44 +108,33 @@ namespace MatchStat.UI
             var maximumId = allMatches != null && allMatches.Any() ? allMatches.Max(e => e.Id) : 0;
             var nextId = maximumId + 1;
             return nextId;
-            //var maximumIdQuery = new FormattableString("SELECT MAX(Id) FROM Match");
-            //using(var context = new FootballInfoContext())
-            //{
-            //    var maximumId = context.Database.SqlQuery<int?>(maximumIdQuery).FirstOrDefault();
-            //    var nextId = maximumId.HasValue ? maximumId.Value + 1 : 1;
-            //    return nextId;
-            //}
         }
 
-        private void deleteMatchButton_Click(object sender, EventArgs e)
+        private void DeleteMatchButton_Click(object sender, EventArgs e)
         {
-            var mySelected = matchBindingSource.Current as Matches;
-            if( mySelected != null)
+            var focussedItemIndex = listView1.FocusedItem?.Index;
+            if(focussedItemIndex.HasValue == false)
+            {
+                return;
+            }
+
+            var allMatches = matchBindingSource.DataSource as List<Matches>;
+            if(allMatches == null || allMatches.Any() == false)
+            {
+                return;
+            }
+
+            var matchToDelete = allMatches[focussedItemIndex.Value];
+            if(matchToDelete != null)
             {
                 using(var context = new FootballInfoContext())
                 {
-                    context.Matches.Remove(mySelected);
+                    context.Matches.Remove(matchToDelete);
                     context.SaveChanges();
-                    LoadMatch();
-
-
-                    foreach (ListViewItem selectedItem in listView1.SelectedItems)
-                    {
-                        if(listView1.SelectedItems.Count > 0)
-                        {
-                            listView1.Items.Remove(selectedItem);
-                        }
-                    }
+                    LoadMatches();
                 }
             }
         }
 
-        private void previewButton_Click(object sender, EventArgs e)
-        {
-            using(var context = new FootballInfoContext())
-            {
-                FillList(context.Matches.ToList());
-            }
-        }
     }
 }

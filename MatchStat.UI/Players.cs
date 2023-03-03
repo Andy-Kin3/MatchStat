@@ -69,6 +69,8 @@ namespace MatchStat.UI
                 context.Players.Add(player);
                 context.SaveChanges();
                 LoadPlayers();
+                playerFirstName.Clear();
+                playerLastName.Clear();
             }
         }
 

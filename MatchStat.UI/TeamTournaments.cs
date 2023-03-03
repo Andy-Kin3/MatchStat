@@ -66,6 +66,7 @@ namespace MatchStat.UI
             {
                 TeamId = Convert.ToInt32(comboTeam.SelectedValue),
                 TournamentId = Convert.ToInt32(comboTournament.SelectedValue),
+                Id = GetNextID()
             };
             using (var context = new FootballInfoContext())
             {
@@ -74,6 +75,14 @@ namespace MatchStat.UI
                 context.SaveChanges();
                 LoadTeamTournments();
             }
+        }
+
+        private int GetNextID()
+        {
+            var allTeamTournaments = teamTournamentBindingSource.DataSource as List<TeamTournament>;
+            var maximumId = allTeamTournaments != null && allTeamTournaments.Any() ? allTeamTournaments.Max(e => e.Id) : 0;
+            var nextId = maximumId+ 1;
+            return nextId;
         }
 
         private void add(string team, string tournament)

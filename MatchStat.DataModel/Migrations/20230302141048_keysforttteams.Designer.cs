@@ -4,6 +4,7 @@ using MatchStat.DataModel.DataModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MatchStat.DataModel.Migrations
 {
     [DbContext(typeof(FootballInfoContext))]
-    partial class FootballInfoContextModelSnapshot : ModelSnapshot
+    [Migration("20230302141048_keysforttteams")]
+    partial class keysforttteams
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -156,7 +159,10 @@ namespace MatchStat.DataModel.Migrations
             modelBuilder.Entity("MatchStat.DataModel.DataModels.TeamTournament", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("TeamId")
                         .HasColumnType("int")

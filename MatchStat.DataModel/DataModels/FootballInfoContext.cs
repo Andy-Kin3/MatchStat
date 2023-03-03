@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using MatchStat.DataModel.EntityTypeConfigurartion;
 using Microsoft.EntityFrameworkCore;
 
 namespace MatchStat.DataModel.DataModels;
@@ -35,133 +36,13 @@ public partial class FootballInfoContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Fields>(entity =>
-        {
-            entity.ToTable("Field");
-
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("ID");
-            entity.Property(e => e.Name)
-                .HasMaxLength(50)
-                .IsUnicode(false);
-        });
-
-        modelBuilder.Entity<Goal>(entity =>
-        {
-            entity.ToTable("Goal");
-
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("ID");
-            entity.Property(e => e.MatchId).HasColumnName("MatchID");
-            entity.Property(e => e.PlayerId).HasColumnName("PlayerID");
-
-            entity.HasOne(d => d.Player).WithMany(p => p.Goals)
-                .HasForeignKey(d => d.PlayerId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Goal_Player");
-        });
-
-        modelBuilder.Entity<Matches>(entity =>
-        {
-            entity.ToTable("Match");
-
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("ID");
-            entity.Property(e => e.Date).HasColumnType("date");
-            entity.Property(e => e.FieldId).HasColumnName("FieldID");
-            entity.Property(e => e.Team1Id).HasColumnName("Team1ID");
-            entity.Property(e => e.Team2Id).HasColumnName("Team2ID");
-            entity.Property(e => e.TournamentId).HasColumnName("TournamentID");
-
-            entity.HasOne(d => d.Field).WithMany(p => p.Matches)
-                .HasForeignKey(d => d.FieldId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Match_Field");
-
-            entity.HasOne(d => d.Team1).WithMany(p => p.MatchTeam1s)
-                .HasForeignKey(d => d.Team1Id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Match_Team");
-
-            entity.HasOne(d => d.Team2).WithMany(p => p.MatchTeam2s)
-                .HasForeignKey(d => d.Team2Id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Match_Team1");
-
-            entity.HasOne(d => d.Tournament).WithMany(p => p.Matches)
-                .HasForeignKey(d => d.TournamentId)
-                .HasConstraintName("FK_Match_Tournament");
-        });
-
-        modelBuilder.Entity<Player>(entity =>
-        {
-            entity.ToTable("Player");
-
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("ID");
-            entity.Property(e => e.Dob)
-                .HasColumnType("date")
-                .HasColumnName("DOB");
-            entity.Property(e => e.FirstName)
-                .HasMaxLength(50)
-                .IsUnicode(false);
-            entity.Property(e => e.TeamId).HasColumnName("TeamID");
-
-            entity.HasOne(d => d.Team).WithMany(p => p.Players)
-                .HasForeignKey(d => d.TeamId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Player_Team");
-        });
-
-        modelBuilder.Entity<Team>(entity =>
-        {
-            entity.ToTable("Team");
-
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("ID");
-            entity.Property(e => e.Name)
-                .HasMaxLength(60)
-                .IsUnicode(false);
-        });
-
-        modelBuilder.Entity<TeamTournament>(entity =>
-        {
-            entity
-                .HasNoKey()
-                .ToTable("TeamTournament");
-
-            entity.Property(e => e.TeamId).HasColumnName("TeamID");
-            entity.Property(e => e.TournamentId).HasColumnName("TournamentID");
-
-            entity.HasOne(d => d.Team).WithMany()
-                .HasForeignKey(d => d.TeamId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_TeamTournament_Team");
-
-            entity.HasOne(d => d.Tournament).WithMany()
-                .HasForeignKey(d => d.TournamentId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_TeamTournament_Tournament");
-        });
-
-        modelBuilder.Entity<Tournament>(entity =>
-        {
-            entity.ToTable("Tournament");
-
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("ID");
-            entity.Property(e => e.EndDate).HasColumnType("date");
-            entity.Property(e => e.Name)
-                .HasMaxLength(50)
-                .IsUnicode(false);
-            entity.Property(e => e.StartDate).HasColumnType("date");
-        });
+        modelBuilder.ApplyConfiguration(new FieldsConfiguration());
+        modelBuilder.ApplyConfiguration(new GoalConfiguration());
+        modelBuilder.ApplyConfiguration(new MatchesConfiguration());
+        modelBuilder.ApplyConfiguration(new PlayerConfiguration());
+        modelBuilder.ApplyConfiguration(new TeamConfigurartion());
+        modelBuilder.ApplyConfiguration(new TeamTournamentConfiguration());
+        modelBuilder.ApplyConfiguration(new TournamentConfiguration());
 
         OnModelCreatingPartial(modelBuilder);
     }
