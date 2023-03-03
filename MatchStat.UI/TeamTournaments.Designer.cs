@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.team = new System.Windows.Forms.ColumnHeader();
+            this.tournament = new System.Windows.Forms.ColumnHeader();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.assignButton = new System.Windows.Forms.Button();
@@ -39,8 +41,6 @@
             this.teamTournamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboTournament = new System.Windows.Forms.ComboBox();
             this.tournamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.team = new System.Windows.Forms.ColumnHeader();
-            this.tournament = new System.Windows.Forms.ColumnHeader();
             ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamTournamentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tournamentBindingSource)).BeginInit();
@@ -60,6 +60,16 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // team
+            // 
+            this.team.Text = "Team";
+            this.team.Width = 260;
+            // 
+            // tournament
+            // 
+            this.tournament.Text = "Tournament";
+            this.tournament.Width = 260;
             // 
             // label1
             // 
@@ -101,6 +111,7 @@
             this.removeButton.TabIndex = 5;
             this.removeButton.Text = "Remove";
             this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // comboTeam
             // 
@@ -135,16 +146,6 @@
             // tournamentBindingSource
             // 
             this.tournamentBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Tournament);
-            // 
-            // team
-            // 
-            this.team.Text = "Team";
-            this.team.Width = 260;
-            // 
-            // tournament
-            // 
-            this.tournament.Text = "Tournament";
-            this.tournament.Width = 260;
             // 
             // TeamTournaments
             // 
