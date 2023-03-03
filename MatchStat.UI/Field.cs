@@ -50,7 +50,8 @@ namespace MatchStat.UI
                 context.Fields.Add(field);
                 context.SaveChanges();
                 LoadField();
-                
+                stadiumTextBox.Clear();
+                countryTextBox.Clear();
             };
         }
         private int GetNextId()
