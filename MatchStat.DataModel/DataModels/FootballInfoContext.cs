@@ -120,7 +120,7 @@ public partial class FootballInfoContext : DbContext
         modelBuilder.Entity<Team>(entity =>
         {
             entity.ToTable("Team");
-
+            entity.HasKey(e => e.Id);
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
                 .HasColumnName("ID");
@@ -132,9 +132,9 @@ public partial class FootballInfoContext : DbContext
         modelBuilder.Entity<TeamTournament>(entity =>
         {
             entity
-                .HasNoKey()
-                .ToTable("TeamTournament");
+                .HasKey(e => e.Id);
 
+            entity.Property(e => e.Id);
             entity.Property(e => e.TeamId).HasColumnName("TeamID");
             entity.Property(e => e.TournamentId).HasColumnName("TournamentID");
 
@@ -152,7 +152,6 @@ public partial class FootballInfoContext : DbContext
         modelBuilder.Entity<Tournament>(entity =>
         {
             entity.ToTable("Tournament");
-
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
                 .HasColumnName("ID");

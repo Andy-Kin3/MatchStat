@@ -46,6 +46,9 @@ namespace MatchStat.UI
             {
                 context.Teams.Add(teams);
                 context.SaveChanges();
+                LoadTeams();
+                teamName.Clear();
+
             }
             LoadTeams();
         }
