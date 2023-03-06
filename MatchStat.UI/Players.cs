@@ -42,10 +42,35 @@ namespace MatchStat.UI
         {
             var players = this.GetPlayer();
             playerBindingSource.DataSource = players;
-            var myTeams = this.GetTeams();
-            teamBindingSource.DataSource = myTeams;
+            var teams = this.GetTeams();
+            teamBindingSource.DataSource = teams;
+            GetTeamName(teamCbo.SelectedValue as int?);
         }
 
+        public string GetTeamName(int? teamId)
+        {
+            if (teamId != null)
+            {
+                using (var context = new FootballInfoContext())
+                {
+
+                    var myTeamName = context.Teams.FirstOrDefault(t => t.Id == teamId);
+                    if (myTeamName != null)
+                    {
+                        return myTeamName.Name;
+                    }
+                }
+            }
+            return string.Empty;     
+        }
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "TeamName")
+            {
+                var teamId = e.Value as int?;
+                e.Value = GetTeamName(teamId);
+            }
+        }
         private int GetNextId()
         {
             var allPlayers = playerBindingSource.DataSource as List<Player>;
@@ -61,7 +86,7 @@ namespace MatchStat.UI
                 FirstName = playerFirstName.Text.ToString(),
                 LastName = playerLastName.Text.ToString(),
                 Dob = DateTime.Parse(dateOfBirth.Text),
-                Id= GetNextId(),
+                Id = GetNextId(),
                 TeamId = Convert.ToInt32(teamCbo.SelectedValue)
             };
             using (var context = new FootballInfoContext())
