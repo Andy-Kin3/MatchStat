@@ -14,4 +14,7 @@ public partial class Goal
     public int NumberOfGoal { get; set; }
 
     public virtual Player Player { get; set; } = null!;
+
+    public string? PlayerName { get; set; }
+    public string? MatchName { get; set; }
 }

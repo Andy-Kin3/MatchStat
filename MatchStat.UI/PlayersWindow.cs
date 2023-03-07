@@ -14,9 +14,9 @@ using Microsoft.VisualBasic;
 
 namespace MatchStat.UI
 {
-    public partial class Players : Form
+    public partial class PlayersWindow : Form
     {
-        public Players()
+        public PlayersWindow()
         {
             InitializeComponent();
         }
@@ -63,7 +63,7 @@ namespace MatchStat.UI
             }
             return string.Empty;     
         }
-        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (dataGridView1.Columns[e.ColumnIndex].Name == "TeamName")
             {

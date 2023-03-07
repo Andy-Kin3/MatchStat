@@ -69,42 +69,42 @@ namespace MatchStat.UI
 
         private void goalsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var goals = new Goals();
+            var goals = new GoalsWindow();
             goals.Show();
             goals.MdiParent = this;
         }
 
         private void competingTeamsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var team = new Teams();
+            var team = new TeamsWindow();
             team.Show();
             team.MdiParent = this;
         }
 
         private void setTournamentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var tournamentStatistics = new TournamentStatistics();
+            var tournamentStatistics = new TournamentStatisticsWindow();
             tournamentStatistics.Show();
             tournamentStatistics.MdiParent = this;
         }
 
         private void selectedFieldsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var fields = new Field();
+            var fields = new FieldsWindow();
             fields.Show();
             fields.MdiParent = this;
         }
 
         private void participatingPlayerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var players = new Players();
+            var players = new PlayersWindow();
             players.Show();
             players.MdiParent = this;
         }
 
         private void matchesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var matches = new Match();
+            var matches = new MatchWindow();
             matches.Show();
             matches.MdiParent = this;
         }
@@ -116,7 +116,7 @@ namespace MatchStat.UI
 
         private void setTournamentsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var teamTournament = new TeamTournaments();
+            var teamTournament = new TeamTournamentsWindow();
             teamTournament.Show();
             teamTournament.MdiParent = this;
         }

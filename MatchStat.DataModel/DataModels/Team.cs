@@ -9,9 +9,9 @@ public partial class Team
 
     public string Name { get; set; } = null!;
 
-    public virtual ICollection<Matches> MatchTeam1s { get; } = new List<Matches>();
+    public virtual ICollection<Match> MatchTeam1s { get; } = new List<Match>();
 
-    public virtual ICollection<Matches> MatchTeam2s { get; } = new List<Matches>();
+    public virtual ICollection<Match> MatchTeam2s { get; } = new List<Match>();
 
     public virtual ICollection<Player> Players { get; } = new List<Player>();
 }

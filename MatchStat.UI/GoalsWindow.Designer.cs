@@ -1,6 +1,6 @@
 ﻿namespace MatchStat.UI
 {
-    partial class Goals
+    partial class GoalsWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.NumberOfGoal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlayerNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MatchName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.createButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
@@ -38,18 +41,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.playerCbox = new System.Windows.Forms.ComboBox();
-            this.matchCbox = new System.Windows.Forms.ComboBox();
-            this.numberOfGoals = new System.Windows.Forms.NumericUpDown();
-            this.matchesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.playerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PlayerId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MatchId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matchCbox = new System.Windows.Forms.ComboBox();
+            this.matchDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.numberOfGoals = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goalBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numberOfGoals)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matchesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matchDetailsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numberOfGoals)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -60,9 +60,9 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.PlayerId,
-            this.MatchId});
+            this.NumberOfGoal,
+            this.PlayerNameColumn,
+            this.MatchName});
             this.dataGridView1.DataSource = this.goalBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(0, 75);
             this.dataGridView1.Name = "dataGridView1";
@@ -70,9 +70,23 @@
             this.dataGridView1.Size = new System.Drawing.Size(800, 375);
             this.dataGridView1.TabIndex = 0;
             // 
-            // goalBindingSource
+            // NumberOfGoal
             // 
-            this.goalBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Goal);
+            this.NumberOfGoal.DataPropertyName = "NumberOfGoal";
+            this.NumberOfGoal.HeaderText = "Number Of Goals";
+            this.NumberOfGoal.Name = "NumberOfGoal";
+            // 
+            // PlayerNameColumn
+            // 
+            this.PlayerNameColumn.DataPropertyName = "PlayerName";
+            this.PlayerNameColumn.HeaderText = "Player Name";
+            this.PlayerNameColumn.Name = "PlayerNameColumn";
+            // 
+            // MatchName
+            // 
+            this.MatchName.DataPropertyName = "MatchName";
+            this.MatchName.HeaderText = "Match Name";
+            this.MatchName.Name = "MatchName";
             // 
             // createButton
             // 
@@ -150,8 +164,8 @@
             // matchCbox
             // 
             this.matchCbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.matchCbox.DataSource = this.matchesBindingSource;
-            this.matchCbox.DisplayMember = "Date";
+            this.matchCbox.DataSource = this.matchDetailsBindingSource;
+            this.matchCbox.DisplayMember = "MatchName";
             this.matchCbox.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.matchCbox.FormattingEnabled = true;
             this.matchCbox.Location = new System.Drawing.Point(447, 6);
@@ -159,6 +173,10 @@
             this.matchCbox.Size = new System.Drawing.Size(341, 27);
             this.matchCbox.TabIndex = 7;
             this.matchCbox.ValueMember = "Id";
+            // 
+            // matchDetailsBindingSource
+            // 
+            this.matchDetailsBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.MatchDetail);
             // 
             // numberOfGoals
             // 
@@ -170,36 +188,7 @@
             this.numberOfGoals.Size = new System.Drawing.Size(310, 27);
             this.numberOfGoals.TabIndex = 8;
             // 
-            // matchesBindingSource
-            // 
-            this.matchesBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Matches);
-            // 
-            // playerBindingSource
-            // 
-            this.playerBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Player);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.Frozen = true;
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 55;
-            // 
-            // PlayerId
-            // 
-            this.PlayerId.DataPropertyName = "PlayerId";
-            this.PlayerId.HeaderText = "Player Name";
-            this.PlayerId.Name = "PlayerId";
-            // 
-            // MatchId
-            // 
-            this.MatchId.DataPropertyName = "MatchId";
-            this.MatchId.HeaderText = "Match Name";
-            this.MatchId.Name = "MatchId";
-            // 
-            // Goals
+            // GoalsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -216,18 +205,20 @@
             this.Controls.Add(this.dataGridView1);
             this.Location = new System.Drawing.Point(592, 400);
             this.MinimumSize = new System.Drawing.Size(816, 489);
-            this.Name = "Goals";
+            this.Name = "GoalsWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Goal";
+            this.Load += new System.EventHandler(this.Goals_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goalBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numberOfGoals)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matchesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matchDetailsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numberOfGoals)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
+
 
         #endregion
 
@@ -241,10 +232,11 @@
         private ComboBox playerCbox;
         private ComboBox matchCbox;
         private NumericUpDown numberOfGoals;
-        private BindingSource matchesBindingSource;
+        private BindingSource matchDetailsBindingSource;
         private BindingSource playerBindingSource;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn PlayerId;
-        private DataGridViewTextBoxColumn MatchId;
+        private DataGridViewTextBoxColumn NumberOfGoal;
+        private DataGridViewTextBoxColumn PlayerNameColumn;
+        private DataGridViewTextBoxColumn MatchName;
     }
 }

@@ -2,9 +2,9 @@
 
 namespace MatchStat.UI
 {
-    public partial class Match : Form
+    public partial class MatchWindow : Form
     {
-        public Match()
+        public MatchWindow()
         {
             InitializeComponent();
         }
@@ -30,7 +30,7 @@ namespace MatchStat.UI
             FillList(matches);
         }
 
-        private List<Matches> GetMatches()
+        private List<Match> GetMatches()
         {
             using (var context = new FootballInfoContext())
             {
@@ -66,7 +66,7 @@ namespace MatchStat.UI
         private void CreateMatchButton_Click(object sender, EventArgs e)
         {
 
-            var matches = new Matches
+            var matches = new Match
             {
                 Date = DateTime.Parse(matchDateTimePicker.Text),
                 Team1Id = Convert.ToInt32(team1Cbo.SelectedValue),
@@ -92,7 +92,7 @@ namespace MatchStat.UI
             ListViewItem item = new ListViewItem(row);
             listView1.Items.Add(item);
         }
-        private void FillList(List<Matches> myMatch)
+        private void FillList(List<Match> myMatch)
         {
             listView1.Items.Clear();
             
@@ -144,7 +144,7 @@ namespace MatchStat.UI
 
         private int GetNextID()
         {
-            var allMatches = matchBindingSource.DataSource as List<Matches>;
+            var allMatches = matchBindingSource.DataSource as List<Match>;
             var maximumId = allMatches != null && allMatches.Any() ? allMatches.Max(e => e.Id) : 0;
             var nextId = maximumId + 1;
             return nextId;
@@ -158,7 +158,7 @@ namespace MatchStat.UI
                 return;
             }
 
-            var allMatches = matchBindingSource.DataSource as List<Matches>;
+            var allMatches = matchBindingSource.DataSource as List<Match>;
             if(allMatches == null || allMatches.Any() == false)
             {
                 return;
