@@ -4,9 +4,9 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace MatchStat.UI
 {
-    public partial class TournamentStatistics : Form
+    public partial class TournamentStatisticsWindow : Form
     {
-        public TournamentStatistics()
+        public TournamentStatisticsWindow()
         {
             InitializeComponent();
         }

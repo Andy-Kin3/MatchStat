@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MatchStat.DataModel.DataModels;
 
-public partial class Matches
+public partial class Match
 {
     public int Id { get; set; }
 

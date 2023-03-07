@@ -1,6 +1,6 @@
 ﻿namespace MatchStat.UI
 {
-    partial class Players
+    partial class PlayersWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -259,7 +259,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-            dataGridView1.CellFormatting += dataGridView1_CellFormatting;
+            dataGridView1.CellFormatting += DataGridView1_CellFormatting;
 
         }
 

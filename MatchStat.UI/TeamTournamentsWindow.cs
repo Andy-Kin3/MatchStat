@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace MatchStat.UI
 {
-    public partial class TeamTournaments : Form
+    public partial class TeamTournamentsWindow : Form
     {
-        public TeamTournaments()
+        public TeamTournamentsWindow()
         {
             InitializeComponent();
         }

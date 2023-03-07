@@ -20,6 +20,9 @@ namespace MatchStat.DataModel.EntityTypeConfigurartion
                 .HasForeignKey(d => d.PlayerId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Goal_Player");
+
+            entity.Ignore(e => e.PlayerName);
+            entity.Ignore(e => e.MatchName);
         }
     }
 }

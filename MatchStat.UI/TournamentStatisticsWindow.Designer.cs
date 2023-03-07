@@ -1,6 +1,6 @@
 ﻿namespace MatchStat.UI
 {
-    partial class TournamentStatistics
+    partial class TournamentStatisticsWindow
     {
         /// <summary>
         ///  Required designer variable.

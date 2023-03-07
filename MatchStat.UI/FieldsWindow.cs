@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace MatchStat.UI
 {
-    public partial class Field : Form
+    public partial class FieldsWindow : Form
     {
-        public Field()
+        public FieldsWindow()
         {
             InitializeComponent();
         }
