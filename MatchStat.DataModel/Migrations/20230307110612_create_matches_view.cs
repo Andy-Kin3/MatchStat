@@ -10,7 +10,8 @@ namespace MatchStat.DataModel.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.Sql(@"IF EXISTS (SELECT * FROM SYS.VIEWS WHERE NAME = 'MatchesView')
+            migrationBuilder.Sql(@"
+IF EXISTS (SELECT * FROM SYS.VIEWS WHERE NAME = 'MatchesView')
 	drop VIEW MATCHESVIEW
 GO
 

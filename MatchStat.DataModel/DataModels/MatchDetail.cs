@@ -22,7 +22,7 @@ public partial class MatchDetail
     {
         get
         {
-            return $"{this.Team1Name} v {this.Team2Name}";
+            return $"{this.Team1Name} VS {this.Team2Name}";
         }
     }
 }

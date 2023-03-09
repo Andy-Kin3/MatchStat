@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MatchStat.DataModel.DataModels;
 
-public partial class Match
+public partial class Matches
 {
     public int Id { get; set; }
 
@@ -25,4 +25,5 @@ public partial class Match
     public virtual Team Team2 { get; set; } = null!;
 
     public virtual Tournament? Tournament { get; set; }
+    public string? MatchName { get; set; }
 }

@@ -33,7 +33,7 @@ namespace MatchStat.UI
                 var player = allPlayers.FirstOrDefault(p => p.Id == goal.PlayerId);
                 goal.PlayerName = player?.FullName;
 
-                var match = allMatches.FirstOrDefault(p => p.Id == goal.MatchId);
+                var match = allMatches.FirstOrDefault(m => m.Id == goal.MatchId);
                 goal.MatchName = match?.MatchName;
             }
 
@@ -63,7 +63,7 @@ namespace MatchStat.UI
                 var playerName = context.Players.FirstOrDefault(p => p.Id == playerId);
                 if (playerName != null)
                 {
-                    return playerName.FirstName + " " + playerName.LastName;
+                    return playerName.FullName;
                 }
                 return "";
             }
@@ -73,24 +73,26 @@ namespace MatchStat.UI
 
         private void DataGridView1_cellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "PlayerName")
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "PlayerNameColumn")
             {
                 int playerId;
                 if (int.TryParse(e.Value?.ToString(), out playerId))
                 {
                     e.Value = GetPlayerFullName(playerId);
                 }
+                //var playerId = e.Value;
+                //e.Value = GetPlayerFullName(Convert.ToInt32(playerId));
             }
         }
 
-        private List<Player> GetPlayers()
-        {
-            using(var context = new FootballInfoContext())
-            {
-                var player = context.Players.ToList();
-                return player;
-            }
-        }
+        //private List<Player> GetPlayers()
+        //{
+        //    using(var context = new FootballInfoContext())
+        //    {
+        //        var player = context.Players.ToList();
+        //        return player;
+        //    }
+        //}
 
         private List<Goal> GetGoals()
         {
