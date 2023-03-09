@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace MatchStat.DataModel.EntityTypeConfigurartion
 {
-    public class MatchesConfiguration : IEntityTypeConfiguration<Match>
+    public class MatchesConfiguration : IEntityTypeConfiguration<Matches>
     {
-        public void Configure(EntityTypeBuilder<Match> entity)
+        public void Configure(EntityTypeBuilder<Matches> entity)
         {
             entity.ToTable("Match");
 
@@ -37,6 +37,7 @@ namespace MatchStat.DataModel.EntityTypeConfigurartion
             entity.HasOne(d => d.Tournament).WithMany(p => p.Matches)
                 .HasForeignKey(d => d.TournamentId)
                 .HasConstraintName("FK_Match_Tournament");
+            entity.Ignore(e => e.MatchName);
         }
     }
 }

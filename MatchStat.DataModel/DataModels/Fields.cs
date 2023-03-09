@@ -10,5 +10,5 @@ public partial class Fields
     public string Name { get; set; } = null!;
     public string Country { get; set; }
 
-    public virtual ICollection<Match> Matches { get; } = new List<Match>();
+    public virtual ICollection<Matches> Matches { get; } = new List<Matches>();
 }
