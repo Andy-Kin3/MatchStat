@@ -27,23 +27,15 @@ namespace MatchStat.UI
             var myTournament = this.GetTournament();
             tournamentBindingSource.DataSource = myTournament;
 
-            FillList(matches);
+            FillListView(matches);
         }
 
-        private List<Matches> GetMatches()
+        private List<Match> GetMatches()
         {
             using (var context = new FootballInfoContext())
             {
                 var matches = context.Matches.ToList();
                 return matches;
-            }
-        }
-        private List<MatchDetail> GetMatchDetails()
-        {
-            using(var context = new FootballInfoContext())
-            {
-                var matchDetails = context.MatchDetails.ToList();
-                return matchDetails;
             }
         }
         private List<Team> GetTeams()
@@ -74,21 +66,23 @@ namespace MatchStat.UI
         private void CreateMatchButton_Click(object sender, EventArgs e)
         {
 
-            var matches = new Matches
+            var matches = new Match
             {
                 Date = DateTime.Parse(matchDateTimePicker.Text),
                 Team1Id = Convert.ToInt32(team1Cbo.SelectedValue),
                 Team2Id = Convert.ToInt32(team2Cbo.SelectedValue),
                 TournamentId = Convert.ToInt32(tourCbo.SelectedValue),
                 FieldId = Convert.ToInt32(fieldcbo.SelectedValue),
+                TeamOneScore = Convert.ToInt32(teamOneScore.Value),
+                TeamTwoScore = Convert.ToInt32(teamTwoScore.Value),
                 Id = GetNextID()
             };
             using (var context =  new FootballInfoContext())
             {
                 Add(Convert.ToDateTime(matchDateTimePicker.Text), team1Cbo.Text, team2Cbo.Text, tourCbo.Text, fieldcbo.Text);
+                 
                 context.Matches.Add(matches);
                 context.SaveChanges();
-                LoadMatches();
             }
 
             LoadMatches();
@@ -100,7 +94,7 @@ namespace MatchStat.UI
             ListViewItem item = new ListViewItem(row);
             listView1.Items.Add(item);
         }
-        private void FillList(List<Matches> myMatch)
+        private void FillListView(List<Match> myMatch)
         {
             listView1.Items.Clear();
             
@@ -141,8 +135,8 @@ namespace MatchStat.UI
         {
             using (var context = new FootballInfoContext())
             {
-                var team = context.Teams.FirstOrDefault(t => t.Id == teamId);
-                var team2 = context.Teams.FirstOrDefault(t => t.Id == team2Id);
+                var team = context.Teams.FirstOrDefault(t => t.Id.Equals(teamId));
+                var team2 = context.Teams.FirstOrDefault(t => t.Id.Equals(team2Id));
                 if (team != null && team2 != null)
                 {
                     return $"{team.Name}  VS  {team2.Name}";
@@ -153,7 +147,7 @@ namespace MatchStat.UI
 
         private int GetNextID()
         {
-            var allMatches = matchBindingSource.DataSource as List<Matches>;
+            var allMatches = matchBindingSource.DataSource as List<Match>;
             var maximumId = allMatches != null && allMatches.Any() ? allMatches.Max(e => e.Id) : 0;
             var nextId = maximumId + 1;
             return nextId;
@@ -167,7 +161,7 @@ namespace MatchStat.UI
                 return;
             }
 
-            var allMatches = matchBindingSource.DataSource as List<Matches>;
+            var allMatches = matchBindingSource.DataSource as List<Match>;
             if(allMatches == null || allMatches.Any() == false)
             {
                 return;
@@ -185,5 +179,11 @@ namespace MatchStat.UI
             }
         }
 
+        private void listciew1_clicked(object sender, MouseEventArgs e)
+        {
+            matchDateTimePicker.Text = listView1.SelectedItems[0].SubItems[0].Text;
+            tourCbo.Text = listView1.SelectedItems[0].SubItems[2].Text;
+            fieldcbo.Text = listView1.SelectedItems[0].SubItems[3].Text;
+        }
     }
 }

@@ -30,7 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.NumberOfGoal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlayerNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MatchName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.createButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
@@ -42,9 +48,6 @@
             this.matchCbox = new System.Windows.Forms.ComboBox();
             this.matchDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.numberOfGoals = new System.Windows.Forms.NumericUpDown();
-            this.NumberOfGoal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PlayerNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MatchName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).BeginInit();
@@ -58,17 +61,54 @@
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NumberOfGoal,
             this.PlayerNameColumn,
             this.MatchName});
             this.dataGridView1.DataSource = this.goalBindingSource;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.Info;
             this.dataGridView1.Location = new System.Drawing.Point(0, 75);
             this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(800, 375);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // NumberOfGoal
+            // 
+            this.NumberOfGoal.DataPropertyName = "NumberOfGoal";
+            this.NumberOfGoal.HeaderText = "Number Of Goals";
+            this.NumberOfGoal.Name = "NumberOfGoal";
+            // 
+            // PlayerNameColumn
+            // 
+            this.PlayerNameColumn.DataPropertyName = "PlayerName";
+            this.PlayerNameColumn.HeaderText = "Player Name";
+            this.PlayerNameColumn.Name = "PlayerNameColumn";
+            // 
+            // MatchName
+            // 
+            this.MatchName.DataPropertyName = "MatchName";
+            this.MatchName.HeaderText = "Match Name";
+            this.MatchName.Name = "MatchName";
             // 
             // createButton
             // 
@@ -134,7 +174,7 @@
             this.playerCbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.playerCbox.DataSource = this.playerBindingSource;
-            this.playerCbox.DisplayMember = "FirstName";
+            this.playerCbox.DisplayMember = "FullName";
             this.playerCbox.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.playerCbox.FormattingEnabled = true;
             this.playerCbox.Location = new System.Drawing.Point(89, 7);
@@ -170,24 +210,6 @@
             this.numberOfGoals.Size = new System.Drawing.Size(310, 27);
             this.numberOfGoals.TabIndex = 8;
             // 
-            // NumberOfGoal
-            // 
-            this.NumberOfGoal.DataPropertyName = "NumberOfGoal";
-            this.NumberOfGoal.HeaderText = "Number Of Goals";
-            this.NumberOfGoal.Name = "NumberOfGoal";
-            // 
-            // PlayerNameColumn
-            // 
-            this.PlayerNameColumn.DataPropertyName = "PlayerName";
-            this.PlayerNameColumn.HeaderText = "Player Name";
-            this.PlayerNameColumn.Name = "PlayerNameColumn";
-            // 
-            // MatchName
-            // 
-            this.MatchName.DataPropertyName = "MatchName";
-            this.MatchName.HeaderText = "Match Name";
-            this.MatchName.Name = "MatchName";
-            // 
             // GoalsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -207,7 +229,7 @@
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "GoalsWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Goal";
+            this.Text = "Goal Window";
             this.Load += new System.EventHandler(this.Goals_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goalBindingSource)).EndInit();

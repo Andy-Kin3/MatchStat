@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace MatchStat.DataModel.EntityTypeConfigurartion
 {
-    public class MatchesConfiguration : IEntityTypeConfiguration<Matches>
+    public class MatchesConfiguration : IEntityTypeConfiguration<Match>
     {
-        public void Configure(EntityTypeBuilder<Matches> entity)
+        public void Configure(EntityTypeBuilder<Match> entity)
         {
             entity.ToTable("Match");
 

@@ -13,5 +13,5 @@ public partial class Tournament
 
     public DateTime? EndDate { get; set; }
 
-    public virtual ICollection<Matches> Matches { get; } = new List<Matches>();
+    public virtual ICollection<Match> Matches { get; } = new List<Match>();
 }
