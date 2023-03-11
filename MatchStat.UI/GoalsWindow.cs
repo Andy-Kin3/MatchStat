@@ -22,7 +22,7 @@ namespace MatchStat.UI
         private void LoadGoals()
         {
             var allPlayers = this.GetAllPlayers();
-            playerBindingSource.DataSource = allPlayers.Select(p => p.FullName);
+            playerBindingSource.DataSource = allPlayers;//.Select(p => p.FullName);
             var allMatches = this.GetAllMatches();
             matchDetailsBindingSource.DataSource = allMatches;
 
@@ -80,8 +80,6 @@ namespace MatchStat.UI
                 {
                     e.Value = GetPlayerFullName(playerId);
                 }
-                //var playerId = e.Value;
-                //e.Value = GetPlayerFullName(Convert.ToInt32(playerId));
             }
         }
 
