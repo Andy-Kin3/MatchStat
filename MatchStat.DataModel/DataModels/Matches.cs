@@ -4,13 +4,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MatchStat.DataModel.DataModels;
 
-public partial class Matches
+public partial class Match
 {
     public int Id { get; set; }
 
     public DateTime Date { get; set; }
 
     public int Team1Id { get; set; }
+    public int TeamOneScore { get; set; }
+    public int TeamTwoScore { get; set; }
 
     public int Team2Id { get; set; }
 

@@ -51,11 +51,12 @@
             this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView1.BackColor = System.Drawing.Color.Turquoise;
+            this.listView1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.team,
             this.tournament});
-            this.listView1.Font = new System.Drawing.Font("Times New Roman", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listView1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(0, 81);
             this.listView1.Name = "listView1";
@@ -160,7 +161,7 @@
             // 
             this.tournamentBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Tournament);
             // 
-            // TeamTournaments
+            // TeamTournamentsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -175,7 +176,7 @@
             this.Controls.Add(this.listView1);
             this.Location = new System.Drawing.Point(592, 400);
             this.MinimumSize = new System.Drawing.Size(754, 498);
-            this.Name = "TeamTournaments";
+            this.Name = "TeamTournamentsWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TeamTournaments";
             this.Load += new System.EventHandler(this.TeamTournaments_Load);
