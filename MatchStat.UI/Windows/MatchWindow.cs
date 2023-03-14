@@ -68,7 +68,7 @@ namespace MatchStat.UI
 
             var matches = new Match
             {
-                Date = DateTime.Parse(matchDateTimePicker.Text),
+                Date = matchDateTimePicker.Value,
                 Team1Id = Convert.ToInt32(team1Cbo.SelectedValue),
                 Team2Id = Convert.ToInt32(team2Cbo.SelectedValue),
                 TournamentId = Convert.ToInt32(tourCbo.SelectedValue),

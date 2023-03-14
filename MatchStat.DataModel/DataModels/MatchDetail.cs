@@ -17,12 +17,18 @@ public partial class MatchDetail
     public string? Team2Name { get; set; }
     public string? TournamentName { get; set; }
     public string? FieldName { get; set; }
+    public int TeamOneScore { get; set; }
+    public int TeamTwoScore { get; set; }
 
     public string MatchName
     {
         get
         {
-            return $"{this.Team1Name} VS {this.Team2Name}";
+            if(TeamOneScore != 0 && TeamTwoScore != 0)
+            {
+                return $"{this.Team1Name} {this.TeamOneScore} : {this.TeamTwoScore} {this.Team2Name}";
+            }
+            return $"{this.Team1Name}  VS  {this.Team2Name}";
         }
     }
 }
