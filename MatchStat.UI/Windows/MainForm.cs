@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MatchStat.UI.Windows;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -104,7 +105,7 @@ namespace MatchStat.UI
 
         private void matchesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var matches = new MatchWindow();
+            var matches = new MatchesWindow2();
             matches.Show();
             matches.MdiParent = this;
         }

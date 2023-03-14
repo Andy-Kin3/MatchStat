@@ -4,6 +4,7 @@ using MatchStat;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MatchStat.DataModel.Migrations
 {
     [DbContext(typeof(FootballInfoContext))]
-    partial class FootballInfoContextModelSnapshot : ModelSnapshot
+    [Migration("20230311125611_updateMatchDetailView_20231103")]
+    partial class updateMatchDetailView_20231103
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -217,7 +220,7 @@ namespace MatchStat.DataModel.Migrations
 
                     b.HasIndex("TournamentId");
 
-                    b.ToTable("TeamTournaments", (string)null);
+                    b.ToTable("TeamTournaments");
                 });
 
             modelBuilder.Entity("MatchStat.DataModel.DataModels.Tournament", b =>
