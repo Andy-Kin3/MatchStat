@@ -70,18 +70,13 @@ namespace MatchStat.UI
             LoadTeamTournments();
         }
 
-        private void assignButton_Click(object sender, EventArgs e)
+        private void addButton_Click(object sender, EventArgs e)
         {
-            var teamandTournaments = new TeamTournament
-            {
-                TeamId = Convert.ToInt32(comboTeam.SelectedValue),
-                TournamentId = Convert.ToInt32(comboTournament.SelectedValue),
-                Id = GetNextID()
-            };
             using (var context = new FootballInfoContext())
             {
                 //add(comboTeam.Text, comboTournament.Text);
-                context.TeamTournaments.Add(teamandTournaments);
+                var tt = teamTournaments;
+                context.TeamTournaments.Add(tt);
                 context.SaveChanges();
                 LoadTeamTournments();
             }

@@ -17,6 +17,15 @@ namespace MatchStat.UI
         {
             InitializeComponent();
         }
+        private Team? team
+        {
+            get
+            {
+                return this.teamBindingSource.DataSource as Team;
+            }
+            set { this.teamBindingSource.DataSource = value; }
+
+        }
         private List<Team> GetTeams()
         {
             using (var context = new FootballInfoContext())
@@ -34,17 +43,11 @@ namespace MatchStat.UI
         {
             LoadTeams();
         }
-
-        private void createbutton_Click(object sender, EventArgs e)
+        private void AddTeamToDatabase(Team t)
         {
-            var teams = new Team()
-            {
-                Name = teamName.Text.ToString(),
-                Id = GetNextID(),
-            };
             using (var context = new FootballInfoContext())
             {
-                context.Teams.Add(teams);
+                context.Teams.Add(t);
                 context.SaveChanges();
                 LoadTeams();
                 teamName.Clear();
@@ -53,12 +56,20 @@ namespace MatchStat.UI
             LoadTeams();
         }
 
-        private int GetNextID()
+        private void createbutton_Click(object sender, EventArgs e)
         {
-            var allTeams = teamBindingSource.DataSource as List<Team>;
-            var maximumId = allTeams != null && allTeams.Any() ? allTeams.Max(x => x.Id) : 0;
-            return maximumId + 1;
+            if (team != null)
+            {
+                AddTeamToDatabase(team);
+            }
         }
+
+        //private int GetNextID()
+        //{
+        //    var allTeams = teamBindingSource.DataSource as List<Team>;
+        //    var maximumId = allTeams != null && allTeams.Any() ? allTeams.Max(x => x.Id) : 0;
+        //    return maximumId + 1;
+        //}
 
         private void deleteTeamButton_Click(object sender, EventArgs e)
         {

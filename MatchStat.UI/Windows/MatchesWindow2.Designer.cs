@@ -54,8 +54,6 @@
             tournamentBindingSource = new BindingSource(components);
             comboBox4 = new ComboBox();
             fieldsBindingSource = new BindingSource(components);
-            label5 = new Label();
-            idvalue = new NumericUpDown();
             saveButton = new Button();
             addButton = new Button();
             matchesMenu = new ContextMenuStrip(components);
@@ -71,7 +69,6 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tournamentBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fieldsBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)idvalue).BeginInit();
             matchesMenu.SuspendLayout();
             SuspendLayout();
             // 
@@ -139,7 +136,6 @@
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
             tableLayoutPanel1.ColumnCount = 6;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 130F));
@@ -160,17 +156,15 @@
             tableLayoutPanel1.Controls.Add(label6, 3, 1);
             tableLayoutPanel1.Controls.Add(comboBox3, 1, 2);
             tableLayoutPanel1.Controls.Add(comboBox4, 1, 3);
-            tableLayoutPanel1.Controls.Add(label5, 0, 4);
-            tableLayoutPanel1.Controls.Add(idvalue, 1, 4);
-            tableLayoutPanel1.Location = new Point(1, 2);
+            tableLayoutPanel1.Dock = DockStyle.Top;
+            tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 5;
+            tableLayoutPanel1.RowCount = 4;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(872, 131);
+            tableLayoutPanel1.Size = new Size(885, 131);
             tableLayoutPanel1.TabIndex = 1;
             // 
             // label1
@@ -179,7 +173,7 @@
             label1.Dock = DockStyle.Fill;
             label1.Location = new Point(4, 1);
             label1.Name = "label1";
-            label1.Size = new Size(124, 26);
+            label1.Size = new Size(124, 31);
             label1.TabIndex = 0;
             label1.Text = "Match Date";
             label1.TextAlign = ContentAlignment.MiddleLeft;
@@ -188,9 +182,9 @@
             // 
             label2.AutoSize = true;
             label2.Dock = DockStyle.Fill;
-            label2.Location = new Point(4, 28);
+            label2.Location = new Point(4, 33);
             label2.Name = "label2";
-            label2.Size = new Size(124, 26);
+            label2.Size = new Size(124, 31);
             label2.TabIndex = 0;
             label2.Text = "Match";
             label2.TextAlign = ContentAlignment.MiddleLeft;
@@ -199,9 +193,9 @@
             // 
             label3.AutoSize = true;
             label3.Dock = DockStyle.Fill;
-            label3.Location = new Point(4, 55);
+            label3.Location = new Point(4, 65);
             label3.Name = "label3";
-            label3.Size = new Size(124, 26);
+            label3.Size = new Size(124, 31);
             label3.TabIndex = 0;
             label3.Text = "Tournament";
             label3.TextAlign = ContentAlignment.MiddleLeft;
@@ -210,9 +204,9 @@
             // 
             label4.AutoSize = true;
             label4.Dock = DockStyle.Fill;
-            label4.Location = new Point(4, 82);
+            label4.Location = new Point(4, 97);
             label4.Name = "label4";
-            label4.Size = new Size(124, 26);
+            label4.Size = new Size(124, 33);
             label4.TabIndex = 0;
             label4.Text = "Field";
             label4.TextAlign = ContentAlignment.MiddleLeft;
@@ -224,7 +218,7 @@
             dateTimePicker1.Dock = DockStyle.Fill;
             dateTimePicker1.Location = new Point(135, 4);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(733, 23);
+            dateTimePicker1.Size = new Size(746, 23);
             dateTimePicker1.TabIndex = 1;
             // 
             // bindingSource_matchDetail
@@ -238,9 +232,9 @@
             comboBox1.DisplayMember = "Name";
             comboBox1.Dock = DockStyle.Fill;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(135, 31);
+            comboBox1.Location = new Point(135, 36);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(296, 23);
+            comboBox1.Size = new Size(303, 23);
             comboBox1.TabIndex = 2;
             comboBox1.ValueMember = "Id";
             // 
@@ -255,9 +249,9 @@
             comboBox2.DisplayMember = "Name";
             comboBox2.Dock = DockStyle.Fill;
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(571, 31);
+            comboBox2.Location = new Point(578, 36);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(297, 23);
+            comboBox2.Size = new Size(303, 23);
             comboBox2.TabIndex = 2;
             comboBox2.ValueMember = "Id";
             // 
@@ -269,7 +263,7 @@
             // 
             numericUpDown1.DataBindings.Add(new Binding("Value", bindingSource_matchDetail, "TeamOneScore", true));
             numericUpDown1.Dock = DockStyle.Fill;
-            numericUpDown1.Location = new Point(438, 31);
+            numericUpDown1.Location = new Point(445, 36);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(44, 23);
             numericUpDown1.TabIndex = 3;
@@ -278,7 +272,7 @@
             // 
             numericUpDown2.DataBindings.Add(new Binding("Value", bindingSource_matchDetail, "TeamTwoScore", true));
             numericUpDown2.Dock = DockStyle.Fill;
-            numericUpDown2.Location = new Point(520, 31);
+            numericUpDown2.Location = new Point(527, 36);
             numericUpDown2.Name = "numericUpDown2";
             numericUpDown2.Size = new Size(44, 23);
             numericUpDown2.TabIndex = 3;
@@ -287,9 +281,9 @@
             // 
             label6.AutoSize = true;
             label6.Dock = DockStyle.Fill;
-            label6.Location = new Point(489, 28);
+            label6.Location = new Point(496, 33);
             label6.Name = "label6";
-            label6.Size = new Size(24, 26);
+            label6.Size = new Size(24, 31);
             label6.TabIndex = 4;
             label6.Text = "VS";
             label6.TextAlign = ContentAlignment.MiddleCenter;
@@ -302,9 +296,9 @@
             comboBox3.DisplayMember = "Name";
             comboBox3.Dock = DockStyle.Fill;
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(135, 58);
+            comboBox3.Location = new Point(135, 68);
             comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(733, 23);
+            comboBox3.Size = new Size(746, 23);
             comboBox3.TabIndex = 5;
             comboBox3.ValueMember = "Id";
             // 
@@ -320,33 +314,15 @@
             comboBox4.DisplayMember = "Name";
             comboBox4.Dock = DockStyle.Fill;
             comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(135, 85);
+            comboBox4.Location = new Point(135, 100);
             comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(733, 23);
+            comboBox4.Size = new Size(746, 23);
             comboBox4.TabIndex = 6;
             comboBox4.ValueMember = "Id";
             // 
             // fieldsBindingSource
             // 
             fieldsBindingSource.DataSource = typeof(DataModel.DataModels.Fields);
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(4, 109);
-            label5.Name = "label5";
-            label5.Size = new Size(18, 15);
-            label5.TabIndex = 7;
-            label5.Text = "ID";
-            // 
-            // idvalue
-            // 
-            idvalue.DataBindings.Add(new Binding("Value", matchDetailBindingSource, "Id", true));
-            idvalue.Dock = DockStyle.Fill;
-            idvalue.Location = new Point(135, 112);
-            idvalue.Name = "idvalue";
-            idvalue.Size = new Size(296, 23);
-            idvalue.TabIndex = 8;
             // 
             // saveButton
             // 
@@ -414,7 +390,6 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             ((System.ComponentModel.ISupportInitialize)tournamentBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)fieldsBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)idvalue).EndInit();
             matchesMenu.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -446,8 +421,6 @@
         private ContextMenuStrip matchesMenu;
         private ToolStripMenuItem editButton;
         private ToolStripMenuItem deleteButton2;
-        private Label label5;
-        private NumericUpDown idvalue;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn matchNameDataGridViewTextBoxColumn;

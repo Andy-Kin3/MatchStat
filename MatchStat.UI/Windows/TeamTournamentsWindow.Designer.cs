@@ -32,21 +32,21 @@
             label1 = new Label();
             label2 = new Label();
             comboTeam = new ComboBox();
-            teamBindingSource = new BindingSource(components);
             teamTournamentBindingSource = new BindingSource(components);
+            teamBindingSource = new BindingSource(components);
             comboTournament = new ComboBox();
             tournamentBindingSource = new BindingSource(components);
             dataGridView1 = new DataGridView();
             teamIdColumn = new DataGridViewTextBoxColumn();
             tournamentIdColumn = new DataGridViewTextBoxColumn();
             tableLayoutPanel1 = new TableLayoutPanel();
-            removeButton = new Button();
             assignButton = new Button();
             teamTourMenu = new ContextMenuStrip(components);
             editButton = new ToolStripMenuItem();
+            deleteToolStripMenuItem = new ToolStripMenuItem();
             updateButton = new Button();
-            ((System.ComponentModel.ISupportInitialize)teamBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)teamTournamentBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)teamBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tournamentBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -63,7 +63,7 @@
             label1.Size = new Size(131, 32);
             label1.TabIndex = 1;
             label1.Text = "Team :";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
@@ -76,12 +76,11 @@
             label2.Size = new Size(137, 32);
             label2.TabIndex = 3;
             label2.Text = "Tournament :";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // comboTeam
             // 
-            comboTeam.DataBindings.Add(new Binding("Text", teamBindingSource, "Name", true));
-            comboTeam.DataBindings.Add(new Binding("SelectedValue", teamBindingSource, "Name", true));
+            comboTeam.DataBindings.Add(new Binding("Text", teamTournamentBindingSource, "TeamId", true));
             comboTeam.DataSource = teamBindingSource;
             comboTeam.DisplayMember = "Name";
             comboTeam.Dock = DockStyle.Fill;
@@ -93,19 +92,18 @@
             comboTeam.TabIndex = 6;
             comboTeam.ValueMember = "Id";
             // 
-            // teamBindingSource
-            // 
-            teamBindingSource.DataSource = typeof(DataModel.DataModels.Team);
-            // 
             // teamTournamentBindingSource
             // 
             teamTournamentBindingSource.DataSource = typeof(DataModel.DataModels.TeamTournament);
+            // 
+            // teamBindingSource
+            // 
+            teamBindingSource.DataSource = typeof(DataModel.DataModels.Team);
             // 
             // comboTournament
             // 
             comboTournament.AllowDrop = true;
             comboTournament.DataBindings.Add(new Binding("Text", teamTournamentBindingSource, "TournamentId", true));
-            comboTournament.DataBindings.Add(new Binding("SelectedValue", tournamentBindingSource, "Name", true));
             comboTournament.DataSource = tournamentBindingSource;
             comboTournament.DisplayMember = "Name";
             comboTournament.Dock = DockStyle.Fill;
@@ -176,41 +174,36 @@
             tableLayoutPanel1.Size = new Size(738, 64);
             tableLayoutPanel1.TabIndex = 9;
             // 
-            // removeButton
-            // 
-            removeButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            removeButton.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            removeButton.Location = new Point(548, 71);
-            removeButton.Name = "removeButton";
-            removeButton.Size = new Size(178, 34);
-            removeButton.TabIndex = 11;
-            removeButton.Text = "Remove";
-            removeButton.UseVisualStyleBackColor = true;
-            removeButton.Click += removeButton_Click;
-            // 
             // assignButton
             // 
             assignButton.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             assignButton.Location = new Point(12, 71);
             assignButton.Name = "assignButton";
-            assignButton.Size = new Size(185, 34);
+            assignButton.Size = new Size(219, 34);
             assignButton.TabIndex = 10;
-            assignButton.Text = "Add";
+            assignButton.Text = "Save";
             assignButton.UseVisualStyleBackColor = true;
-            assignButton.Click += assignButton_Click;
+            assignButton.Click += addButton_Click;
             // 
             // teamTourMenu
             // 
-            teamTourMenu.Items.AddRange(new ToolStripItem[] { editButton });
+            teamTourMenu.Items.AddRange(new ToolStripItem[] { editButton, deleteToolStripMenuItem });
             teamTourMenu.Name = "matchesMenu";
-            teamTourMenu.Size = new Size(95, 26);
+            teamTourMenu.Size = new Size(108, 48);
             // 
             // editButton
             // 
             editButton.Name = "editButton";
-            editButton.Size = new Size(94, 22);
+            editButton.Size = new Size(107, 22);
             editButton.Text = "Edit";
             editButton.Click += editButton_Click;
+            // 
+            // deleteToolStripMenuItem
+            // 
+            deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            deleteToolStripMenuItem.Size = new Size(107, 22);
+            deleteToolStripMenuItem.Text = "Delete";
+            deleteToolStripMenuItem.Click += removeButton_Click;
             // 
             // updateButton
             // 
@@ -230,7 +223,6 @@
             BackColor = SystemColors.AppWorkspace;
             ClientSize = new Size(738, 459);
             Controls.Add(updateButton);
-            Controls.Add(removeButton);
             Controls.Add(assignButton);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(dataGridView1);
@@ -240,8 +232,8 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TeamTournaments";
             Load += TeamTournaments_Load;
-            ((System.ComponentModel.ISupportInitialize)teamBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)teamTournamentBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)teamBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)tournamentBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
@@ -260,12 +252,12 @@
         private BindingSource teamTournamentBindingSource;
         private DataGridView dataGridView1;
         private TableLayoutPanel tableLayoutPanel1;
-        private Button removeButton;
         private Button assignButton;
         private ContextMenuStrip teamTourMenu;
         private ToolStripMenuItem editButton;
         private DataGridViewTextBoxColumn teamIdColumn;
         private DataGridViewTextBoxColumn tournamentIdColumn;
         private Button updateButton;
+        private ToolStripMenuItem deleteToolStripMenuItem;
     }
 }

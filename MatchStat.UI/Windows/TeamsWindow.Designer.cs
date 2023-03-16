@@ -31,14 +31,14 @@
             components = new System.ComponentModel.Container();
             label1 = new Label();
             teamName = new TextBox();
+            teamBindingSource = new BindingSource(components);
             createbutton = new Button();
             deleteTeamButton = new Button();
             dataGridView1 = new DataGridView();
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            teamBindingSource = new BindingSource(components);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)teamBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -54,12 +54,15 @@
             // teamName
             // 
             teamName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            teamName.DataBindings.Add(new Binding("Text", teamBindingSource, "Name", true));
             teamName.Location = new Point(75, 7);
             teamName.Multiline = true;
             teamName.Name = "teamName";
             teamName.Size = new Size(377, 29);
             teamName.TabIndex = 1;
+            // 
+            // teamBindingSource
+            // 
+            teamBindingSource.DataSource = typeof(DataModel.DataModels.Team);
             // 
             // createbutton
             // 
@@ -118,10 +121,6 @@
             nameDataGridViewTextBoxColumn.HeaderText = "Name";
             nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
-            // teamBindingSource
-            // 
-            teamBindingSource.DataSource = typeof(DataModel.DataModels.Team);
-            // 
             // TeamsWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -139,8 +138,8 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Teams";
             Load += Teams_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)teamBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

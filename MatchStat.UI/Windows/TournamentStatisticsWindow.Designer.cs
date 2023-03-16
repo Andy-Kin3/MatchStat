@@ -55,7 +55,6 @@
             // 
             // tournamentName
             // 
-            tournamentName.DataBindings.Add(new Binding("Text", tournamentBindingSource, "Name", true));
             tournamentName.Dock = DockStyle.Fill;
             tournamentName.Font = new Font("Times New Roman", 15F, FontStyle.Regular, GraphicsUnit.Point);
             tournamentName.Location = new Point(128, 3);

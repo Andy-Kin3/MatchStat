@@ -1,16 +1,4 @@
 ﻿using MatchStat.DataModel.DataModels;
-using MatchStat.DataModel.Migrations;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace MatchStat.UI
 {
@@ -114,13 +102,13 @@ namespace MatchStat.UI
         }
         private void CreateGoal()
         {
-            var goal = new Goal()
-            {
-                NumberOfGoal = Convert.ToInt32(numberOfGoals.Text),
-                PlayerId = Convert.ToInt32(playerCbox.Text),
-                MatchId = Convert.ToInt32(matchCbox.Text),
-                Id = GetNextID()
-            };
+            //var goal = new Goal()
+            //{
+            //    NumberOfGoal = Convert.ToInt32(numberOfGoals.Text),
+            //    PlayerId = Convert.ToInt32(playerCbox.Text),
+            //    MatchId = Convert.ToInt32(matchCbox.Text),
+            //    Id = GetNextID()
+            //};
             using (var context = new FootballInfoContext())
             {
                 var goals = goal;
@@ -174,6 +162,7 @@ namespace MatchStat.UI
         private void Goals_Load_1(object sender, EventArgs e)
         {
             LoadGoals();
+            goal = new Goal();
         }
     }
 }

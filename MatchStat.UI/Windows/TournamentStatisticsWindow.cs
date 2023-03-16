@@ -10,6 +10,15 @@ namespace MatchStat.UI
         {
             InitializeComponent();
         }
+        private Tournament? tournament
+        {
+            get { return this.tournamentBindingSource.DataSource as Tournament; }
+            set
+            {
+                this.tournamentBindingSource.DataSource = value;
+            }
+
+        }
 
 
         private List<Tournament> GetTournament()

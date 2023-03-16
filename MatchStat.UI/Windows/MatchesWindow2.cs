@@ -31,9 +31,21 @@ namespace MatchStat.UI.Windows
             using (var context = new FootballInfoContext())
             {
                 var m = match.Map<MatchDetail, Match>();
+                if (m.Id == 0)
+                {
+                    m.Id = GetNextId();
+                }
                 context.Matches.Add(m);
                 context.SaveChanges();
             }
+        }
+
+        private int GetNextId()
+        {
+            var allMatches = matchDetailBindingSource.DataSource as MatchDetail[];
+            var maximumId = allMatches != null && allMatches.Any() ? allMatches.Max(m => m.Id) : 0;
+            var nextMatchId = maximumId + 1;
+            return nextMatchId;
         }
 
         private void MatchesWindow2_Load(object sender, EventArgs e)
@@ -99,12 +111,6 @@ namespace MatchStat.UI.Windows
         {
             this.match = new MatchDetail { Date = DateTime.Now };
         }
-        //private int GetNextID()
-        //{
-        //    var allMatches = bindingSource_matchDetail as List<Match>;
-        //    var maximumId = allMatches != null && allMatches.Any() ? allMatches.Max(m => m.Id) : 0;
-        //    return maximumId + 1;
-        //}
 
 
         private void editButton_Click(object sender, EventArgs e)

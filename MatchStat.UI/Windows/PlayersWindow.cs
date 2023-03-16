@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.VisualBasic;
+using System.Numerics;
 
 namespace MatchStat.UI
 {
@@ -19,6 +20,12 @@ namespace MatchStat.UI
         public PlayersWindow()
         {
             InitializeComponent();
+        }
+        private Player? Player
+        {
+            get { return this.playerBindingSource.DataSource as Player; }
+
+            set { this.playerBindingSource.DataSource = value; }
         }
 
         private List<Player> GetPlayer()
@@ -81,17 +88,10 @@ namespace MatchStat.UI
 
         private void createPlayerButton_Click(object sender, EventArgs e)
         {
-            var player = new Player
-            {
-                FirstName = playerFirstName.Text.ToString(),
-                LastName = playerLastName.Text.ToString(),
-                Dob = DateTime.Parse(dateOfBirth.Text),
-                Id = GetNextId(),
-                TeamId = Convert.ToInt32(teamCbo.SelectedValue)
-            };
             using (var context = new FootballInfoContext())
             {
-                context.Players.Add(player);
+                var p = Player;
+                context.Players.Add(p);
                 context.SaveChanges();
                 LoadPlayers();
                 playerFirstName.Clear();

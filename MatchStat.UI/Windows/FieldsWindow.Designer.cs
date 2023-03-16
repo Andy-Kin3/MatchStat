@@ -34,17 +34,17 @@
             label1 = new Label();
             label2 = new Label();
             stadiumTextBox = new TextBox();
+            fieldBindingSource = new BindingSource(components);
             countryTextBox = new TextBox();
             dataGridView1 = new DataGridView();
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             countryDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            fieldBindingSource = new BindingSource(components);
             tableLayoutPanel1 = new TableLayoutPanel();
             deleteButton = new Button();
             createButton = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fieldBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -72,7 +72,6 @@
             // 
             // stadiumTextBox
             // 
-            stadiumTextBox.DataBindings.Add(new Binding("Text", fieldBindingSource, "Name", true));
             stadiumTextBox.Dock = DockStyle.Fill;
             stadiumTextBox.Font = new Font("Times New Roman", 12F, FontStyle.Italic, GraphicsUnit.Point);
             stadiumTextBox.Location = new Point(157, 3);
@@ -80,9 +79,12 @@
             stadiumTextBox.Size = new Size(485, 26);
             stadiumTextBox.TabIndex = 2;
             // 
+            // fieldBindingSource
+            // 
+            fieldBindingSource.DataSource = typeof(DataModel.DataModels.Fields);
+            // 
             // countryTextBox
             // 
-            countryTextBox.DataBindings.Add(new Binding("Text", fieldBindingSource, "Country", true));
             countryTextBox.Dock = DockStyle.Fill;
             countryTextBox.Font = new Font("Times New Roman", 12F, FontStyle.Italic, GraphicsUnit.Point);
             countryTextBox.Location = new Point(157, 37);
@@ -136,10 +138,6 @@
             countryDataGridViewTextBoxColumn.DataPropertyName = "Country";
             countryDataGridViewTextBoxColumn.HeaderText = "Country";
             countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
-            // 
-            // fieldBindingSource
-            // 
-            fieldBindingSource.DataSource = typeof(DataModel.DataModels.Fields);
             // 
             // tableLayoutPanel1
             // 
@@ -196,8 +194,8 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Field";
             Load += Field_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)fieldBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
