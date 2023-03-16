@@ -377,7 +377,7 @@
             Controls.Add(tableLayoutPanel1);
             Controls.Add(dataGridView1);
             Name = "MatchesWindow2";
-            Text = "Match";
+            Text = " ";
             Load += MatchesWindow2_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)matchDetailBindingSource).EndInit();

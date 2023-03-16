@@ -40,5 +40,11 @@ namespace MatchStat.UI.Windows
         {
             LoadMatchRecords();
         }
+
+        private void createMatchButton_Click(object sender, EventArgs e)
+        {
+            var matchRecordInput = new MatchRecordInput();
+            matchRecordInput.Show();
+        }
     }
 }

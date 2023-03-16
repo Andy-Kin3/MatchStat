@@ -62,6 +62,7 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(800, 398);
             dataGridView1.TabIndex = 0;
             // 
@@ -131,6 +132,7 @@
             createMatchButton.TabIndex = 2;
             createMatchButton.Text = "Create New Match";
             createMatchButton.UseVisualStyleBackColor = true;
+            createMatchButton.Click += createMatchButton_Click;
             // 
             // SaveMatchButton
             // 

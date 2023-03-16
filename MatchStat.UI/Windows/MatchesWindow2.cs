@@ -35,7 +35,7 @@ namespace MatchStat.UI.Windows
                 {
                     m.Id = GetNextId();
                 }
-                context.Matches.Add(m);
+                context.MatchDetail.Add(m);
                 context.SaveChanges();
             }
         }
@@ -141,10 +141,10 @@ namespace MatchStat.UI.Windows
         {
             using (var context = new FootballInfoContext())
             {
-                var m = context.Matches.FirstOrDefault(m => m.Id == currentMatch.Id);
+                var m = context.MatchDetail.FirstOrDefault(m => m.Id == currentMatch.Id);
                 if (m != null)
                 {
-                    context.Matches.Remove(m);
+                    context.MatchDetail.Remove(m);
                     context.SaveChanges();
                 }
             }

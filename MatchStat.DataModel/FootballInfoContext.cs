@@ -19,7 +19,7 @@ public partial class FootballInfoContext : DbContext
 
     public virtual DbSet<Goal> Goals { get; set; }
 
-    public virtual DbSet<Match> Matches { get; set; }
+    public virtual DbSet<Match> MatchDetail { get; set; }
 
     public virtual DbSet<Player> Players { get; set; }
 
