@@ -17,6 +17,14 @@ namespace MatchStat.UI
         {
             InitializeComponent();
         }
+        private Fields? field
+        {
+            get { return this.fieldBindingSource.DataSource as Fields; }
+            set
+            {
+                this.fieldBindingSource.DataSource = value;
+            }
+        }
 
         private void Field_Load(object sender, EventArgs e)
         {
@@ -33,33 +41,27 @@ namespace MatchStat.UI
         }
         private void LoadField()
         {
-            var field = GetField();
-            fieldBindingSource.DataSource = field;
+            fieldBindingSource.DataSource = GetField();
         }
 
         private void createButton_Click(object sender, EventArgs e)
         {
-            var field = new Fields
+            using (var context = new FootballInfoContext())
             {
-                Name = stadiumTextBox.Text.ToString(),
-                Country = countryTextBox.Text.ToString(),
-                Id = GetNextId()
-            };
-            using(var context = new FootballInfoContext())
-            {
-                context.Fields.Add(field);
+                var f = field;
+                context.Fields.Add(f);
                 context.SaveChanges();
                 LoadField();
                 stadiumTextBox.Clear();
                 countryTextBox.Clear();
             };
         }
-        private int GetNextId()
-        {
-            var allfields = fieldBindingSource.DataSource as List<Fields>;
-            var maximumId =  allfields != null && allfields.Any() ? allfields.Max(x => x.Id) : 0;
-            return maximumId + 1;
-        }
+        //private int GetNextId()
+        //{
+        //    var allfields = fieldBindingSource.DataSource as List<Fields>;
+        //    var maximumId = allfields != null && allfields.Any() ? allfields.Max(x => x.Id) : 0;
+        //    return maximumId + 1;
+        //}
 
         private void deleteButton_Click(object sender, EventArgs e)
         {

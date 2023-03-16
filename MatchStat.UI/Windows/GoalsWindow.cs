@@ -1,15 +1,4 @@
 ﻿using MatchStat.DataModel.DataModels;
-using MatchStat.DataModel.Migrations;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace MatchStat.UI
 {
@@ -19,16 +8,27 @@ namespace MatchStat.UI
         {
             InitializeComponent();
         }
+        private Goal? goal
+        {
+            get
+            {
+                return this.goalBindingSource.DataSource as Goal;
+            }
+            set
+            {
+                this.goalBindingSource.DataSource = value;
+            }
+        }
         private void LoadGoals()
         {
             var allPlayers = this.GetAllPlayers();
-            playerBindingSource.DataSource = allPlayers;//.Select(p => p.FullName);
+            playerBindingSource1.DataSource = allPlayers;//.Select(p => p.FullName);
             var allMatches = this.GetAllMatches();
             matchDetailsBindingSource.DataSource = allMatches;
 
 
             var goals = this.GetGoals();
-            foreach(var goal in goals)
+            foreach (var goal in goals)
             {
                 var player = allPlayers.FirstOrDefault(p => p.Id == goal.PlayerId);
                 goal.PlayerName = player?.FullName;
@@ -40,19 +40,19 @@ namespace MatchStat.UI
             goalBindingSource.DataSource = goals;
         }
 
-        private List<MatchDetail> GetAllMatches()
-        {
-            using(var context = new FootballInfoContext())
-            {
-                var matches = context.MatchDetails.ToList();
-                return matches;
-            }
-        }
-        public List<Player> GetAllPlayers()
+        private MatchDetail[] GetAllMatches()
         {
             using (var context = new FootballInfoContext())
             {
-                var players = context.Players.ToList();
+                var matches = context.MatchDetails.ToArray();
+                return matches;
+            }
+        }
+        public Player[] GetAllPlayers()
+        {
+            using (var context = new FootballInfoContext())
+            {
+                var players = context.Players.ToArray();
                 return players;
             }
         }
@@ -92,49 +92,69 @@ namespace MatchStat.UI
         //    }
         //}
 
-        private List<Goal> GetGoals()
+        private Goal[] GetGoals()
         {
-            using(var context = new FootballInfoContext())
+            using (var context = new FootballInfoContext())
             {
-                var goals = context.Goals.ToList();
+                var goals = context.Goals.ToArray();
                 return goals;
             }
         }
-
-        private void createButton_Click_1(object sender, EventArgs e)
+        private void CreateGoal()
         {
-            var goals = new Goal
+            //var goal = new Goal()
+            //{
+            //    NumberOfGoal = Convert.ToInt32(numberOfGoals.Text),
+            //    PlayerId = Convert.ToInt32(playerCbox.Text),
+            //    MatchId = Convert.ToInt32(matchCbox.Text),
+            //    Id = GetNextID()
+            //};
+            using (var context = new FootballInfoContext())
             {
-                NumberOfGoal = Convert.ToInt32(numberOfGoals.Value),
-                PlayerId = Convert.ToInt32(playerCbox.SelectedValue),
-                MatchId = Convert.ToInt32(matchCbox.SelectedValue),
-                Id = GetNextID()
-            };
-            using(var context = new FootballInfoContext())
-            {
+                var goals = goal;
                 context.Goals.Add(goals);
                 context.SaveChanges();
                 LoadGoals();
             }
         }
 
+        private void createButton_Click_1(object sender, EventArgs e)
+        {
+            CreateGoal();
+            LoadGoals();
+        }
+
         private int GetNextID()
         {
             var allGoals = goalBindingSource.DataSource as List<Goal>;
             var maximumId = allGoals != null && allGoals.Any() ? allGoals.Max(x => x.Id) : 0;
-            return maximumId + 1;
+            var nextId = maximumId + 1;
+            return nextId;
+        }
+        private Goal? GetSelectedGoal()
+        {
+            return this.goalBindingSource.Current as Goal;
         }
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-            var selected = goalBindingSource.DataSource as Goal;
-            if(selected != null)
+            var selected = GetSelectedGoal();
+            if (selected != null)
             {
-                using(var context = new FootballInfoContext())
+                DeleteGoal(selected);
+                LoadGoals();
+            }
+
+        }
+        private void DeleteGoal(Goal currentgoal)
+        {
+            using (var context = new FootballInfoContext())
+            {
+                var selected = context.Goals.FirstOrDefault(g => g.Id == currentgoal.Id);
+                if (selected != null)
                 {
                     context.Goals.Remove(selected);
                     context.SaveChanges();
-                    LoadGoals();
                 }
             }
         }
@@ -142,6 +162,7 @@ namespace MatchStat.UI
         private void Goals_Load_1(object sender, EventArgs e)
         {
             LoadGoals();
+            goal = new Goal();
         }
     }
 }
