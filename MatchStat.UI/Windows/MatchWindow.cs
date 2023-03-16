@@ -34,7 +34,7 @@ namespace MatchStat.UI
         {
             using (var context = new FootballInfoContext())
             {
-                var matches = context.Matches.ToList();
+                var matches = context.MatchDetail.ToList();
                 return matches;
             }
         }
@@ -81,7 +81,7 @@ namespace MatchStat.UI
             {
                 Add(Convert.ToDateTime(matchDateTimePicker.Text), team1Cbo.Text, team2Cbo.Text, tourCbo.Text, fieldcbo.Text);
                  
-                context.Matches.Add(matches);
+                context.MatchDetail.Add(matches);
                 context.SaveChanges();
             }
 
@@ -172,7 +172,7 @@ namespace MatchStat.UI
             {
                 using(var context = new FootballInfoContext())
                 {
-                    context.Matches.Remove(matchToDelete);
+                    context.MatchDetail.Remove(matchToDelete);
                     context.SaveChanges();
                     LoadMatches();
                 }
