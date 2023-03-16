@@ -28,165 +28,177 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.stadiumTextBox = new System.Windows.Forms.TextBox();
-            this.countryTextBox = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fieldBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.createButton = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fieldBindingSource)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            label1 = new Label();
+            label2 = new Label();
+            stadiumTextBox = new TextBox();
+            countryTextBox = new TextBox();
+            dataGridView1 = new DataGridView();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            countryDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            fieldBindingSource = new BindingSource(components);
+            tableLayoutPanel1 = new TableLayoutPanel();
+            deleteButton = new Button();
+            createButton = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fieldBindingSource).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(4, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Stadium Name :";
+            label1.AutoSize = true;
+            label1.Dock = DockStyle.Fill;
+            label1.Font = new Font("Times New Roman", 14F, FontStyle.Italic, GraphicsUnit.Point);
+            label1.Location = new Point(3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(148, 34);
+            label1.TabIndex = 0;
+            label1.Text = "Stadium Name :";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(4, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Country :";
+            label2.AutoSize = true;
+            label2.Dock = DockStyle.Fill;
+            label2.Font = new Font("Times New Roman", 14F, FontStyle.Italic, GraphicsUnit.Point);
+            label2.Location = new Point(3, 34);
+            label2.Name = "label2";
+            label2.Size = new Size(148, 34);
+            label2.TabIndex = 1;
+            label2.Text = "Country :";
             // 
             // stadiumTextBox
             // 
-            this.stadiumTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.stadiumTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.stadiumTextBox.Location = new System.Drawing.Point(142, 8);
-            this.stadiumTextBox.Name = "stadiumTextBox";
-            this.stadiumTextBox.Size = new System.Drawing.Size(491, 26);
-            this.stadiumTextBox.TabIndex = 2;
+            stadiumTextBox.Dock = DockStyle.Fill;
+            stadiumTextBox.Font = new Font("Times New Roman", 12F, FontStyle.Italic, GraphicsUnit.Point);
+            stadiumTextBox.Location = new Point(157, 3);
+            stadiumTextBox.Name = "stadiumTextBox";
+            stadiumTextBox.Size = new Size(485, 26);
+            stadiumTextBox.TabIndex = 2;
             // 
             // countryTextBox
             // 
-            this.countryTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.countryTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.countryTextBox.Location = new System.Drawing.Point(93, 39);
-            this.countryTextBox.Name = "countryTextBox";
-            this.countryTextBox.Size = new System.Drawing.Size(269, 26);
-            this.countryTextBox.TabIndex = 3;
+            countryTextBox.Dock = DockStyle.Fill;
+            countryTextBox.Font = new Font("Times New Roman", 12F, FontStyle.Italic, GraphicsUnit.Point);
+            countryTextBox.Location = new Point(157, 37);
+            countryTextBox.Name = "countryTextBox";
+            countryTextBox.Size = new Size(485, 26);
+            countryTextBox.TabIndex = 3;
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.countryDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.fieldBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 73);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(645, 361);
-            this.dataGridView1.TabIndex = 4;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(128, 255, 255);
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, countryDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = fieldBindingSource;
+            dataGridView1.Dock = DockStyle.Bottom;
+            dataGridView1.Location = new Point(0, 103);
+            dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(645, 331);
+            dataGridView1.TabIndex = 4;
             // 
             // idDataGridViewTextBoxColumn
             // 
-            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.Frozen = true;
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 55;
+            idDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.Frozen = true;
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.Width = 55;
             // 
             // nameDataGridViewTextBoxColumn
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
             // countryDataGridViewTextBoxColumn
             // 
-            this.countryDataGridViewTextBoxColumn.DataPropertyName = "Country";
-            this.countryDataGridViewTextBoxColumn.HeaderText = "Country";
-            this.countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
+            countryDataGridViewTextBoxColumn.DataPropertyName = "Country";
+            countryDataGridViewTextBoxColumn.HeaderText = "Country";
+            countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
             // 
             // fieldBindingSource
             // 
-            this.fieldBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Fields);
+            fieldBindingSource.DataSource = typeof(DataModel.DataModels.Fields);
             // 
-            // createButton
+            // tableLayoutPanel1
             // 
-            this.createButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.createButton.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.createButton.Location = new System.Drawing.Point(376, 36);
-            this.createButton.Name = "createButton";
-            this.createButton.Size = new System.Drawing.Size(125, 31);
-            this.createButton.TabIndex = 7;
-            this.createButton.Text = "Create";
-            this.createButton.UseVisualStyleBackColor = true;
-            this.createButton.Click += new System.EventHandler(this.createButton_Click);
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23.91657F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 76.08343F));
+            tableLayoutPanel1.Controls.Add(label1, 0, 0);
+            tableLayoutPanel1.Controls.Add(label2, 0, 1);
+            tableLayoutPanel1.Controls.Add(stadiumTextBox, 1, 0);
+            tableLayoutPanel1.Controls.Add(countryTextBox, 1, 1);
+            tableLayoutPanel1.Dock = DockStyle.Top;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(645, 68);
+            tableLayoutPanel1.TabIndex = 9;
             // 
             // deleteButton
             // 
-            this.deleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteButton.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.deleteButton.Location = new System.Drawing.Point(507, 36);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(126, 31);
-            this.deleteButton.TabIndex = 8;
-            this.deleteButton.Text = "Delete";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            deleteButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            deleteButton.Font = new Font("Times New Roman", 14F, FontStyle.Italic, GraphicsUnit.Point);
+            deleteButton.Location = new Point(519, 71);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(126, 31);
+            deleteButton.TabIndex = 11;
+            deleteButton.Text = "Delete";
+            deleteButton.UseVisualStyleBackColor = true;
             // 
-            // Field
+            // createButton
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(645, 434);
-            this.Controls.Add(this.deleteButton);
-            this.Controls.Add(this.createButton);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.countryTextBox);
-            this.Controls.Add(this.stadiumTextBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Location = new System.Drawing.Point(592, 400);
-            this.MinimumSize = new System.Drawing.Size(661, 473);
-            this.Name = "Field";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Field";
-            this.Load += new System.EventHandler(this.Field_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fieldBindingSource)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            createButton.Font = new Font("Times New Roman", 14F, FontStyle.Italic, GraphicsUnit.Point);
+            createButton.Location = new Point(3, 71);
+            createButton.Name = "createButton";
+            createButton.Size = new Size(125, 31);
+            createButton.TabIndex = 10;
+            createButton.Text = "Create";
+            createButton.UseVisualStyleBackColor = true;
+            // 
+            // FieldsWindow
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.AppWorkspace;
+            ClientSize = new Size(645, 434);
+            Controls.Add(deleteButton);
+            Controls.Add(createButton);
+            Controls.Add(tableLayoutPanel1);
+            Controls.Add(dataGridView1);
+            Location = new Point(592, 400);
+            MinimumSize = new Size(661, 473);
+            Name = "FieldsWindow";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Field";
+            Load += Field_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fieldBindingSource).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -197,10 +209,11 @@
         private TextBox countryTextBox;
         private DataGridView dataGridView1;
         private BindingSource fieldBindingSource;
-        private Button createButton;
-        private Button deleteButton;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Button deleteButton;
+        private Button createButton;
     }
 }

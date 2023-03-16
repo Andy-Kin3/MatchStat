@@ -23,15 +23,15 @@ namespace MatchStat.UI
 
         private List<Player> GetPlayer()
         {
-            using(var context = new FootballInfoContext())
+            using (var context = new FootballInfoContext())
             {
                 var player = context.Players.ToList();
-                return player; 
+                return player;
             }
         }
         private List<Team> GetTeams()
         {
-            using(var context = new FootballInfoContext())
+            using (var context = new FootballInfoContext())
             {
                 var teams = context.Teams.ToList();
                 return teams;
@@ -61,7 +61,7 @@ namespace MatchStat.UI
                     }
                 }
             }
-            return string.Empty;     
+            return string.Empty;
         }
         private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {

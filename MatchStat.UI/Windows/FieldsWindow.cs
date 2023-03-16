@@ -45,7 +45,7 @@ namespace MatchStat.UI
                 Country = countryTextBox.Text.ToString(),
                 Id = GetNextId()
             };
-            using(var context = new FootballInfoContext())
+            using (var context = new FootballInfoContext())
             {
                 context.Fields.Add(field);
                 context.SaveChanges();
@@ -57,7 +57,7 @@ namespace MatchStat.UI
         private int GetNextId()
         {
             var allfields = fieldBindingSource.DataSource as List<Fields>;
-            var maximumId =  allfields != null && allfields.Any() ? allfields.Max(x => x.Id) : 0;
+            var maximumId = allfields != null && allfields.Any() ? allfields.Max(x => x.Id) : 0;
             return maximumId + 1;
         }
 

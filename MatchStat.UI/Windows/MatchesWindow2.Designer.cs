@@ -28,403 +28,395 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matchNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tournamentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fieldNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matchDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.bindingSource_matchDetail = new System.Windows.Forms.BindingSource(this.components);
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.team1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.team2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.tournamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.fieldsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label5 = new System.Windows.Forms.Label();
-            this.idvalue = new System.Windows.Forms.NumericUpDown();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.addButton = new System.Windows.Forms.Button();
-            this.matchesMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteButton2 = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matchDetailBindingSource)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource_matchDetail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.team1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.team2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tournamentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fieldsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.idvalue)).BeginInit();
-            this.matchesMenu.SuspendLayout();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            dataGridView1 = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            dateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            matchNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            tournamentNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            fieldNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            matchDetailBindingSource = new BindingSource(components);
+            tableLayoutPanel1 = new TableLayoutPanel();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            bindingSource_matchDetail = new BindingSource(components);
+            comboBox1 = new ComboBox();
+            team1BindingSource = new BindingSource(components);
+            comboBox2 = new ComboBox();
+            team2BindingSource = new BindingSource(components);
+            numericUpDown1 = new NumericUpDown();
+            numericUpDown2 = new NumericUpDown();
+            label6 = new Label();
+            comboBox3 = new ComboBox();
+            tournamentBindingSource = new BindingSource(components);
+            comboBox4 = new ComboBox();
+            fieldsBindingSource = new BindingSource(components);
+            label5 = new Label();
+            idvalue = new NumericUpDown();
+            saveButton = new Button();
+            addButton = new Button();
+            matchesMenu = new ContextMenuStrip(components);
+            editButton = new ToolStripMenuItem();
+            deleteButton2 = new ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)matchDetailBindingSource).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)bindingSource_matchDetail).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)team1BindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)team2BindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tournamentBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fieldsBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)idvalue).BeginInit();
+            matchesMenu.SuspendLayout();
+            SuspendLayout();
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.dateDataGridViewTextBoxColumn,
-            this.matchNameDataGridViewTextBoxColumn,
-            this.tournamentNameDataGridViewTextBoxColumn,
-            this.fieldNameDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.matchDetailBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 180);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(885, 379);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id, dateDataGridViewTextBoxColumn, matchNameDataGridViewTextBoxColumn, tournamentNameDataGridViewTextBoxColumn, fieldNameDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = matchDetailBindingSource;
+            dataGridView1.Dock = DockStyle.Bottom;
+            dataGridView1.Location = new Point(0, 180);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.ShowEditingIcon = false;
+            dataGridView1.Size = new Size(885, 379);
+            dataGridView1.TabIndex = 0;
+            dataGridView1.MouseUp += dataGridView1_MouseUp;
             // 
             // Id
             // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "ID";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "ID";
+            Id.Name = "Id";
+            Id.ReadOnly = true;
             // 
             // dateDataGridViewTextBoxColumn
             // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            dateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // matchNameDataGridViewTextBoxColumn
             // 
-            this.matchNameDataGridViewTextBoxColumn.DataPropertyName = "MatchName";
-            this.matchNameDataGridViewTextBoxColumn.HeaderText = "MatchName";
-            this.matchNameDataGridViewTextBoxColumn.Name = "matchNameDataGridViewTextBoxColumn";
-            this.matchNameDataGridViewTextBoxColumn.ReadOnly = true;
+            matchNameDataGridViewTextBoxColumn.DataPropertyName = "MatchName";
+            matchNameDataGridViewTextBoxColumn.HeaderText = "Match Name";
+            matchNameDataGridViewTextBoxColumn.Name = "matchNameDataGridViewTextBoxColumn";
+            matchNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tournamentNameDataGridViewTextBoxColumn
             // 
-            this.tournamentNameDataGridViewTextBoxColumn.DataPropertyName = "TournamentName";
-            this.tournamentNameDataGridViewTextBoxColumn.HeaderText = "TournamentName";
-            this.tournamentNameDataGridViewTextBoxColumn.Name = "tournamentNameDataGridViewTextBoxColumn";
-            this.tournamentNameDataGridViewTextBoxColumn.ReadOnly = true;
+            tournamentNameDataGridViewTextBoxColumn.DataPropertyName = "TournamentName";
+            tournamentNameDataGridViewTextBoxColumn.HeaderText = "Tournament Name";
+            tournamentNameDataGridViewTextBoxColumn.Name = "tournamentNameDataGridViewTextBoxColumn";
+            tournamentNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fieldNameDataGridViewTextBoxColumn
             // 
-            this.fieldNameDataGridViewTextBoxColumn.DataPropertyName = "FieldName";
-            this.fieldNameDataGridViewTextBoxColumn.HeaderText = "FieldName";
-            this.fieldNameDataGridViewTextBoxColumn.Name = "fieldNameDataGridViewTextBoxColumn";
-            this.fieldNameDataGridViewTextBoxColumn.ReadOnly = true;
+            fieldNameDataGridViewTextBoxColumn.DataPropertyName = "FieldName";
+            fieldNameDataGridViewTextBoxColumn.HeaderText = "Field Name";
+            fieldNameDataGridViewTextBoxColumn.Name = "fieldNameDataGridViewTextBoxColumn";
+            fieldNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // matchDetailBindingSource
             // 
-            this.matchDetailBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.MatchDetail);
+            matchDetailBindingSource.DataSource = typeof(DataModel.DataModels.MatchDetail);
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 6;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox2, 5, 1);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown1, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown2, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox3, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox4, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.idvalue, 1, 4);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 2);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(872, 131);
-            this.tableLayoutPanel1.TabIndex = 1;
+            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+            tableLayoutPanel1.ColumnCount = 6;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 130F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(label1, 0, 0);
+            tableLayoutPanel1.Controls.Add(label2, 0, 1);
+            tableLayoutPanel1.Controls.Add(label3, 0, 2);
+            tableLayoutPanel1.Controls.Add(label4, 0, 3);
+            tableLayoutPanel1.Controls.Add(dateTimePicker1, 1, 0);
+            tableLayoutPanel1.Controls.Add(comboBox1, 1, 1);
+            tableLayoutPanel1.Controls.Add(comboBox2, 5, 1);
+            tableLayoutPanel1.Controls.Add(numericUpDown1, 2, 1);
+            tableLayoutPanel1.Controls.Add(numericUpDown2, 4, 1);
+            tableLayoutPanel1.Controls.Add(label6, 3, 1);
+            tableLayoutPanel1.Controls.Add(comboBox3, 1, 2);
+            tableLayoutPanel1.Controls.Add(comboBox4, 1, 3);
+            tableLayoutPanel1.Controls.Add(label5, 0, 4);
+            tableLayoutPanel1.Controls.Add(idvalue, 1, 4);
+            tableLayoutPanel1.Location = new Point(1, 2);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 5;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(872, 131);
+            tableLayoutPanel1.TabIndex = 1;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(4, 1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Match Date";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label1.AutoSize = true;
+            label1.Dock = DockStyle.Fill;
+            label1.Location = new Point(4, 1);
+            label1.Name = "label1";
+            label1.Size = new Size(124, 26);
+            label1.TabIndex = 0;
+            label1.Text = "Match Date";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(4, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 26);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Match";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label2.AutoSize = true;
+            label2.Dock = DockStyle.Fill;
+            label2.Location = new Point(4, 28);
+            label2.Name = "label2";
+            label2.Size = new Size(124, 26);
+            label2.TabIndex = 0;
+            label2.Text = "Match";
+            label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Location = new System.Drawing.Point(4, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 26);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Tournament";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label3.AutoSize = true;
+            label3.Dock = DockStyle.Fill;
+            label3.Location = new Point(4, 55);
+            label3.Name = "label3";
+            label3.Size = new Size(124, 26);
+            label3.TabIndex = 0;
+            label3.Text = "Tournament";
+            label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Location = new System.Drawing.Point(4, 82);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 26);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Field";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label4.AutoSize = true;
+            label4.Dock = DockStyle.Fill;
+            label4.Location = new Point(4, 82);
+            label4.Name = "label4";
+            label4.Size = new Size(124, 26);
+            label4.TabIndex = 0;
+            label4.Text = "Field";
+            label4.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // dateTimePicker1
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.dateTimePicker1, 5);
-            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource_matchDetail, "Date", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePicker1.Location = new System.Drawing.Point(135, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(733, 23);
-            this.dateTimePicker1.TabIndex = 1;
+            tableLayoutPanel1.SetColumnSpan(dateTimePicker1, 5);
+            dateTimePicker1.DataBindings.Add(new Binding("Value", bindingSource_matchDetail, "Date", true, DataSourceUpdateMode.OnPropertyChanged));
+            dateTimePicker1.Dock = DockStyle.Fill;
+            dateTimePicker1.Location = new Point(135, 4);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(733, 23);
+            dateTimePicker1.TabIndex = 1;
             // 
             // bindingSource_matchDetail
             // 
-            this.bindingSource_matchDetail.DataSource = typeof(MatchStat.DataModel.DataModels.MatchDetail);
+            bindingSource_matchDetail.DataSource = typeof(DataModel.DataModels.MatchDetail);
             // 
             // comboBox1
             // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bindingSource_matchDetail, "Team1Id", true));
-            this.comboBox1.DataSource = this.team1BindingSource;
-            this.comboBox1.DisplayMember = "Name";
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(135, 31);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(296, 23);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.ValueMember = "Id";
+            comboBox1.DataBindings.Add(new Binding("SelectedValue", bindingSource_matchDetail, "Team1Id", true));
+            comboBox1.DataSource = team1BindingSource;
+            comboBox1.DisplayMember = "Name";
+            comboBox1.Dock = DockStyle.Fill;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(135, 31);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(296, 23);
+            comboBox1.TabIndex = 2;
+            comboBox1.ValueMember = "Id";
             // 
             // team1BindingSource
             // 
-            this.team1BindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Team);
+            team1BindingSource.DataSource = typeof(DataModel.DataModels.Team);
             // 
             // comboBox2
             // 
-            this.comboBox2.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bindingSource_matchDetail, "Team2Id", true));
-            this.comboBox2.DataSource = this.team2BindingSource;
-            this.comboBox2.DisplayMember = "Name";
-            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(571, 31);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(297, 23);
-            this.comboBox2.TabIndex = 2;
-            this.comboBox2.ValueMember = "Id";
+            comboBox2.DataBindings.Add(new Binding("SelectedValue", bindingSource_matchDetail, "Team2Id", true));
+            comboBox2.DataSource = team2BindingSource;
+            comboBox2.DisplayMember = "Name";
+            comboBox2.Dock = DockStyle.Fill;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(571, 31);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(297, 23);
+            comboBox2.TabIndex = 2;
+            comboBox2.ValueMember = "Id";
             // 
             // team2BindingSource
             // 
-            this.team2BindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Team);
+            team2BindingSource.DataSource = typeof(DataModel.DataModels.Team);
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource_matchDetail, "TeamOneScore", true));
-            this.numericUpDown1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDown1.Location = new System.Drawing.Point(438, 31);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(44, 23);
-            this.numericUpDown1.TabIndex = 3;
+            numericUpDown1.DataBindings.Add(new Binding("Value", bindingSource_matchDetail, "TeamOneScore", true));
+            numericUpDown1.Dock = DockStyle.Fill;
+            numericUpDown1.Location = new Point(438, 31);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(44, 23);
+            numericUpDown1.TabIndex = 3;
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource_matchDetail, "TeamTwoScore", true));
-            this.numericUpDown2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDown2.Location = new System.Drawing.Point(520, 31);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(44, 23);
-            this.numericUpDown2.TabIndex = 3;
+            numericUpDown2.DataBindings.Add(new Binding("Value", bindingSource_matchDetail, "TeamTwoScore", true));
+            numericUpDown2.Dock = DockStyle.Fill;
+            numericUpDown2.Location = new Point(520, 31);
+            numericUpDown2.Name = "numericUpDown2";
+            numericUpDown2.Size = new Size(44, 23);
+            numericUpDown2.TabIndex = 3;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Location = new System.Drawing.Point(489, 28);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 26);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "VS";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label6.AutoSize = true;
+            label6.Dock = DockStyle.Fill;
+            label6.Location = new Point(489, 28);
+            label6.Name = "label6";
+            label6.Size = new Size(24, 26);
+            label6.TabIndex = 4;
+            label6.Text = "VS";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // comboBox3
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.comboBox3, 5);
-            this.comboBox3.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bindingSource_matchDetail, "TournamentId", true));
-            this.comboBox3.DataSource = this.tournamentBindingSource;
-            this.comboBox3.DisplayMember = "Name";
-            this.comboBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(135, 58);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(733, 23);
-            this.comboBox3.TabIndex = 5;
-            this.comboBox3.ValueMember = "Id";
+            tableLayoutPanel1.SetColumnSpan(comboBox3, 5);
+            comboBox3.DataBindings.Add(new Binding("SelectedValue", bindingSource_matchDetail, "TournamentId", true));
+            comboBox3.DataSource = tournamentBindingSource;
+            comboBox3.DisplayMember = "Name";
+            comboBox3.Dock = DockStyle.Fill;
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(135, 58);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(733, 23);
+            comboBox3.TabIndex = 5;
+            comboBox3.ValueMember = "Id";
             // 
             // tournamentBindingSource
             // 
-            this.tournamentBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Tournament);
+            tournamentBindingSource.DataSource = typeof(DataModel.DataModels.Tournament);
             // 
             // comboBox4
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.comboBox4, 5);
-            this.comboBox4.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bindingSource_matchDetail, "FieldId", true));
-            this.comboBox4.DataSource = this.fieldsBindingSource;
-            this.comboBox4.DisplayMember = "Name";
-            this.comboBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(135, 85);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(733, 23);
-            this.comboBox4.TabIndex = 6;
-            this.comboBox4.ValueMember = "Id";
+            tableLayoutPanel1.SetColumnSpan(comboBox4, 5);
+            comboBox4.DataBindings.Add(new Binding("SelectedValue", bindingSource_matchDetail, "FieldId", true));
+            comboBox4.DataSource = fieldsBindingSource;
+            comboBox4.DisplayMember = "Name";
+            comboBox4.Dock = DockStyle.Fill;
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(135, 85);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(733, 23);
+            comboBox4.TabIndex = 6;
+            comboBox4.ValueMember = "Id";
             // 
             // fieldsBindingSource
             // 
-            this.fieldsBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Fields);
+            fieldsBindingSource.DataSource = typeof(DataModel.DataModels.Fields);
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 109);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(18, 15);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "ID";
+            label5.AutoSize = true;
+            label5.Location = new Point(4, 109);
+            label5.Name = "label5";
+            label5.Size = new Size(18, 15);
+            label5.TabIndex = 7;
+            label5.Text = "ID";
             // 
             // idvalue
             // 
-            this.idvalue.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.matchDetailBindingSource, "Id", true));
-            this.idvalue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.idvalue.Location = new System.Drawing.Point(135, 112);
-            this.idvalue.Name = "idvalue";
-            this.idvalue.Size = new System.Drawing.Size(296, 23);
-            this.idvalue.TabIndex = 8;
+            idvalue.DataBindings.Add(new Binding("Value", matchDetailBindingSource, "Id", true));
+            idvalue.Dock = DockStyle.Fill;
+            idvalue.Location = new Point(135, 112);
+            idvalue.Name = "idvalue";
+            idvalue.Size = new Size(296, 23);
+            idvalue.TabIndex = 8;
             // 
             // saveButton
             // 
-            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.saveButton.Location = new System.Drawing.Point(719, 140);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(167, 34);
-            this.saveButton.TabIndex = 2;
-            this.saveButton.Text = "Save";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            saveButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            saveButton.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            saveButton.Location = new Point(719, 140);
+            saveButton.Name = "saveButton";
+            saveButton.Size = new Size(167, 34);
+            saveButton.TabIndex = 2;
+            saveButton.Text = "Save Changes";
+            saveButton.UseVisualStyleBackColor = true;
+            saveButton.Click += saveButton_Click;
             // 
             // addButton
             // 
-            this.addButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.addButton.Location = new System.Drawing.Point(136, 139);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(171, 34);
-            this.addButton.TabIndex = 3;
-            this.addButton.Text = "Creat New Match";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            addButton.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            addButton.Location = new Point(136, 139);
+            addButton.Name = "addButton";
+            addButton.Size = new Size(171, 34);
+            addButton.TabIndex = 3;
+            addButton.Text = "Create New Match";
+            addButton.UseVisualStyleBackColor = true;
+            addButton.Click += addButton_Click;
             // 
             // matchesMenu
             // 
-            this.matchesMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editButton,
-            this.deleteButton2});
-            this.matchesMenu.Name = "matchesMenu";
-            this.matchesMenu.Size = new System.Drawing.Size(108, 48);
+            matchesMenu.Items.AddRange(new ToolStripItem[] { editButton, deleteButton2 });
+            matchesMenu.Name = "matchesMenu";
+            matchesMenu.Size = new Size(108, 48);
             // 
             // editButton
             // 
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(107, 22);
-            this.editButton.Text = "Edit";
-            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            editButton.Name = "editButton";
+            editButton.Size = new Size(107, 22);
+            editButton.Text = "Edit";
+            editButton.Click += editButton_Click;
             // 
             // deleteButton2
             // 
-            this.deleteButton2.Name = "deleteButton2";
-            this.deleteButton2.Size = new System.Drawing.Size(107, 22);
-            this.deleteButton2.Text = "Delete";
-            this.deleteButton2.Click += new System.EventHandler(this.deleteButton2_Click);
+            deleteButton2.Name = "deleteButton2";
+            deleteButton2.Size = new Size(107, 22);
+            deleteButton2.Text = "Delete";
+            deleteButton2.Click += deleteButton2_Click;
             // 
             // MatchesWindow2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 559);
-            this.Controls.Add(this.addButton);
-            this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "MatchesWindow2";
-            this.Text = "Match";
-            this.Load += new System.EventHandler(this.MatchesWindow2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matchDetailBindingSource)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource_matchDetail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.team1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.team2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tournamentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fieldsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.idvalue)).EndInit();
-            this.matchesMenu.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(885, 559);
+            Controls.Add(addButton);
+            Controls.Add(saveButton);
+            Controls.Add(tableLayoutPanel1);
+            Controls.Add(dataGridView1);
+            Name = "MatchesWindow2";
+            Text = "Match";
+            Load += MatchesWindow2_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)matchDetailBindingSource).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)bindingSource_matchDetail).EndInit();
+            ((System.ComponentModel.ISupportInitialize)team1BindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)team2BindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tournamentBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fieldsBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)idvalue).EndInit();
+            matchesMenu.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
