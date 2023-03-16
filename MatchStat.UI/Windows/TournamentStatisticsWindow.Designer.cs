@@ -28,218 +28,236 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.tournamentName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.startDate = new System.Windows.Forms.DateTimePicker();
-            this.endDate = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.createButton = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tournamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tournamentBindingSource)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            tournamentName = new TextBox();
+            tournamentBindingSource = new BindingSource(components);
+            label2 = new Label();
+            label3 = new Label();
+            startDate = new DateTimePicker();
+            endDate = new DateTimePicker();
+            label4 = new Label();
+            createButton = new Button();
+            deleteButton = new Button();
+            dataGridView1 = new DataGridView();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            startDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            endDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            ((System.ComponentModel.ISupportInitialize)tournamentBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
+            SuspendLayout();
             // 
             // tournamentName
             // 
-            this.tournamentName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tournamentName.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tournamentName.Location = new System.Drawing.Point(92, -1);
-            this.tournamentName.Multiline = true;
-            this.tournamentName.Name = "tournamentName";
-            this.tournamentName.Size = new System.Drawing.Size(578, 39);
-            this.tournamentName.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Pristina", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(-1, -1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 39);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Name :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Pristina", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(-1, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 39);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Start Date :";
-            // 
-            // startDate
-            // 
-            this.startDate.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.startDate.Location = new System.Drawing.Point(134, 48);
-            this.startDate.Name = "startDate";
-            this.startDate.Size = new System.Drawing.Size(200, 23);
-            this.startDate.TabIndex = 5;
-            // 
-            // endDate
-            // 
-            this.endDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.endDate.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.endDate.Location = new System.Drawing.Point(482, 49);
-            this.endDate.Name = "endDate";
-            this.endDate.Size = new System.Drawing.Size(191, 23);
-            this.endDate.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Pristina", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(357, 41);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 39);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "End Date :";
-            // 
-            // createButton
-            // 
-            this.createButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.createButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.createButton.Font = new System.Drawing.Font("Times New Roman", 13.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.createButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.createButton.Location = new System.Drawing.Point(676, -1);
-            this.createButton.Name = "createButton";
-            this.createButton.Size = new System.Drawing.Size(124, 72);
-            this.createButton.TabIndex = 8;
-            this.createButton.Text = "Create";
-            this.createButton.UseVisualStyleBackColor = false;
-            this.createButton.Click += new System.EventHandler(this.createButton_Click);
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.deleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.deleteButton.Font = new System.Drawing.Font("Times New Roman", 13.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.deleteButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.deleteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.deleteButton.Location = new System.Drawing.Point(676, 86);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(121, 39);
-            this.deleteButton.TabIndex = 9;
-            this.deleteButton.Text = "Delete Selected";
-            this.deleteButton.UseVisualStyleBackColor = false;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Cyan;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.startDateDataGridViewTextBoxColumn,
-            this.endDateDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.tournamentBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 86);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.MintCream;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(674, 363);
-            this.dataGridView1.TabIndex = 11;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.Frozen = true;
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 55;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // startDateDataGridViewTextBoxColumn
-            // 
-            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
-            this.startDateDataGridViewTextBoxColumn.HeaderText = "StartDate";
-            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
-            // 
-            // endDateDataGridViewTextBoxColumn
-            // 
-            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
-            this.endDateDataGridViewTextBoxColumn.HeaderText = "EndDate";
-            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
+            tournamentName.Dock = DockStyle.Fill;
+            tournamentName.Font = new Font("Times New Roman", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            tournamentName.Location = new Point(128, 3);
+            tournamentName.Name = "tournamentName";
+            tournamentName.Size = new Size(542, 30);
+            tournamentName.TabIndex = 1;
             // 
             // tournamentBindingSource
             // 
-            this.tournamentBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Tournament);
+            tournamentBindingSource.DataSource = typeof(DataModel.DataModels.Tournament);
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Dock = DockStyle.Fill;
+            label2.Font = new Font("Times New Roman", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(3, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(119, 33);
+            label2.TabIndex = 2;
+            label2.Text = "Name :";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Dock = DockStyle.Fill;
+            label3.Font = new Font("Times New Roman", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(3, 33);
+            label3.Name = "label3";
+            label3.Size = new Size(119, 33);
+            label3.TabIndex = 4;
+            label3.Text = "Start Date :";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // startDate
+            // 
+            startDate.DataBindings.Add(new Binding("Value", tournamentBindingSource, "StartDate", true));
+            startDate.Dock = DockStyle.Fill;
+            startDate.Font = new Font("Times New Roman", 10F, FontStyle.Italic, GraphicsUnit.Point);
+            startDate.Location = new Point(128, 36);
+            startDate.Name = "startDate";
+            startDate.Size = new Size(542, 23);
+            startDate.TabIndex = 5;
+            // 
+            // endDate
+            // 
+            endDate.DataBindings.Add(new Binding("Value", tournamentBindingSource, "EndDate", true));
+            endDate.Dock = DockStyle.Fill;
+            endDate.Font = new Font("Times New Roman", 10F, FontStyle.Italic, GraphicsUnit.Point);
+            endDate.Location = new Point(128, 69);
+            endDate.Name = "endDate";
+            endDate.Size = new Size(542, 23);
+            endDate.TabIndex = 7;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Dock = DockStyle.Fill;
+            label4.Font = new Font("Times New Roman", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(3, 66);
+            label4.Name = "label4";
+            label4.Size = new Size(119, 34);
+            label4.TabIndex = 6;
+            label4.Text = "End Date :";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // createButton
+            // 
+            createButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            createButton.BackColor = SystemColors.ActiveCaptionText;
+            createButton.Font = new Font("Times New Roman", 13.25F, FontStyle.Bold, GraphicsUnit.Point);
+            createButton.ForeColor = SystemColors.Control;
+            createButton.Location = new Point(676, -1);
+            createButton.Name = "createButton";
+            createButton.Size = new Size(124, 72);
+            createButton.TabIndex = 8;
+            createButton.Text = "Create";
+            createButton.UseVisualStyleBackColor = false;
+            createButton.Click += createButton_Click;
+            // 
+            // deleteButton
+            // 
+            deleteButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            deleteButton.BackColor = SystemColors.ActiveCaptionText;
+            deleteButton.BackgroundImageLayout = ImageLayout.Stretch;
+            deleteButton.Font = new Font("Times New Roman", 13.25F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteButton.ForeColor = SystemColors.Control;
+            deleteButton.ImageAlign = ContentAlignment.MiddleLeft;
+            deleteButton.Location = new Point(676, 68);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(121, 39);
+            deleteButton.TabIndex = 9;
+            deleteButton.Text = "Delete Selected";
+            deleteButton.UseVisualStyleBackColor = false;
+            deleteButton.Click += deleteButton_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = Color.Cyan;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(128, 255, 255);
+            dataGridViewCellStyle2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, startDateDataGridViewTextBoxColumn, endDateDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = tournamentBindingSource;
+            dataGridView1.Dock = DockStyle.Bottom;
+            dataGridView1.Location = new Point(0, 113);
+            dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Cyan;
+            dataGridViewCellStyle3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = Color.MintCream;
+            dataGridViewCellStyle4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(800, 337);
+            dataGridView1.TabIndex = 11;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.Frozen = true;
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.Width = 55;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // startDateDataGridViewTextBoxColumn
+            // 
+            startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
+            startDateDataGridViewTextBoxColumn.HeaderText = "StartDate";
+            startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
+            // 
+            // endDateDataGridViewTextBoxColumn
+            // 
+            endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
+            endDateDataGridViewTextBoxColumn.HeaderText = "EndDate";
+            endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.5834846F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 81.41652F));
+            tableLayoutPanel1.Controls.Add(label2, 0, 0);
+            tableLayoutPanel1.Controls.Add(label3, 0, 1);
+            tableLayoutPanel1.Controls.Add(label4, 0, 2);
+            tableLayoutPanel1.Controls.Add(tournamentName, 1, 0);
+            tableLayoutPanel1.Controls.Add(endDate, 1, 2);
+            tableLayoutPanel1.Controls.Add(startDate, 1, 1);
+            tableLayoutPanel1.Location = new Point(0, 3);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.Size = new Size(673, 100);
+            tableLayoutPanel1.TabIndex = 12;
             // 
             // TournamentStatisticsWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.deleteButton);
-            this.Controls.Add(this.createButton);
-            this.Controls.Add(this.endDate);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.startDate);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.tournamentName);
-            this.Location = new System.Drawing.Point(592, 400);
-            this.MdiChildrenMinimizedAnchorBottom = false;
-            this.MinimumSize = new System.Drawing.Size(816, 489);
-            this.Name = "TournamentStatisticsWindow";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tournament Statistics";
-            this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tournamentBindingSource)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlLight;
+            ClientSize = new Size(800, 450);
+            Controls.Add(tableLayoutPanel1);
+            Controls.Add(dataGridView1);
+            Controls.Add(deleteButton);
+            Controls.Add(createButton);
+            Location = new Point(592, 400);
+            MdiChildrenMinimizedAnchorBottom = false;
+            MinimumSize = new Size(816, 489);
+            Name = "TournamentStatisticsWindow";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Tournament Statistics";
+            Load += MainForm_Load;
+            ((System.ComponentModel.ISupportInitialize)tournamentBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -257,5 +275,6 @@
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

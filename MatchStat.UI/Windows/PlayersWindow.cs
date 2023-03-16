@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.VisualBasic;
+using System.Numerics;
 
 namespace MatchStat.UI
 {
@@ -20,18 +21,24 @@ namespace MatchStat.UI
         {
             InitializeComponent();
         }
+        private Player? Player
+        {
+            get { return this.playerBindingSource.DataSource as Player; }
+
+            set { this.playerBindingSource.DataSource = value; }
+        }
 
         private List<Player> GetPlayer()
         {
-            using(var context = new FootballInfoContext())
+            using (var context = new FootballInfoContext())
             {
                 var player = context.Players.ToList();
-                return player; 
+                return player;
             }
         }
         private List<Team> GetTeams()
         {
-            using(var context = new FootballInfoContext())
+            using (var context = new FootballInfoContext())
             {
                 var teams = context.Teams.ToList();
                 return teams;
@@ -61,7 +68,7 @@ namespace MatchStat.UI
                     }
                 }
             }
-            return string.Empty;     
+            return string.Empty;
         }
         private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -81,17 +88,10 @@ namespace MatchStat.UI
 
         private void createPlayerButton_Click(object sender, EventArgs e)
         {
-            var player = new Player
-            {
-                FirstName = playerFirstName.Text.ToString(),
-                LastName = playerLastName.Text.ToString(),
-                Dob = DateTime.Parse(dateOfBirth.Text),
-                Id = GetNextId(),
-                TeamId = Convert.ToInt32(teamCbo.SelectedValue)
-            };
             using (var context = new FootballInfoContext())
             {
-                context.Players.Add(player);
+                var p = Player;
+                context.Players.Add(p);
                 context.SaveChanges();
                 LoadPlayers();
                 playerFirstName.Clear();

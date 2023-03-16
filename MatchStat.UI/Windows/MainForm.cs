@@ -18,56 +18,6 @@ namespace MatchStat.UI
             InitializeComponent();
         }
 
-        //private void tournamentbutton_Click(object sender, EventArgs e)
-        //{
-        //   var tournamentStatistics = new TournamentStatistics();
-        //    tournamentStatistics.Show();
-        //    tournamentStatistics.MdiParent = this;
-        //}
-
-        //private void playerButton_Click(object sender, EventArgs e)
-        //{
-        //    var players = new Players();
-        //    players.Show();
-        //    players.MdiParent = this;
-        //}
-
-        //private void fieldButton_Click(object sender, EventArgs e)
-        //{
-        //    var fields = new Field();
-        //    fields.Show();
-        //    fields.MdiParent = this;
-        //}
-
-        //private void MatchButton_Click(object sender, EventArgs e)
-        //{
-        //    var matches = new Match();
-        //    matches.Show();
-        //    matches.MdiParent = this;
-        //}
-
-        //private void teamButton_Click(object sender, EventArgs e)
-        //{
-        //    var team = new Teams();
-        //    team.Show();
-        //    team.MdiParent = this;
-
-        //}
-
-        //private void tournamentTeamsButton_Click(object sender, EventArgs e)
-        //{
-        //    var teamTournament = new TeamTournaments();
-        //    teamTournament.Show();
-        //    teamTournament.MdiParent = this;
-        //}
-
-        //private void goalsButton_Click(object sender, EventArgs e)
-        //{
-        //    var goals = new Goals();
-        //    goals.Show();
-        //    goals.MdiParent = this;
-        //}
-
         private void goalsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var goals = new GoalsWindow();
@@ -105,7 +55,7 @@ namespace MatchStat.UI
 
         private void matchesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var matches = new MatchesWindow2();
+            var matches = new MatchRecordWindow();
             matches.Show();
             matches.MdiParent = this;
         }

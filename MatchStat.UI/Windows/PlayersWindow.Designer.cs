@@ -28,239 +28,254 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.playerFName = new System.Windows.Forms.Label();
-            this.playerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.playerFirstName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateOfBirth = new System.Windows.Forms.DateTimePicker();
-            this.playerLName = new System.Windows.Forms.Label();
-            this.playerLastName = new System.Windows.Forms.TextBox();
-            this.createPlayerButton = new System.Windows.Forms.Button();
-            this.deletePlayerButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.teamBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.teamCbo = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dobDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TeamName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            playerFName = new Label();
+            playerBindingSource = new BindingSource(components);
+            playerFirstName = new TextBox();
+            label2 = new Label();
+            dateOfBirth = new DateTimePicker();
+            playerLName = new Label();
+            playerLastName = new TextBox();
+            dataGridView1 = new DataGridView();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            firstNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            lastNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dobDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            TeamName = new DataGridViewTextBoxColumn();
+            teamBindingSource = new BindingSource(components);
+            teamCbo = new ComboBox();
+            label1 = new Label();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            deletePlayerButton = new Button();
+            createPlayerButton = new Button();
+            ((System.ComponentModel.ISupportInitialize)playerBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)teamBindingSource).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
+            SuspendLayout();
             // 
             // playerFName
             // 
-            this.playerFName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.playerFName.AutoSize = true;
-            this.playerFName.Font = new System.Drawing.Font("Times New Roman", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.playerFName.Location = new System.Drawing.Point(12, 10);
-            this.playerFName.Name = "playerFName";
-            this.playerFName.Size = new System.Drawing.Size(83, 17);
-            this.playerFName.TabIndex = 0;
-            this.playerFName.Text = "First Name :";
+            playerFName.AutoSize = true;
+            playerFName.Dock = DockStyle.Fill;
+            playerFName.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            playerFName.Location = new Point(3, 0);
+            playerFName.Name = "playerFName";
+            playerFName.Size = new Size(94, 37);
+            playerFName.TabIndex = 0;
+            playerFName.Text = "First Name :";
+            playerFName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // playerBindingSource
             // 
-            this.playerBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Player);
+            playerBindingSource.DataSource = typeof(DataModel.DataModels.Player);
             // 
             // playerFirstName
             // 
-            this.playerFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.playerFirstName.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.playerFirstName.Location = new System.Drawing.Point(101, 10);
-            this.playerFirstName.Name = "playerFirstName";
-            this.playerFirstName.Size = new System.Drawing.Size(253, 23);
-            this.playerFirstName.TabIndex = 2;
+            playerFirstName.Dock = DockStyle.Fill;
+            playerFirstName.Font = new Font("Times New Roman", 10F, FontStyle.Italic, GraphicsUnit.Point);
+            playerFirstName.Location = new Point(103, 3);
+            playerFirstName.Name = "playerFirstName";
+            playerFirstName.Size = new Size(265, 23);
+            playerFirstName.TabIndex = 2;
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(384, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Date of Birth :";
+            label2.AutoSize = true;
+            label2.Dock = DockStyle.Fill;
+            label2.Font = new Font("Times New Roman", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(374, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(104, 37);
+            label2.TabIndex = 3;
+            label2.Text = "Date of Birth :";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // dateOfBirth
             // 
-            this.dateOfBirth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateOfBirth.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.dateOfBirth.Location = new System.Drawing.Point(485, 10);
-            this.dateOfBirth.Name = "dateOfBirth";
-            this.dateOfBirth.Size = new System.Drawing.Size(256, 23);
-            this.dateOfBirth.TabIndex = 4;
+            dateOfBirth.Dock = DockStyle.Fill;
+            dateOfBirth.Font = new Font("Times New Roman", 10F, FontStyle.Italic, GraphicsUnit.Point);
+            dateOfBirth.Location = new Point(484, 3);
+            dateOfBirth.Name = "dateOfBirth";
+            dateOfBirth.Size = new Size(266, 23);
+            dateOfBirth.TabIndex = 4;
             // 
             // playerLName
             // 
-            this.playerLName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.playerLName.AutoSize = true;
-            this.playerLName.Font = new System.Drawing.Font("Times New Roman", 10.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.playerLName.Location = new System.Drawing.Point(12, 42);
-            this.playerLName.Name = "playerLName";
-            this.playerLName.Size = new System.Drawing.Size(81, 17);
-            this.playerLName.TabIndex = 5;
-            this.playerLName.Text = "Last Name :";
+            playerLName.AutoSize = true;
+            playerLName.Dock = DockStyle.Fill;
+            playerLName.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            playerLName.Location = new Point(3, 37);
+            playerLName.Name = "playerLName";
+            playerLName.Size = new Size(94, 37);
+            playerLName.TabIndex = 5;
+            playerLName.Text = "Last Name :";
+            playerLName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // playerLastName
             // 
-            this.playerLastName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.playerLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.playerLastName.Location = new System.Drawing.Point(99, 40);
-            this.playerLastName.Name = "playerLastName";
-            this.playerLastName.Size = new System.Drawing.Size(148, 23);
-            this.playerLastName.TabIndex = 6;
-            // 
-            // createPlayerButton
-            // 
-            this.createPlayerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.createPlayerButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.createPlayerButton.Location = new System.Drawing.Point(485, 37);
-            this.createPlayerButton.Name = "createPlayerButton";
-            this.createPlayerButton.Size = new System.Drawing.Size(108, 28);
-            this.createPlayerButton.TabIndex = 7;
-            this.createPlayerButton.Text = "Create";
-            this.createPlayerButton.UseVisualStyleBackColor = true;
-            this.createPlayerButton.Click += new System.EventHandler(this.createPlayerButton_Click);
-            // 
-            // deletePlayerButton
-            // 
-            this.deletePlayerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.deletePlayerButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.deletePlayerButton.Location = new System.Drawing.Point(599, 39);
-            this.deletePlayerButton.Name = "deletePlayerButton";
-            this.deletePlayerButton.Size = new System.Drawing.Size(143, 28);
-            this.deletePlayerButton.TabIndex = 8;
-            this.deletePlayerButton.Text = "Delete Selected";
-            this.deletePlayerButton.UseVisualStyleBackColor = true;
-            this.deletePlayerButton.Click += new System.EventHandler(this.deletePlayerButton_Click);
+            playerLastName.Dock = DockStyle.Fill;
+            playerLastName.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Italic, GraphicsUnit.Point);
+            playerLastName.Location = new Point(103, 40);
+            playerLastName.Multiline = true;
+            playerLastName.Name = "playerLastName";
+            playerLastName.Size = new Size(265, 31);
+            playerLastName.TabIndex = 6;
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.firstNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.dobDataGridViewTextBoxColumn,
-            this.TeamName});
-            this.dataGridView1.DataSource = this.playerBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 73);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(753, 350);
-            this.dataGridView1.TabIndex = 9;
-            // 
-            // teamBindingSource
-            // 
-            this.teamBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Team);
-            // 
-            // teamCbo
-            // 
-            this.teamCbo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.teamCbo.DataSource = this.teamBindingSource;
-            this.teamCbo.DisplayMember = "Name";
-            this.teamCbo.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.teamCbo.FormattingEnabled = true;
-            this.teamCbo.Location = new System.Drawing.Point(310, 41);
-            this.teamCbo.Name = "teamCbo";
-            this.teamCbo.Size = new System.Drawing.Size(151, 23);
-            this.teamCbo.TabIndex = 10;
-            this.teamCbo.ValueMember = "Id";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(263, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 17);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Team :";
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(128, 255, 255);
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, firstNameDataGridViewTextBoxColumn, lastNameDataGridViewTextBoxColumn, dobDataGridViewTextBoxColumn, TeamName });
+            dataGridView1.DataSource = playerBindingSource;
+            dataGridView1.Dock = DockStyle.Bottom;
+            dataGridView1.Location = new Point(0, 129);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(753, 294);
+            dataGridView1.TabIndex = 9;
+            dataGridView1.CellFormatting += DataGridView1_CellFormatting;
             // 
             // idDataGridViewTextBoxColumn
             // 
-            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.Frozen = true;
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 55;
+            idDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.Frozen = true;
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.Width = 55;
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
+            firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
             // 
             // lastNameDataGridViewTextBoxColumn
             // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
             // 
             // dobDataGridViewTextBoxColumn
             // 
-            this.dobDataGridViewTextBoxColumn.DataPropertyName = "Dob";
-            this.dobDataGridViewTextBoxColumn.HeaderText = "Date Of Birth";
-            this.dobDataGridViewTextBoxColumn.Name = "dobDataGridViewTextBoxColumn";
+            dobDataGridViewTextBoxColumn.DataPropertyName = "Dob";
+            dobDataGridViewTextBoxColumn.HeaderText = "Date Of Birth";
+            dobDataGridViewTextBoxColumn.Name = "dobDataGridViewTextBoxColumn";
             // 
             // TeamName
             // 
-            this.TeamName.DataPropertyName = "TeamId";
-            this.TeamName.HeaderText = "Team Name";
-            this.TeamName.Name = "TeamName";
+            TeamName.DataPropertyName = "TeamId";
+            TeamName.HeaderText = "Team Name";
+            TeamName.Name = "TeamName";
             // 
-            // Players
+            // teamBindingSource
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(753, 423);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.teamCbo);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.deletePlayerButton);
-            this.Controls.Add(this.createPlayerButton);
-            this.Controls.Add(this.playerLastName);
-            this.Controls.Add(this.playerLName);
-            this.Controls.Add(this.dateOfBirth);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.playerFirstName);
-            this.Controls.Add(this.playerFName);
-            this.Location = new System.Drawing.Point(592, 400);
-            this.MinimumSize = new System.Drawing.Size(769, 462);
-            this.Name = "Players";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PlayerInfo";
-            this.Load += new System.EventHandler(this.Players_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-            dataGridView1.CellFormatting += DataGridView1_CellFormatting;
-
+            teamBindingSource.DataSource = typeof(DataModel.DataModels.Team);
+            // 
+            // teamCbo
+            // 
+            teamCbo.DataBindings.Add(new Binding("SelectedValue", playerBindingSource, "TeamId", true));
+            teamCbo.DataSource = teamBindingSource;
+            teamCbo.DisplayMember = "Name";
+            teamCbo.Dock = DockStyle.Fill;
+            teamCbo.Font = new Font("Times New Roman", 10F, FontStyle.Italic, GraphicsUnit.Point);
+            teamCbo.FormattingEnabled = true;
+            teamCbo.Location = new Point(484, 40);
+            teamCbo.Name = "teamCbo";
+            teamCbo.Size = new Size(266, 23);
+            teamCbo.TabIndex = 10;
+            teamCbo.ValueMember = "Id";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Dock = DockStyle.Fill;
+            label1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(374, 37);
+            label1.Name = "label1";
+            label1.Size = new Size(104, 37);
+            label1.TabIndex = 11;
+            label1.Text = "Team :";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 4;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(playerFName, 0, 0);
+            tableLayoutPanel1.Controls.Add(teamCbo, 3, 1);
+            tableLayoutPanel1.Controls.Add(label1, 2, 1);
+            tableLayoutPanel1.Controls.Add(playerLName, 0, 1);
+            tableLayoutPanel1.Controls.Add(label2, 2, 0);
+            tableLayoutPanel1.Controls.Add(playerFirstName, 1, 0);
+            tableLayoutPanel1.Controls.Add(dateOfBirth, 3, 0);
+            tableLayoutPanel1.Controls.Add(playerLastName, 1, 1);
+            tableLayoutPanel1.Dock = DockStyle.Top;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(753, 74);
+            tableLayoutPanel1.TabIndex = 12;
+            // 
+            // deletePlayerButton
+            // 
+            deletePlayerButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            deletePlayerButton.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            deletePlayerButton.Location = new Point(582, 81);
+            deletePlayerButton.Name = "deletePlayerButton";
+            deletePlayerButton.Size = new Size(157, 42);
+            deletePlayerButton.TabIndex = 14;
+            deletePlayerButton.Text = "Delete Selected";
+            deletePlayerButton.UseVisualStyleBackColor = true;
+            deletePlayerButton.Click += deletePlayerButton_Click;
+            // 
+            // createPlayerButton
+            // 
+            createPlayerButton.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            createPlayerButton.Location = new Point(103, 81);
+            createPlayerButton.Name = "createPlayerButton";
+            createPlayerButton.Size = new Size(131, 42);
+            createPlayerButton.TabIndex = 13;
+            createPlayerButton.Text = "Create";
+            createPlayerButton.UseVisualStyleBackColor = true;
+            createPlayerButton.Click += createPlayerButton_Click;
+            // 
+            // PlayersWindow
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveBorder;
+            ClientSize = new Size(753, 423);
+            Controls.Add(deletePlayerButton);
+            Controls.Add(createPlayerButton);
+            Controls.Add(tableLayoutPanel1);
+            Controls.Add(dataGridView1);
+            Location = new Point(592, 400);
+            MinimumSize = new Size(769, 462);
+            Name = "PlayersWindow";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "PlayerInfo";
+            Load += Players_Load;
+            ((System.ComponentModel.ISupportInitialize)playerBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)teamBindingSource).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -273,8 +288,6 @@
         private Label label2;
         private DateTimePicker dateOfBirth;
         private Label playerLName;
-        private Button createPlayerButton;
-        private Button deletePlayerButton;
         private DataGridView dataGridView1;
         private ComboBox teamCbo;
         private Label label1;
@@ -284,5 +297,8 @@
         private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn dobDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn TeamName;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Button deletePlayerButton;
+        private Button createPlayerButton;
     }
 }

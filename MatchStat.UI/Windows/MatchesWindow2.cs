@@ -11,14 +11,14 @@ namespace MatchStat.UI.Windows
             InitializeComponent();
         }
 
-        private MatchDetail? match 
+        private MatchDetail? match
         {
             get { return this.bindingSource_matchDetail.DataSource as MatchDetail; }
             set
             {
                 this.bindingSource_matchDetail.DataSource = value;
             }
-        } 
+        }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
@@ -31,9 +31,21 @@ namespace MatchStat.UI.Windows
             using (var context = new FootballInfoContext())
             {
                 var m = match.Map<MatchDetail, Match>();
+                if (m.Id == 0)
+                {
+                    m.Id = GetNextId();
+                }
                 context.Matches.Add(m);
                 context.SaveChanges();
             }
+        }
+
+        private int GetNextId()
+        {
+            var allMatches = matchDetailBindingSource.DataSource as MatchDetail[];
+            var maximumId = allMatches != null && allMatches.Any() ? allMatches.Max(m => m.Id) : 0;
+            var nextMatchId = maximumId + 1;
+            return nextMatchId;
         }
 
         private void MatchesWindow2_Load(object sender, EventArgs e)
@@ -65,7 +77,7 @@ namespace MatchStat.UI.Windows
 
         private Fields[] GetAllFields()
         {
-            using(var context = new FootballInfoContext())
+            using (var context = new FootballInfoContext())
             {
                 return context.Fields.OrderBy(r => r.Name).ToArray();
             }
@@ -73,7 +85,7 @@ namespace MatchStat.UI.Windows
 
         private Tournament[] GetAllTournaments()
         {
-           using(var context = new FootballInfoContext())
+            using (var context = new FootballInfoContext())
             {
                 return context.Tournaments.OrderBy(t => t.Name).ToArray();
             }
@@ -81,7 +93,7 @@ namespace MatchStat.UI.Windows
 
         private Team[] GetAllTeams()
         {
-            using(var context = new FootballInfoContext())
+            using (var context = new FootballInfoContext())
             {
                 return context.Teams.OrderBy(t => t.Name).ToArray();
             }
@@ -89,7 +101,8 @@ namespace MatchStat.UI.Windows
 
         private void dataGridView1_MouseUp(object sender, MouseEventArgs e)
         {
-            if(e.Button== MouseButtons.Right) {
+            if (e.Button == MouseButtons.Right)
+            {
                 this.matchesMenu.Show(MousePosition);
             }
         }
@@ -98,12 +111,6 @@ namespace MatchStat.UI.Windows
         {
             this.match = new MatchDetail { Date = DateTime.Now };
         }
-        //private int GetNextID()
-        //{
-        //    var allMatches = bindingSource_matchDetail as List<Match>;
-        //    var maximumId = allMatches != null && allMatches.Any() ? allMatches.Max(m => m.Id) : 0;
-        //    return maximumId + 1;
-        //}
 
 
         private void editButton_Click(object sender, EventArgs e)

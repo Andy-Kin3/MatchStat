@@ -1,16 +1,4 @@
 ﻿using MatchStat.DataModel.DataModels;
-using MatchStat.DataModel.Migrations;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace MatchStat.UI
 {
@@ -40,7 +28,7 @@ namespace MatchStat.UI
 
 
             var goals = this.GetGoals();
-            foreach(var goal in goals)
+            foreach (var goal in goals)
             {
                 var player = allPlayers.FirstOrDefault(p => p.Id == goal.PlayerId);
                 goal.PlayerName = player?.FullName;
@@ -54,7 +42,7 @@ namespace MatchStat.UI
 
         private MatchDetail[] GetAllMatches()
         {
-            using(var context = new FootballInfoContext())
+            using (var context = new FootballInfoContext())
             {
                 var matches = context.MatchDetails.ToArray();
                 return matches;
@@ -106,7 +94,7 @@ namespace MatchStat.UI
 
         private Goal[] GetGoals()
         {
-            using(var context = new FootballInfoContext())
+            using (var context = new FootballInfoContext())
             {
                 var goals = context.Goals.ToArray();
                 return goals;
@@ -114,13 +102,13 @@ namespace MatchStat.UI
         }
         private void CreateGoal()
         {
-            var goal = new Goal()
-            {
-                NumberOfGoal = Convert.ToInt32(numberOfGoals.Text),
-                PlayerId = Convert.ToInt32(playerCbox.Text),
-                MatchId = Convert.ToInt32(matchCbox.Text),
-                Id = GetNextID()
-            };
+            //var goal = new Goal()
+            //{
+            //    NumberOfGoal = Convert.ToInt32(numberOfGoals.Text),
+            //    PlayerId = Convert.ToInt32(playerCbox.Text),
+            //    MatchId = Convert.ToInt32(matchCbox.Text),
+            //    Id = GetNextID()
+            //};
             using (var context = new FootballInfoContext())
             {
                 var goals = goal;
@@ -140,12 +128,12 @@ namespace MatchStat.UI
         {
             var allGoals = goalBindingSource.DataSource as List<Goal>;
             var maximumId = allGoals != null && allGoals.Any() ? allGoals.Max(x => x.Id) : 0;
-            var nextId = maximumId+ 1;
+            var nextId = maximumId + 1;
             return nextId;
         }
         private Goal? GetSelectedGoal()
         {
-            return this.goalBindingSource.Current as Goal ;
+            return this.goalBindingSource.Current as Goal;
         }
 
         private void removeButton_Click(object sender, EventArgs e)
@@ -156,14 +144,14 @@ namespace MatchStat.UI
                 DeleteGoal(selected);
                 LoadGoals();
             }
-            
+
         }
         private void DeleteGoal(Goal currentgoal)
         {
             using (var context = new FootballInfoContext())
             {
-                var selected = context.Goals.FirstOrDefault(g => g.Id== currentgoal.Id);
-                if(selected != null)
+                var selected = context.Goals.FirstOrDefault(g => g.Id == currentgoal.Id);
+                if (selected != null)
                 {
                     context.Goals.Remove(selected);
                     context.SaveChanges();
@@ -174,6 +162,7 @@ namespace MatchStat.UI
         private void Goals_Load_1(object sender, EventArgs e)
         {
             LoadGoals();
+            goal = new Goal();
         }
     }
 }

@@ -10,17 +10,26 @@ namespace MatchStat.UI
         {
             InitializeComponent();
         }
+        private Tournament? tournament
+        {
+            get { return this.tournamentBindingSource.DataSource as Tournament; }
+            set
+            {
+                this.tournamentBindingSource.DataSource = value;
+            }
+
+        }
 
 
         private List<Tournament> GetTournament()
         {
-            using(var context = new FootballInfoContext())
+            using (var context = new FootballInfoContext())
             {
                 var tournament = context.Tournaments.ToList();
                 return tournament;
             }
         }
-        
+
 
         private void createButton_Click(object sender, EventArgs e)
         {
@@ -31,7 +40,7 @@ namespace MatchStat.UI
                 Name = tournamentName.Text.ToString(),
                 Id = GetNextId()
             };
-            
+
             using (var context = new FootballInfoContext())
             {
                 context.Tournaments.Add(tournament);
@@ -62,7 +71,7 @@ namespace MatchStat.UI
         private void deleteButton_Click(object sender, EventArgs e)
         {
             var currentlySelected = tournamentBindingSource.Current as Tournament;
-            if(currentlySelected != null)
+            if (currentlySelected != null)
             {
                 using (var context = new FootballInfoContext())
                 {
