@@ -28,125 +28,121 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.teamName = new System.Windows.Forms.TextBox();
-            this.createbutton = new System.Windows.Forms.Button();
-            this.deleteTeamButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teamBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            label1 = new Label();
+            teamName = new TextBox();
+            createbutton = new Button();
+            deleteTeamButton = new Button();
+            dataGridView1 = new DataGridView();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            teamBindingSource = new BindingSource(components);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)teamBindingSource).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(2, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Team :";
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 15.75F, FontStyle.Italic, GraphicsUnit.Point);
+            label1.Location = new Point(2, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(67, 23);
+            label1.TabIndex = 0;
+            label1.Text = "Team :";
             // 
             // teamName
             // 
-            this.teamName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.teamName.Location = new System.Drawing.Point(75, 7);
-            this.teamName.Multiline = true;
-            this.teamName.Name = "teamName";
-            this.teamName.Size = new System.Drawing.Size(377, 29);
-            this.teamName.TabIndex = 1;
+            teamName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            teamName.DataBindings.Add(new Binding("Text", teamBindingSource, "Name", true));
+            teamName.Location = new Point(75, 7);
+            teamName.Multiline = true;
+            teamName.Name = "teamName";
+            teamName.Size = new Size(377, 29);
+            teamName.TabIndex = 1;
             // 
             // createbutton
             // 
-            this.createbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.createbutton.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.createbutton.Location = new System.Drawing.Point(467, 9);
-            this.createbutton.Name = "createbutton";
-            this.createbutton.Size = new System.Drawing.Size(104, 27);
-            this.createbutton.TabIndex = 2;
-            this.createbutton.Text = "Create";
-            this.createbutton.UseVisualStyleBackColor = true;
-            this.createbutton.Click += new System.EventHandler(this.createbutton_Click);
+            createbutton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            createbutton.Font = new Font("Times New Roman", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            createbutton.Location = new Point(467, 9);
+            createbutton.Name = "createbutton";
+            createbutton.Size = new Size(104, 27);
+            createbutton.TabIndex = 2;
+            createbutton.Text = "Create";
+            createbutton.UseVisualStyleBackColor = true;
+            createbutton.Click += createbutton_Click;
             // 
             // deleteTeamButton
             // 
-            this.deleteTeamButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteTeamButton.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.deleteTeamButton.Location = new System.Drawing.Point(582, 8);
-            this.deleteTeamButton.Name = "deleteTeamButton";
-            this.deleteTeamButton.Size = new System.Drawing.Size(138, 27);
-            this.deleteTeamButton.TabIndex = 3;
-            this.deleteTeamButton.Text = "Delete Selected";
-            this.deleteTeamButton.UseVisualStyleBackColor = true;
-            this.deleteTeamButton.Click += new System.EventHandler(this.deleteTeamButton_Click);
+            deleteTeamButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            deleteTeamButton.Font = new Font("Times New Roman", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteTeamButton.Location = new Point(582, 8);
+            deleteTeamButton.Name = "deleteTeamButton";
+            deleteTeamButton.Size = new Size(138, 27);
+            deleteTeamButton.TabIndex = 3;
+            deleteTeamButton.Text = "Delete Selected";
+            deleteTeamButton.UseVisualStyleBackColor = true;
+            deleteTeamButton.Click += deleteTeamButton_Click;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.teamBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 42);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(731, 368);
-            this.dataGridView1.TabIndex = 4;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = teamBindingSource;
+            dataGridView1.Location = new Point(0, 42);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(731, 368);
+            dataGridView1.TabIndex = 4;
             // 
             // idDataGridViewTextBoxColumn
             // 
-            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.FillWeight = 45.68528F;
-            this.idDataGridViewTextBoxColumn.Frozen = true;
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 55;
+            idDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.FillWeight = 45.68528F;
+            idDataGridViewTextBoxColumn.Frozen = true;
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.Width = 55;
             // 
             // nameDataGridViewTextBoxColumn
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.FillWeight = 127.1574F;
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            nameDataGridViewTextBoxColumn.FillWeight = 127.1574F;
+            nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
             // teamBindingSource
             // 
-            this.teamBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Team);
+            teamBindingSource.DataSource = typeof(DataModel.DataModels.Team);
             // 
-            // Teams
+            // TeamsWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(731, 410);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.deleteTeamButton);
-            this.Controls.Add(this.createbutton);
-            this.Controls.Add(this.teamName);
-            this.Controls.Add(this.label1);
-            this.Location = new System.Drawing.Point(592, 400);
-            this.MinimumSize = new System.Drawing.Size(747, 449);
-            this.Name = "Teams";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Teams";
-            this.Load += new System.EventHandler(this.Teams_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.AppWorkspace;
+            ClientSize = new Size(731, 410);
+            Controls.Add(dataGridView1);
+            Controls.Add(deleteTeamButton);
+            Controls.Add(createbutton);
+            Controls.Add(teamName);
+            Controls.Add(label1);
+            Location = new Point(592, 400);
+            MinimumSize = new Size(747, 449);
+            Name = "TeamsWindow";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Teams";
+            Load += Teams_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)teamBindingSource).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

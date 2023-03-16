@@ -19,7 +19,7 @@ namespace MatchStat.UI
         }
         private List<Team> GetTeams()
         {
-            using(var context = new FootballInfoContext())
+            using (var context = new FootballInfoContext())
             {
                 var team = context.Teams.ToList();
                 return team;
@@ -42,7 +42,7 @@ namespace MatchStat.UI
                 Name = teamName.Text.ToString(),
                 Id = GetNextID(),
             };
-            using(var context = new FootballInfoContext())
+            using (var context = new FootballInfoContext())
             {
                 context.Teams.Add(teams);
                 context.SaveChanges();

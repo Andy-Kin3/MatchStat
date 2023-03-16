@@ -73,6 +73,7 @@
             // 
             // playerFirstName
             // 
+            playerFirstName.DataBindings.Add(new Binding("Text", playerBindingSource, "FirstName", true));
             playerFirstName.Dock = DockStyle.Fill;
             playerFirstName.Font = new Font("Times New Roman", 10F, FontStyle.Italic, GraphicsUnit.Point);
             playerFirstName.Location = new Point(103, 3);
@@ -94,6 +95,7 @@
             // 
             // dateOfBirth
             // 
+            dateOfBirth.DataBindings.Add(new Binding("Value", playerBindingSource, "Dob", true));
             dateOfBirth.Dock = DockStyle.Fill;
             dateOfBirth.Font = new Font("Times New Roman", 10F, FontStyle.Italic, GraphicsUnit.Point);
             dateOfBirth.Location = new Point(484, 3);
@@ -115,6 +117,7 @@
             // 
             // playerLastName
             // 
+            playerLastName.DataBindings.Add(new Binding("Text", playerBindingSource, "LastName", true));
             playerLastName.Dock = DockStyle.Fill;
             playerLastName.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Italic, GraphicsUnit.Point);
             playerLastName.Location = new Point(103, 40);

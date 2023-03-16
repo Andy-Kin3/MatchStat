@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
             label2 = new Label();
             stadiumTextBox = new TextBox();
@@ -72,6 +72,7 @@
             // 
             // stadiumTextBox
             // 
+            stadiumTextBox.DataBindings.Add(new Binding("Text", fieldBindingSource, "Name", true));
             stadiumTextBox.Dock = DockStyle.Fill;
             stadiumTextBox.Font = new Font("Times New Roman", 12F, FontStyle.Italic, GraphicsUnit.Point);
             stadiumTextBox.Location = new Point(157, 3);
@@ -81,6 +82,7 @@
             // 
             // countryTextBox
             // 
+            countryTextBox.DataBindings.Add(new Binding("Text", fieldBindingSource, "Country", true));
             countryTextBox.Dock = DockStyle.Fill;
             countryTextBox.Font = new Font("Times New Roman", 12F, FontStyle.Italic, GraphicsUnit.Point);
             countryTextBox.Location = new Point(157, 37);
@@ -90,8 +92,8 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(128, 255, 255);
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(128, 255, 255);
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
@@ -101,14 +103,14 @@
             dataGridView1.Dock = DockStyle.Bottom;
             dataGridView1.Location = new Point(0, 103);
             dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(645, 331);
