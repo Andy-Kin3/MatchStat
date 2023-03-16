@@ -35,24 +35,24 @@
             label3 = new Label();
             label4 = new Label();
             dateTimePicker1 = new DateTimePicker();
-            comboBox1 = new ComboBox();
             matchDetailBindingSource = new BindingSource(components);
+            team1Combobox = new ComboBox();
             teamBindingSource = new BindingSource(components);
-            comboBox2 = new ComboBox();
+            team2comboBox = new ComboBox();
             teamBindingSource1 = new BindingSource(components);
-            numericUpDown1 = new NumericUpDown();
-            numericUpDown2 = new NumericUpDown();
-            comboBox3 = new ComboBox();
+            teamScoreOne = new NumericUpDown();
+            teamScoreTwo = new NumericUpDown();
+            tournamentCbox = new ComboBox();
             tournamentBindingSource = new BindingSource(components);
-            comboBox4 = new ComboBox();
+            fieldcomboBox = new ComboBox();
             fieldsBindingSource = new BindingSource(components);
             label5 = new Label();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)matchDetailBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)teamBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)teamBindingSource1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)teamScoreOne).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)teamScoreTwo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tournamentBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fieldsBindingSource).BeginInit();
             SuspendLayout();
@@ -71,16 +71,16 @@
             tableLayoutPanel1.Controls.Add(label3, 0, 2);
             tableLayoutPanel1.Controls.Add(label4, 0, 3);
             tableLayoutPanel1.Controls.Add(dateTimePicker1, 1, 0);
-            tableLayoutPanel1.Controls.Add(comboBox1, 1, 1);
-            tableLayoutPanel1.Controls.Add(comboBox2, 5, 1);
-            tableLayoutPanel1.Controls.Add(numericUpDown1, 2, 1);
-            tableLayoutPanel1.Controls.Add(numericUpDown2, 4, 1);
-            tableLayoutPanel1.Controls.Add(comboBox3, 1, 2);
-            tableLayoutPanel1.Controls.Add(comboBox4, 1, 3);
+            tableLayoutPanel1.Controls.Add(team1Combobox, 1, 1);
+            tableLayoutPanel1.Controls.Add(team2comboBox, 5, 1);
+            tableLayoutPanel1.Controls.Add(teamScoreOne, 2, 1);
+            tableLayoutPanel1.Controls.Add(teamScoreTwo, 4, 1);
+            tableLayoutPanel1.Controls.Add(tournamentCbox, 1, 2);
+            tableLayoutPanel1.Controls.Add(fieldcomboBox, 1, 3);
             tableLayoutPanel1.Controls.Add(label5, 3, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Margin = new Padding(4, 4, 4, 4);
+            tableLayoutPanel1.Margin = new Padding(4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 4;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
@@ -144,105 +144,104 @@
             dateTimePicker1.DataBindings.Add(new Binding("Value", matchDetailBindingSource, "Date", true));
             dateTimePicker1.Dock = DockStyle.Fill;
             dateTimePicker1.Location = new Point(142, 4);
-            dateTimePicker1.Margin = new Padding(4, 4, 4, 4);
+            dateTimePicker1.Margin = new Padding(4);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(631, 26);
             dateTimePicker1.TabIndex = 4;
-            // 
-            // comboBox1
-            // 
-            comboBox1.DataBindings.Add(new Binding("SelectedValue", matchDetailBindingSource, "Team1Id", true));
-            comboBox1.DataSource = teamBindingSource;
-            comboBox1.DisplayMember = "Name";
-            comboBox1.Dock = DockStyle.Fill;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(142, 44);
-            comboBox1.Margin = new Padding(4, 4, 4, 4);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(243, 27);
-            comboBox1.TabIndex = 5;
             // 
             // matchDetailBindingSource
             // 
             matchDetailBindingSource.DataSource = typeof(DataModel.DataModels.MatchDetail);
             // 
+            // team1Combobox
+            // 
+            team1Combobox.DataBindings.Add(new Binding("SelectedValue", matchDetailBindingSource, "Team1Name", true));
+            team1Combobox.DataSource = teamBindingSource;
+            team1Combobox.DisplayMember = "Name";
+            team1Combobox.Dock = DockStyle.Fill;
+            team1Combobox.FormattingEnabled = true;
+            team1Combobox.Location = new Point(142, 44);
+            team1Combobox.Margin = new Padding(4);
+            team1Combobox.Name = "team1Combobox";
+            team1Combobox.Size = new Size(243, 27);
+            team1Combobox.TabIndex = 5;
+            team1Combobox.ValueMember = "Id";
+            // 
             // teamBindingSource
             // 
             teamBindingSource.DataSource = typeof(DataModel.DataModels.Team);
             // 
-            // comboBox2
+            // team2comboBox
             // 
-            comboBox2.DataBindings.Add(new Binding("SelectedValue", matchDetailBindingSource, "Team2Id", true));
-            comboBox2.DataSource = teamBindingSource1;
-            comboBox2.DisplayMember = "Name";
-            comboBox2.Dock = DockStyle.Fill;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(528, 44);
-            comboBox2.Margin = new Padding(4, 4, 4, 4);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(245, 27);
-            comboBox2.TabIndex = 6;
-            comboBox2.ValueMember = "Id";
+            team2comboBox.DataBindings.Add(new Binding("SelectedValue", matchDetailBindingSource, "Team2Name", true));
+            team2comboBox.DataSource = teamBindingSource1;
+            team2comboBox.DisplayMember = "Name";
+            team2comboBox.Dock = DockStyle.Fill;
+            team2comboBox.FormattingEnabled = true;
+            team2comboBox.Location = new Point(528, 44);
+            team2comboBox.Margin = new Padding(4);
+            team2comboBox.Name = "team2comboBox";
+            team2comboBox.Size = new Size(245, 27);
+            team2comboBox.TabIndex = 6;
+            team2comboBox.ValueMember = "Id";
             // 
             // teamBindingSource1
             // 
             teamBindingSource1.DataSource = typeof(DataModel.DataModels.Team);
             // 
-            // numericUpDown1
+            // teamScoreOne
             // 
-            numericUpDown1.DataBindings.Add(new Binding("Value", matchDetailBindingSource, "TeamOneScore", true));
-            numericUpDown1.Dock = DockStyle.Fill;
-            numericUpDown1.Location = new Point(393, 44);
-            numericUpDown1.Margin = new Padding(4, 4, 4, 4);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(37, 26);
-            numericUpDown1.TabIndex = 7;
+            teamScoreOne.DataBindings.Add(new Binding("Value", matchDetailBindingSource, "TeamOneScore", true));
+            teamScoreOne.Dock = DockStyle.Fill;
+            teamScoreOne.Location = new Point(393, 44);
+            teamScoreOne.Margin = new Padding(4);
+            teamScoreOne.Name = "teamScoreOne";
+            teamScoreOne.Size = new Size(37, 26);
+            teamScoreOne.TabIndex = 7;
             // 
-            // numericUpDown2
+            // teamScoreTwo
             // 
-            numericUpDown2.DataBindings.Add(new Binding("Value", matchDetailBindingSource, "TeamTwoScore", true));
-            numericUpDown2.Dock = DockStyle.Fill;
-            numericUpDown2.Location = new Point(483, 44);
-            numericUpDown2.Margin = new Padding(4, 4, 4, 4);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(37, 26);
-            numericUpDown2.TabIndex = 8;
+            teamScoreTwo.DataBindings.Add(new Binding("Value", matchDetailBindingSource, "TeamTwoScore", true));
+            teamScoreTwo.Dock = DockStyle.Fill;
+            teamScoreTwo.Location = new Point(483, 44);
+            teamScoreTwo.Margin = new Padding(4);
+            teamScoreTwo.Name = "teamScoreTwo";
+            teamScoreTwo.Size = new Size(37, 26);
+            teamScoreTwo.TabIndex = 8;
             // 
-            // comboBox3
+            // tournamentCbox
             // 
-            tableLayoutPanel1.SetColumnSpan(comboBox3, 5);
-            comboBox3.DataBindings.Add(new Binding("Text", matchDetailBindingSource, "TournamentId", true));
-            comboBox3.DataBindings.Add(new Binding("SelectedValue", matchDetailBindingSource, "TournamentId", true));
-            comboBox3.DataSource = tournamentBindingSource;
-            comboBox3.DisplayMember = "Name";
-            comboBox3.Dock = DockStyle.Fill;
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(142, 84);
-            comboBox3.Margin = new Padding(4, 4, 4, 4);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(631, 27);
-            comboBox3.TabIndex = 9;
-            comboBox3.ValueMember = "Id";
+            tableLayoutPanel1.SetColumnSpan(tournamentCbox, 5);
+            tournamentCbox.DataBindings.Add(new Binding("SelectedValue", matchDetailBindingSource, "TournamentName", true));
+            tournamentCbox.DataSource = tournamentBindingSource;
+            tournamentCbox.DisplayMember = "Name";
+            tournamentCbox.Dock = DockStyle.Fill;
+            tournamentCbox.FormattingEnabled = true;
+            tournamentCbox.Location = new Point(142, 84);
+            tournamentCbox.Margin = new Padding(4);
+            tournamentCbox.Name = "tournamentCbox";
+            tournamentCbox.Size = new Size(631, 27);
+            tournamentCbox.TabIndex = 9;
+            tournamentCbox.ValueMember = "Id";
             // 
             // tournamentBindingSource
             // 
             tournamentBindingSource.DataSource = typeof(DataModel.DataModels.Tournament);
             // 
-            // comboBox4
+            // fieldcomboBox
             // 
-            tableLayoutPanel1.SetColumnSpan(comboBox4, 5);
-            comboBox4.DataBindings.Add(new Binding("Text", matchDetailBindingSource, "FieldId", true));
-            comboBox4.DataBindings.Add(new Binding("SelectedValue", matchDetailBindingSource, "FieldId", true));
-            comboBox4.DataSource = fieldsBindingSource;
-            comboBox4.DisplayMember = "Name";
-            comboBox4.Dock = DockStyle.Fill;
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(142, 124);
-            comboBox4.Margin = new Padding(4, 4, 4, 4);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(631, 27);
-            comboBox4.TabIndex = 10;
-            comboBox4.ValueMember = "Id";
+            tableLayoutPanel1.SetColumnSpan(fieldcomboBox, 5);
+            fieldcomboBox.DataBindings.Add(new Binding("SelectedValue", matchDetailBindingSource, "FieldName", true));
+            fieldcomboBox.DataSource = fieldsBindingSource;
+            fieldcomboBox.DisplayMember = "Name";
+            fieldcomboBox.Dock = DockStyle.Fill;
+            fieldcomboBox.FormattingEnabled = true;
+            fieldcomboBox.Location = new Point(142, 124);
+            fieldcomboBox.Margin = new Padding(4);
+            fieldcomboBox.Name = "fieldcomboBox";
+            fieldcomboBox.Size = new Size(631, 27);
+            fieldcomboBox.TabIndex = 10;
+            fieldcomboBox.ValueMember = "Id";
             // 
             // fieldsBindingSource
             // 
@@ -267,16 +266,17 @@
             ClientSize = new Size(777, 161);
             Controls.Add(tableLayoutPanel1);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "MatchRecordInput";
             Text = "Match Record Input";
+            Load += MatchRecordInput_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)matchDetailBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)teamBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)teamBindingSource1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)teamScoreOne).EndInit();
+            ((System.ComponentModel.ISupportInitialize)teamScoreTwo).EndInit();
             ((System.ComponentModel.ISupportInitialize)tournamentBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)fieldsBindingSource).EndInit();
             ResumeLayout(false);
@@ -290,16 +290,16 @@
         private Label label3;
         private Label label4;
         private DateTimePicker dateTimePicker1;
-        private ComboBox comboBox1;
+        private ComboBox team1Combobox;
         private BindingSource matchDetailBindingSource;
         private BindingSource teamBindingSource;
-        private ComboBox comboBox2;
+        private ComboBox team2comboBox;
         private BindingSource teamBindingSource1;
-        private NumericUpDown numericUpDown1;
-        private NumericUpDown numericUpDown2;
-        private ComboBox comboBox3;
+        private NumericUpDown teamScoreOne;
+        private NumericUpDown teamScoreTwo;
+        private ComboBox tournamentCbox;
         private BindingSource tournamentBindingSource;
-        private ComboBox comboBox4;
+        private ComboBox fieldcomboBox;
         private BindingSource fieldsBindingSource;
         private Label label5;
     }

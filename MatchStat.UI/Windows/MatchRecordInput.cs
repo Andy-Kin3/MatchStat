@@ -42,7 +42,7 @@ namespace MatchStat.UI.Windows
         {
             using (var context = new FootballInfoContext())
             {
-                var tournaments = context.Tournaments.ToArray();
+                var tournaments = context.Tournaments.OrderBy(t => t.Name).ToArray();
                 return tournaments;
             }
         }
@@ -56,16 +56,16 @@ namespace MatchStat.UI.Windows
         }
         private void MatchRecordInput_Load(object sender, EventArgs e)
         {
-            LoadMatches();
-        }
-
-        private void LoadMatches()
-        {
             var teams = GetTeams();
             this.teamBindingSource.DataSource = teams;
             this.teamBindingSource1.DataSource = teams;
             this.tournamentBindingSource.DataSource = GetTournaments();
             this.fieldsBindingSource.DataSource = GetFields();
+            LoadMatches();
+        }
+
+        private void LoadMatches()
+        {
             var match = GetMatches();
             this.matchDetailBindingSource.DataSource = match;
         }
