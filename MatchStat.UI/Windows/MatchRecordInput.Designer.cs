@@ -47,6 +47,7 @@
             fieldcomboBox = new ComboBox();
             fieldsBindingSource = new BindingSource(components);
             label5 = new Label();
+            saveMatchButton = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)matchDetailBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)teamBindingSource).BeginInit();
@@ -59,6 +60,7 @@
             // 
             // tableLayoutPanel1
             // 
+            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel1.ColumnCount = 6;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17.8324738F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 32.3800125F));
@@ -78,7 +80,6 @@
             tableLayoutPanel1.Controls.Add(tournamentCbox, 1, 2);
             tableLayoutPanel1.Controls.Add(fieldcomboBox, 1, 3);
             tableLayoutPanel1.Controls.Add(label5, 3, 1);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Margin = new Padding(4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -155,7 +156,7 @@
             // 
             // team1Combobox
             // 
-            team1Combobox.DataBindings.Add(new Binding("SelectedValue", matchDetailBindingSource, "Team1Name", true));
+            team1Combobox.DataBindings.Add(new Binding("SelectedValue", matchDetailBindingSource, "Team1Id", true));
             team1Combobox.DataSource = teamBindingSource;
             team1Combobox.DisplayMember = "Name";
             team1Combobox.Dock = DockStyle.Fill;
@@ -173,7 +174,7 @@
             // 
             // team2comboBox
             // 
-            team2comboBox.DataBindings.Add(new Binding("SelectedValue", matchDetailBindingSource, "Team2Name", true));
+            team2comboBox.DataBindings.Add(new Binding("SelectedValue", matchDetailBindingSource, "Team2Id", true));
             team2comboBox.DataSource = teamBindingSource1;
             team2comboBox.DisplayMember = "Name";
             team2comboBox.Dock = DockStyle.Fill;
@@ -212,7 +213,7 @@
             // tournamentCbox
             // 
             tableLayoutPanel1.SetColumnSpan(tournamentCbox, 5);
-            tournamentCbox.DataBindings.Add(new Binding("SelectedValue", matchDetailBindingSource, "TournamentName", true));
+            tournamentCbox.DataBindings.Add(new Binding("SelectedValue", matchDetailBindingSource, "TournamentId", true));
             tournamentCbox.DataSource = tournamentBindingSource;
             tournamentCbox.DisplayMember = "Name";
             tournamentCbox.Dock = DockStyle.Fill;
@@ -231,7 +232,7 @@
             // fieldcomboBox
             // 
             tableLayoutPanel1.SetColumnSpan(fieldcomboBox, 5);
-            fieldcomboBox.DataBindings.Add(new Binding("SelectedValue", matchDetailBindingSource, "FieldName", true));
+            fieldcomboBox.DataBindings.Add(new Binding("SelectedValue", matchDetailBindingSource, "FieldId", true));
             fieldcomboBox.DataSource = fieldsBindingSource;
             fieldcomboBox.DisplayMember = "Name";
             fieldcomboBox.Dock = DockStyle.Fill;
@@ -258,12 +259,25 @@
             label5.Text = "VS";
             label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // saveMatchButton
+            // 
+            saveMatchButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            saveMatchButton.Font = new Font("Times New Roman", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            saveMatchButton.Location = new Point(577, 158);
+            saveMatchButton.Name = "saveMatchButton";
+            saveMatchButton.Size = new Size(188, 40);
+            saveMatchButton.TabIndex = 1;
+            saveMatchButton.Text = "Save Match";
+            saveMatchButton.UseVisualStyleBackColor = true;
+            saveMatchButton.Click += saveMatchButton_Click;
+            // 
             // MatchRecordInput
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.AppWorkspace;
-            ClientSize = new Size(777, 161);
+            ClientSize = new Size(777, 207);
+            Controls.Add(saveMatchButton);
             Controls.Add(tableLayoutPanel1);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4);
@@ -302,5 +316,6 @@
         private ComboBox fieldcomboBox;
         private BindingSource fieldsBindingSource;
         private Label label5;
+        private Button saveMatchButton;
     }
 }

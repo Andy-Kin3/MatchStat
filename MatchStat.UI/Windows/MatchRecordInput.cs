@@ -1,4 +1,5 @@
 ﻿using MatchStat.DataModel.DataModels;
+using MatchStat.DataModel.EntityTypeConfigurartion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -68,6 +69,31 @@ namespace MatchStat.UI.Windows
         {
             var match = GetMatches();
             this.matchDetailBindingSource.DataSource = match;
+        }
+        private void SaveMatchToDB(MatchDetail matchs)
+        {
+            using (var context = new FootballInfoContext())
+            {
+                var m = matchs;
+                if (m.Id == 0)
+                {
+                    m.Id = GetMatchNextId();
+                }
+                context.MatchDetails.Add(m);
+                context.SaveChanges();
+            }
+        }
+        private int GetMatchNextId()
+        {
+            var allMatches = this.matchDetailBindingSource.DataSource as MatchDetail[];
+            var maximumId = allMatches != null && allMatches.Any() ? allMatches.Max(m => m.Id) : 0;
+            var nextIdValue = maximumId + 1;
+            return nextIdValue;
+        }
+
+        private void saveMatchButton_Click(object sender, EventArgs e)
+        {
+            SaveMatchToDB(matchDetail);
         }
     }
 }
