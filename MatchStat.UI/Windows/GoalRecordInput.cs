@@ -60,10 +60,10 @@ namespace MatchStat.UI.Windows
         private void button_saveGoal_Click(object sender, EventArgs e)
         {
             saveGoal(goals);
-            //var eventArguments = new GoalSavedEventArguments
-            //{
-            //    SavedGoals = goals
-            //};
+            var eventArguments = new GoalSavedEventArguments
+            {
+                SavedGoals = goals
+            };
             SaveGoal?.Invoke(this, e);
         }
 
