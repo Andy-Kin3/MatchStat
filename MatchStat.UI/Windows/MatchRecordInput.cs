@@ -1,20 +1,14 @@
 ﻿using ExpressMapper.Extensions;
+using MatchStat.Core;
 using MatchStat.DataModel.DataModels;
-using MatchStat.DataModel.EntityTypeConfigurartion;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace MatchStat.UI.Windows
 {
     public partial class MatchRecordInput : Form
     {
+        public EventHandler MatchSaved { get; set; }
+
         public MatchRecordInput()
         {
             InitializeComponent();
@@ -76,31 +70,44 @@ namespace MatchStat.UI.Windows
         {
             using (var context = new FootballInfoContext())
             {
-                    var m = match.Map<MatchDetail, Match>();
-                    if (m.Id == 0)
-                    {
-                        m.Id = GetMatchNextId();
-                    }
-                    context.MatchDetail.Add(m);
-                    context.SaveChanges();
+                var m = match.Map<MatchDetail, Match>();
+                if (m.Id == 0)
+                {
+                    m.Id = GetMatchNextId();
                 }
+                context.MatchDetail.Add(m);
+                context.SaveChanges();
+            }
         }
         private int GetMatchNextId()
         {
-            var maximumId = this.matchDetailBindingSource.DataSource is MatchDetail[] allMatches && allMatches.Any() ? allMatches.Max(m => m.Id) : 0;
-            var nextIdValue = maximumId + 1;
-            return nextIdValue;
-        }
-        public void FormInstance()
-        {
-            this.Close();
-            MatchRecordWindow frm = new();
-            frm.Refresh();
+            using (var context = new FootballInfoContext())
+            {
+                try
+                {
+                    var maximumId = context.MatchDetails.Max(r => r.Id);
+                    return maximumId + 1;
+                }
+                catch (Exception ex)
+                {
+                    return 1;
+                }
+            }
         }
         private void saveMatchButton_Click(object sender, EventArgs e)
         {
             SaveMatchToDB(matchDetail);
-            FormInstance();
+
+            //if (MatchSaved != null)
+            //{
+            //    MatchSaved.Invoke(sender, e);
+            //}
+
+            var eventArguments = new MatchSavedEventArguments
+            {
+                SavedMatch = matchDetail
+            };
+            MatchSaved?.Invoke(this, eventArguments);
         }
     }
 }
