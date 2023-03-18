@@ -32,7 +32,7 @@ namespace MatchStat.UI.Windows
                 context.SaveChanges();
             }
         }
-        private void UpdateMatches(Goal g)
+        private void UpdateEditedGoal(Goal g)
         {
             using(var context = new FootballInfoContext())
             {
@@ -64,7 +64,14 @@ namespace MatchStat.UI.Windows
         }
         private void button_saveGoal_Click(object sender, EventArgs e)
         {
-            saveGoal(Goal);
+            if(Goal.Id > 0)
+            {
+                UpdateEditedGoal(Goal);
+            }
+            else //if(Goal?.Id == null)
+            {
+                saveGoal(Goal);
+            }
             var eventArguments = new GoalSavedEventArguments
             {
                 SavedGoals = Goal
