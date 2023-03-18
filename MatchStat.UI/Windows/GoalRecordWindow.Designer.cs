@@ -35,8 +35,12 @@
             numberOfGoalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             goalBindingSource = new BindingSource(components);
             button_CreateGoal = new Button();
+            contextMenuStrip_goal = new ContextMenuStrip(components);
+            editToolStripMenuItem = new ToolStripMenuItem();
+            deleteToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)goalBindingSource).BeginInit();
+            contextMenuStrip_goal.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView1
@@ -49,14 +53,17 @@
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { playerIdDataGridViewTextBoxColumn, matchIdDataGridViewTextBoxColumn, numberOfGoalDataGridViewTextBoxColumn });
             dataGridView1.DataSource = goalBindingSource;
             dataGridView1.Dock = DockStyle.Bottom;
-            dataGridView1.Location = new Point(0, 56);
+            dataGridView1.Location = new Point(0, 52);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(800, 394);
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(800, 398);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             dataGridView1.CellFormatting += DataGridView1_cellFormatting;
+            dataGridView1.MouseUp += dataGridView1_MouseUp;
             // 
             // playerIdDataGridViewTextBoxColumn
             // 
@@ -85,13 +92,33 @@
             // 
             // button_CreateGoal
             // 
-            button_CreateGoal.Location = new Point(12, 2);
+            button_CreateGoal.Location = new Point(2, 3);
             button_CreateGoal.Name = "button_CreateGoal";
             button_CreateGoal.Size = new Size(192, 44);
             button_CreateGoal.TabIndex = 1;
             button_CreateGoal.Text = "Create New";
             button_CreateGoal.UseVisualStyleBackColor = true;
             button_CreateGoal.Click += button_CreateGoal_Click;
+            // 
+            // contextMenuStrip_goal
+            // 
+            contextMenuStrip_goal.Items.AddRange(new ToolStripItem[] { editToolStripMenuItem, deleteToolStripMenuItem });
+            contextMenuStrip_goal.Name = "contextMenuStrip1";
+            contextMenuStrip_goal.Size = new Size(108, 48);
+            // 
+            // editToolStripMenuItem
+            // 
+            editToolStripMenuItem.Name = "editToolStripMenuItem";
+            editToolStripMenuItem.Size = new Size(107, 22);
+            editToolStripMenuItem.Text = "Edit";
+            editToolStripMenuItem.Click += editToolStripMenuItem_Click;
+            // 
+            // deleteToolStripMenuItem
+            // 
+            deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            deleteToolStripMenuItem.Size = new Size(107, 22);
+            deleteToolStripMenuItem.Text = "Delete";
+            deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
             // 
             // GoalRecordWindow
             // 
@@ -105,6 +132,7 @@
             Load += GoalRecordWindow_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)goalBindingSource).EndInit();
+            contextMenuStrip_goal.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -116,5 +144,8 @@
         private DataGridViewTextBoxColumn numberOfGoalDataGridViewTextBoxColumn;
         private BindingSource goalBindingSource;
         private Button button_CreateGoal;
+        private ContextMenuStrip contextMenuStrip_goal;
+        private ToolStripMenuItem editToolStripMenuItem;
+        private ToolStripMenuItem deleteToolStripMenuItem;
     }
 }

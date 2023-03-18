@@ -35,7 +35,7 @@ namespace MatchStat.UI.Windows
                 {
                     m.Id = GetNextId();
                 }
-                context.MatchDetail.Add(m);
+                context.MatchDetail.Update(m);
                 context.SaveChanges();
             }
         }
