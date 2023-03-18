@@ -32,6 +32,16 @@ namespace MatchStat.UI.Windows
                 context.SaveChanges();
             }
         }
+        private void UpdateMatches(Goal g)
+        {
+            using(var context = new FootballInfoContext())
+            {
+                var goal = g;
+                context.Goals.Update(goal);
+                context.SaveChanges();
+            }
+
+        }
         private int GetNextGoalId()
         {
             using (var context = new FootballInfoContext())
