@@ -1,4 +1,5 @@
-﻿using MatchStat.DataModel.DataModels;
+﻿using MatchStat.Core;
+using MatchStat.DataModel.DataModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,7 +45,24 @@ namespace MatchStat.UI.Windows
         private void createMatchButton_Click(object sender, EventArgs e)
         {
             var matchRecordInput = new MatchRecordInput();
-            matchRecordInput.Show();
+            matchRecordInput.MatchSaved += NewMatchSaved;
+            matchRecordInput.ShowDialog();
         }
+        private void NewMatchSaved(object sender, EventArgs e)
+        {
+            var matchRecordInput = sender as MatchRecordInput;
+
+            //if(matchRecordInput != null)
+            //{
+            //    matchRecordInput.Close();
+            //}
+
+            var eventArgs = e as MatchSavedEventArguments;
+            var savedMatch = eventArgs.SavedMatch;
+
+            matchRecordInput?.Close();
+            LoadMatchRecords();
+        }
+
     }
 }

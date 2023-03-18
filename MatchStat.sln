@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchStat.DataModel", "MatchStat.DataModel\MatchStat.DataModel.csproj", "{55F45019-4209-4EB2-8BF7-EB9210EE1054}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatchStat.DataModel", "MatchStat.DataModel\MatchStat.DataModel.csproj", "{55F45019-4209-4EB2-8BF7-EB9210EE1054}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchStat.UI", "MatchStat.UI\MatchStat.UI.csproj", "{66851FAA-A8D7-48FC-B0CB-9A54590520EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatchStat.UI", "MatchStat.UI\MatchStat.UI.csproj", "{66851FAA-A8D7-48FC-B0CB-9A54590520EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchStat.Core", "MatchStat.Core\MatchStat.Core.csproj", "{C9C152BE-4A6B-40A9-8165-75835C48D2FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{66851FAA-A8D7-48FC-B0CB-9A54590520EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66851FAA-A8D7-48FC-B0CB-9A54590520EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66851FAA-A8D7-48FC-B0CB-9A54590520EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9C152BE-4A6B-40A9-8165-75835C48D2FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9C152BE-4A6B-40A9-8165-75835C48D2FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9C152BE-4A6B-40A9-8165-75835C48D2FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9C152BE-4A6B-40A9-8165-75835C48D2FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

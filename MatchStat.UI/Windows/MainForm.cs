@@ -20,7 +20,7 @@ namespace MatchStat.UI
 
         private void goalsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var goals = new GoalsWindow();
+            var goals = new GoalRecordWindow();
             goals.Show();
             goals.MdiParent = this;
         }

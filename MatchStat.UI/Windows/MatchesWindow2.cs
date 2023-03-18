@@ -141,10 +141,10 @@ namespace MatchStat.UI.Windows
         {
             using (var context = new FootballInfoContext())
             {
-                var m = context.MatchDetail.FirstOrDefault(m => m.Id == currentMatch.Id);
+                var m = context.MatchDetails.FirstOrDefault(m => m.Id == currentMatch.Id);
                 if (m != null)
                 {
-                    context.MatchDetail.Remove(m);
+                    context.MatchDetails.Remove(m);
                     context.SaveChanges();
                 }
             }
