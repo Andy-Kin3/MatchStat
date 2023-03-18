@@ -1,18 +1,14 @@
-﻿using MatchStat.DataModel.DataModels;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using ExpressMapper.Extensions;
+using MatchStat.Core;
+using MatchStat.DataModel.DataModels;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace MatchStat.UI.Windows
 {
     public partial class MatchRecordInput : Form
     {
+        public EventHandler MatchSaved { get; set; }
+
         public MatchRecordInput()
         {
             InitializeComponent();
@@ -26,7 +22,7 @@ namespace MatchStat.UI.Windows
         {
             using (var context = new FootballInfoContext())
             {
-                var teams = context.Teams.ToArray();
+                var teams = context.Teams.OrderBy(t => t.Name).ToArray();
                 return teams;
             }
         }
@@ -34,7 +30,7 @@ namespace MatchStat.UI.Windows
         {
             using (var context = new FootballInfoContext())
             {
-                var fields = context.Fields.ToArray();
+                var fields = context.Fields.OrderBy(f => f.Name).ToArray();
                 return fields;
             }
         }
@@ -42,7 +38,7 @@ namespace MatchStat.UI.Windows
         {
             using (var context = new FootballInfoContext())
             {
-                var tournaments = context.Tournaments.ToArray();
+                var tournaments = context.Tournaments.OrderBy(t => t.Name).ToArray();
                 return tournaments;
             }
         }
@@ -56,18 +52,62 @@ namespace MatchStat.UI.Windows
         }
         private void MatchRecordInput_Load(object sender, EventArgs e)
         {
-            LoadMatches();
-        }
-
-        private void LoadMatches()
-        {
             var teams = GetTeams();
             this.teamBindingSource.DataSource = teams;
             this.teamBindingSource1.DataSource = teams;
             this.tournamentBindingSource.DataSource = GetTournaments();
             this.fieldsBindingSource.DataSource = GetFields();
+            LoadMatches();
+            matchDetail = new MatchDetail();
+        }
+
+        private void LoadMatches()
+        {
             var match = GetMatches();
             this.matchDetailBindingSource.DataSource = match;
+        }
+        private void SaveMatchToDB(MatchDetail match)
+        {
+            using (var context = new FootballInfoContext())
+            {
+                var m = match.Map<MatchDetail, Match>();
+                if (m.Id == 0)
+                {
+                    m.Id = GetMatchNextId();
+                }
+                context.MatchDetail.Add(m);
+                context.SaveChanges();
+            }
+        }
+        private int GetMatchNextId()
+        {
+            using (var context = new FootballInfoContext())
+            {
+                try
+                {
+                    var maximumId = context.MatchDetails.Max(r => r.Id);
+                    return maximumId + 1;
+                }
+                catch (Exception ex)
+                {
+                    return 1;
+                }
+            }
+        }
+        private void saveMatchButton_Click(object sender, EventArgs e)
+        {
+            SaveMatchToDB(matchDetail);
+
+            //if (MatchSaved != null)
+            //{
+            //    MatchSaved.Invoke(sender, e);
+            //}
+
+            var eventArguments = new MatchSavedEventArguments
+            {
+                SavedMatch = matchDetail
+            };
+            MatchSaved?.Invoke(this, eventArguments);
         }
     }
 }

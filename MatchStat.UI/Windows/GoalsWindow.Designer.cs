@@ -201,7 +201,7 @@
             // 
             // matchBindingSource
             // 
-            matchBindingSource.DataSource = typeof(DataModel.DataModels.Match);
+            matchBindingSource.DataSource = typeof(DataModel.DataModels.MatchDetail);
             // 
             // numberOfGoals
             // 
