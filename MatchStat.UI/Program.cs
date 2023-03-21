@@ -18,6 +18,9 @@ namespace MatchStat.UI
             var context = new FootballInfoContext();
             context.Database.Migrate();
 
+            var nowString = DateTime.Now.ToString("yyy-MM-dd hh:mm");
+            var todayString = DateTime.Now.ToString("yyy-MM-dd hh:mm");
+
             Application.Run(new MainForm());
         }
     }
