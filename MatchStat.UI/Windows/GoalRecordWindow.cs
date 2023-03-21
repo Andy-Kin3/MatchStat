@@ -1,5 +1,6 @@
 ﻿using MatchStat.Core;
 using MatchStat.DataModel.DataModels;
+using MatchStat.UI.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,12 +15,12 @@ namespace MatchStat.UI.Windows
 {
     public partial class GoalRecordWindow : Form
     {
-        
-        //private Goal? goal
-        //{
-        //    get { return goalBindingSource.DataSource as Goal; }
-        //    set { this.goalBindingSource.DataSource = value; }
-        //}
+
+        private Goal? goal
+        {
+            get { return goalBindingSource.DataSource as Goal; }
+            set { this.goalBindingSource.DataSource = value; }
+        }
         public GoalRecordWindow()
         {
             InitializeComponent();
@@ -46,12 +47,12 @@ namespace MatchStat.UI.Windows
                 {
                     return playerName.FullName;
                 }
-                return "";
+                return string.Empty;
             }
         }
         private string GetMatchName(int matchId)
         {
-            using(var context = new FootballInfoContext())
+            using (var context = new FootballInfoContext())
             {
                 var matchName = context.MatchDetails.FirstOrDefault(p => p.Id == matchId);
                 if (matchName != null)
@@ -60,7 +61,7 @@ namespace MatchStat.UI.Windows
                 }
                 return string.Empty;
             }
-            
+
         }
 
 
@@ -73,7 +74,7 @@ namespace MatchStat.UI.Windows
                 {
                     e.Value = GetPlayerFullName(playerId);
                 }
-               
+
             }
             if (dataGridView1.Columns[e.ColumnIndex].Index == 1)
             {
@@ -85,11 +86,23 @@ namespace MatchStat.UI.Windows
 
             }
         }
+        private Goal? CurrentGoal()
+        {
+            return this.goalBindingSource.Current as Goal;
+        }
 
         private void button_CreateGoal_Click(object sender, EventArgs e)
         {
-            GoalRecordInput goalFrm = new GoalRecordInput();
-            goalFrm.SaveGoal += GoalSaved;
+            InvokeGoalRecordInput();
+        }
+        private void InvokeGoalRecordInput(Goal g = null)
+        {
+            var goalFrm = new GoalRecordInput();
+            if (g != null)
+            {
+                goalFrm.Goal = g;
+            }
+            goalFrm.GoalSaved += GoalSaved;
             goalFrm.ShowDialog();
         }
         private void GoalSaved(object sender, EventArgs e)
@@ -107,6 +120,63 @@ namespace MatchStat.UI.Windows
         private void GoalRecordWindow_Load(object sender, EventArgs e)
         {
             LoadGoals();
+        }
+
+        private void dataGridView1_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                this.contextMenuStrip_goal.Show(MousePosition);
+            }
+        }
+        private void UpdateEditedGoals(Goal? goal)
+        {
+            using (var context = new FootballInfoContext())
+            {
+                var g = context.Goals.FirstOrDefault(n => n.Id == goal.Id);
+                if (g != null)
+                {
+                    context.Goals.Update(g);
+                    LoadGoals();
+                }
+            }
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var currentlySelected = CurrentGoal();
+            if (currentlySelected != null)
+            {
+                DeleteGoal(currentlySelected);
+            }
+        }
+        public void DeleteGoal(Goal goalId)
+        {
+            using (var context = new FootballInfoContext())
+            {
+                var g = context.Goals.FirstOrDefault(x => x.Id == goalId.Id);
+                if (g != null)
+                {
+                    context.Goals.Remove(g);
+                    LoadGoals();
+                }
+            }
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditCurrentGoal();
+        }
+
+        private void EditCurrentGoal()
+        {
+            var currentSelected = CurrentGoal();
+            InvokeGoalRecordInput(currentSelected);
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EditCurrentGoal();
         }
     }
 }
