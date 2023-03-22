@@ -81,7 +81,7 @@
             ucSingleMatch1.Location = new Point(0, 0);
             ucSingleMatch1.match = null;
             ucSingleMatch1.Name = "ucSingleMatch1";
-            ucSingleMatch1.Size = new Size(777, 142);
+            ucSingleMatch1.Size = new Size(777, 151);
             ucSingleMatch1.TabIndex = 2;
             // 
             // MatchRecordInput
@@ -89,7 +89,7 @@
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.AppWorkspace;
-            ClientSize = new Size(777, 199);
+            ClientSize = new Size(777, 207);
             Controls.Add(ucSingleMatch1);
             Controls.Add(button_SaveMatch);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -112,7 +112,6 @@
         private BindingSource tournamentBindingSource;
         private BindingSource fieldsBindingSource;
         private Button button_SaveMatch;
-        private System.CodeDom.CodeTypeReference ucmAtches1;
         private UserControls.UcSingleMatch ucSingleMatch1;
     }
 }

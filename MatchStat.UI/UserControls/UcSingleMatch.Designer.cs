@@ -36,6 +36,8 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            matchDetailBindingSource = new BindingSource(components);
             comboBox_team1 = new ComboBox();
             teamBindingSource = new BindingSource(components);
             numericUpDown_team1 = new NumericUpDown();
@@ -47,6 +49,9 @@
             tournamentBindingSource = new BindingSource(components);
             comboBox_field = new ComboBox();
             fieldsBindingSource = new BindingSource(components);
+            numericUpDown1 = new NumericUpDown();
+            numericUpDown2 = new NumericUpDown();
+            label5 = new Label();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)matchDetailBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)teamBindingSource).BeginInit();
@@ -55,22 +60,24 @@
             ((System.ComponentModel.ISupportInitialize)teamBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tournamentBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fieldsBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 6;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.0528F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 27.0678711F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8.274175F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8.27074F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8.270739F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 27.0636787F));
-            tableLayoutPanel1.Controls.Add(dateTimePicker1, 1, 0);
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15.3304548F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 28.3897362F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.016581F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.016581F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.856916F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 28.3897362F));
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(label2, 0, 1);
             tableLayoutPanel1.Controls.Add(label3, 0, 2);
             tableLayoutPanel1.Controls.Add(label4, 0, 3);
+            tableLayoutPanel1.Controls.Add(dateTimePicker1, 1, 0);
             tableLayoutPanel1.Controls.Add(comboBox_team1, 1, 1);
             tableLayoutPanel1.Controls.Add(numericUpDown_team1, 2, 1);
             tableLayoutPanel1.Controls.Add(numericUpDown_team2, 4, 1);
@@ -78,6 +85,9 @@
             tableLayoutPanel1.Controls.Add(comboBox_team2, 5, 1);
             tableLayoutPanel1.Controls.Add(comboBox_tournament, 1, 2);
             tableLayoutPanel1.Controls.Add(comboBox_field, 1, 3);
+            tableLayoutPanel1.Controls.Add(numericUpDown1, 2, 1);
+            tableLayoutPanel1.Controls.Add(numericUpDown2, 4, 1);
+            tableLayoutPanel1.Controls.Add(label5, 3, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -86,7 +96,6 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.Size = new Size(730, 142);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // dateTimePicker1
@@ -112,9 +121,6 @@
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(147, 35);
-            label1.TabIndex = 1;
-            label1.Text = "Date";
             label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label2
@@ -122,10 +128,7 @@
             label2.AutoSize = true;
             label2.Dock = DockStyle.Fill;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(3, 35);
             label2.Name = "label2";
-            label2.Size = new Size(147, 35);
-            label2.TabIndex = 2;
             label2.Text = "Match";
             label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -134,11 +137,7 @@
             label3.AutoSize = true;
             label3.Dock = DockStyle.Fill;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(3, 70);
             label3.Name = "label3";
-            label3.Size = new Size(147, 35);
-            label3.TabIndex = 3;
-            label3.Text = "Tournament";
             label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label4
@@ -146,12 +145,24 @@
             label4.AutoSize = true;
             label4.Dock = DockStyle.Fill;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(3, 105);
             label4.Name = "label4";
-            label4.Size = new Size(147, 37);
-            label4.TabIndex = 4;
             label4.Text = "Field";
             label4.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // dateTimePicker1
+            // 
+            tableLayoutPanel1.SetColumnSpan(dateTimePicker1, 5);
+            dateTimePicker1.DataBindings.Add(new Binding("Value", matchDetailBindingSource, "Date", true));
+            dateTimePicker1.Dock = DockStyle.Fill;
+            dateTimePicker1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePicker1.Location = new Point(111, 3);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(595, 29);
+            dateTimePicker1.TabIndex = 4;
+            // 
+            // matchDetailBindingSource
+            // 
+            matchDetailBindingSource.DataSource = typeof(DataModel.DataModels.MatchDetail);
             // 
             // comboBox_team1
             // 
@@ -159,11 +170,10 @@
             comboBox_team1.DataSource = teamBindingSource;
             comboBox_team1.DisplayMember = "Name";
             comboBox_team1.Dock = DockStyle.Fill;
+            comboBox_team1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_team1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox_team1.FormattingEnabled = true;
-            comboBox_team1.Location = new Point(156, 38);
             comboBox_team1.Name = "comboBox_team1";
-            comboBox_team1.Size = new Size(191, 29);
             comboBox_team1.TabIndex = 5;
             comboBox_team1.ValueMember = "Id";
             // 
@@ -209,12 +219,10 @@
             comboBox_team2.DataSource = teamBindingSource1;
             comboBox_team2.DisplayMember = "Name";
             comboBox_team2.Dock = DockStyle.Fill;
+            comboBox_team2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_team2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox_team2.FormattingEnabled = true;
-            comboBox_team2.Location = new Point(533, 38);
             comboBox_team2.Name = "comboBox_team2";
-            comboBox_team2.Size = new Size(194, 29);
-            comboBox_team2.TabIndex = 9;
             comboBox_team2.ValueMember = "Id";
             // 
             // teamBindingSource1
@@ -228,12 +236,10 @@
             comboBox_tournament.DataSource = tournamentBindingSource;
             comboBox_tournament.DisplayMember = "Name";
             comboBox_tournament.Dock = DockStyle.Fill;
+            comboBox_tournament.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_tournament.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox_tournament.FormattingEnabled = true;
-            comboBox_tournament.Location = new Point(156, 73);
             comboBox_tournament.Name = "comboBox_tournament";
-            comboBox_tournament.Size = new Size(571, 29);
-            comboBox_tournament.TabIndex = 10;
             comboBox_tournament.ValueMember = "Id";
             // 
             // tournamentBindingSource
@@ -247,17 +253,46 @@
             comboBox_field.DataSource = fieldsBindingSource;
             comboBox_field.DisplayMember = "Name";
             comboBox_field.Dock = DockStyle.Fill;
+            comboBox_field.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_field.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox_field.FormattingEnabled = true;
-            comboBox_field.Location = new Point(156, 108);
             comboBox_field.Name = "comboBox_field";
-            comboBox_field.Size = new Size(571, 29);
-            comboBox_field.TabIndex = 11;
             comboBox_field.ValueMember = "Id";
             // 
             // fieldsBindingSource
             // 
             fieldsBindingSource.DataSource = typeof(DataModel.DataModels.Fields);
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.DataBindings.Add(new Binding("Value", matchDetailBindingSource, "TeamOneScore", true));
+            numericUpDown1.Dock = DockStyle.Fill;
+            numericUpDown1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDown1.Location = new Point(312, 40);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(57, 29);
+            numericUpDown1.TabIndex = 9;
+            // 
+            // numericUpDown2
+            // 
+            numericUpDown2.DataBindings.Add(new Binding("Value", matchDetailBindingSource, "TeamTwoScore", true));
+            numericUpDown2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDown2.Location = new Point(438, 40);
+            numericUpDown2.Name = "numericUpDown2";
+            numericUpDown2.Size = new Size(63, 29);
+            numericUpDown2.TabIndex = 10;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Dock = DockStyle.Fill;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(375, 37);
+            label5.Name = "label5";
+            label5.Size = new Size(57, 37);
+            label5.TabIndex = 11;
+            label5.Text = "VS";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // UcSingleMatch
             // 
@@ -265,7 +300,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel1);
             Name = "UcSingleMatch";
-            Size = new Size(730, 142);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)matchDetailBindingSource).EndInit();
@@ -275,6 +309,8 @@
             ((System.ComponentModel.ISupportInitialize)teamBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)tournamentBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)fieldsBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             ResumeLayout(false);
         }
 
@@ -286,6 +322,7 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private DateTimePicker dateTimePicker1;
         private ComboBox comboBox_team1;
         private NumericUpDown numericUpDown_team1;
         private NumericUpDown numericUpDown_team2;
@@ -293,10 +330,10 @@
         private ComboBox comboBox_team2;
         private ComboBox comboBox_tournament;
         private ComboBox comboBox_field;
-        private BindingSource tournamentBindingSource;
-        private BindingSource fieldsBindingSource;
         private BindingSource matchDetailBindingSource;
         private BindingSource teamBindingSource;
         private BindingSource teamBindingSource1;
+        private BindingSource tournamentBindingSource;
+        private BindingSource fieldsBindingSource;
     }
 }
