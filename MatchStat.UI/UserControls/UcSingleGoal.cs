@@ -31,7 +31,7 @@ namespace MatchStat.UI.UserControls
 
         private void UcSingleGoal_Load(object sender, EventArgs e)
         {
-            if(Goal == null)
+            if (Goal == null)
             {
                 Goal = new Goal();
             }

@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MatchStat.DataModel\MatchStat.DataBase.csproj" />
   </ItemGroup>
 
 </Project>
