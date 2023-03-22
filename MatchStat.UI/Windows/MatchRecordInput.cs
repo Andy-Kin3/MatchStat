@@ -1,9 +1,7 @@
-﻿using ExpressMapper.Extensions;
-using MatchStat.Core;
+﻿using MatchStat.Core;
 using MatchStat.Core.EventArgs;
 using MatchStat.DataModel.DataModels;
 using MatchStat.Repositories.Repositories;
-using System.Data;
 
 namespace MatchStat.UI.Windows
 {
@@ -49,7 +47,7 @@ namespace MatchStat.UI.Windows
         }
         private void saveMatchButton_Click(object sender, EventArgs e)
         {
-            if(matchDetail.Id > 0)
+            if (matchDetail.Id > 0)
             {
                 UpdateMatch(matchDetail);
             }
