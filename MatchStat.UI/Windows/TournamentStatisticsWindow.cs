@@ -1,5 +1,6 @@
 using System.Data.SqlClient;
 using MatchStat.DataModel.DataModels;
+using MatchStat.Repositories.Repositories;
 using Microsoft.IdentityModel.Tokens;
 
 namespace MatchStat.UI
@@ -64,7 +65,7 @@ namespace MatchStat.UI
 
         private void LoadTournaments()
         {
-            var tournaments = this.GetTournament();
+            var tournaments = new TounamentsRepository().GetTournaments();
             tournamentBindingSource.DataSource = tournaments;
         }
 

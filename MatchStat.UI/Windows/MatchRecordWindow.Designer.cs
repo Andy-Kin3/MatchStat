@@ -40,7 +40,6 @@
             editToolStripMenuItem = new ToolStripMenuItem();
             deleteToolStripMenuItem = new ToolStripMenuItem();
             createMatchButton = new Button();
-            SaveMatchButton = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)matchDetailBindingSource).BeginInit();
             contextMenuStrip1.SuspendLayout();
@@ -65,6 +64,8 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(800, 398);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellMouseDoubleClick += dataGridView1_CellMouseDoubleClick;
+            dataGridView1.CellMouseUp += dataGridView1_CellMouseUp;
             // 
             // Id
             // 
@@ -116,6 +117,7 @@
             editToolStripMenuItem.Name = "editToolStripMenuItem";
             editToolStripMenuItem.Size = new Size(107, 22);
             editToolStripMenuItem.Text = "Edit";
+            editToolStripMenuItem.Click += editToolStripMenuItem_Click;
             // 
             // deleteToolStripMenuItem
             // 
@@ -134,23 +136,11 @@
             createMatchButton.UseVisualStyleBackColor = true;
             createMatchButton.Click += createMatchButton_Click;
             // 
-            // SaveMatchButton
-            // 
-            SaveMatchButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            SaveMatchButton.Font = new Font("Times New Roman", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            SaveMatchButton.Location = new Point(580, 10);
-            SaveMatchButton.Name = "SaveMatchButton";
-            SaveMatchButton.Size = new Size(195, 38);
-            SaveMatchButton.TabIndex = 3;
-            SaveMatchButton.Text = "Save Matches";
-            SaveMatchButton.UseVisualStyleBackColor = true;
-            // 
             // MatchRecordWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(SaveMatchButton);
             Controls.Add(createMatchButton);
             Controls.Add(dataGridView1);
             Font = new Font("Times New Roman", 10F, FontStyle.Regular, GraphicsUnit.Point);
@@ -176,6 +166,5 @@
         private ToolStripMenuItem editToolStripMenuItem;
         private ToolStripMenuItem deleteToolStripMenuItem;
         private Button createMatchButton;
-        private Button SaveMatchButton;
     }
 }

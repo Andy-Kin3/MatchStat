@@ -1,5 +1,6 @@
-﻿using MatchStat.Core;
+﻿using MatchStat.Core.EventArgs;
 using MatchStat.DataModel.DataModels;
+using MatchStat.Repositories.Repositories;
 using MatchStat.UI.UserControls;
 using System;
 using System.Collections.Generic;
@@ -38,31 +39,6 @@ namespace MatchStat.UI.Windows
             var goals = GetGoals();
             this.goalBindingSource.DataSource = goals;
         }
-        private string GetPlayerFullName(int playerId)
-        {
-            using (var context = new FootballInfoContext())
-            {
-                var playerName = context.Players.FirstOrDefault(p => p.Id == playerId);
-                if (playerName != null)
-                {
-                    return playerName.FullName;
-                }
-                return string.Empty;
-            }
-        }
-        private string GetMatchName(int matchId)
-        {
-            using (var context = new FootballInfoContext())
-            {
-                var matchName = context.MatchDetails.FirstOrDefault(p => p.Id == matchId);
-                if (matchName != null)
-                {
-                    return matchName.MatchName;
-                }
-                return string.Empty;
-            }
-
-        }
 
 
         private void DataGridView1_cellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -72,7 +48,7 @@ namespace MatchStat.UI.Windows
                 int playerId;
                 if (int.TryParse(e.Value?.ToString(), out playerId))
                 {
-                    e.Value = GetPlayerFullName(playerId);
+                    e.Value = new GoalRepository().GetPlayerFullName(playerId);
                 }
 
             }
@@ -81,7 +57,7 @@ namespace MatchStat.UI.Windows
                 int matchId;
                 if (int.TryParse(e.Value?.ToString(), out matchId))
                 {
-                    e.Value = GetMatchName(matchId);
+                    e.Value = new GoalRepository().GetMatchName(matchId);
                 }
 
             }
@@ -95,7 +71,7 @@ namespace MatchStat.UI.Windows
         {
             InvokeGoalRecordInput();
         }
-        private void InvokeGoalRecordInput(Goal g = null)
+        private void InvokeGoalRecordInput(Goal? g = null)
         {
             var goalFrm = new GoalRecordInput();
             if (g != null)
@@ -129,18 +105,6 @@ namespace MatchStat.UI.Windows
                 this.contextMenuStrip_goal.Show(MousePosition);
             }
         }
-        private void UpdateEditedGoals(Goal? goal)
-        {
-            using (var context = new FootballInfoContext())
-            {
-                var g = context.Goals.FirstOrDefault(n => n.Id == goal.Id);
-                if (g != null)
-                {
-                    context.Goals.Update(g);
-                    LoadGoals();
-                }
-            }
-        }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -152,15 +116,8 @@ namespace MatchStat.UI.Windows
         }
         public void DeleteGoal(Goal goalId)
         {
-            using (var context = new FootballInfoContext())
-            {
-                var g = context.Goals.FirstOrDefault(x => x.Id == goalId.Id);
-                if (g != null)
-                {
-                    context.Goals.Remove(g);
-                    LoadGoals();
-                }
-            }
+            var removeGoal = new GoalRepository();
+            removeGoal.RemoveGoal(goalId);
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)

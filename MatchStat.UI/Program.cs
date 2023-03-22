@@ -1,3 +1,4 @@
+using MatchStat.Core;
 using MatchStat.DataModel.DataModels;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +19,7 @@ namespace MatchStat.UI
             var context = new FootballInfoContext();
             context.Database.Migrate();
 
+            GlobalFunctions.IsRunTime = true;
             Application.Run(new MainForm());
         }
     }

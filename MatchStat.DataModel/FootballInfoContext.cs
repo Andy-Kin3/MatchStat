@@ -24,7 +24,6 @@ public partial class FootballInfoContext : DbContext
     public virtual DbSet<Player> Players { get; set; }
 
     public virtual DbSet<Team> Teams { get; set; }
-
     public virtual DbSet<TeamTournament> TeamTournaments { get; set; }
 
     public virtual DbSet<Tournament> Tournaments { get; set; }

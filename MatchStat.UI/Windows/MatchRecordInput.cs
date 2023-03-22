@@ -1,6 +1,8 @@
 ﻿using ExpressMapper.Extensions;
 using MatchStat.Core;
+using MatchStat.Core.EventArgs;
 using MatchStat.DataModel.DataModels;
+using MatchStat.Repositories.Repositories;
 using System.Data;
 
 namespace MatchStat.UI.Windows
@@ -12,90 +14,45 @@ namespace MatchStat.UI.Windows
         public MatchRecordInput()
         {
             InitializeComponent();
+            InitializeWindow();
         }
-        private MatchDetail? matchDetail
+        private void InitializeWindow()
         {
-            get { return this.matchDetailBindingSource.DataSource as MatchDetail; }
+            var matchDetail = new MatchesRepository();
+            matchDetailBindingSource.DataSource = matchDetail.GetAllMatches();
+        }
+        public MatchDetail? matchDetail
+        {
+            get { return this.ucSingleMatch1.match as MatchDetail; }
             set { this.matchDetailBindingSource.DataSource = value; }
-        }
-        private Team[] GetTeams()
-        {
-            using (var context = new FootballInfoContext())
-            {
-                var teams = context.Teams.OrderBy(t => t.Name).ToArray();
-                return teams;
-            }
-        }
-        private Fields[] GetFields()
-        {
-            using (var context = new FootballInfoContext())
-            {
-                var fields = context.Fields.OrderBy(f => f.Name).ToArray();
-                return fields;
-            }
-        }
-        private Tournament[] GetTournaments()
-        {
-            using (var context = new FootballInfoContext())
-            {
-                var tournaments = context.Tournaments.OrderBy(t => t.Name).ToArray();
-                return tournaments;
-            }
-        }
-        private MatchDetail[] GetMatches()
-        {
-            using (var context = new FootballInfoContext())
-            {
-                var matches = context.MatchDetails.OrderBy(m => m.Id).ToArray();
-                return matches;
-            }
         }
         private void MatchRecordInput_Load(object sender, EventArgs e)
         {
-            var teams = GetTeams();
-            this.teamBindingSource.DataSource = teams;
-            this.teamBindingSource1.DataSource = teams;
-            this.tournamentBindingSource.DataSource = GetTournaments();
-            this.fieldsBindingSource.DataSource = GetFields();
             LoadMatches();
             matchDetail = new MatchDetail();
         }
 
         private void LoadMatches()
         {
-            var match = GetMatches();
-            this.matchDetailBindingSource.DataSource = match;
+            var match = new MatchesRepository();
+            this.matchDetailBindingSource.DataSource = match.GetAllMatches();
         }
         private void SaveMatchToDB(MatchDetail match)
         {
-            using (var context = new FootballInfoContext())
-            {
-                var m = match.Map<MatchDetail, Match>();
-                if (m.Id == 0)
-                {
-                    m.Id = GetMatchNextId();
-                }
-                context.MatchDetail.Add(m);
-                context.SaveChanges();
-            }
+            var saveMatch = new MatchesRepository();
+            saveMatch.AddMatches(match);
         }
-        private int GetMatchNextId()
+        private void UpdateMatch(MatchDetail match)
         {
-            using (var context = new FootballInfoContext())
-            {
-                try
-                {
-                    var maximumId = context.MatchDetails.Max(r => r.Id);
-                    return maximumId + 1;
-                }
-                catch (Exception ex)
-                {
-                    return 1;
-                }
-            }
+            var updateMatch = new MatchesRepository();
+            updateMatch.UpdateMatch(match);
         }
         private void saveMatchButton_Click(object sender, EventArgs e)
         {
+            if(matchDetail.Id > 0)
+            {
+                UpdateMatch(matchDetail);
+            }
             SaveMatchToDB(matchDetail);
 
             //if (MatchSaved != null)
