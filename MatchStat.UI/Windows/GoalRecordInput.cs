@@ -1,5 +1,6 @@
 ﻿using MatchStat.Core;
 using MatchStat.DataModel.DataModels;
+using MatchStat.Repositories.Repositories;
 
 namespace MatchStat.UI.Windows
 {
@@ -19,52 +20,28 @@ namespace MatchStat.UI.Windows
             set { this.ucSingleGoal1.Goal = value; }
         }
 
-        private void saveGoal(Goal goal)
+        public void SaveGoal(Goal goal)
         {
-            using (var context = new FootballInfoContext())
-            {
-                var g = goal;
-                if (g.Id == 0)
-                {
-                    g.Id = GetNextGoalId();
-                }
-                context.Goals.Add(Goal);
-                context.SaveChanges();
-            }
-        }
-        private void UpdateMatches(Goal g)
-        {
-            using(var context = new FootballInfoContext())
-            {
-                var goal = g;
-                context.Goals.Update(goal);
-                context.SaveChanges();
-            }
+            var savedGoal = new GoalRepository();
+            savedGoal.AddGoal(goal);
 
         }
-        private int GetNextGoalId()
+        public void UpdateEditedGoal(Goal g)
         {
-            using (var context = new FootballInfoContext())
-            {
-                try
-                {
-                    var maximumId = context.Goals.Max(g => g.Id);
-                    var nextId = maximumId + 1;
-                    if (nextId == maximumId + 1)
-                    {
-                        return nextId + 1;
-                    }
-                    return nextId;
-                }
-                catch (Exception ex)
-                {
-                    return 1;
-                }
-            }
+            var updatedGoal = new GoalRepository();
+            updatedGoal.AddGoal(g);
+
         }
         private void button_saveGoal_Click(object sender, EventArgs e)
         {
-            saveGoal(Goal);
+            if (Goal.Id > 0)
+            {
+                UpdateEditedGoal(Goal);
+            }
+            else //if(Goal?.Id == null)
+            {
+                SaveGoal(Goal);
+            }
             var eventArguments = new GoalSavedEventArguments
             {
                 SavedGoals = Goal

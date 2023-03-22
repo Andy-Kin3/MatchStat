@@ -1,4 +1,6 @@
-﻿using MatchStat.DataModel.DataModels;
+﻿using MatchStat.Core;
+using MatchStat.DataModel.DataModels;
+using MatchStat.Repositories.Repositories;
 
 namespace MatchStat.UI.UserControls
 {
@@ -7,7 +9,10 @@ namespace MatchStat.UI.UserControls
         public UcSingleGoal()
         {
             InitializeComponent();
-            InitializeWindow();
+            if (GlobalFunctions.IsRunTime)
+            {
+                InitializeWindow();
+            }
         }
 
         public Goal Goal
@@ -30,31 +35,13 @@ namespace MatchStat.UI.UserControls
 
         private void InitializeWindow()
         {
-            var allMatches = GetMatches();
+            var allMatches = new MatchesRepository().GetAllMatches();
             allMatches.Insert(0, new MatchDetail());
             matchDetailBindingSource.DataSource = allMatches;
 
-            var allPlayers = GetPlayers();
+            var allPlayers = new PlayerRepository().GetPlayers();
             allPlayers.Insert(0, new Player());
             playerBindingSource.DataSource = allPlayers;
-        }
-
-        private List<Player> GetPlayers()
-        {
-            using (var context = new FootballInfoContext())
-            {
-                var players = context.Players.OrderBy(p => p.FirstName).ToList();
-                return players;
-            }
-        }
-
-        private List<MatchDetail> GetMatches()
-        {
-            using (var context = new FootballInfoContext())
-            {
-                var matches = context.MatchDetails.OrderBy(m => m.Id).ToList();
-                return matches;
-            }
         }
     }
 }
