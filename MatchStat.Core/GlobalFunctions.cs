@@ -1,6 +1,4 @@
-﻿using MatchStat.DataModel.DataModels;
-
-namespace MatchStat.Core
+﻿namespace MatchStat.Core
 {
     public static class GlobalFunctions
     {

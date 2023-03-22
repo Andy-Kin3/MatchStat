@@ -1,10 +1,4 @@
-﻿using ExpressMapper.Extensions;
-using MatchStat.DataModel.DataModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MatchStat.DataModel.DataModels;
 
 namespace MatchStat.Repositories.Repositories
 {
