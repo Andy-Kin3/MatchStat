@@ -65,11 +65,11 @@
             // 
             // button_SaveMatch
             // 
-            button_SaveMatch.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            button_SaveMatch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button_SaveMatch.Font = new Font("Times New Roman", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            button_SaveMatch.Location = new Point(580, 164);
+            button_SaveMatch.Location = new Point(585, 138);
             button_SaveMatch.Name = "button_SaveMatch";
-            button_SaveMatch.Size = new Size(188, 40);
+            button_SaveMatch.Size = new Size(188, 56);
             button_SaveMatch.TabIndex = 1;
             button_SaveMatch.Text = "Save Match";
             button_SaveMatch.UseVisualStyleBackColor = true;

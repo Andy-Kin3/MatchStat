@@ -1,4 +1,5 @@
 ﻿using MatchStat.Core;
+using MatchStat.Core.EventArgs;
 using MatchStat.DataModel.DataModels;
 using MatchStat.Repositories.Repositories;
 

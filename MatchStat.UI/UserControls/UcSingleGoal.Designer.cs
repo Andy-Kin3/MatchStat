@@ -65,7 +65,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.Size = new Size(667, 105);
+            tableLayoutPanel1.Size = new Size(602, 82);
             tableLayoutPanel1.TabIndex = 2;
             // 
             // label1
@@ -75,7 +75,7 @@
             label1.Location = new Point(4, 0);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(129, 34);
+            label1.Size = new Size(116, 27);
             label1.TabIndex = 0;
             label1.Text = "Player";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -84,9 +84,9 @@
             // 
             label2.AutoSize = true;
             label2.Dock = DockStyle.Fill;
-            label2.Location = new Point(3, 34);
+            label2.Location = new Point(3, 27);
             label2.Name = "label2";
-            label2.Size = new Size(131, 34);
+            label2.Size = new Size(118, 27);
             label2.TabIndex = 1;
             label2.Text = "Match";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -95,9 +95,9 @@
             // 
             label3.AutoSize = true;
             label3.Dock = DockStyle.Fill;
-            label3.Location = new Point(3, 68);
+            label3.Location = new Point(3, 54);
             label3.Name = "label3";
-            label3.Size = new Size(131, 37);
+            label3.Size = new Size(118, 28);
             label3.TabIndex = 2;
             label3.Text = "Goal";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -110,9 +110,9 @@
             comboBox_player.Dock = DockStyle.Fill;
             comboBox_player.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_player.FormattingEnabled = true;
-            comboBox_player.Location = new Point(140, 3);
+            comboBox_player.Location = new Point(127, 3);
             comboBox_player.Name = "comboBox_player";
-            comboBox_player.Size = new Size(524, 23);
+            comboBox_player.Size = new Size(472, 23);
             comboBox_player.TabIndex = 3;
             comboBox_player.ValueMember = "Id";
             // 
@@ -132,9 +132,9 @@
             comboBox_match.Dock = DockStyle.Fill;
             comboBox_match.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_match.FormattingEnabled = true;
-            comboBox_match.Location = new Point(140, 37);
+            comboBox_match.Location = new Point(127, 30);
             comboBox_match.Name = "comboBox_match";
-            comboBox_match.Size = new Size(524, 23);
+            comboBox_match.Size = new Size(472, 23);
             comboBox_match.TabIndex = 4;
             comboBox_match.ValueMember = "Id";
             // 
@@ -146,9 +146,9 @@
             // 
             numericUpDown_Goals.DataBindings.Add(new Binding("Value", goalBindingSource, "NumberOfGoal", true));
             numericUpDown_Goals.Dock = DockStyle.Fill;
-            numericUpDown_Goals.Location = new Point(140, 71);
+            numericUpDown_Goals.Location = new Point(127, 57);
             numericUpDown_Goals.Name = "numericUpDown_Goals";
-            numericUpDown_Goals.Size = new Size(524, 23);
+            numericUpDown_Goals.Size = new Size(472, 23);
             numericUpDown_Goals.TabIndex = 5;
             // 
             // UcSingleGoal
@@ -157,7 +157,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel1);
             Name = "UcSingleGoal";
-            Size = new Size(667, 105);
+            Size = new Size(602, 82);
             Load += UcSingleGoal_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();

@@ -15,7 +15,7 @@ namespace MatchStat.UI.UserControls
             }
         }
 
-        public Goal Goal
+        public Goal? Goal
         {
             get
             {
@@ -31,6 +31,10 @@ namespace MatchStat.UI.UserControls
 
         private void UcSingleGoal_Load(object sender, EventArgs e)
         {
+            if(Goal == null)
+            {
+                Goal = new Goal();
+            }
         }
 
         private void InitializeWindow()

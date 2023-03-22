@@ -168,7 +168,7 @@ namespace MatchStat.UI
         {
             using (var context = new FootballInfoContext())
             {
-                var selectedRow = context.TeamTournaments.FirstOrDefault(t => t.Id == currentRow.Id);
+                var selectedRow = context.Fields.FirstOrDefault(t => t.Id == currentRow.Id);
                 if (selectedRow != null)
                 {
                     context.TeamTournaments.Remove(currentRow);

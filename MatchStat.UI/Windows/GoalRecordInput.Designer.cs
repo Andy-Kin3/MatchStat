@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataModel.DataModels.Goal goal1 = new DataModel.DataModels.Goal();
             button_saveGoal = new Button();
-            ucSingleGoal1 = new UserControls.UcSingleGoal();
+            ucSingleGoal2 = new UserControls.UcSingleGoal();
             SuspendLayout();
             // 
             // button_saveGoal
             // 
-            button_saveGoal.Location = new Point(548, 106);
+            button_saveGoal.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button_saveGoal.Location = new Point(538, 111);
             button_saveGoal.Name = "button_saveGoal";
             button_saveGoal.Size = new Size(186, 44);
             button_saveGoal.TabIndex = 1;
@@ -42,24 +44,33 @@
             button_saveGoal.UseVisualStyleBackColor = true;
             button_saveGoal.Click += button_saveGoal_Click;
             // 
-            // ucSingleGoal1
+            // ucSingleGoal2
             // 
-            ucSingleGoal1.Location = new Point(-3, -5);
-            ucSingleGoal1.Name = "ucSingleGoal1";
-            ucSingleGoal1.Size = new Size(751, 105);
-            ucSingleGoal1.TabIndex = 2;
+            ucSingleGoal2.Dock = DockStyle.Top;
+            goal1.Id = 0;
+            goal1.MatchId = 0;
+            goal1.MatchName = null;
+            goal1.NumberOfGoal = 0;
+            goal1.Player = null;
+            goal1.PlayerId = 0;
+            goal1.PlayerName = null;
+            ucSingleGoal2.Goal = goal1;
+            ucSingleGoal2.Location = new Point(0, 0);
+            ucSingleGoal2.Name = "ucSingleGoal2";
+            ucSingleGoal2.Size = new Size(736, 105);
+            ucSingleGoal2.TabIndex = 2;
             // 
             // GoalRecordInput
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(746, 163);
-            Controls.Add(ucSingleGoal1);
+            ClientSize = new Size(736, 163);
+            Controls.Add(ucSingleGoal2);
             Controls.Add(button_saveGoal);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4);
             Name = "GoalRecordInput";
-            Text = "Goal Record Input";
+            Text = "Goal Window";
             Load += GoalRecordInput_Load;
             ResumeLayout(false);
         }
@@ -67,5 +78,6 @@
         #endregion
         private Button button_saveGoal;
         private UserControls.UcSingleGoal ucSingleGoal1;
+        private UserControls.UcSingleGoal ucSingleGoal2;
     }
 }
