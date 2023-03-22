@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatchStat.Core", "MatchStat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatchStat.Repository", "MatchStat.Repository\MatchStat.Repository.csproj", "{A716DBC1-F823-4A4A-A21D-20E79B9831AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchStat.DataModel", "MatchStat.DataBase\MatchStat.DataModel.csproj", "{C731909C-8271-49E9-91F6-B4E1C03F38E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatchStat.DataModel", "MatchStat.DataBase\MatchStat.DataModel.csproj", "{C731909C-8271-49E9-91F6-B4E1C03F38E0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatchStat.Repositories", "MatchStat.Repositories\MatchStat.Repositories.csproj", "{D71ABC8F-F425-427A-BC3D-D303691F47EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{C731909C-8271-49E9-91F6-B4E1C03F38E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C731909C-8271-49E9-91F6-B4E1C03F38E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C731909C-8271-49E9-91F6-B4E1C03F38E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D71ABC8F-F425-427A-BC3D-D303691F47EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D71ABC8F-F425-427A-BC3D-D303691F47EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D71ABC8F-F425-427A-BC3D-D303691F47EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D71ABC8F-F425-427A-BC3D-D303691F47EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
