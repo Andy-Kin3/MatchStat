@@ -1,4 +1,5 @@
-﻿using MatchStat.DataModel.DataModels;
+﻿using MatchStat.Database;
+using MatchStat.DataModel.DataModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace MatchStat.Repositories.Repositories
 {
-    public class TounamentsRepository
+    public class TournamentsRepository
     {
-        public TounamentsRepository() { }
+        public TournamentsRepository() { }
         public List<Tournament> GetTournaments()
         {
             using(var context = new FootballInfoContext())

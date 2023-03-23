@@ -33,7 +33,7 @@ namespace MatchStat.UI.Windows
         }
         private void InvokeMatchesRecordInput(MatchDetail m = null)
         {
-            var matchRecordInput = new MatchRecordInput();
+            var matchRecordInput = new  MatchRecordInput();
             if (m != null)
             {
                 matchRecordInput.matchDetail = m;

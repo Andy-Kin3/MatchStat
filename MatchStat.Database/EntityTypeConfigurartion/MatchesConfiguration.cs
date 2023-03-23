@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace MatchStat.DataModel.EntityTypeConfigurartion
+namespace MatchStat.Database.EntityTypeConfigurartion
 {
     public class MatchesConfiguration : IEntityTypeConfiguration<Match>
     {

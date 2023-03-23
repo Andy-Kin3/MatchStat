@@ -1,21 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWindowsForms>true</UseWindowsForms>
+    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="UserControl1.cs" />
-    <Compile Remove="UserControl1.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Remove="UserControl1.resx" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="7.0.0" />
@@ -35,24 +24,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MatchStat.Core\MatchStat.Core.csproj" />
     <ProjectReference Include="..\MatchStat.DataModel\MatchStat.DataModel.csproj" />
-    <ProjectReference Include="..\MatchStat.Repositories\MatchStat.Repositories.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
 </Project>

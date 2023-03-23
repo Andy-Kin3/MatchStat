@@ -1,4 +1,6 @@
-﻿namespace MatchStat.UI.Windows
+﻿using MatchStat.DataModel.DataModels;
+
+namespace MatchStat.UI.Windows
 {
     partial class GoalRecordInput
     {
@@ -28,7 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataModel.DataModels.Goal goal1 = new DataModel.DataModels.Goal();
+            Goal goal1 = new Goal();
             button_saveGoal = new Button();
             ucSingleGoal2 = new UserControls.UcSingleGoal();
             SuspendLayout();

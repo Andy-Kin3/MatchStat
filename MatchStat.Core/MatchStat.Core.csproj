@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MatchStat.DataModel\MatchStat.DataBase.csproj" />
+    <PackageReference Include="Autofac" Version="7.0.0" />
+    <PackageReference Include="Dapper" Version="2.0.123" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MatchStat.DataModel\MatchStat.DataModel.csproj" />
   </ItemGroup>
 
 </Project>
