@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MatchStat.DataModel.EntityTypeConfigurartion
+namespace MatchStat.Database.EntityTypeConfigurartion
 {
-    public class FieldsConfiguration: IEntityTypeConfiguration<Fields>
+    public class FieldsConfiguration : IEntityTypeConfiguration<Fields>
     {
         public void Configure(EntityTypeBuilder<Fields> entity)
         {

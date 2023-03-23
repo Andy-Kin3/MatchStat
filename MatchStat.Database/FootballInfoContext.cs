@@ -1,8 +1,8 @@
-﻿using MatchStat.DataModel.DataModels;
-using MatchStat.DataModel.EntityTypeConfigurartion;
+﻿using MatchStat.Database.EntityTypeConfigurartion;
+using MatchStat.DataModel.DataModels;
 using Microsoft.EntityFrameworkCore;
 
-namespace MatchStat;
+namespace MatchStat.Database;
 
 public partial class FootballInfoContext : DbContext
 {

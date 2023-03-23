@@ -35,7 +35,7 @@
             tournamentBindingSource = new BindingSource(components);
             fieldsBindingSource = new BindingSource(components);
             button_SaveMatch = new Button();
-            ucSingleMatch1 = new UserControls.UcSingleMatch();
+            ucSingleMatch = new UserControls.UcSingleMatch();
             ((System.ComponentModel.ISupportInitialize)matchDetailBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)teamBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)teamBindingSource1).BeginInit();
@@ -75,14 +75,13 @@
             button_SaveMatch.UseVisualStyleBackColor = true;
             button_SaveMatch.Click += saveMatchButton_Click;
             // 
-            // ucSingleMatch1
+            // ucSingleMatch
             // 
-            ucSingleMatch1.Dock = DockStyle.Top;
-            ucSingleMatch1.Location = new Point(0, 0);
-            ucSingleMatch1.match = null;
-            ucSingleMatch1.Name = "ucSingleMatch1";
-            ucSingleMatch1.Size = new Size(777, 151);
-            ucSingleMatch1.TabIndex = 2;
+            ucSingleMatch.Dock = DockStyle.Top;
+            ucSingleMatch.Location = new Point(0, 0);
+            ucSingleMatch.Name = "ucSingleMatch";
+            ucSingleMatch.Size = new Size(777, 132);
+            ucSingleMatch.TabIndex = 2;
             // 
             // MatchRecordInput
             // 
@@ -90,7 +89,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.AppWorkspace;
             ClientSize = new Size(777, 207);
-            Controls.Add(ucSingleMatch1);
+            Controls.Add(ucSingleMatch);
             Controls.Add(button_SaveMatch);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4);
@@ -112,6 +111,6 @@
         private BindingSource tournamentBindingSource;
         private BindingSource fieldsBindingSource;
         private Button button_SaveMatch;
-        private UserControls.UcSingleMatch ucSingleMatch1;
+        private UserControls.UcSingleMatch ucSingleMatch;
     }
 }

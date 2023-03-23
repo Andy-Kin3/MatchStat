@@ -1,4 +1,5 @@
-﻿using MatchStat.DataModel.DataModels;
+﻿using MatchStat.Database;
+using MatchStat.DataModel.DataModels;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

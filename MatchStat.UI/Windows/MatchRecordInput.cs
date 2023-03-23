@@ -8,21 +8,24 @@ namespace MatchStat.UI.Windows
     public partial class MatchRecordInput : Form
     {
         public EventHandler MatchSaved { get; set; }
+        MatchesRepository _matchesRepository;
 
         public MatchRecordInput()
         {
             InitializeComponent();
+            _matchesRepository = new MatchesRepository();
             InitializeWindow();
+
         }
         private void InitializeWindow()
         {
-            var matchDetail = new MatchesRepository();
-            matchDetailBindingSource.DataSource = matchDetail.GetAllMatches();
+
+            matchDetailBindingSource.DataSource = _matchesRepository.GetAllMatches();
         }
         public MatchDetail? matchDetail
         {
-            get { return this.ucSingleMatch1.match as MatchDetail; }
-            set { this.matchDetailBindingSource.DataSource = value; }
+            get { return this.ucSingleMatch.match as MatchDetail; }
+            set { this.ucSingleMatch.match = value; }
         }
         private void MatchRecordInput_Load(object sender, EventArgs e)
         {
@@ -32,18 +35,15 @@ namespace MatchStat.UI.Windows
 
         private void LoadMatches()
         {
-            var match = new MatchesRepository();
-            this.matchDetailBindingSource.DataSource = match.GetAllMatches();
+            this.matchDetailBindingSource.DataSource = _matchesRepository.GetAllMatches();
         }
         private void SaveMatchToDB(MatchDetail match)
         {
-            var saveMatch = new MatchesRepository();
-            saveMatch.AddMatches(match);
+            _matchesRepository.AddMatches(match);
         }
         private void UpdateMatch(MatchDetail match)
-        {
-            var updateMatch = new MatchesRepository();
-            updateMatch.UpdateMatch(match);
+        {;
+            _matchesRepository.UpdateMatch(match);
         }
         private void saveMatchButton_Click(object sender, EventArgs e)
         {
