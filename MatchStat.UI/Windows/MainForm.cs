@@ -55,7 +55,7 @@ namespace MatchStat.UI
 
         private void matchesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var matches = new MatchesWindow2();
+            var matches = new MatchRecordWindow();
             matches.Show();
             matches.MdiParent = this;
         }

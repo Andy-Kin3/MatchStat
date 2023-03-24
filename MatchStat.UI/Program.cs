@@ -1,3 +1,5 @@
+using MatchStat.Core;
+using MatchStat.Database;
 using MatchStat.DataModel.DataModels;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,9 +20,7 @@ namespace MatchStat.UI
             var context = new FootballInfoContext();
             context.Database.Migrate();
 
-            var nowString = DateTime.Now.ToString("yyy-MM-dd hh:mm");
-            var todayString = DateTime.Now.ToString("yyy-MM-dd hh:mm");
-
+            GlobalFunctions.IsRunTime = true;
             Application.Run(new MainForm());
         }
     }

@@ -18,6 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="7.0.0" />
+    <PackageReference Include="Dapper" Version="2.0.123" />
     <PackageReference Include="ExpressMapper.Core" Version="1.9.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.3">
@@ -35,6 +37,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MatchStat.Core\MatchStat.Core.csproj" />
     <ProjectReference Include="..\MatchStat.DataModel\MatchStat.DataModel.csproj" />
+    <ProjectReference Include="..\MatchStat.Repositories\MatchStat.Repositories.csproj" />
   </ItemGroup>
 
   <ItemGroup>

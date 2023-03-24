@@ -1,5 +1,7 @@
 ﻿using ExpressMapper.Extensions;
+using MatchStat.Database;
 using MatchStat.DataModel.DataModels;
+using MatchStat.Repositories.Repositories;
 using System.Data;
 
 namespace MatchStat.UI.Windows
@@ -50,11 +52,11 @@ namespace MatchStat.UI.Windows
 
         private void MatchesWindow2_Load(object sender, EventArgs e)
         {
-            var teams = GetAllTeams();
+            var teams = new TeamsRepository().GetAllTeams();
             this.team1BindingSource.DataSource = teams;
             this.team2BindingSource.DataSource = teams;
-            this.tournamentBindingSource.DataSource = GetAllTournaments();
-            this.fieldsBindingSource.DataSource = GetAllFields();
+            this.tournamentBindingSource.DataSource = new TournamentsRepository().GetTournaments();
+            this.fieldsBindingSource.DataSource = new FieldRepository().GetAllFields();
 
             LoadAllMatches();
             addButton_Click(null, null);
@@ -62,41 +64,8 @@ namespace MatchStat.UI.Windows
 
         private void LoadAllMatches()
         {
-            var matches = GetAllMatches();
+            var matches = new MatchesRepository().GetAllMatches();
             this.matchDetailBindingSource.DataSource = matches;
-        }
-
-        private MatchDetail[] GetAllMatches()
-        {
-            using (var context = new FootballInfoContext())
-            {
-                var matches = context.MatchDetails.OrderBy(m => m.Id).ToArray();
-                return matches;
-            }
-        }
-
-        private Fields[] GetAllFields()
-        {
-            using (var context = new FootballInfoContext())
-            {
-                return context.Fields.OrderBy(r => r.Name).ToArray();
-            }
-        }
-
-        private Tournament[] GetAllTournaments()
-        {
-            using (var context = new FootballInfoContext())
-            {
-                return context.Tournaments.OrderBy(t => t.Name).ToArray();
-            }
-        }
-
-        private Team[] GetAllTeams()
-        {
-            using (var context = new FootballInfoContext())
-            {
-                return context.Teams.OrderBy(t => t.Name).ToArray();
-            }
         }
 
         private void dataGridView1_MouseUp(object sender, MouseEventArgs e)
