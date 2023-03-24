@@ -22,7 +22,10 @@ namespace MatchStat.UI
 
         private void goalsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var goals = new GoalRecordWindow();
+            var context = new FootballInfoContext();
+            var playerRepo = new PlayersRepository(context);
+            var goalRepo = new GoalRepository(context);
+            var goals = new GoalRecordWindow(playerRepo, goalRepo);
             goals.Show();
             goals.MdiParent = this;
         }
@@ -36,7 +39,9 @@ namespace MatchStat.UI
 
         private void setTournamentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var tournamentStatistics = new TournamentStatisticsWindow();
+            var context = new FootballInfoContext();
+            var tournamentRepo = new TournamentsRepository(context);
+            var tournamentStatistics = new TournamentStatisticsWindow(tournamentRepo);
             tournamentStatistics.Show();
             tournamentStatistics.MdiParent = this;
         }
@@ -50,7 +55,10 @@ namespace MatchStat.UI
 
         private void participatingPlayerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var players = new PlayersWindow();
+            var context = new FootballInfoContext();
+            var playerRepo = new PlayersRepository(context);
+            var teamsRepo = new TeamsRepository(context);
+            var players = new PlayersWindow(teamsRepo, playerRepo);
             players.Show();
             players.MdiParent = this;
         }

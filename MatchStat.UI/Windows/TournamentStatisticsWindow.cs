@@ -1,6 +1,7 @@
 using System.Data.SqlClient;
 using MatchStat.Database;
 using MatchStat.DataModel.DataModels;
+using MatchStat.Interfaces;
 using MatchStat.Repositories.Repositories;
 using Microsoft.IdentityModel.Tokens;
 
@@ -8,9 +9,11 @@ namespace MatchStat.UI
 {
     public partial class TournamentStatisticsWindow : Form
     {
-        public TournamentStatisticsWindow()
+        private readonly ITournamentsRepository _tournamentRepository;
+        public TournamentStatisticsWindow(ITournamentsRepository tournamentsRepository)
         {
             InitializeComponent();
+            _tournamentRepository = tournamentsRepository;
         }
         private Tournament? tournament
         {
@@ -66,8 +69,7 @@ namespace MatchStat.UI
 
         private void LoadTournaments()
         {
-            var tournaments = new TournamentsRepository().GetTournaments();
-            tournamentBindingSource.DataSource = tournaments;
+            tournamentBindingSource.DataSource = _tournamentRepository.GetAll();
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -75,12 +77,7 @@ namespace MatchStat.UI
             var currentlySelected = tournamentBindingSource.Current as Tournament;
             if (currentlySelected != null)
             {
-                using (var context = new FootballInfoContext())
-                {
-                    context.Tournaments.Remove(currentlySelected);
-                    context.SaveChanges();
-                    LoadTournaments();
-                }
+                _tournamentRepository.Delete(currentlySelected);
             }
         }
     }

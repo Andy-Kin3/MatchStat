@@ -195,10 +195,6 @@
             comboBox_field.TabIndex = 7;
             comboBox_field.ValueMember = "Id";
             // 
-            // fieldsBindingSource
-            // 
-            fieldsBindingSource.DataSource = typeof(DataModel.DataModels.Field);
-            // 
             // comboBox_team2
             // 
             comboBox_team2.DataBindings.Add(new Binding("SelectedValue", matchDetailBindingSource, "Team2Id", true));

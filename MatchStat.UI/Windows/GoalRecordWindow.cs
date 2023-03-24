@@ -1,26 +1,30 @@
 ﻿using MatchStat.Core.EventArgs;
 using MatchStat.Database;
 using MatchStat.DataModel.DataModels;
+using MatchStat.Interfaces;
 using MatchStat.Repositories.Repositories;
 
 namespace MatchStat.UI.Windows
 {
     public partial class GoalRecordWindow : Form
     {
+        private readonly IGoalRepository _goalRepository;
+        private readonly IPlayersRepository _playersRepository;
+        private readonly IMatchesRepository _matchesRepository;
 
         private Goal? goal
         {
             get { return goalBindingSource.DataSource as Goal; }
             set { this.goalBindingSource.DataSource = value; }
         }
-        public GoalRecordWindow()
+        public GoalRecordWindow(IPlayersRepository playersRepository, IGoalRepository _goalRepository)
         {
             InitializeComponent();
+            _playersRepository = playersRepository;
         }
         private void LoadGoals()
         {
-            var goals = new GoalRepository().GetAllGoals();
-            this.goalBindingSource.DataSource = goals;
+            this.goalBindingSource.DataSource = _goalRepository.GetAll();
         }
 
 
@@ -31,7 +35,7 @@ namespace MatchStat.UI.Windows
                 int playerId;
                 if (int.TryParse(e.Value?.ToString(), out playerId))
                 {
-                    e.Value = new GoalRepository().GetPlayerFullName(playerId);
+                    e.Value = _goalRepository.GetPlayerFullName(playerId);
                 }
 
             }
@@ -40,7 +44,7 @@ namespace MatchStat.UI.Windows
                 int matchId;
                 if (int.TryParse(e.Value?.ToString(), out matchId))
                 {
-                    e.Value = new GoalRepository().GetMatchName(matchId);
+                    e.Value = _goalRepository.GetMatchName(matchId);
                 }
 
             }
@@ -56,7 +60,8 @@ namespace MatchStat.UI.Windows
         }
         private void InvokeGoalRecordInput(Goal? g = null)
         {
-            var goalFrm = new GoalRecordInput();
+
+            var goalFrm = new GoalRecordInput(_goalRepository, _matchesRepository, _playersRepository);
             if (g != null)
             {
                 goalFrm.Goal = g;
@@ -99,8 +104,7 @@ namespace MatchStat.UI.Windows
         }
         public void DeleteGoal(Goal goalId)
         {
-            var removeGoal = new GoalRepository();
-            removeGoal.RemoveGoal(goalId);
+            _goalRepository.Delete(goalId);
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)

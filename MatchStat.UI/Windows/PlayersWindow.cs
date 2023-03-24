@@ -14,14 +14,19 @@ using Microsoft.VisualBasic;
 using System.Numerics;
 using MatchStat.Database;
 using MatchStat.Repositories.Repositories;
+using MatchStat.Interfaces;
 
 namespace MatchStat.UI
 {
     public partial class PlayersWindow : Form
     {
-        public PlayersWindow()
+        private readonly IPlayersRepository _playerRepository;
+        private readonly ITeamsRepository _teamsRepository;
+        public PlayersWindow(ITeamsRepository teamsRepository, IPlayersRepository playersRepository)
         {
             InitializeComponent();
+            _teamsRepository = teamsRepository;
+            _playerRepository = playersRepository;
         }
         private Player? Player
         {
@@ -32,10 +37,8 @@ namespace MatchStat.UI
 
         private void LoadPlayers()
         {
-            var players = new PlayerRepository().GetPlayers();
-            playerBindingSource.DataSource = players;
-            var teams = new TeamsRepository().GetAllTeams();
-            teamBindingSource.DataSource = teams;
+            playerBindingSource.DataSource = _playerRepository.GetAll();
+            teamBindingSource.DataSource = _teamsRepository.GetAll();
             GetTeamName(teamCbo.SelectedValue as int?);
         }
 
@@ -85,8 +88,7 @@ namespace MatchStat.UI
         }
         private void Saveplayers(Player player)
         {
-            var savePlayer = new PlayerRepository();
-            savePlayer.SavePlayer(player);
+            _playerRepository.Add(player);
         }
 
         private void deletePlayerButton_Click(object sender, EventArgs e)
@@ -94,8 +96,7 @@ namespace MatchStat.UI
             var currentlySelected = playerBindingSource.Current as Player;
             if (currentlySelected != null)
             {
-                var removePlayer = new PlayerRepository();
-                removePlayer.RemovePlayer(currentlySelected);
+                _playerRepository.Delete(currentlySelected);
                 LoadPlayers();
             }
         }

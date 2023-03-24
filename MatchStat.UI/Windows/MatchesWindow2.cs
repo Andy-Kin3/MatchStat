@@ -1,6 +1,7 @@
 ﻿using ExpressMapper.Extensions;
 using MatchStat.Database;
 using MatchStat.DataModel.DataModels;
+using MatchStat.Interfaces;
 using MatchStat.Repositories.Repositories;
 using System.Data;
 
@@ -8,9 +9,15 @@ namespace MatchStat.UI.Windows
 {
     public partial class MatchesWindow2 : Form
     {
-        public MatchesWindow2()
+        IMatchesRepository _matchesRepository;
+        ITournamentsRepository _tournamentsRepository;
+        IFieldsRepository _fieldsRepository;
+        ITeamsRepository _teamsRepository;
+
+        public MatchesWindow2(IMatchesRepository repository, ITeamsRepository teamsRepository, ITournamentsRepository tournamentsRepository, IFieldsRepository fieldRepository)
         {
             InitializeComponent();
+            _matchesRepository = repository;
         }
 
         private MatchDetail? match
@@ -30,33 +37,16 @@ namespace MatchStat.UI.Windows
 
         private void SaveMatchToDatabase(MatchDetail match)
         {
-            using (var context = new FootballInfoContext())
-            {
-                var m = match.Map<MatchDetail, Match>();
-                if (m.Id == 0)
-                {
-                    m.Id = GetNextId();
-                }
-                context.MatchDetail.Update(m);
-                context.SaveChanges();
-            }
-        }
-
-        private int GetNextId()
-        {
-            var allMatches = matchDetailBindingSource.DataSource as MatchDetail[];
-            var maximumId = allMatches != null && allMatches.Any() ? allMatches.Max(m => m.Id) : 0;
-            var nextMatchId = maximumId + 1;
-            return nextMatchId;
+            _matchesRepository.Add(match);
         }
 
         private void MatchesWindow2_Load(object sender, EventArgs e)
         {
-            var teams = new TeamsRepository().GetAllTeams();
+            var teams = _teamsRepository.GetAll();
             this.team1BindingSource.DataSource = teams;
             this.team2BindingSource.DataSource = teams;
-            this.tournamentBindingSource.DataSource = new TournamentsRepository().GetTournaments();
-            this.fieldsBindingSource.DataSource = new FieldRepository().GetAllFields();
+            this.tournamentBindingSource.DataSource = _teamsRepository.GetAll();
+            this.fieldsBindingSource.DataSource = _teamsRepository.GetAll();
 
             LoadAllMatches();
             addButton_Click(null, null);
@@ -64,8 +54,7 @@ namespace MatchStat.UI.Windows
 
         private void LoadAllMatches()
         {
-            var matches = new MatchesRepository().GetAllMatches();
-            this.matchDetailBindingSource.DataSource = matches;
+            this.matchDetailBindingSource.DataSource = _matchesRepository.GetAll();
         }
 
         private void dataGridView1_MouseUp(object sender, MouseEventArgs e)
@@ -108,15 +97,7 @@ namespace MatchStat.UI.Windows
 
         private void DeleteMatch(MatchDetail currentMatch)
         {
-            using (var context = new FootballInfoContext())
-            {
-                var m = context.MatchDetails.FirstOrDefault(m => m.Id == currentMatch.Id);
-                if (m != null)
-                {
-                    context.MatchDetails.Remove(m);
-                    context.SaveChanges();
-                }
-            }
+            _matchesRepository.Delete(currentMatch);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace MatchStat.UI.UserControls
             }
 
             this._teamsRepository = teamsRepository;
-           this. _turnamentsRepository = turnamentsRepository;
+            this._turnamentsRepository = turnamentsRepository;
             this._fieldsRepository = fieldsRepository;
         }
 
