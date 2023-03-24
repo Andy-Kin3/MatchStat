@@ -1,11 +1,4 @@
-﻿using MatchStat.Database;
-using MatchStat.DataModel.DataModels;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MatchStat.DataModel.DataModels;
 
 namespace MatchStat.Repositories.Repositories
 {
