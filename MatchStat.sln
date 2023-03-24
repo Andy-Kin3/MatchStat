@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatchStat.Database", "Match
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatchStat.DataModel", "MatchStat.DataModel\MatchStat.DataModel.csproj", "{F51F2F10-22BD-4ED1-A990-3E7303515828}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchStat.Interfaces", "MatchStat.Interfaces\MatchStat.Interfaces.csproj", "{3EF31A3C-48D7-4A51-8306-08FE5F5383C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F51F2F10-22BD-4ED1-A990-3E7303515828}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F51F2F10-22BD-4ED1-A990-3E7303515828}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F51F2F10-22BD-4ED1-A990-3E7303515828}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EF31A3C-48D7-4A51-8306-08FE5F5383C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EF31A3C-48D7-4A51-8306-08FE5F5383C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EF31A3C-48D7-4A51-8306-08FE5F5383C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EF31A3C-48D7-4A51-8306-08FE5F5383C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
