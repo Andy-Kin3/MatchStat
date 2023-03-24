@@ -1,6 +1,6 @@
 ﻿namespace MatchStat.DataModel.DataModels;
 
-public partial class MatchDetail
+public partial class MatchDetail : IItemsWithIdField
 {
     public int Id { get; set; }
 

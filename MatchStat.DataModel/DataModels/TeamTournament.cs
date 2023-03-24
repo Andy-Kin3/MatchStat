@@ -1,6 +1,6 @@
 ﻿namespace MatchStat.DataModel.DataModels;
 
-public partial class TeamTournament
+public partial class TeamTournament : IItemsWithIdField
 {
     public int Id { get; set; }
 

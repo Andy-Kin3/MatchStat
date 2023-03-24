@@ -81,7 +81,7 @@
             // 
             // fieldBindingSource
             // 
-            fieldBindingSource.DataSource = typeof(DataModel.DataModels.Fields);
+            fieldBindingSource.DataSource = typeof(DataModel.DataModels.Field);
             // 
             // countryTextBox
             // 

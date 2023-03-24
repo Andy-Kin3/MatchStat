@@ -15,7 +15,7 @@ public partial class FootballInfoContext : DbContext
     {
     }
 
-    public virtual DbSet<Fields> Fields { get; set; }
+    public virtual DbSet<Field> Fields { get; set; }
 
     public virtual DbSet<Goal> Goals { get; set; }
 

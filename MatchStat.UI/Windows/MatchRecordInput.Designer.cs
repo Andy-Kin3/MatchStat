@@ -35,7 +35,7 @@
             tournamentBindingSource = new BindingSource(components);
             fieldsBindingSource = new BindingSource(components);
             button_SaveMatch = new Button();
-            ucSingleMatch = new UserControls.UcSingleMatch();
+            ucSingleMatch = new UserControls.UcSingleMatch(this._teamsRepository, this._turnamentsRepository, this._fieldsRepository);
             ((System.ComponentModel.ISupportInitialize)matchDetailBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)teamBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)teamBindingSource1).BeginInit();
@@ -61,7 +61,7 @@
             // 
             // fieldsBindingSource
             // 
-            fieldsBindingSource.DataSource = typeof(DataModel.DataModels.Fields);
+            fieldsBindingSource.DataSource = typeof(DataModel.DataModels.Field);
             // 
             // button_SaveMatch
             // 

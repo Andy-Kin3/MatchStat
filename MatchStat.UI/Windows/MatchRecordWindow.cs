@@ -1,14 +1,17 @@
 ﻿using MatchStat.Core.EventArgs;
 using MatchStat.DataModel.DataModels;
+using MatchStat.Interfaces;
 using MatchStat.Repositories.Repositories;
 
 namespace MatchStat.UI.Windows
 {
     public partial class MatchRecordWindow : Form
     {
-        public MatchRecordWindow()
+        private IMatchesRepository _matchesRepository;
+        public MatchRecordWindow(IMatchesRepository repo)
         {
             InitializeComponent();
+            _matchesRepository = repo;
         }
 
         private MatchDetail? matchDetail
@@ -18,8 +21,7 @@ namespace MatchStat.UI.Windows
         }
         private void LoadMatchRecords()
         {
-            var allMatches = new MatchesRepository();
-            this.matchDetailBindingSource.DataSource = allMatches.GetAllMatches();
+            this.matchDetailBindingSource.DataSource = _matchesRepository.GetAllMatches();
         }
 
         private void MatchRecordWindow_Load(object sender, EventArgs e)
@@ -33,7 +35,7 @@ namespace MatchStat.UI.Windows
         }
         private void InvokeMatchesRecordInput(MatchDetail m = null)
         {
-            var matchRecordInput = new  MatchRecordInput();
+            var matchRecordInput = new  MatchRecordInput(_matchesRepository);
             if (m != null)
             {
                 matchRecordInput.matchDetail = m;

@@ -1,6 +1,6 @@
-﻿using MatchStat.Core;
-using MatchStat.Core.EventArgs;
+﻿using MatchStat.Core.EventArgs;
 using MatchStat.DataModel.DataModels;
+using MatchStat.Interfaces;
 using MatchStat.Repositories.Repositories;
 
 namespace MatchStat.UI.Windows
@@ -8,19 +8,22 @@ namespace MatchStat.UI.Windows
     public partial class MatchRecordInput : Form
     {
         public EventHandler MatchSaved { get; set; }
-        MatchesRepository _matchesRepository;
+        IMatchesRepository _matchesRepository;
+        private readonly ITeamsRepository _teamsRepository;
+        private readonly ITournamentsRepository _turnamentsRepository;
+        private readonly IFieldsRepository _fieldsRepository;
 
-        public MatchRecordInput()
+        public MatchRecordInput(IMatchesRepository repo, ITeamsRepository teamsRepository, ITournamentsRepository turnamentsRepository, IFieldsRepository fieldsRepository)
         {
             InitializeComponent();
-            _matchesRepository = new MatchesRepository();
+            _matchesRepository = repo;
             InitializeWindow();
 
         }
         private void InitializeWindow()
         {
 
-            matchDetailBindingSource.DataSource = _matchesRepository.GetAllMatches();
+            matchDetailBindingSource.DataSource = _matchesRepository.GetAll();
         }
         public MatchDetail? matchDetail
         {
@@ -35,15 +38,15 @@ namespace MatchStat.UI.Windows
 
         private void LoadMatches()
         {
-            this.matchDetailBindingSource.DataSource = _matchesRepository.GetAllMatches();
+            this.matchDetailBindingSource.DataSource = _matchesRepository.GetAll();
         }
         private void SaveMatchToDB(MatchDetail match)
         {
-            _matchesRepository.AddMatches(match);
+            _matchesRepository.Add(match);
         }
         private void UpdateMatch(MatchDetail match)
         {;
-            _matchesRepository.UpdateMatch(match);
+            _matchesRepository.Update(match);
         }
         private void saveMatchButton_Click(object sender, EventArgs e)
         {

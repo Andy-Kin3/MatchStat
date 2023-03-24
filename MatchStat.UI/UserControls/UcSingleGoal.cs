@@ -1,14 +1,21 @@
 ﻿using MatchStat.Core;
 using MatchStat.DataModel.DataModels;
+using MatchStat.Interfaces;
 using MatchStat.Repositories.Repositories;
 
 namespace MatchStat.UI.UserControls
 {
     public partial class UcSingleGoal : UserControl
     {
-        public UcSingleGoal()
+
+        public IMatchesRepository _matchesRepo;
+        public IPlayersRepository _playersRepo;
+        public UcSingleGoal(IMatchesRepository matchesRepository, IPlayersRepository playersRepo)
         {
             InitializeComponent();
+            _matchesRepo = matchesRepository;
+            _playersRepo = playersRepo;
+
             if (GlobalFunctions.IsRunTime)
             {
                 InitializeWindow();
@@ -39,11 +46,11 @@ namespace MatchStat.UI.UserControls
 
         private void InitializeWindow()
         {
-            var allMatches = new MatchesRepository().GetAllMatches();
+            var allMatches = _matchesRepo.GetAll();
             allMatches.Insert(0, new MatchDetail());
             matchDetailBindingSource.DataSource = allMatches;
 
-            var allPlayers = new PlayerRepository().GetPlayers();
+            var allPlayers = _playersRepo.GetAll();
             allPlayers.Insert(0, new Player());
             playerBindingSource.DataSource = allPlayers;
         }

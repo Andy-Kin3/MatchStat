@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace MatchStat.Database.EntityTypeConfigurartion
 {
-    public class FieldsConfiguration : IEntityTypeConfiguration<Fields>
+    public class FieldsConfiguration : IEntityTypeConfiguration<Field>
     {
-        public void Configure(EntityTypeBuilder<Fields> entity)
+        public void Configure(EntityTypeBuilder<Field> entity)
         {
             entity.ToTable("Field");
 

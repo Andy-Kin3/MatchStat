@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MatchStat.DataModel.DataModels;
 
-public partial class Team
+public partial class Team : IItemsWithIdField
 {
     public int Id { get; set; }
 

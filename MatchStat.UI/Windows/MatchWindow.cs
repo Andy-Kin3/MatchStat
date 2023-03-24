@@ -47,7 +47,7 @@ namespace MatchStat.UI
                 return teams;
             }
         }
-        private List<Fields> GetFields()
+        private List<Field> GetFields()
         {
             using(var context = new FootballInfoContext())
             {

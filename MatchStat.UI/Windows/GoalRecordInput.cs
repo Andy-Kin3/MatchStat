@@ -1,18 +1,23 @@
 ﻿using MatchStat.Core.EventArgs;
 using MatchStat.DataModel.DataModels;
-using MatchStat.Repositories.Repositories;
-using Microsoft.EntityFrameworkCore.Metadata;
+using MatchStat.Interfaces;
 
 namespace MatchStat.UI.Windows
 {
     public partial class GoalRecordInput : Form
     {
+        private readonly IGoalRepository _goalRepo; 
+        public IMatchesRepository _matchesRepo;
+        public IPlayersRepository _playersRepo;
+
         public EventHandler GoalSaved { get; set; }
 
-        public GoalRecordInput(Goal g = null)
+        public GoalRecordInput(IGoalRepository goalRepo, IMatchesRepository matchesRepository, IPlayersRepository playersRepo,  Goal g = null)
         {
             InitializeComponent();
-
+            this._goalRepo = goalRepo;
+            this._matchesRepo = matchesRepository;
+            this._playersRepo = playersRepo;
         }
 
         public Goal? Goal
@@ -23,14 +28,12 @@ namespace MatchStat.UI.Windows
 
         public void SaveGoal(Goal goal)
         {
-            var savedGoal = new GoalRepository();
-            savedGoal.AddGoal(goal);
+            _goalRepo.Add(goal);
 
         }
         public void UpdateEditedGoal(Goal g)
         {
-            var updatedGoal = new GoalRepository();
-            updatedGoal.AddGoal(g);
+            _goalRepo.Update(g);
 
         }
         private void button_saveGoal_Click(object sender, EventArgs e)
