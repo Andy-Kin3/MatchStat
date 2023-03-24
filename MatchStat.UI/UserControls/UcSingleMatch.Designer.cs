@@ -197,7 +197,7 @@
             // 
             // fieldsBindingSource
             // 
-            fieldsBindingSource.DataSource = typeof(DataModel.DataModels.Fields);
+            fieldsBindingSource.DataSource = typeof(DataModel.DataModels.Field);
             // 
             // comboBox_team2
             // 

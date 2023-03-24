@@ -18,9 +18,9 @@ namespace MatchStat.UI
         {
             InitializeComponent();
         }
-        private Fields? field
+        private Field? field
         {
-            get { return this.fieldBindingSource.DataSource as Fields; }
+            get { return this.fieldBindingSource.DataSource as Field; }
             set
             {
                 this.fieldBindingSource.DataSource = value;
@@ -66,7 +66,7 @@ namespace MatchStat.UI
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            var currentlySelected = fieldBindingSource.DataSource as Fields;
+            var currentlySelected = fieldBindingSource.DataSource as Field;
             if (currentlySelected != null)
             {
                 using (var context = new FootballInfoContext())

@@ -32,7 +32,7 @@ namespace MatchStat.UI.Windows
         {
             Goal goal1 = new Goal();
             button_saveGoal = new Button();
-            ucSingleGoal2 = new UserControls.UcSingleGoal();
+            ucSingleGoal2 = new UserControls.UcSingleGoal(_matchesRepo, _playersRepo);
             SuspendLayout();
             // 
             // button_saveGoal

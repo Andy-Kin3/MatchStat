@@ -247,7 +247,7 @@
             // 
             // fieldsBindingSource
             // 
-            this.fieldsBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Fields);
+            this.fieldsBindingSource.DataSource = typeof(MatchStat.DataModel.DataModels.Field);
             // 
             // field
             // 

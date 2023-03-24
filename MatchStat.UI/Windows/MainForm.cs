@@ -1,4 +1,6 @@
-﻿using MatchStat.UI.Windows;
+﻿using MatchStat.Database;
+using MatchStat.Repositories.Repositories;
+using MatchStat.UI.Windows;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -55,7 +57,9 @@ namespace MatchStat.UI
 
         private void matchesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var matches = new MatchRecordWindow();
+            var context = new FootballInfoContext();
+            var matchesRepository = new MatchDetailsRepository(context);
+            var matches = new MatchRecordWindow(matchesRepository);
             matches.Show();
             matches.MdiParent = this;
         }

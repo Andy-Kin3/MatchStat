@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MatchStat.DataModel.DataModels;
 
-public partial class Match
+public partial class Match : IItemsWithIdField
 {
     public int Id { get; set; }
 
@@ -20,7 +20,7 @@ public partial class Match
 
     public int FieldId { get; set; }
 
-    public virtual Fields Field { get; set; } = null!;
+    public virtual Field Field { get; set; } = null!;
 
     public virtual Team Team1 { get; set; } = null!;
 
