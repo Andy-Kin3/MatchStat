@@ -17,17 +17,9 @@ namespace MatchStat.UI.Windows
         {
             InitializeComponent();
         }
-        private Goal[] GetGoals()
-        {
-            using (var context = new FootballInfoContext())
-            {
-                var goal = context.Goals.ToArray();
-                return goal;
-            }
-        }
         private void LoadGoals()
         {
-            var goals = GetGoals();
+            var goals = new GoalRepository().GetAllGoals();
             this.goalBindingSource.DataSource = goals;
         }
 

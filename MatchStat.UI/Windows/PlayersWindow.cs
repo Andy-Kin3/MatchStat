@@ -13,6 +13,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.VisualBasic;
 using System.Numerics;
 using MatchStat.Database;
+using MatchStat.Repositories.Repositories;
 
 namespace MatchStat.UI
 {
@@ -29,28 +30,11 @@ namespace MatchStat.UI
             set { this.playerBindingSource.DataSource = value; }
         }
 
-        private List<Player> GetPlayer()
-        {
-            using (var context = new FootballInfoContext())
-            {
-                var player = context.Players.ToList();
-                return player;
-            }
-        }
-        private List<Team> GetTeams()
-        {
-            using (var context = new FootballInfoContext())
-            {
-                var teams = context.Teams.ToList();
-                return teams;
-            }
-        }
-
         private void LoadPlayers()
         {
-            var players = this.GetPlayer();
+            var players = new PlayerRepository().GetPlayers();
             playerBindingSource.DataSource = players;
-            var teams = this.GetTeams();
+            var teams = new TeamsRepository().GetAllTeams();
             teamBindingSource.DataSource = teams;
             GetTeamName(teamCbo.SelectedValue as int?);
         }
@@ -79,30 +63,30 @@ namespace MatchStat.UI
                 e.Value = GetTeamName(teamId);
             }
         }
-        private int GetNextId()
-        {
-            var allPlayers = playerBindingSource.DataSource as List<Player>;
-            var maximumId = allPlayers != null && allPlayers.Any() ? allPlayers.Max(x => x.Id) : 0;
-            var returnValue = maximumId + 1;
-            return returnValue;
-        }
+        //private int GetNextId()
+        //{
+        //    var allPlayers = playerBindingSource.DataSource as List<Player>;
+        //    var maximumId = allPlayers != null && allPlayers.Any() ? allPlayers.Max(x => x.Id) : 0;
+        //    var returnValue = maximumId + 1;
+        //    return returnValue;
+        //}
 
         private void createPlayerButton_Click(object sender, EventArgs e)
         {
-            using (var context = new FootballInfoContext())
-            {
-                var p = Player;
-                context.Players.Add(p);
-                context.SaveChanges();
-                LoadPlayers();
-                playerFirstName.Clear();
-                playerLastName.Clear();
-            }
+            Saveplayers(Player);
+            LoadPlayers();
+            playerFirstName.Clear();
+            playerLastName.Clear();
         }
 
         private void Players_Load(object sender, EventArgs e)
         {
             LoadPlayers();
+        }
+        private void Saveplayers(Player player)
+        {
+            var savePlayer = new PlayerRepository();
+            savePlayer.SavePlayer(player);
         }
 
         private void deletePlayerButton_Click(object sender, EventArgs e)
@@ -110,12 +94,9 @@ namespace MatchStat.UI
             var currentlySelected = playerBindingSource.Current as Player;
             if (currentlySelected != null)
             {
-                using (var context = new FootballInfoContext())
-                {
-                    context.Players.Remove(currentlySelected);
-                    context.SaveChanges();
-                    LoadPlayers();
-                }
+                var removePlayer = new PlayerRepository();
+                removePlayer.RemovePlayer(currentlySelected);
+                LoadPlayers();
             }
         }
     }

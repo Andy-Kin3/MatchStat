@@ -19,7 +19,7 @@ namespace MatchStat.Repositories.Repositories
                 return p;
             }
         }
-        public void UpdateAndSavePlayer(Player player)
+        public void SavePlayer(Player player)
         {
             using( var context = new FootballInfoContext())
             {
