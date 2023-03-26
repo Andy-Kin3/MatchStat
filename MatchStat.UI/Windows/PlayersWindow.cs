@@ -1,19 +1,4 @@
 ﻿using MatchStat.DataModel.DataModels;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.VisualBasic;
-using System.Numerics;
-using MatchStat.Database;
-using MatchStat.Repositories.Repositories;
 using MatchStat.Interfaces;
 
 namespace MatchStat.UI
@@ -39,31 +24,17 @@ namespace MatchStat.UI
         {
             playerBindingSource.DataSource = _playerRepository.GetAll();
             teamBindingSource.DataSource = _teamsRepository.GetAll();
-            GetTeamName(teamCbo.SelectedValue as int?);
+            //_teamsRepository.GetTeamName(teamCbo.SelectedValue);
         }
 
-        public string GetTeamName(int? teamId)
-        {
-            if (teamId != null)
-            {
-                using (var context = new FootballInfoContext())
-                {
 
-                    var myTeamName = context.Teams.FirstOrDefault(t => t.Id == teamId);
-                    if (myTeamName != null)
-                    {
-                        return myTeamName.Name;
-                    }
-                }
-            }
-            return string.Empty;
-        }
         private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (dataGridView1.Columns[e.ColumnIndex].Name == "TeamName")
             {
-                var teamId = e.Value as int?;
-                e.Value = GetTeamName(teamId);
+                int teamId;
+                if (int.TryParse(e.Value?.ToString(), out teamId))
+                    e.Value = _teamsRepository.GetTeamName(teamId);
             }
         }
         //private int GetNextId()

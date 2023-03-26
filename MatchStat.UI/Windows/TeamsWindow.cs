@@ -1,22 +1,15 @@
-﻿using MatchStat.Database;
-using MatchStat.DataModel.DataModels;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using MatchStat.DataModel.DataModels;
+using MatchStat.Interfaces;
 
 namespace MatchStat.UI
 {
     public partial class TeamsWindow : Form
     {
-        public TeamsWindow()
+        private readonly ITeamsRepository _teamsRepository;
+        public TeamsWindow(ITeamsRepository teamsRepository)
         {
             InitializeComponent();
+            _teamsRepository = teamsRepository;
         }
         private Team? team
         {
@@ -27,17 +20,9 @@ namespace MatchStat.UI
             set { this.teamBindingSource.DataSource = value; }
 
         }
-        private List<Team> GetTeams()
-        {
-            using (var context = new FootballInfoContext())
-            {
-                var team = context.Teams.ToList();
-                return team;
-            }
-        }
         private void LoadTeams()
         {
-            var teams = GetTeams();
+            var teams = _teamsRepository.GetAll();
             teamBindingSource.DataSource = teams;
         }
         private void Teams_Load(object sender, EventArgs e)
@@ -46,14 +31,7 @@ namespace MatchStat.UI
         }
         private void AddTeamToDatabase(Team t)
         {
-            using (var context = new FootballInfoContext())
-            {
-                context.Teams.Add(t);
-                context.SaveChanges();
-                LoadTeams();
-                teamName.Clear();
-
-            }
+            _teamsRepository.Add(t);
             LoadTeams();
         }
 
@@ -77,12 +55,7 @@ namespace MatchStat.UI
             var currentlySelected = teamBindingSource.Current as Team;
             if (currentlySelected != null)
             {
-                using (var context = new FootballInfoContext())
-                {
-                    context.Teams.Remove(currentlySelected);
-                    context.SaveChanges();
-                    LoadTeams();
-                }
+                _teamsRepository.Delete(currentlySelected);
             }
         }
     }

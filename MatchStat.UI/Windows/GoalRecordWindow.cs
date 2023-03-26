@@ -12,19 +12,20 @@ namespace MatchStat.UI.Windows
         private readonly IPlayersRepository _playersRepository;
         private readonly IMatchesRepository _matchesRepository;
 
-        private Goal? goal
-        {
-            get { return goalBindingSource.DataSource as Goal; }
-            set { this.goalBindingSource.DataSource = value; }
-        }
-        public GoalRecordWindow(IPlayersRepository playersRepository, IGoalRepository _goalRepository)
+        //private Goal? goal
+        //{
+        //    get { return goalBindingSource.DataSource as Goal; }
+        //    set { this.goalBindingSource.DataSource = value; }
+        //}
+        public GoalRecordWindow(IPlayersRepository playersRepository, IGoalRepository goalRepository)
         {
             InitializeComponent();
             _playersRepository = playersRepository;
+            _goalRepository = goalRepository;
         }
         private void LoadGoals()
         {
-            this.goalBindingSource.DataSource = _goalRepository.GetAll();
+            goalBindingSource.DataSource = _goalRepository.GetAll();
         }
 
 

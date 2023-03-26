@@ -56,6 +56,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id, dateDataGridViewTextBoxColumn, matchNameDataGridViewTextBoxColumn, tournamentNameDataGridViewTextBoxColumn, fieldNameDataGridViewTextBoxColumn });
             dataGridView1.DataSource = matchDetailBindingSource;
+            dataGridView1.GridColor = SystemColors.InactiveBorder;
             dataGridView1.Location = new Point(0, 52);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;

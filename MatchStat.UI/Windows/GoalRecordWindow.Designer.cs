@@ -30,14 +30,14 @@
         {
             components = new System.ComponentModel.Container();
             dataGridView1 = new DataGridView();
-            playerIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            matchIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            numberOfGoalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             goalBindingSource = new BindingSource(components);
             button_CreateGoal = new Button();
             contextMenuStrip_goal = new ContextMenuStrip(components);
             editToolStripMenuItem = new ToolStripMenuItem();
             deleteToolStripMenuItem = new ToolStripMenuItem();
+            playerIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            matchIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            numberOfGoalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)goalBindingSource).BeginInit();
             contextMenuStrip_goal.SuspendLayout();
@@ -49,10 +49,12 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = SystemColors.InactiveBorder;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { playerIdDataGridViewTextBoxColumn, matchIdDataGridViewTextBoxColumn, numberOfGoalDataGridViewTextBoxColumn });
             dataGridView1.DataSource = goalBindingSource;
             dataGridView1.Dock = DockStyle.Bottom;
+            dataGridView1.GridColor = SystemColors.InactiveBorder;
             dataGridView1.Location = new Point(0, 52);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -64,27 +66,6 @@
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             dataGridView1.CellFormatting += DataGridView1_cellFormatting;
             dataGridView1.MouseUp += dataGridView1_MouseUp;
-            // 
-            // playerIdDataGridViewTextBoxColumn
-            // 
-            playerIdDataGridViewTextBoxColumn.DataPropertyName = "PlayerId";
-            playerIdDataGridViewTextBoxColumn.HeaderText = "PlayerId";
-            playerIdDataGridViewTextBoxColumn.Name = "playerIdDataGridViewTextBoxColumn";
-            playerIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // matchIdDataGridViewTextBoxColumn
-            // 
-            matchIdDataGridViewTextBoxColumn.DataPropertyName = "MatchId";
-            matchIdDataGridViewTextBoxColumn.HeaderText = "MatchId";
-            matchIdDataGridViewTextBoxColumn.Name = "matchIdDataGridViewTextBoxColumn";
-            matchIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numberOfGoalDataGridViewTextBoxColumn
-            // 
-            numberOfGoalDataGridViewTextBoxColumn.DataPropertyName = "NumberOfGoal";
-            numberOfGoalDataGridViewTextBoxColumn.HeaderText = "NumberOfGoal";
-            numberOfGoalDataGridViewTextBoxColumn.Name = "numberOfGoalDataGridViewTextBoxColumn";
-            numberOfGoalDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // goalBindingSource
             // 
@@ -120,6 +101,27 @@
             deleteToolStripMenuItem.Text = "Delete";
             deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
             // 
+            // playerIdDataGridViewTextBoxColumn
+            // 
+            playerIdDataGridViewTextBoxColumn.DataPropertyName = "PlayerId";
+            playerIdDataGridViewTextBoxColumn.HeaderText = "Players";
+            playerIdDataGridViewTextBoxColumn.Name = "playerIdDataGridViewTextBoxColumn";
+            playerIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // matchIdDataGridViewTextBoxColumn
+            // 
+            matchIdDataGridViewTextBoxColumn.DataPropertyName = "MatchId";
+            matchIdDataGridViewTextBoxColumn.HeaderText = "Matches";
+            matchIdDataGridViewTextBoxColumn.Name = "matchIdDataGridViewTextBoxColumn";
+            matchIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // numberOfGoalDataGridViewTextBoxColumn
+            // 
+            numberOfGoalDataGridViewTextBoxColumn.DataPropertyName = "NumberOfGoal";
+            numberOfGoalDataGridViewTextBoxColumn.HeaderText = "Number Of Goal";
+            numberOfGoalDataGridViewTextBoxColumn.Name = "numberOfGoalDataGridViewTextBoxColumn";
+            numberOfGoalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // GoalRecordWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -139,13 +141,13 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn playerIdDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn matchIdDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn numberOfGoalDataGridViewTextBoxColumn;
         private BindingSource goalBindingSource;
         private Button button_CreateGoal;
         private ContextMenuStrip contextMenuStrip_goal;
         private ToolStripMenuItem editToolStripMenuItem;
         private ToolStripMenuItem deleteToolStripMenuItem;
+        private DataGridViewTextBoxColumn playerIdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn matchIdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn numberOfGoalDataGridViewTextBoxColumn;
     }
 }

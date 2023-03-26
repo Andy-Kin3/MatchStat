@@ -9,14 +9,14 @@ namespace MatchStat.UI.Windows
     {
         public EventHandler MatchSaved { get; set; }
         IMatchesRepository _matchesRepository;
-        private readonly ITeamsRepository _teamsRepository;
-        private readonly ITournamentsRepository _turnamentsRepository;
-        private readonly IFieldsRepository _fieldsRepository;
+        ITeamsRepository _teamsRepository;
+        ITournamentsRepository _turnamentsRepository;
+        IFieldsRepository _fieldsRepository;
 
-        public MatchRecordInput(IMatchesRepository repo, ITeamsRepository teamsRepository, ITournamentsRepository turnamentsRepository, IFieldsRepository fieldsRepository)
+        public MatchRecordInput(IMatchesRepository mathcRepository, ITeamsRepository teamsRepository, ITournamentsRepository turnamentsRepository, IFieldsRepository fieldsRepository)
         {
             InitializeComponent();
-            _matchesRepository = repo;
+            _matchesRepository = mathcRepository;
             InitializeWindow();
 
         }

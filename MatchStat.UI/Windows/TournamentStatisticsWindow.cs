@@ -26,16 +26,6 @@ namespace MatchStat.UI
         }
 
 
-        private List<Tournament> GetTournament()
-        {
-            using (var context = new FootballInfoContext())
-            {
-                var tournament = context.Tournaments.ToList();
-                return tournament;
-            }
-        }
-
-
         private void createButton_Click(object sender, EventArgs e)
         {
             var tournament = new Tournament

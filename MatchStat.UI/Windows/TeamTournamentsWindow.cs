@@ -1,22 +1,20 @@
 ﻿using MatchStat.Database;
 using MatchStat.DataModel.DataModels;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using MatchStat.Interfaces;
 
 namespace MatchStat.UI
 {
     public partial class TeamTournamentsWindow : Form
     {
-        public TeamTournamentsWindow()
+        public readonly ITeamTournamentsRepository _teamTournamentRepository;
+        private readonly ITournamentsRepository _tournamentRepository;
+        private readonly ITeamsRepository _teamsRepository;
+        public TeamTournamentsWindow(ITeamTournamentsRepository teamTournamentsRepository, ITournamentsRepository tournamentRepository, ITeamsRepository teamsRepository)
         {
             InitializeComponent();
+            _tournamentRepository = tournamentRepository;
+            _teamsRepository = teamsRepository;
+            _teamTournamentRepository = teamTournamentsRepository;
         }
         private TeamTournament? teamTournaments
         {
@@ -31,39 +29,11 @@ namespace MatchStat.UI
         }
         private void LoadTeamTournments()
         {
-            var teamsTournament = this.GetTeamTournaments();
+            var teamsTournament = _teamTournamentRepository.GetAll();
             teamTournamentBindingSource.DataSource = teamsTournament;
-            this.teamBindingSource.DataSource = GetTeams();
-            this.tournamentBindingSource.DataSource = GetTournament();
+            this.teamBindingSource.DataSource = _teamsRepository.GetAll();
+            this.tournamentBindingSource.DataSource = _tournamentRepository.GetAll();
             //FillList(teamsTournament);
-        }
-
-        private List<TeamTournament> GetTeamTournaments()
-        {
-            using (var context = new FootballInfoContext())
-            {
-                var myTeamTour = context.TeamTournaments.ToList();
-                return myTeamTour;
-            }
-        }
-
-        private List<Tournament> GetTournament()
-        {
-            using (var context = new FootballInfoContext())
-            {
-
-                var myTournament = context.Tournaments.ToList();
-                return myTournament;
-            }
-        }
-
-        private List<Team> GetTeams()
-        {
-            using (var context = new FootballInfoContext())
-            {
-                var myTeam = context.Teams.ToList();
-                return myTeam;
-            }
         }
 
         private void TeamTournaments_Load(object sender, EventArgs e)
@@ -82,41 +52,20 @@ namespace MatchStat.UI
                 LoadTeamTournments();
             }
         }
-        private string GetTeamName(int? id)
-        {
-            using (var context = new FootballInfoContext())
-            {
-                var team = context.Teams.FirstOrDefault(t => t.Id == id);
-                if (team != null)
-                {
-                    return team.Name;
-                }
-                return string.Empty;
-            }
-        }
-        private string GetTournamentName(int? id)
-        {
-            using (var context = new FootballInfoContext())
-            {
-                var tournament = context.Tournaments.FirstOrDefault(t => t.Id == id);
-                if (tournament != null)
-                {
-                    return tournament.Name;
-                }
-                return string.Empty;
-            }
-        }
+
         private void DataGridView_CellFormatting(Object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (dataGridView1.Columns[e.ColumnIndex].Index == 0)
             {
-                var teamId = e.Value as int?;
-                e.Value = GetTeamName(teamId);
+                int teamId;
+                if (int.TryParse(e.Value?.ToString(), out teamId))
+                    e.Value = _teamsRepository.GetTeamName(teamId);
             }
             if (dataGridView1.Columns[e.ColumnIndex].Index == 1)
             {
-                var tournamentId = e.Value as int?;
-                e.Value = GetTournamentName(tournamentId);
+                int tournamentId;
+                if (int.TryParse(e.Value?.ToString(), out tournamentId))
+                    e.Value = _tournamentRepository.GetTournamentName(tournamentId);
             }
         }
         private int GetNextID()

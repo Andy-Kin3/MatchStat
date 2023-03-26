@@ -1,5 +1,6 @@
 ﻿using MatchStat.Database;
 using MatchStat.DataModel.DataModels;
+using MatchStat.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,11 @@ namespace MatchStat.UI
 {
     public partial class FieldsWindow : Form
     {
-        public FieldsWindow()
+        private readonly IFieldsRepository _fieldsRepository;
+        public FieldsWindow(IFieldsRepository fieldRepo)
         {
             InitializeComponent();
+            _fieldsRepository = fieldRepo;
         }
         private Field? field
         {
@@ -31,31 +34,14 @@ namespace MatchStat.UI
         {
             LoadField();
         }
-
-        private object GetField()
-        {
-            using (var context = new FootballInfoContext())
-            {
-                var fields = context.Fields.ToList();
-                return fields;
-            };
-        }
         private void LoadField()
         {
-            fieldBindingSource.DataSource = GetField();
+            fieldBindingSource.DataSource = _fieldsRepository.GetAll();
         }
 
         private void createButton_Click(object sender, EventArgs e)
         {
-            using (var context = new FootballInfoContext())
-            {
-                var f = field;
-                context.Fields.Add(f);
-                context.SaveChanges();
-                LoadField();
-                stadiumTextBox.Clear();
-                countryTextBox.Clear();
-            };
+            _fieldsRepository.Add(field);
         }
         //private int GetNextId()
         //{
@@ -69,13 +55,7 @@ namespace MatchStat.UI
             var currentlySelected = fieldBindingSource.DataSource as Field;
             if (currentlySelected != null)
             {
-                using (var context = new FootballInfoContext())
-                {
-                    context.Fields.Remove(currentlySelected);
-                    context.SaveChanges();
-                    LoadField();
-
-                }
+                _fieldsRepository.Delete(currentlySelected);
             }
         }
     }

@@ -45,8 +45,8 @@ namespace MatchStat.UI.Windows
             var teams = _teamsRepository.GetAll();
             this.team1BindingSource.DataSource = teams;
             this.team2BindingSource.DataSource = teams;
-            this.tournamentBindingSource.DataSource = _teamsRepository.GetAll();
-            this.fieldsBindingSource.DataSource = _teamsRepository.GetAll();
+            this.tournamentBindingSource.DataSource = _tournamentsRepository.GetAll();
+            this.fieldsBindingSource.DataSource = _fieldsRepository.GetAll();
 
             LoadAllMatches();
             addButton_Click(null, null);

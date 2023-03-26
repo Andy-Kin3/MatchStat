@@ -40,17 +40,16 @@
             playerLName = new Label();
             playerLastName = new TextBox();
             dataGridView1 = new DataGridView();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            firstNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            lastNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            dobDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            TeamName = new DataGridViewTextBoxColumn();
             teamBindingSource = new BindingSource(components);
             teamCbo = new ComboBox();
             label1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             deletePlayerButton = new Button();
             createPlayerButton = new Button();
+            firstNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            lastNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dobDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            TeamName = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)playerBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)teamBindingSource).BeginInit();
@@ -127,6 +126,8 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(128, 255, 255);
             dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.AutoGenerateColumns = false;
@@ -135,49 +136,18 @@
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, firstNameDataGridViewTextBoxColumn, lastNameDataGridViewTextBoxColumn, dobDataGridViewTextBoxColumn, TeamName });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { firstNameDataGridViewTextBoxColumn, lastNameDataGridViewTextBoxColumn, dobDataGridViewTextBoxColumn, TeamName });
             dataGridView1.DataSource = playerBindingSource;
             dataGridView1.Dock = DockStyle.Bottom;
+            dataGridView1.GridColor = SystemColors.InactiveBorder;
             dataGridView1.Location = new Point(0, 129);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(753, 294);
             dataGridView1.TabIndex = 9;
             dataGridView1.CellFormatting += DataGridView1_CellFormatting;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.Frozen = true;
-            idDataGridViewTextBoxColumn.HeaderText = "Id";
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.Width = 55;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
-            firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            // 
-            // dobDataGridViewTextBoxColumn
-            // 
-            dobDataGridViewTextBoxColumn.DataPropertyName = "Dob";
-            dobDataGridViewTextBoxColumn.HeaderText = "Date Of Birth";
-            dobDataGridViewTextBoxColumn.Name = "dobDataGridViewTextBoxColumn";
-            // 
-            // TeamName
-            // 
-            TeamName.DataPropertyName = "TeamId";
-            TeamName.HeaderText = "Team Name";
-            TeamName.Name = "TeamName";
             // 
             // teamBindingSource
             // 
@@ -186,9 +156,11 @@
             // teamCbo
             // 
             teamCbo.DataBindings.Add(new Binding("SelectedValue", playerBindingSource, "TeamId", true));
+            teamCbo.DataBindings.Add(new Binding("Text", playerBindingSource, "TeamId", true));
             teamCbo.DataSource = teamBindingSource;
             teamCbo.DisplayMember = "Name";
             teamCbo.Dock = DockStyle.Fill;
+            teamCbo.DropDownStyle = ComboBoxStyle.DropDownList;
             teamCbo.Font = new Font("Times New Roman", 10F, FontStyle.Italic, GraphicsUnit.Point);
             teamCbo.FormattingEnabled = true;
             teamCbo.Location = new Point(484, 40);
@@ -256,6 +228,34 @@
             createPlayerButton.UseVisualStyleBackColor = true;
             createPlayerButton.Click += createPlayerButton_Click;
             // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
+            firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dobDataGridViewTextBoxColumn
+            // 
+            dobDataGridViewTextBoxColumn.DataPropertyName = "Dob";
+            dobDataGridViewTextBoxColumn.HeaderText = "Date Of Birth";
+            dobDataGridViewTextBoxColumn.Name = "dobDataGridViewTextBoxColumn";
+            dobDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // TeamName
+            // 
+            TeamName.DataPropertyName = "TeamId";
+            TeamName.HeaderText = "Team Name";
+            TeamName.Name = "TeamName";
+            TeamName.ReadOnly = true;
+            // 
             // PlayersWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -294,13 +294,12 @@
         private ComboBox teamCbo;
         private Label label1;
         private BindingSource teamBindingSource;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Button deletePlayerButton;
+        private Button createPlayerButton;
         private DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn dobDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn TeamName;
-        private TableLayoutPanel tableLayoutPanel1;
-        private Button deletePlayerButton;
-        private Button createPlayerButton;
     }
 }

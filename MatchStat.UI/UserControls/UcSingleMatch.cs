@@ -13,11 +13,11 @@ namespace MatchStat.UI.UserControls
 
         public UcSingleMatch(ITeamsRepository teamsRepository, ITournamentsRepository turnamentsRepository, IFieldsRepository fieldsRepository)
         {
-            InitializeComponent();
             if (GlobalFunctions.IsRunTime)
             {
                 InitializeWindow();
             }
+            InitializeComponent();
 
             this._teamsRepository = teamsRepository;
             this._turnamentsRepository = turnamentsRepository;

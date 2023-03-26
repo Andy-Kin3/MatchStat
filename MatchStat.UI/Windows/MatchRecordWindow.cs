@@ -7,7 +7,7 @@ namespace MatchStat.UI.Windows
 {
     public partial class MatchRecordWindow : Form
     {
-        private  readonly IMatchesRepository _matchesRepository;
+        private readonly IMatchesRepository _matchesRepository;
         private readonly ITeamsRepository _teamsRepository;
         private readonly ITournamentsRepository _turnamentsRepository;
         private readonly IFieldsRepository _fieldsRepository;
@@ -38,7 +38,7 @@ namespace MatchStat.UI.Windows
         }
         private void InvokeMatchesRecordInput(MatchDetail m = null)
         {
-            var matchRecordInput = new  MatchRecordInput(_matchesRepository, _teamsRepository, _turnamentsRepository, _fieldsRepository);
+            var matchRecordInput = new MatchRecordInput(_matchesRepository, _teamsRepository, _turnamentsRepository, _fieldsRepository);
             if (m != null)
             {
                 matchRecordInput.matchDetail = m;

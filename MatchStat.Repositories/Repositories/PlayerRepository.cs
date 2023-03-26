@@ -15,6 +15,22 @@ namespace MatchStat.Repositories.Repositories
         public PlayersRepository(FootballInfoContext context) : base(context)
         {
         }
+        public string GetTeamName(int teamId)
+        {
+            if (teamId != null)
+            {
+                using (var context = new FootballInfoContext())
+                {
+
+                    var myTeamName = context.Teams.FirstOrDefault(t => t.Id == teamId);
+                    if (myTeamName != null)
+                    {
+                        return myTeamName.Name;
+                    }
+                }
+            }
+            return string.Empty;
+        }
 
     }
 }

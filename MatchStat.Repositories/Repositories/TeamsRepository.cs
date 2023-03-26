@@ -1,7 +1,7 @@
 ﻿using MatchStat.Database;
 using MatchStat.DataModel.DataModels;
 using MatchStat.Interfaces;
-
+using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,20 @@ namespace MatchStat.Repositories.Repositories
     {
         public TeamsRepository(FootballInfoContext context) : base(context)
         {
+            
         }
 
+        public string GetTeamName(int teamId)
+        {
+            using (var context = new FootballInfoContext())
+            {
+                var team = context.Teams.FirstOrDefault(t => t.Id == teamId);
+                if (team != null)
+                {
+                    return team.Name;
+                }
+                return string.Empty;
+            }
+        }
     }
 }

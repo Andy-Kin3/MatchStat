@@ -8,18 +8,17 @@ namespace MatchStat.UI.UserControls
     public partial class UcSingleGoal : UserControl
     {
 
-        public IMatchesRepository _matchesRepo;
-        public IPlayersRepository _playersRepo;
+        private readonly IMatchesRepository _matchesRepository;
+        private readonly IPlayersRepository _playersRepository;
         public UcSingleGoal(IMatchesRepository matchesRepository, IPlayersRepository playersRepo)
         {
-            InitializeComponent();
-            _matchesRepo = matchesRepository;
-            _playersRepo = playersRepo;
-
             if (GlobalFunctions.IsRunTime)
             {
                 InitializeWindow();
             }
+            InitializeComponent();
+            _matchesRepository = matchesRepository;
+            _playersRepository = playersRepo;
         }
 
         public Goal? Goal
@@ -46,11 +45,11 @@ namespace MatchStat.UI.UserControls
 
         private void InitializeWindow()
         {
-            var allMatches = _matchesRepo.GetAll();
+            var allMatches = _matchesRepository.GetAll();
             allMatches.Insert(0, new MatchDetail());
             matchDetailBindingSource.DataSource = allMatches;
 
-            var allPlayers = _playersRepo.GetAll();
+            var allPlayers = _playersRepository.GetAll();
             allPlayers.Insert(0, new Player());
             playerBindingSource.DataSource = allPlayers;
         }

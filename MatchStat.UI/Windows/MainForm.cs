@@ -1,4 +1,5 @@
 ﻿using MatchStat.Database;
+using MatchStat.Interfaces;
 using MatchStat.Repositories.Repositories;
 using MatchStat.UI.Windows;
 using System;
@@ -32,7 +33,9 @@ namespace MatchStat.UI
 
         private void competingTeamsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var team = new TeamsWindow();
+            var context = new FootballInfoContext();
+            var teamRepo = new TeamsRepository(context);
+            var team = new TeamsWindow(teamRepo);
             team.Show();
             team.MdiParent = this;
         }
@@ -48,7 +51,9 @@ namespace MatchStat.UI
 
         private void selectedFieldsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var fields = new FieldsWindow();
+            var context = new FootballInfoContext();
+            var fieldRepo = new FieldRepository(context);
+            var fields = new FieldsWindow(fieldRepo);
             fields.Show();
             fields.MdiParent = this;
         }
@@ -79,7 +84,11 @@ namespace MatchStat.UI
 
         private void setTournamentsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var teamTournament = new TeamTournamentsWindow();
+            var context = new FootballInfoContext();
+            var teamRepo = new TeamsRepository(context);
+            var tournamentRepo = new TournamentsRepository(context);
+            var teamTournamentsrepo = new TeamTournamentRepository(context);
+            var teamTournament = new TeamTournamentsWindow(teamTournamentsrepo, tournamentRepo, teamRepo);
             teamTournament.Show();
             teamTournament.MdiParent = this;
         }
