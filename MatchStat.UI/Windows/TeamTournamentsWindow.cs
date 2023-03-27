@@ -1,14 +1,14 @@
 ﻿using MatchStat.Database;
 using MatchStat.DataModel.DataModels;
-using MatchStat.Interfaces;
+using MatchStat.Interfaces.Interfaces;
 
 namespace MatchStat.UI
 {
     public partial class TeamTournamentsWindow : Form
     {
-        public readonly ITeamTournamentsRepository _teamTournamentRepository;
-        private readonly ITournamentsRepository _tournamentRepository;
-        private readonly ITeamsRepository _teamsRepository;
+        ITeamTournamentsRepository _teamTournamentRepository;
+        ITournamentsRepository _tournamentRepository;
+        ITeamsRepository _teamsRepository;
         public TeamTournamentsWindow(ITeamTournamentsRepository teamTournamentsRepository, ITournamentsRepository tournamentRepository, ITeamsRepository teamsRepository)
         {
             InitializeComponent();

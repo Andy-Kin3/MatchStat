@@ -40,16 +40,16 @@
             playerLName = new Label();
             playerLastName = new TextBox();
             dataGridView1 = new DataGridView();
+            firstNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            lastNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dobDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            TeamName = new DataGridViewTextBoxColumn();
             teamBindingSource = new BindingSource(components);
             teamCbo = new ComboBox();
             label1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             deletePlayerButton = new Button();
             createPlayerButton = new Button();
-            firstNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            lastNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            dobDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            TeamName = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)playerBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)teamBindingSource).BeginInit();
@@ -149,6 +149,34 @@
             dataGridView1.TabIndex = 9;
             dataGridView1.CellFormatting += DataGridView1_CellFormatting;
             // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
+            firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dobDataGridViewTextBoxColumn
+            // 
+            dobDataGridViewTextBoxColumn.DataPropertyName = "Dob";
+            dobDataGridViewTextBoxColumn.HeaderText = "Date Of Birth";
+            dobDataGridViewTextBoxColumn.Name = "dobDataGridViewTextBoxColumn";
+            dobDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // TeamName
+            // 
+            TeamName.DataPropertyName = "TeamId";
+            TeamName.HeaderText = "Team Name";
+            TeamName.Name = "TeamName";
+            TeamName.ReadOnly = true;
+            // 
             // teamBindingSource
             // 
             teamBindingSource.DataSource = typeof(DataModel.DataModels.Team);
@@ -227,34 +255,6 @@
             createPlayerButton.Text = "Create";
             createPlayerButton.UseVisualStyleBackColor = true;
             createPlayerButton.Click += createPlayerButton_Click;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
-            firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dobDataGridViewTextBoxColumn
-            // 
-            dobDataGridViewTextBoxColumn.DataPropertyName = "Dob";
-            dobDataGridViewTextBoxColumn.HeaderText = "Date Of Birth";
-            dobDataGridViewTextBoxColumn.Name = "dobDataGridViewTextBoxColumn";
-            dobDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // TeamName
-            // 
-            TeamName.DataPropertyName = "TeamId";
-            TeamName.HeaderText = "Team Name";
-            TeamName.Name = "TeamName";
-            TeamName.ReadOnly = true;
             // 
             // PlayersWindow
             // 

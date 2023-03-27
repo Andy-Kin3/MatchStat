@@ -1,6 +1,6 @@
 ﻿using MatchStat.Database;
 using MatchStat.DataModel.DataModels;
-using MatchStat.Interfaces;
+using MatchStat.Interfaces.Interfaces;
 using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;

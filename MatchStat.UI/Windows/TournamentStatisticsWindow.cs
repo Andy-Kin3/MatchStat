@@ -1,15 +1,12 @@
-using System.Data.SqlClient;
 using MatchStat.Database;
 using MatchStat.DataModel.DataModels;
-using MatchStat.Interfaces;
-using MatchStat.Repositories.Repositories;
-using Microsoft.IdentityModel.Tokens;
+using MatchStat.Interfaces.Interfaces;
 
 namespace MatchStat.UI
 {
     public partial class TournamentStatisticsWindow : Form
     {
-        private readonly ITournamentsRepository _tournamentRepository;
+        ITournamentsRepository _tournamentRepository;
         public TournamentStatisticsWindow(ITournamentsRepository tournamentsRepository)
         {
             InitializeComponent();

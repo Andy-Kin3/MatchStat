@@ -35,6 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DependencyInjector\DependencyInjector.csproj" />
     <ProjectReference Include="..\MatchStat.Core\MatchStat.Core.csproj" />
     <ProjectReference Include="..\MatchStat.DataModel\MatchStat.DataModel.csproj" />
     <ProjectReference Include="..\MatchStat.Repositories\MatchStat.Repositories.csproj" />

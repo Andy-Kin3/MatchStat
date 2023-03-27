@@ -1,12 +1,12 @@
 ﻿using MatchStat.DataModel.DataModels;
-using MatchStat.Interfaces;
+using MatchStat.Interfaces.Interfaces;
 
 namespace MatchStat.UI
 {
     public partial class PlayersWindow : Form
     {
-        private readonly IPlayersRepository _playerRepository;
-        private readonly ITeamsRepository _teamsRepository;
+        IPlayersRepository _playerRepository;
+        ITeamsRepository _teamsRepository;
         public PlayersWindow(ITeamsRepository teamsRepository, IPlayersRepository playersRepository)
         {
             InitializeComponent();

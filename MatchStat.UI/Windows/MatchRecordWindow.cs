@@ -1,16 +1,16 @@
 ﻿using MatchStat.Core.EventArgs;
 using MatchStat.DataModel.DataModels;
-using MatchStat.Interfaces;
+using MatchStat.Interfaces.Interfaces;
 using MatchStat.Repositories.Repositories;
 
 namespace MatchStat.UI.Windows
 {
     public partial class MatchRecordWindow : Form
     {
-        private readonly IMatchesRepository _matchesRepository;
-        private readonly ITeamsRepository _teamsRepository;
-        private readonly ITournamentsRepository _turnamentsRepository;
-        private readonly IFieldsRepository _fieldsRepository;
+        IMatchesRepository _matchesRepository;
+        ITeamsRepository _teamsRepository;
+        ITournamentsRepository _turnamentsRepository;
+        IFieldsRepository _fieldsRepository;
         public MatchRecordWindow(IMatchesRepository repo)
         {
             InitializeComponent();

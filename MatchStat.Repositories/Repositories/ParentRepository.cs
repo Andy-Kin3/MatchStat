@@ -1,6 +1,6 @@
 ﻿using MatchStat.Database;
 using MatchStat.DataModel.DataModels;
-using MatchStat.Interfaces;
+using MatchStat.Interfaces.Interfaces;
 
 namespace MatchStat.Repositories.Repositories
 {

@@ -1,16 +1,16 @@
 ﻿using MatchStat.Core.EventArgs;
 using MatchStat.Database;
 using MatchStat.DataModel.DataModels;
-using MatchStat.Interfaces;
+using MatchStat.Interfaces.Interfaces;
 using MatchStat.Repositories.Repositories;
 
 namespace MatchStat.UI.Windows
 {
     public partial class GoalRecordWindow : Form
     {
-        private readonly IGoalRepository _goalRepository;
-        private readonly IPlayersRepository _playersRepository;
-        private readonly IMatchesRepository _matchesRepository;
+        IGoalRepository _goalRepository;
+        IPlayersRepository _playersRepository;
+        IMatchesRepository _matchesRepository;
 
         //private Goal? goal
         //{

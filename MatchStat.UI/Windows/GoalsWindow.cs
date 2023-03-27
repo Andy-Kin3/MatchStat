@@ -1,14 +1,14 @@
 ﻿using MatchStat.Database;
 using MatchStat.DataModel.DataModels;
-using MatchStat.Interfaces;
+using MatchStat.Interfaces.Interfaces;
 
 namespace MatchStat.UI
 {
     public partial class GoalsWindow : Form
     {
-        private readonly IGoalRepository _goalrepository;
-        private readonly IPlayersRepository _playersRepository;
-        private readonly IMatchesRepository _matchesRepository;
+        IGoalRepository _goalrepository;
+        IPlayersRepository _playersRepository;
+        IMatchesRepository _matchesRepository;
         public GoalsWindow(IPlayersRepository playersRepository, IGoalRepository goalRepository, IMatchesRepository matchesRepository)
         {
             InitializeComponent();

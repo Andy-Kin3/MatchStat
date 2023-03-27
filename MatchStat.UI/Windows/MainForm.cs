@@ -1,16 +1,8 @@
-﻿using MatchStat.Database;
-using MatchStat.Interfaces;
+﻿using Autofac;
+using DependencyInjector;
+using MatchStat.Database;
 using MatchStat.Repositories.Repositories;
 using MatchStat.UI.Windows;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace MatchStat.UI
 {
@@ -23,12 +15,18 @@ namespace MatchStat.UI
 
         private void goalsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var context = new FootballInfoContext();
-            var playerRepo = new PlayersRepository(context);
-            var goalRepo = new GoalRepository(context);
-            var goals = new GoalRecordWindow(playerRepo, goalRepo);
-            goals.Show();
-            goals.MdiParent = this;
+            var container = ContainerConfig.Configure();
+            using(var scope =  container.BeginLifetimeScope()) 
+            {
+                var goals = scope.Resolve<GoalRecordWindow>();
+                goals.Show();
+            }
+            //var context = new FootballInfoContext();
+            //var playerRepo = new PlayersRepository(context);
+            //var goalRepo = new GoalRepository(context);
+            //var goals = new GoalRecordWindow(playerRepo, goalRepo);
+            //goals.Show();
+            //goals.MdiParent = this;
         }
 
         private void competingTeamsToolStripMenuItem_Click(object sender, EventArgs e)

@@ -1,6 +1,6 @@
 ﻿using MatchStat.Database;
 using MatchStat.DataModel.DataModels;
-using MatchStat.Interfaces;
+using MatchStat.Interfaces.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +15,7 @@ namespace MatchStat.UI
 {
     public partial class FieldsWindow : Form
     {
-        private readonly IFieldsRepository _fieldsRepository;
+        IFieldsRepository _fieldsRepository;
         public FieldsWindow(IFieldsRepository fieldRepo)
         {
             InitializeComponent();

@@ -1,6 +1,6 @@
-﻿namespace MatchStat.Interfaces
+﻿namespace MatchStat.Interfaces.Interfaces
 {
-    public interface IParentInterface<T> where T:class
+    public interface IParentInterface<T> where T : class
     {
         void Add(T match);
         List<T> GetAll();

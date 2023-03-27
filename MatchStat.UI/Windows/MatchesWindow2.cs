@@ -1,7 +1,7 @@
 ﻿using ExpressMapper.Extensions;
 using MatchStat.Database;
 using MatchStat.DataModel.DataModels;
-using MatchStat.Interfaces;
+using MatchStat.Interfaces.Interfaces;
 using MatchStat.Repositories.Repositories;
 using System.Data;
 

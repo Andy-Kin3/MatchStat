@@ -43,10 +43,10 @@
             createButton = new Button();
             deleteButton = new Button();
             dataGridView1 = new DataGridView();
-            tableLayoutPanel1 = new TableLayoutPanel();
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             startDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             endDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            tableLayoutPanel1 = new TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)tournamentBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -193,26 +193,6 @@
             dataGridView1.Size = new Size(800, 337);
             dataGridView1.TabIndex = 11;
             // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.5834846F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 81.41652F));
-            tableLayoutPanel1.Controls.Add(label2, 0, 0);
-            tableLayoutPanel1.Controls.Add(label3, 0, 1);
-            tableLayoutPanel1.Controls.Add(label4, 0, 2);
-            tableLayoutPanel1.Controls.Add(tournamentName, 1, 0);
-            tableLayoutPanel1.Controls.Add(endDate, 1, 2);
-            tableLayoutPanel1.Controls.Add(startDate, 1, 1);
-            tableLayoutPanel1.Location = new Point(0, 3);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.Size = new Size(673, 100);
-            tableLayoutPanel1.TabIndex = 12;
-            // 
             // nameDataGridViewTextBoxColumn
             // 
             nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
@@ -233,6 +213,26 @@
             endDateDataGridViewTextBoxColumn.HeaderText = "EndDate";
             endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
             endDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.5834846F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 81.41652F));
+            tableLayoutPanel1.Controls.Add(label2, 0, 0);
+            tableLayoutPanel1.Controls.Add(label3, 0, 1);
+            tableLayoutPanel1.Controls.Add(label4, 0, 2);
+            tableLayoutPanel1.Controls.Add(tournamentName, 1, 0);
+            tableLayoutPanel1.Controls.Add(endDate, 1, 2);
+            tableLayoutPanel1.Controls.Add(startDate, 1, 1);
+            tableLayoutPanel1.Location = new Point(0, 3);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.Size = new Size(673, 100);
+            tableLayoutPanel1.TabIndex = 12;
             // 
             // TournamentStatisticsWindow
             // 

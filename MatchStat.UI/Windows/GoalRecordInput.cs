@@ -1,14 +1,14 @@
 ﻿using MatchStat.Core.EventArgs;
 using MatchStat.DataModel.DataModels;
-using MatchStat.Interfaces;
+using MatchStat.Interfaces.Interfaces;
 
 namespace MatchStat.UI.Windows
 {
     public partial class GoalRecordInput : Form
     {
-        private readonly IGoalRepository _goalRepo; 
-        public IMatchesRepository _matchesRepo;
-        public IPlayersRepository _playersRepo;
+        IGoalRepository _goalRepo; 
+        IMatchesRepository _matchesRepo;
+        IPlayersRepository _playersRepo;
 
         public EventHandler GoalSaved { get; set; }
 

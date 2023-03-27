@@ -1,7 +1,6 @@
-﻿
-using MatchStat.DataModel.DataModels;
+﻿using MatchStat.DataModel.DataModels;
 
-namespace MatchStat.Interfaces
+namespace MatchStat.Interfaces.Interfaces
 {
     public interface IPlayersRepository : IParentInterface<Player>
     {

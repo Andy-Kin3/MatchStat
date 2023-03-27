@@ -37,11 +37,11 @@
             fieldBindingSource = new BindingSource(components);
             countryTextBox = new TextBox();
             dataGridView1 = new DataGridView();
+            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            countryDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tableLayoutPanel1 = new TableLayoutPanel();
             deleteButton = new Button();
             createButton = new Button();
-            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            countryDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)fieldBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -122,6 +122,20 @@
             dataGridView1.Size = new Size(645, 331);
             dataGridView1.TabIndex = 4;
             // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // countryDataGridViewTextBoxColumn
+            // 
+            countryDataGridViewTextBoxColumn.DataPropertyName = "Country";
+            countryDataGridViewTextBoxColumn.HeaderText = "Country";
+            countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
+            countryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
@@ -160,20 +174,6 @@
             createButton.TabIndex = 10;
             createButton.Text = "Create";
             createButton.UseVisualStyleBackColor = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // countryDataGridViewTextBoxColumn
-            // 
-            countryDataGridViewTextBoxColumn.DataPropertyName = "Country";
-            countryDataGridViewTextBoxColumn.HeaderText = "Country";
-            countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
-            countryDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FieldsWindow
             // 
