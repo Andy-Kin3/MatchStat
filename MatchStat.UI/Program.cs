@@ -1,3 +1,4 @@
+using Autofac;
 using MatchStat.Core;
 using MatchStat.Database;
 using MatchStat.DataModel.DataModels;
@@ -17,10 +18,13 @@ namespace MatchStat.UI
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
+            GlobalFunctions.RegisterDependencies();
+
             var context = new FootballInfoContext();
             context.Database.Migrate();
 
             GlobalFunctions.IsRunTime = true;
+
             Application.Run(new MainForm());
         }
     }

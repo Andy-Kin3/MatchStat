@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MatchStat.Database;
 
-public partial class FootballInfoContext : DbContext
+public partial class FootballInfoContext : DbContext, IFootballInfoContext
 {
     public FootballInfoContext()
     {

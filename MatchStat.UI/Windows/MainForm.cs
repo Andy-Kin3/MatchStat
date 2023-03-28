@@ -1,8 +1,10 @@
 ﻿using Autofac;
-using DependencyInjector;
+using MatchStat.Core;
 using MatchStat.Database;
+using MatchStat.Interfaces.Interfaces;
 using MatchStat.Repositories.Repositories;
 using MatchStat.UI.Windows;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace MatchStat.UI
 {
@@ -15,64 +17,49 @@ namespace MatchStat.UI
 
         private void goalsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var container = ContainerConfig.Configure();
-            using(var scope =  container.BeginLifetimeScope()) 
-            {
-                var goals = scope.Resolve<GoalRecordWindow>();
-                goals.Show();
-            }
-            //var context = new FootballInfoContext();
-            //var playerRepo = new PlayersRepository(context);
-            //var goalRepo = new GoalRepository(context);
+            //var playerRepo = GlobalFunctions.Container.Resolve<IPlayersRepository>();
+            //var goalRepo = Container.Resolve<IGoalRepository>();
+
+
+            var goalsWindow = GlobalFunctions.Container.Resolve<GoalRecordWindow>();
             //var goals = new GoalRecordWindow(playerRepo, goalRepo);
-            //goals.Show();
-            //goals.MdiParent = this;
+            goalsWindow.Show();
+            goalsWindow.MdiParent = this;
         }
 
         private void competingTeamsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var context = new FootballInfoContext();
-            var teamRepo = new TeamsRepository(context);
-            var team = new TeamsWindow(teamRepo);
-            team.Show();
-            team.MdiParent = this;
+            var teamWindow = GlobalFunctions.Container.ResolveOptional<TeamsWindow>();
+            teamWindow.Show();
+            teamWindow.MdiParent = this;
         }
 
         private void setTournamentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var context = new FootballInfoContext();
-            var tournamentRepo = new TournamentsRepository(context);
-            var tournamentStatistics = new TournamentStatisticsWindow(tournamentRepo);
-            tournamentStatistics.Show();
-            tournamentStatistics.MdiParent = this;
+            var toutnamentWindow = GlobalFunctions.Container.ResolveOptional<TournamentStatisticsWindow>();
+            toutnamentWindow.Show();
+            toutnamentWindow.MdiParent = this;
         }
 
         private void selectedFieldsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var context = new FootballInfoContext();
-            var fieldRepo = new FieldRepository(context);
-            var fields = new FieldsWindow(fieldRepo);
-            fields.Show();
-            fields.MdiParent = this;
+            var fieldsWindow = GlobalFunctions.Container.ResolveOptional<FieldsWindow>();
+            fieldsWindow.Show();
+            fieldsWindow.MdiParent = this;
         }
 
         private void participatingPlayerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var context = new FootballInfoContext();
-            var playerRepo = new PlayersRepository(context);
-            var teamsRepo = new TeamsRepository(context);
-            var players = new PlayersWindow(teamsRepo, playerRepo);
-            players.Show();
-            players.MdiParent = this;
+            var playerWindow = GlobalFunctions.Container.ResolveOptional<PlayersWindow>();
+            playerWindow.Show();
+            playerWindow.MdiParent = this;
         }
 
         private void matchesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var context = new FootballInfoContext();
-            var matchesRepository = new MatchDetailsRepository(context);
-            var matches = new MatchRecordWindow(matchesRepository);
-            matches.Show();
-            matches.MdiParent = this;
+            var matchRecordWindow = GlobalFunctions.Container.ResolveOptional<MatchRecordWindow>();
+            matchRecordWindow.Show();
+            matchRecordWindow.MdiParent = this;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,13 +69,9 @@ namespace MatchStat.UI
 
         private void setTournamentsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var context = new FootballInfoContext();
-            var teamRepo = new TeamsRepository(context);
-            var tournamentRepo = new TournamentsRepository(context);
-            var teamTournamentsrepo = new TeamTournamentRepository(context);
-            var teamTournament = new TeamTournamentsWindow(teamTournamentsrepo, tournamentRepo, teamRepo);
-            teamTournament.Show();
-            teamTournament.MdiParent = this;
+            var teamTournamentWindow = GlobalFunctions.Container.ResolveOptional<TeamTournamentsWindow>();
+            teamTournamentWindow.Show();
+            teamTournamentWindow.MdiParent = this;
         }
     }
 }

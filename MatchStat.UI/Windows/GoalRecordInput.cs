@@ -38,7 +38,7 @@ namespace MatchStat.UI.Windows
         }
         private void button_saveGoal_Click(object sender, EventArgs e)
         {
-            if (Goal.Id > 0)
+            if (Goal?.Id > 0)
             {
                 UpdateEditedGoal(Goal);
             }
