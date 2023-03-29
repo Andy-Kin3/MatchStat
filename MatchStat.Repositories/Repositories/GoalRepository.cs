@@ -6,7 +6,7 @@ namespace MatchStat.Repositories.Repositories
 {
     public class GoalRepository : ParentRepository<Goal>, IGoalRepository
     {
-        public GoalRepository(FootballInfoContext c) : base(c) 
+        public GoalRepository(FootballInfoContext c) : base(c)
         {
         }
         public string GetPlayerFullName(int playerId)

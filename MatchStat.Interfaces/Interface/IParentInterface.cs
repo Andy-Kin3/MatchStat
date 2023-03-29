@@ -2,9 +2,9 @@
 {
     public interface IParentInterface<T> where T : class
     {
-        void Add(T match);
+        void Add(T item);
         List<T> GetAll();
-        void Delete(T match);
-        void Update(T? match);
+        void Delete(T item);
+        void Update(T? item);
     }
 }

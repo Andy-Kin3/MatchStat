@@ -24,7 +24,7 @@ public partial class MatchDetail : IItemsWithIdField
     {
         get
         {
-            if(TeamOneScore != 0 && TeamTwoScore != 0)
+            if (TeamOneScore != 0 && TeamTwoScore != 0)
             {
                 return $"{this.Team1Name} {this.TeamOneScore} : {this.TeamTwoScore} {this.Team2Name}";
             }

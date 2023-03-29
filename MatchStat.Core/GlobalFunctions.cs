@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using DependencyInjector.DI;
 
 namespace MatchStat.Core
 {
@@ -6,13 +7,12 @@ namespace MatchStat.Core
     {
         public static bool IsRunTime = false;
 
-        public static ILifetimeScope? Container { get; set; }
+        public static ILifetimeScope Container { get; set; }
 
         public static void RegisterDependencies()
         {
-            GlobalFunctions.Container = ContainerConfig.Configure().BeginLifetimeScope(); ;
+            Container = ContainerConfig.Configure().BeginLifetimeScope();
         }
     }
-
 }
 

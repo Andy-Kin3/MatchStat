@@ -1,10 +1,6 @@
 ﻿using Autofac;
 using MatchStat.Core;
-using MatchStat.Database;
-using MatchStat.Interfaces.Interfaces;
-using MatchStat.Repositories.Repositories;
 using MatchStat.UI.Windows;
-using static System.Formats.Asn1.AsnWriter;
 
 namespace MatchStat.UI
 {
@@ -19,9 +15,7 @@ namespace MatchStat.UI
         {
             //var playerRepo = GlobalFunctions.Container.Resolve<IPlayersRepository>();
             //var goalRepo = Container.Resolve<IGoalRepository>();
-
-
-            var goalsWindow = GlobalFunctions.Container.Resolve<GoalRecordWindow>();
+            var goalsWindow = GlobalFunctions.Container.ResolveOptional<GoalRecordWindow>();
             //var goals = new GoalRecordWindow(playerRepo, goalRepo);
             goalsWindow.Show();
             goalsWindow.MdiParent = this;

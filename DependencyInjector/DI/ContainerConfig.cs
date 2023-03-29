@@ -2,14 +2,12 @@
 using MatchStat.Database;
 using MatchStat.Interfaces.Interfaces;
 using MatchStat.Repositories.Repositories;
-using MatchStat.UI;
-using MatchStat.UI.Windows;
 
 namespace DependencyInjector.DI
 {
     public static class ContainerConfig
     {
-       public static IContainer Container()
+        public static IContainer Configure()
         {
             var builder = new ContainerBuilder();
 
@@ -22,14 +20,15 @@ namespace DependencyInjector.DI
             builder.RegisterType<TeamTournamentRepository>().As<ITeamTournamentsRepository>();
             builder.RegisterType<FootballInfoContext>().As<IFootballInfoContext>();
 
-            builder.RegisterType<GoalRecordWindow>().AsSelf();
-            builder.RegisterType<MatchRecordWindow>().AsSelf();
-            builder.RegisterType<PlayersWindow>().AsSelf();
-            builder.RegisterType<TournamentStatisticsWindow>().AsSelf();
-            builder.RegisterType<FieldsWindow>().AsSelf();
-            builder.RegisterType<TeamTournamentsWindow>().AsSelf();
-            builder.RegisterType<TeamsWindow>().AsSelf();
+            //builder.RegisterType<GoalRecordWindow>().AsSelf();
+            //builder.RegisterType<MatchRecordWindow>().AsSelf();
+            //builder.RegisterType<PlayersWindow>().AsSelf();
+            //builder.RegisterType<TournamentStatisticsWindow>().AsSelf();
+            //builder.RegisterType<FieldsWindow>().AsSelf();
+            //builder.RegisterType<TeamTournamentsWindow>().AsSelf();
+            //builder.RegisterType<TeamsWindow>().AsSelf();
+
             return builder.Build();
-        } 
+        }
     }
 }

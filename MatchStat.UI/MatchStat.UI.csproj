@@ -36,8 +36,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MatchStat.Core\MatchStat.Core.csproj" />
+    <ProjectReference Include="..\MatchStat.Database\MatchStat.Database.csproj" />
     <ProjectReference Include="..\MatchStat.DataModel\MatchStat.DataModel.csproj" />
-    <ProjectReference Include="..\MatchStat.Repositories\MatchStat.Repositories.csproj" />
+    <ProjectReference Include="..\MatchStat.Interfaces\MatchStat.Interfaces.csproj" />
   </ItemGroup>
 
   <ItemGroup>

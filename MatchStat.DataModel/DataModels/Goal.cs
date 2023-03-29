@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace MatchStat.DataModel.DataModels;
+﻿namespace MatchStat.DataModel.DataModels;
 
 public partial class Goal : IItemsWithIdField
 {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
-namespace MatchStat.DataModel.DataModels;
+﻿namespace MatchStat.DataModel.DataModels;
 
 public partial class Match : IItemsWithIdField
 {

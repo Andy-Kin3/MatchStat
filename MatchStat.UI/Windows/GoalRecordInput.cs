@@ -6,13 +6,13 @@ namespace MatchStat.UI.Windows
 {
     public partial class GoalRecordInput : Form
     {
-        IGoalRepository _goalRepo; 
+        IGoalRepository _goalRepo;
         IMatchesRepository _matchesRepo;
         IPlayersRepository _playersRepo;
 
         public EventHandler GoalSaved { get; set; }
 
-        public GoalRecordInput(IGoalRepository goalRepo, IMatchesRepository matchesRepository, IPlayersRepository playersRepo,  Goal g = null)
+        public GoalRecordInput(IGoalRepository goalRepo, IMatchesRepository matchesRepository, IPlayersRepository playersRepo, Goal g = null)
         {
             InitializeComponent();
             this._goalRepo = goalRepo;

@@ -30,7 +30,7 @@ namespace MatchStat.Repositories.Repositories
             {
                 item.Id = GetNextId();
             }
-            _context.Set<T>().Add(item );
+            _context.Set<T>().Add(item);
             _context.SaveChanges();
         }
 

@@ -1,7 +1,5 @@
-using Autofac;
 using MatchStat.Core;
 using MatchStat.Database;
-using MatchStat.DataModel.DataModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace MatchStat.UI

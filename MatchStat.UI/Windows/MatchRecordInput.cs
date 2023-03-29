@@ -1,7 +1,6 @@
 ﻿using MatchStat.Core.EventArgs;
 using MatchStat.DataModel.DataModels;
 using MatchStat.Interfaces.Interfaces;
-using MatchStat.Repositories.Repositories;
 
 namespace MatchStat.UI.Windows
 {
@@ -45,7 +44,8 @@ namespace MatchStat.UI.Windows
             _matchesRepository.Add(match);
         }
         private void UpdateMatch(MatchDetail match)
-        {;
+        {
+            ;
             _matchesRepository.Update(match);
         }
         private void saveMatchButton_Click(object sender, EventArgs e)

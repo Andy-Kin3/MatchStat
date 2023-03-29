@@ -1,7 +1,6 @@
 ﻿using MatchStat.Core.EventArgs;
 using MatchStat.DataModel.DataModels;
 using MatchStat.Interfaces.Interfaces;
-using MatchStat.Repositories.Repositories;
 
 namespace MatchStat.UI.Windows
 {

@@ -1,9 +1,5 @@
-﻿using ExpressMapper.Extensions;
-using MatchStat.Database;
-using MatchStat.DataModel.DataModels;
+﻿using MatchStat.DataModel.DataModels;
 using MatchStat.Interfaces.Interfaces;
-using MatchStat.Repositories.Repositories;
-using System.Data;
 
 namespace MatchStat.UI.Windows
 {
