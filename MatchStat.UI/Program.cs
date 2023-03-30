@@ -21,7 +21,7 @@ namespace MatchStat.UI
             var context = new FootballInfoContext();
             context.Database.Migrate();
 
-            GlobalFunctions.IsRunTime = true;
+            UCRuntimeFunction.UCRuntimeFunction.IsRunTime = true;
 
             Application.Run(new MainForm());
         }

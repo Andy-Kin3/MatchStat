@@ -1,5 +1,4 @@
-﻿using MatchStat.Core;
-using MatchStat.DataModel.DataModels;
+﻿using MatchStat.DataModel.DataModels;
 using MatchStat.Interfaces.Interfaces;
 
 namespace MatchStat.UI.UserControls
@@ -11,7 +10,7 @@ namespace MatchStat.UI.UserControls
         private readonly IPlayersRepository _playersRepository;
         public UcSingleGoal(IMatchesRepository matchesRepository, IPlayersRepository playersRepo)
         {
-            if (GlobalFunctions.IsRunTime == false)
+            if (UCRuntimeFunction.UCRuntimeFunction.IsRunTime == false)
             {
                 InitializeWindow();
             }

@@ -1,6 +1,6 @@
 ﻿using MatchStat.DataModel.DataModels;
 
-namespace MatchStat.Core.EventArgs
+namespace MatchStat.MyEventArguments.EventArgs
 {
     public class MatchSavedEventArguments : System.EventArgs
     {

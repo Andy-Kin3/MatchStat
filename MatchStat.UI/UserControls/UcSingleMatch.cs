@@ -12,7 +12,7 @@ namespace MatchStat.UI.UserControls
 
         public UcSingleMatch(ITeamsRepository teamsRepository, ITournamentsRepository turnamentsRepository, IFieldsRepository fieldsRepository)
         {
-            if (GlobalFunctions.IsRunTime == false)
+            if (UCRuntimeFunction.UCRuntimeFunction.IsRunTime == false)
             {
                 InitializeWindow();
             }

@@ -39,6 +39,8 @@
     <ProjectReference Include="..\MatchStat.Database\MatchStat.Database.csproj" />
     <ProjectReference Include="..\MatchStat.DataModel\MatchStat.DataModel.csproj" />
     <ProjectReference Include="..\MatchStat.Interfaces\MatchStat.Interfaces.csproj" />
+    <ProjectReference Include="..\MatchStat.MyEventArguments\MatchStat.MyEventArguments.csproj" />
+    <ProjectReference Include="..\MatchStat.UCRuntimeFunction\MatchStat.UCRuntimeFunction.csproj" />
   </ItemGroup>
 
   <ItemGroup>
