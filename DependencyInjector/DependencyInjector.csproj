@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MatchStat.Repositories\MatchStat.Repositories.csproj" />
+    <ProjectReference Include="..\MatchStat.UI\MatchStat.UI.csproj" />
   </ItemGroup>
 
 </Project>

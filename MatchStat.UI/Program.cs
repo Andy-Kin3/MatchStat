@@ -1,6 +1,3 @@
-using MatchStat.Core;
-using MatchStat.Database;
-using Microsoft.EntityFrameworkCore;
 
 namespace MatchStat.UI
 {
@@ -14,16 +11,9 @@ namespace MatchStat.UI
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
+            //ApplicationConfiguration.Initialize();
 
-            GlobalFunctions.RegisterDependencies();
-
-            var context = new FootballInfoContext();
-            context.Database.Migrate();
-
-            UCRuntimeFunction.UCRuntimeFunction.IsRunTime = true;
-
-            Application.Run(new MainForm());
+            //Application.Run(new MainForm());
         }
     }
 }

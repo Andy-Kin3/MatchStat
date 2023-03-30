@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MatchStat.DataModel\MatchStat.DataModel.csproj" />
+    <ProjectReference Include="..\MatchStat.Interfaces\MatchStat.Interfaces.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -5,6 +5,6 @@
         void Add(T item);
         List<T> GetAll();
         void Delete(T item);
-        void Update(T? item);
+        void Update(T item);
     }
 }

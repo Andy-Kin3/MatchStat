@@ -2,7 +2,7 @@
 using MatchStat.Interfaces.Interfaces;
 using MatchStat.MyEventArguments.EventArgs;
 
-namespace MatchStat.UI.Windows
+namespace MatchStat.UI
 {
     public partial class GoalRecordWindow : Form
     {

@@ -1,6 +1,6 @@
 ﻿using MatchStat.DataModel.DataModels;
 
-namespace MatchStat.UI.Windows
+namespace MatchStat.UI
 {
     partial class GoalRecordInput
     {

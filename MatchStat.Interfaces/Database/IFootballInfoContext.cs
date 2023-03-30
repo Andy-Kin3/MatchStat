@@ -1,7 +1,8 @@
 ﻿using MatchStat.DataModel.DataModels;
+
 using Microsoft.EntityFrameworkCore;
 
-namespace MatchStat.Database
+namespace MatchStat.Interfaces.Database
 {
     public interface IFootballInfoContext
     {
@@ -13,5 +14,8 @@ namespace MatchStat.Database
         DbSet<Team> Teams { get; set; }
         DbSet<TeamTournament> TeamTournaments { get; set; }
         DbSet<Tournament> Tournaments { get; set; }
+        void MigrateDatabase();
+        DbSet<T> Set<T>() where T : class;
+        int SaveChanges();
     }
 }

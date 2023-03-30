@@ -1,4 +1,4 @@
-﻿namespace MatchStat.UI.Windows
+﻿namespace MatchStat.UI
 {
     partial class GoalRecordWindow
     {

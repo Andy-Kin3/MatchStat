@@ -1,5 +1,7 @@
 ﻿using MatchStat.Database.EntityTypeConfigurartion;
 using MatchStat.DataModel.DataModels;
+using MatchStat.Interfaces.Database;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace MatchStat.Database;
@@ -13,6 +15,10 @@ public partial class FootballInfoContext : DbContext, IFootballInfoContext
     public FootballInfoContext(DbContextOptions<FootballInfoContext> options)
         : base(options)
     {
+    }
+    public void MigrateDatabase()
+    {
+        this.Database.Migrate();
     }
 
     public virtual DbSet<Field> Fields { get; set; }

@@ -1,4 +1,5 @@
-﻿namespace MatchStat.UI
+﻿
+namespace MatchStat.Presentation
 {
     partial class MainForm
     {

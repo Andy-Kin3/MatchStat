@@ -1,4 +1,4 @@
-﻿using MatchStat.Database;
+﻿using MatchStat.Interfaces.Database;
 using MatchStat.DataModel.DataModels;
 using MatchStat.Interfaces.Interfaces;
 
@@ -6,8 +6,8 @@ namespace MatchStat.Repositories.Repositories
 {
     public abstract class ParentRepository<T> : IParentInterface<T> where T : class, IItemsWithIdField
     {
-        protected FootballInfoContext _context;
-        public ParentRepository(FootballInfoContext context)
+        protected IFootballInfoContext _context;
+        public ParentRepository(IFootballInfoContext context)
         {
             _context = context;
         }

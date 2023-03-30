@@ -1,27 +1,20 @@
-﻿using MatchStat.Database;
-using MatchStat.DataModel.DataModels;
+﻿using MatchStat.DataModel.DataModels;
+using MatchStat.Interfaces.Database;
 using MatchStat.Interfaces.Interfaces;
 
 namespace MatchStat.Repositories.Repositories
 {
     public class PlayersRepository : ParentRepository<Player>, IPlayersRepository
     {
-        public PlayersRepository(FootballInfoContext context) : base(context)
+        public PlayersRepository(IFootballInfoContext context) : base(context)
         {
         }
         public string GetTeamName(int teamId)
         {
-            if (teamId != null)
+            var myTeamName = _context.Teams.FirstOrDefault(t => t.Id == teamId);
+            if (myTeamName != null)
             {
-                using (var context = new FootballInfoContext())
-                {
-
-                    var myTeamName = context.Teams.FirstOrDefault(t => t.Id == teamId);
-                    if (myTeamName != null)
-                    {
-                        return myTeamName.Name;
-                    }
-                }
+                return myTeamName.Name;
             }
             return string.Empty;
         }

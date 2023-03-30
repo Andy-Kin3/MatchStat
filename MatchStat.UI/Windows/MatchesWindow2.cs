@@ -1,7 +1,7 @@
 ﻿using MatchStat.DataModel.DataModels;
 using MatchStat.Interfaces.Interfaces;
 
-namespace MatchStat.UI.Windows
+namespace MatchStat.UI
 {
     public partial class MatchesWindow2 : Form
     {

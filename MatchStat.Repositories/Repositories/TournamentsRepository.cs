@@ -1,4 +1,4 @@
-﻿using MatchStat.Database;
+﻿using MatchStat.Interfaces.Database;
 using MatchStat.DataModel.DataModels;
 using MatchStat.Interfaces.Interfaces;
 
@@ -6,20 +6,17 @@ namespace MatchStat.Repositories.Repositories
 {
     public class TournamentsRepository : ParentRepository<Tournament>, ITournamentsRepository
     {
-        public TournamentsRepository(FootballInfoContext context) : base(context)
+        public TournamentsRepository(IFootballInfoContext context) : base(context)
         {
         }
         public string GetTournamentName(int id)
         {
-            using (var context = new FootballInfoContext())
+            var tournament = _context.Tournaments.FirstOrDefault(t => t.Id == id);
+            if (tournament != null)
             {
-                var tournament = context.Tournaments.FirstOrDefault(t => t.Id == id);
-                if (tournament != null)
-                {
-                    return tournament.Name;
-                }
-                return string.Empty;
+                return tournament.Name;
             }
+            return string.Empty;
         }
     }
 }
