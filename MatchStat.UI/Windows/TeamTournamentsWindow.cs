@@ -68,13 +68,6 @@ namespace MatchStat.UI
                     e.Value = _tournamentRepository.GetTournamentName(tournamentId);
             }
         }
-        private int GetNextID()
-        {
-            var allTeamTournaments = teamTournamentBindingSource.DataSource as List<TeamTournament>;
-            var maximumId = allTeamTournaments != null && allTeamTournaments.Any() ? allTeamTournaments.Max(e => e.Id) : 0;
-            var nextId = maximumId + 1;
-            return nextId;
-        }
 
         //private void add(string team, string tournament)
         //{
@@ -116,16 +109,7 @@ namespace MatchStat.UI
         }
         private void DeleteRow(TeamTournament currentRow)
         {
-            using (var context = new FootballInfoContext())
-            {
-                var selectedRow = context.Fields.FirstOrDefault(t => t.Id == currentRow.Id);
-                if (selectedRow != null)
-                {
-                    context.TeamTournaments.Remove(currentRow);
-                    context.SaveChanges();
-                    LoadTeamTournments();
-                }
-            }
+            _teamTournamentRepository.Delete(currentRow);
         }
 
         private void editButton_Click(object sender, EventArgs e)
@@ -139,16 +123,7 @@ namespace MatchStat.UI
 
         private void updateButton_Click(object sender, EventArgs e)
         {
-            using (var context = new FootballInfoContext())
-            {
-                var currentSelected = GetCurrentRow();
-                if (currentSelected != null)
-                {
-                    context.TeamTournaments.Update(currentSelected);
-                    context.SaveChanges();
-                    LoadTeamTournments();
-                }
-            }
+            _teamTournamentRepository.Update(teamTournaments);
         }
     }
 }

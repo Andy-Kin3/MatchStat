@@ -1,4 +1,5 @@
 ﻿using MatchStat.Core;
+using MatchStat.DataModel.DataModels;
 using MatchStat.UI;
 using MatchStat.UI.Windows;
 

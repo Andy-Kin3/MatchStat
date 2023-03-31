@@ -4,6 +4,7 @@ using MatchStat.Database;
 using MatchStat.DataModel.DataModels;
 using MatchStat.Interfaces.Database;
 using MatchStat.Interfaces.Interfaces;
+using MatchStat.Interfaces.RepositoryInterfaces;
 using MatchStat.Repositories.Repositories;
 using MatchStat.UI;
 using MatchStat.UI.Windows;
@@ -23,6 +24,7 @@ namespace DependencyInjector.DI
             builder.RegisterType<TeamsRepository>().As<ITeamsRepository>();
             builder.RegisterType<TournamentsRepository>().As<ITournamentsRepository>();
             builder.RegisterType<TeamTournamentRepository>().As<ITeamTournamentsRepository>();
+            builder.RegisterType<MatchStoredProcedureRepository>().As<IMatchStoreProcedure>();
             builder.RegisterType<FootballInfoContext>().As<IFootballInfoContext>();
 
             builder.RegisterType<GoalRecordWindow>().AsSelf();
