@@ -4,6 +4,7 @@ using MatchStat.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MatchStat.DataModel.Migrations
 {
     [DbContext(typeof(FootballInfoContext))]
-    partial class FootballInfoContextModelSnapshot : ModelSnapshot
+    [Migration("20230330184116_spGetAllMatches")]
+    partial class spGetAllMatches
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -154,40 +157,6 @@ namespace MatchStat.DataModel.Migrations
                     b.ToTable((string)null);
 
                     b.ToView("MatchesView", (string)null);
-                });
-
-            modelBuilder.Entity("MatchStat.DataModel.DataModels.MyMatchStoredProcedure", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("FieldId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Team1Id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Team2Id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TeamOneScore")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TeamTwoScore")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("TournamentId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("MatchStoredProcedure");
                 });
 
             modelBuilder.Entity("MatchStat.DataModel.DataModels.Player", b =>

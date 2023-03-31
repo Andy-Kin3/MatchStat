@@ -4,7 +4,7 @@ using MatchStat.Interfaces.Interfaces;
 
 namespace MatchStat.Repositories.Repositories
 {
-    public class MatchDetailsRepository : ParentRepository<MatchDetail>, IMatchesRepository
+    public class MatchDetailsRepository : ParentRepository<MatchDetail>, Interfaces.Interfaces.IMatchesRepository
     {
         public MatchDetailsRepository(IFootballInfoContext context) : base(context)
         {

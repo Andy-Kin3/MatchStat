@@ -10,7 +10,7 @@ namespace MatchStat.UI.UserControls
         private readonly IPlayersRepository _playersRepository;
         public UcSingleGoal(IMatchesRepository matchesRepository, IPlayersRepository playersRepo)
         {
-            if (RuntimeChecker.IsRunTime == false)
+            if (RuntimeChecker.IsRunTime)
             {
                 InitializeWindow();
             }

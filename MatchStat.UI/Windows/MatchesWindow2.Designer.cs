@@ -33,9 +33,8 @@
             Id = new DataGridViewTextBoxColumn();
             dateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             matchNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            tournamentNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            fieldNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             matchDetailBindingSource = new BindingSource(components);
+            matchStoreProceDureBindingSource = new BindingSource(components);
             tableLayoutPanel1 = new TableLayoutPanel();
             label1 = new Label();
             label2 = new Label();
@@ -61,6 +60,7 @@
             deleteButton2 = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)matchDetailBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)matchStoreProceDureBindingSource).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bindingSource_matchDetail).BeginInit();
             ((System.ComponentModel.ISupportInitialize)team1BindingSource).BeginInit();
@@ -80,7 +80,7 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id, dateDataGridViewTextBoxColumn, matchNameDataGridViewTextBoxColumn, tournamentNameDataGridViewTextBoxColumn, fieldNameDataGridViewTextBoxColumn });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id, dateDataGridViewTextBoxColumn, matchNameDataGridViewTextBoxColumn });
             dataGridView1.DataSource = matchDetailBindingSource;
             dataGridView1.Dock = DockStyle.Bottom;
             dataGridView1.Location = new Point(0, 180);
@@ -115,20 +115,6 @@
             matchNameDataGridViewTextBoxColumn.HeaderText = "Match Name";
             matchNameDataGridViewTextBoxColumn.Name = "matchNameDataGridViewTextBoxColumn";
             matchNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tournamentNameDataGridViewTextBoxColumn
-            // 
-            tournamentNameDataGridViewTextBoxColumn.DataPropertyName = "TournamentName";
-            tournamentNameDataGridViewTextBoxColumn.HeaderText = "Tournament Name";
-            tournamentNameDataGridViewTextBoxColumn.Name = "tournamentNameDataGridViewTextBoxColumn";
-            tournamentNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fieldNameDataGridViewTextBoxColumn
-            // 
-            fieldNameDataGridViewTextBoxColumn.DataPropertyName = "FieldName";
-            fieldNameDataGridViewTextBoxColumn.HeaderText = "Field Name";
-            fieldNameDataGridViewTextBoxColumn.Name = "fieldNameDataGridViewTextBoxColumn";
-            fieldNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // matchDetailBindingSource
             // 
@@ -381,6 +367,7 @@
             Load += MatchesWindow2_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)matchDetailBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)matchStoreProceDureBindingSource).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)bindingSource_matchDetail).EndInit();
@@ -424,7 +411,6 @@
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn matchNameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn tournamentNameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn fieldNameDataGridViewTextBoxColumn;
+        private BindingSource matchStoreProceDureBindingSource;
     }
 }

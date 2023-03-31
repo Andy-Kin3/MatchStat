@@ -11,7 +11,7 @@ namespace MatchStat.UI.UserControls
 
         public UcSingleMatch(ITeamsRepository teamsRepository, ITournamentsRepository turnamentsRepository, IFieldsRepository fieldsRepository)
         {
-            if (RuntimeChecker.IsRunTime == false)
+            if (RuntimeChecker.IsRunTime)
             {
                 InitializeWindow();
             }

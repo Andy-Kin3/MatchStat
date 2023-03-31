@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MatchStat.Core\MatchStat.Core.csproj" />
     <ProjectReference Include="..\MatchStat.UI\MatchStat.UI.csproj" />
   </ItemGroup>

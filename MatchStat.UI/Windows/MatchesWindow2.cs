@@ -14,6 +14,9 @@ namespace MatchStat.UI
         {
             InitializeComponent();
             _matchesRepository = repository;
+            _teamsRepository = teamsRepository;
+            _fieldsRepository = fieldRepository;
+            _tournamentsRepository = tournamentsRepository;
         }
 
         private MatchDetail? match
@@ -24,6 +27,7 @@ namespace MatchStat.UI
                 this.bindingSource_matchDetail.DataSource = value;
             }
         }
+
 
         private void saveButton_Click(object sender, EventArgs e)
         {

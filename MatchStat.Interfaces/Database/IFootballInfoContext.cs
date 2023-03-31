@@ -10,6 +10,7 @@ namespace MatchStat.Interfaces.Database
         DbSet<Goal> Goals { get; set; }
         DbSet<Match> MatchDetail { get; set; }
         DbSet<MatchDetail> MatchDetails { get; set; }
+        DbSet<MyMatchStoredProcedure> myMatchStoredProcedures { get; set; }
         DbSet<Player> Players { get; set; }
         DbSet<Team> Teams { get; set; }
         DbSet<TeamTournament> TeamTournaments { get; set; }

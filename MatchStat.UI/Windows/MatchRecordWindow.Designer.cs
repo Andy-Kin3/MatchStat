@@ -33,14 +33,14 @@
             Id = new DataGridViewTextBoxColumn();
             dateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             matchNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            tournamentNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            fieldNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            matchStoreProceDureBindingSource = new BindingSource(components);
             matchDetailBindingSource = new BindingSource(components);
             contextMenuStrip1 = new ContextMenuStrip(components);
             editToolStripMenuItem = new ToolStripMenuItem();
             deleteToolStripMenuItem = new ToolStripMenuItem();
             createMatchButton = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)matchStoreProceDureBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)matchDetailBindingSource).BeginInit();
             contextMenuStrip1.SuspendLayout();
             SuspendLayout();
@@ -54,7 +54,7 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id, dateDataGridViewTextBoxColumn, matchNameDataGridViewTextBoxColumn, tournamentNameDataGridViewTextBoxColumn, fieldNameDataGridViewTextBoxColumn });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id, dateDataGridViewTextBoxColumn, matchNameDataGridViewTextBoxColumn });
             dataGridView1.DataSource = matchDetailBindingSource;
             dataGridView1.GridColor = SystemColors.InactiveBorder;
             dataGridView1.Location = new Point(0, 52);
@@ -88,21 +88,6 @@
             matchNameDataGridViewTextBoxColumn.HeaderText = "Match Name";
             matchNameDataGridViewTextBoxColumn.Name = "matchNameDataGridViewTextBoxColumn";
             matchNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tournamentNameDataGridViewTextBoxColumn
-            // 
-            tournamentNameDataGridViewTextBoxColumn.DataPropertyName = "TournamentName";
-            tournamentNameDataGridViewTextBoxColumn.HeaderText = "Tournament Name";
-            tournamentNameDataGridViewTextBoxColumn.Name = "tournamentNameDataGridViewTextBoxColumn";
-            tournamentNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fieldNameDataGridViewTextBoxColumn
-            // 
-            fieldNameDataGridViewTextBoxColumn.DataPropertyName = "FieldName";
-            fieldNameDataGridViewTextBoxColumn.HeaderText = "Field Name";
-            fieldNameDataGridViewTextBoxColumn.Name = "fieldNameDataGridViewTextBoxColumn";
-            fieldNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // matchDetailBindingSource
             // 
             matchDetailBindingSource.DataSource = typeof(DataModel.DataModels.MatchDetail);
@@ -149,6 +134,7 @@
             Text = "Match Record Window";
             Load += MatchRecordWindow_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)matchStoreProceDureBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)matchDetailBindingSource).EndInit();
             contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
@@ -161,11 +147,10 @@
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn matchNameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn tournamentNameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn fieldNameDataGridViewTextBoxColumn;
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem editToolStripMenuItem;
         private ToolStripMenuItem deleteToolStripMenuItem;
         private Button createMatchButton;
+        private BindingSource matchStoreProceDureBindingSource;
     }
 }

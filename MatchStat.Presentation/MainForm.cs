@@ -1,5 +1,6 @@
 ﻿using MatchStat.Core;
 using MatchStat.UI;
+using MatchStat.UI.Windows;
 
 namespace MatchStat.Presentation
 {
@@ -50,7 +51,7 @@ namespace MatchStat.Presentation
 
         private void matchesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var matchRecordWindow = GlobalFunctions.GetInstance<MatchRecordWindow>();
+            var matchRecordWindow = GlobalFunctions.GetInstance<MatchesWindow2>();
             matchRecordWindow.Show();
             matchRecordWindow.MdiParent = this;
         }
@@ -65,6 +66,13 @@ namespace MatchStat.Presentation
             var teamTournamentWindow = GlobalFunctions.GetInstance<TeamTournamentsWindow>();
             teamTournamentWindow.Show();
             teamTournamentWindow.MdiParent = this;
+        }
+
+        private void matchStoreProToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var mymatchwindow = GlobalFunctions.GetInstance<MatchesStoredProcedureWindow>();
+            mymatchwindow.Show();
+            mymatchwindow.MdiParent = this;
         }
     }
 }

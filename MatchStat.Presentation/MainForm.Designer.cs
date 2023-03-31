@@ -30,124 +30,121 @@ namespace MatchStat.Presentation
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.goalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.competingTeamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setTournamentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setTournamentsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.selectedFieldsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.participatingPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.matchesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
-            this.SuspendLayout();
+            menuStrip1 = new MenuStrip();
+            menuToolStripMenuItem = new ToolStripMenuItem();
+            goalsToolStripMenuItem = new ToolStripMenuItem();
+            competingTeamsToolStripMenuItem = new ToolStripMenuItem();
+            setTournamentsToolStripMenuItem = new ToolStripMenuItem();
+            setTournamentsToolStripMenuItem1 = new ToolStripMenuItem();
+            selectedFieldsToolStripMenuItem = new ToolStripMenuItem();
+            participatingPlayerToolStripMenuItem = new ToolStripMenuItem();
+            matchesToolStripMenuItem = new ToolStripMenuItem();
+            exitToolStripMenuItem = new ToolStripMenuItem();
+            matchStoreProToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
+            SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1053, 30);
-            this.menuStrip1.TabIndex = 8;
-            this.menuStrip1.Text = "menuStrip1";
+            menuStrip1.BackColor = SystemColors.ControlDarkDark;
+            menuStrip1.Font = new Font("Times New Roman", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1053, 30);
+            menuStrip1.TabIndex = 8;
+            menuStrip1.Text = "menuStrip1";
             // 
             // menuToolStripMenuItem
             // 
-            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.goalsToolStripMenuItem,
-            this.competingTeamsToolStripMenuItem,
-            this.setTournamentsToolStripMenuItem,
-            this.setTournamentsToolStripMenuItem1,
-            this.selectedFieldsToolStripMenuItem,
-            this.participatingPlayerToolStripMenuItem,
-            this.matchesToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(66, 26);
-            this.menuToolStripMenuItem.Text = "Menu";
+            menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { goalsToolStripMenuItem, competingTeamsToolStripMenuItem, setTournamentsToolStripMenuItem, setTournamentsToolStripMenuItem1, selectedFieldsToolStripMenuItem, participatingPlayerToolStripMenuItem, matchesToolStripMenuItem, exitToolStripMenuItem, matchStoreProToolStripMenuItem });
+            menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            menuToolStripMenuItem.Size = new Size(66, 26);
+            menuToolStripMenuItem.Text = "Menu";
             // 
             // goalsToolStripMenuItem
             // 
-            this.goalsToolStripMenuItem.Name = "goalsToolStripMenuItem";
-            this.goalsToolStripMenuItem.Size = new System.Drawing.Size(316, 26);
-            this.goalsToolStripMenuItem.Text = "Goals";
-            this.goalsToolStripMenuItem.Click += new System.EventHandler(this.goalsToolStripMenuItem_Click);
+            goalsToolStripMenuItem.Name = "goalsToolStripMenuItem";
+            goalsToolStripMenuItem.Size = new Size(316, 26);
+            goalsToolStripMenuItem.Text = "Goals";
+            goalsToolStripMenuItem.Click += goalsToolStripMenuItem_Click;
             // 
             // competingTeamsToolStripMenuItem
             // 
-            this.competingTeamsToolStripMenuItem.Name = "competingTeamsToolStripMenuItem";
-            this.competingTeamsToolStripMenuItem.Size = new System.Drawing.Size(316, 26);
-            this.competingTeamsToolStripMenuItem.Text = "Competing Teams";
-            this.competingTeamsToolStripMenuItem.Click += new System.EventHandler(this.competingTeamsToolStripMenuItem_Click);
+            competingTeamsToolStripMenuItem.Name = "competingTeamsToolStripMenuItem";
+            competingTeamsToolStripMenuItem.Size = new Size(316, 26);
+            competingTeamsToolStripMenuItem.Text = "Competing Teams";
+            competingTeamsToolStripMenuItem.Click += competingTeamsToolStripMenuItem_Click;
             // 
             // setTournamentsToolStripMenuItem
             // 
-            this.setTournamentsToolStripMenuItem.Name = "setTournamentsToolStripMenuItem";
-            this.setTournamentsToolStripMenuItem.Size = new System.Drawing.Size(316, 26);
-            this.setTournamentsToolStripMenuItem.Text = "Set Tournaments";
-            this.setTournamentsToolStripMenuItem.Click += new System.EventHandler(this.setTournamentsToolStripMenuItem_Click);
+            setTournamentsToolStripMenuItem.Name = "setTournamentsToolStripMenuItem";
+            setTournamentsToolStripMenuItem.Size = new Size(316, 26);
+            setTournamentsToolStripMenuItem.Text = "Set Tournaments";
+            setTournamentsToolStripMenuItem.Click += setTournamentsToolStripMenuItem_Click;
             // 
             // setTournamentsToolStripMenuItem1
             // 
-            this.setTournamentsToolStripMenuItem1.Name = "setTournamentsToolStripMenuItem1";
-            this.setTournamentsToolStripMenuItem1.Size = new System.Drawing.Size(316, 26);
-            this.setTournamentsToolStripMenuItem1.Text = "Register Teams(Tournaments)";
-            this.setTournamentsToolStripMenuItem1.Click += new System.EventHandler(this.setTournamentsToolStripMenuItem1_Click);
+            setTournamentsToolStripMenuItem1.Name = "setTournamentsToolStripMenuItem1";
+            setTournamentsToolStripMenuItem1.Size = new Size(316, 26);
+            setTournamentsToolStripMenuItem1.Text = "Register Teams(Tournaments)";
+            setTournamentsToolStripMenuItem1.Click += setTournamentsToolStripMenuItem1_Click;
             // 
             // selectedFieldsToolStripMenuItem
             // 
-            this.selectedFieldsToolStripMenuItem.Name = "selectedFieldsToolStripMenuItem";
-            this.selectedFieldsToolStripMenuItem.Size = new System.Drawing.Size(316, 26);
-            this.selectedFieldsToolStripMenuItem.Text = "Selected Fields";
-            this.selectedFieldsToolStripMenuItem.Click += new System.EventHandler(this.selectedFieldsToolStripMenuItem_Click);
+            selectedFieldsToolStripMenuItem.Name = "selectedFieldsToolStripMenuItem";
+            selectedFieldsToolStripMenuItem.Size = new Size(316, 26);
+            selectedFieldsToolStripMenuItem.Text = "Selected Fields";
+            selectedFieldsToolStripMenuItem.Click += selectedFieldsToolStripMenuItem_Click;
             // 
             // participatingPlayerToolStripMenuItem
             // 
-            this.participatingPlayerToolStripMenuItem.Name = "participatingPlayerToolStripMenuItem";
-            this.participatingPlayerToolStripMenuItem.Size = new System.Drawing.Size(316, 26);
-            this.participatingPlayerToolStripMenuItem.Text = "Participating Player";
-            this.participatingPlayerToolStripMenuItem.Click += new System.EventHandler(this.participatingPlayerToolStripMenuItem_Click);
+            participatingPlayerToolStripMenuItem.Name = "participatingPlayerToolStripMenuItem";
+            participatingPlayerToolStripMenuItem.Size = new Size(316, 26);
+            participatingPlayerToolStripMenuItem.Text = "Participating Player";
+            participatingPlayerToolStripMenuItem.Click += participatingPlayerToolStripMenuItem_Click;
             // 
             // matchesToolStripMenuItem
             // 
-            this.matchesToolStripMenuItem.Name = "matchesToolStripMenuItem";
-            this.matchesToolStripMenuItem.Size = new System.Drawing.Size(316, 26);
-            this.matchesToolStripMenuItem.Text = "Matches";
-            this.matchesToolStripMenuItem.Click += new System.EventHandler(this.matchesToolStripMenuItem_Click);
+            matchesToolStripMenuItem.Name = "matchesToolStripMenuItem";
+            matchesToolStripMenuItem.Size = new Size(316, 26);
+            matchesToolStripMenuItem.Text = "Matches";
+            matchesToolStripMenuItem.Click += matchesToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(316, 26);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new Size(316, 26);
+            exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            // 
+            // matchStoreProToolStripMenuItem
+            // 
+            matchStoreProToolStripMenuItem.Name = "matchStoreProToolStripMenuItem";
+            matchStoreProToolStripMenuItem.Size = new Size(316, 26);
+            matchStoreProToolStripMenuItem.Text = "MatchStore Pro";
+            matchStoreProToolStripMenuItem.Click += matchStoreProToolStripMenuItem_Click;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1053, 505);
-            this.Controls.Add(this.menuStrip1);
-            this.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(1069, 544);
-            this.Name = "MainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaptionText;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1053, 505);
+            Controls.Add(menuStrip1);
+            IsMdiContainer = true;
+            MainMenuStrip = menuStrip1;
+            MinimumSize = new Size(1069, 544);
+            Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "MainForm";
+            WindowState = FormWindowState.Maximized;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -161,5 +158,6 @@ namespace MatchStat.Presentation
         private ToolStripMenuItem participatingPlayerToolStripMenuItem;
         private ToolStripMenuItem matchesToolStripMenuItem;
         private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem matchStoreProToolStripMenuItem;
     }
 }
