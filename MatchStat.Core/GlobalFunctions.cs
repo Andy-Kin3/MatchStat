@@ -8,7 +8,7 @@ namespace MatchStat.Core
         private static ILifetimeScope? Container { get; set; }
 
         //public static bool IsRunTime = false;
-        public static T GetInstance<T>() where T : notnull
+        public static T? GetInstance<T>() where T : notnull
         {
             try
             {
